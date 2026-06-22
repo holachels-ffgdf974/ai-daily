@@ -1,0 +1,52 @@
+name: AI Daily Report
+
+on:
+  schedule:
+    # 北京时间 10:00 = UTC 2:00
+    - cron: '0 2 * * *'
+  workflow_dispatch:  # 允许手动触发
+
+# GitHub Pages 部署权限
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install lark-cli
+        run: npm install -g @larksuite/cli
+
+      - name: Configure lark-cli (bot identity)
+        run: |
+          echo "${{ secrets.FEISHU_APP_SECRET }}" | lark-cli config init \
+            --app-id "${{ secrets.FEISHU_APP_ID }}" \
+            --app-secret-stdin \
+            --brand feishu \
+            --lang zh
+
+      - name: Run AI Daily pipeline
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          FEISHU_USER_OPEN_ID: ${{ secrets.FEISHU_USER_OPEN_ID }}
+        run: node ai-daily-ci.js
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          commit_message: 'AI Daily Report [skip ci]'
