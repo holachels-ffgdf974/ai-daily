@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 日报 · 2026年09月07日</title>
+    <title>AI 日报 · 2026年09月08日</title>
     <style>
         * {
             margin: 0;
@@ -15,47 +15,65 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
             color: #1a1a1a;
             line-height: 1.7;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
         .container {
             max-width: 680px;
             margin: 0 auto;
         }
-        header {
+        /* 刊头 */
+        .header {
             text-align: center;
-            padding: 40px 0 30px;
+            padding: 60px 20px 40px;
             border-bottom: 1px solid #e8e8e4;
             margin-bottom: 40px;
         }
-        .date {
+        .header .date {
             font-size: 14px;
-            color: #6b6b6b;
             letter-spacing: 2px;
+            color: #6b6b6b;
             text-transform: uppercase;
             margin-bottom: 12px;
         }
-        h1 {
-            font-family: Georgia, serif;
-            font-size: 42px;
-            font-weight: 400;
-            letter-spacing: -0.5px;
-            margin-bottom: 12px;
-            color: #1a1a1a;
-        }
-        .stats {
-            font-size: 13px;
-            color: #6b6b6b;
+        .header h1 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 48px;
+            font-weight: normal;
             letter-spacing: 1px;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            display: inline-block;
+            border-bottom: 3px solid #8b5e3c;
+            padding-bottom: 8px;
         }
-        .stats span {
-            margin: 0 8px;
+        .header .summary {
+            font-size: 14px;
+            color: #6b6b6b;
+            margin-top: 12px;
         }
+        /* 分区标题 */
+        .section-title {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 24px;
+            font-weight: normal;
+            color: #1a1a1a;
+            margin: 48px 0 24px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e8e8e4;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-title .icon {
+            font-size: 20px;
+        }
+        /* Builder 卡片 */
         .builder-card {
             background: #ffffff;
             border: 1px solid #e8e8e4;
             border-radius: 8px;
-            padding: 36px 32px;
-            margin-bottom: 32px;
+            padding: 32px;
+            margin-bottom: 24px;
         }
         .builder-header {
             margin-bottom: 20px;
@@ -63,32 +81,36 @@
             border-bottom: 1px solid #f0f0ec;
         }
         .builder-name {
-            font-family: Georgia, serif;
-            font-size: 22px;
-            font-weight: 600;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 20px;
+            font-weight: bold;
             color: #1a1a1a;
-            margin-bottom: 4px;
         }
         .builder-handle {
-            font-size: 14px;
             color: #6b6b6b;
-            margin-bottom: 6px;
+            font-size: 14px;
+            margin-left: 8px;
+            font-weight: normal;
         }
         .builder-bio {
-            font-size: 14px;
+            font-size: 13px;
             color: #6b6b6b;
-            font-style: italic;
+            margin-top: 8px;
             line-height: 1.5;
         }
-        .tweet-item {
-            margin-bottom: 28px;
-            padding-left: 16px;
+        .builder-bio a {
+            color: #2c6bae;
+            text-decoration: none;
+        }
+        /* 推文块 */
+        .tweet {
+            margin-bottom: 20px;
+            padding: 16px 20px;
             border-left: 3px solid #e8e0d0;
             background: #fdfdfb;
-            padding: 16px 20px;
-            border-radius: 0 8px 8px 0;
+            border-radius: 0 4px 4px 0;
         }
-        .tweet-item:last-child {
+        .tweet:last-child {
             margin-bottom: 0;
         }
         .tweet-en {
@@ -96,246 +118,230 @@
             line-height: 1.6;
             color: #1a1a1a;
             margin-bottom: 8px;
-            word-wrap: break-word;
         }
         .tweet-zh {
             font-size: 14px;
             line-height: 1.6;
-            color: #6b6b6b;
-            margin-bottom: 10px;
-            word-wrap: break-word;
+            color: #444;
+            border-top: 1px dashed #e8e0d0;
+            padding-top: 8px;
         }
         .tweet-link {
+            display: inline-block;
+            margin-top: 8px;
             font-size: 12px;
             color: #2c6bae;
             text-decoration: none;
-            display: inline-block;
-            margin-top: 4px;
         }
         .tweet-link:hover {
             text-decoration: underline;
         }
+        /* 播客区 */
         .podcast-card {
             background: #ffffff;
             border: 1px solid #e8e8e4;
             border-radius: 8px;
-            padding: 36px 32px;
-            margin-top: 40px;
-        }
-        .podcast-header {
-            margin-bottom: 20px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid #f0f0ec;
+            padding: 32px;
+            margin-bottom: 24px;
         }
         .podcast-name {
-            font-family: Georgia, serif;
-            font-size: 20px;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 6px;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #8b5e3c;
+            margin-bottom: 4px;
         }
         .podcast-title {
-            font-size: 15px;
-            color: #6b6b6b;
-            line-height: 1.6;
-            margin-bottom: 6px;
-        }
-        .podcast-url {
-            font-size: 13px;
-            color: #2c6bae;
-            text-decoration: none;
-            word-break: break-all;
-        }
-        .podcast-url:hover {
-            text-decoration: underline;
+            font-size: 16px;
+            color: #1a1a1a;
+            margin-bottom: 16px;
         }
         .podcast-points {
-            margin-top: 20px;
+            list-style: none;
+            padding: 0;
         }
-        .point-item {
-            margin-bottom: 20px;
-            padding-left: 16px;
+        .podcast-points li {
+            padding: 12px 16px;
             border-left: 3px solid #e8e0d0;
             background: #fdfdfb;
-            padding: 16px 20px;
-            border-radius: 0 8px 8px 0;
+            margin-bottom: 12px;
+            border-radius: 0 4px 4px 0;
         }
-        .point-item:last-child {
+        .podcast-points li:last-child {
             margin-bottom: 0;
         }
         .point-en {
-            font-size: 15px;
-            line-height: 1.6;
+            font-size: 14px;
             color: #1a1a1a;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
         .point-zh {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #6b6b6b;
-        }
-        .quote-block {
-            margin: 12px 0;
-            padding: 12px 16px;
-            background: #f8f7f4;
-            border-radius: 6px;
-            font-size: 14px;
-            color: #1a1a1a;
-            line-height: 1.6;
-        }
-        footer {
-            text-align: center;
-            padding: 40px 0 20px;
-            color: #6b6b6b;
             font-size: 13px;
-            letter-spacing: 0.5px;
-            border-top: 1px solid #e8e8e4;
-            margin-top: 40px;
+            color: #444;
+            border-top: 1px dashed #e8e0d0;
+            padding-top: 4px;
         }
+        .podcast-link {
+            display: inline-block;
+            margin-top: 16px;
+            font-size: 13px;
+            color: #2c6bae;
+            text-decoration: none;
+        }
+        .podcast-link:hover {
+            text-decoration: underline;
+        }
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+            border-top: 1px solid #e8e8e4;
+            font-size: 13px;
+            color: #6b6b6b;
+        }
+        /* 响应式 */
         @media (max-width: 600px) {
             body {
-                padding: 30px 16px;
+                padding: 20px 12px;
             }
-            .builder-card, .podcast-card {
-                padding: 24px 20px;
+            .header {
+                padding: 40px 12px 30px;
             }
-            h1 {
-                font-size: 32px;
+            .header h1 {
+                font-size: 36px;
             }
-            .tweet-item, .point-item {
+            .builder-card,
+            .podcast-card {
+                padding: 20px;
+            }
+            .tweet {
                 padding: 12px 14px;
+            }
+            .section-title {
+                font-size: 20px;
+                margin-top: 32px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="date">2026年09月07日 星期一</div>
+        <!-- 刊头 -->
+        <div class="header">
+            <div class="date">2026年09月08日 星期二</div>
             <h1>AI 日报</h1>
-            <div class="stats">
-                <span>3 位 Builder</span>
-                <span>·</span>
-                <span>5 条推文</span>
-                <span>·</span>
-                <span>1 期播客</span>
-            </div>
-        </header>
+            <div class="summary">5 位 Builder · 6 条推文 · 1 期播客</div>
+        </div>
 
-        <!-- Thibault Sottiaux -->
-        <div class="builder-card">
-            <div class="builder-header">
-                <div class="builder-name">Thibault Sottiaux</div>
-                <div class="builder-handle">@thsottiaux</div>
-                <div class="builder-bio">Codex &amp; ChatGPT @OpenAI</div>
-            </div>
-            
-            <div class="tweet-item">
-                <div class="tweet-en">"To calibrate you all on which reasoning effort to use for Astra, know that GPT-6 Astra on low performs better than GPT-5.6 Sol on high.</div>
-                <div class="tweet-zh">「为了让各位了解 Astra 应该使用哪种推理强度，需要说明的是：GPT-6 Astra 在低推理强度下的表现优于 GPT-5.6 Sol 在高推理强度下的表现。</div>
-                <div class="tweet-zh">如果你之前对 Sol 使用高推理强度并感到满意，我建议你在 Astra 上改用低或中推理强度。」</div>
-                <a href="https://x.com/thsottiaux/status/2096688770523467947" class="tweet-link" target="_blank" rel="noopener">查看原文 →</a>
-            </div>
+        <!-- Builders 部分 -->
+        <div class="section-title">
+            <span class="icon">✦</span> Builders
         </div>
 
         <!-- Peter Yang -->
         <div class="builder-card">
             <div class="builder-header">
-                <div class="builder-name">Peter Yang</div>
-                <div class="builder-handle">@petergyang</div>
-                <div class="builder-bio">Practical AI tutorials and interviews for busy people | Get my best AI skills and guides at https://t.co/6VAA6p81x6</div>
+                <span class="builder-name">Peter Yang</span>
+                <span class="builder-handle">@petergyang</span>
+                <div class="builder-bio">实用 AI 教程与访谈，专为忙碌人士打造 | 获取我的最佳 AI 技能与指南：<a href="https://t.co/6VAA6p81x6">https://t.co/6VAA6p81x6</a></div>
             </div>
-            
-            <div class="tweet-item">
-                <div class="tweet-en">"Cheating and explaining the answer [to your child] are closer than you'd think."</div>
-                <div class="tweet-zh">「（给孩子）作弊和解释答案之间的距离比你想象的要近。」</div>
-                <div class="tweet-en" style="margin-top:12px;">Here's my new episode with @suekhim, co-founder of @brilliantorg, who showed me how AI can help kids think for themselves. We talked about:</div>
-                <div class="tweet-zh">这是我与 @suekhim（@brilliantorg 联合创始人）的新一期节目，她向我展示了 AI 如何帮助孩子独立思考。我们聊到了：</div>
-                <div class="tweet-en" style="margin-top:8px;">→ Why better grades don't always mean more learning</div>
-                <div class="tweet-zh">→ 为什么更好的成绩并不总是意味着更多的学习</div>
-                <div class="tweet-en" style="margin-top:4px;">→ How to help kids enjoy doing hard things vs. only trying to please adults</div>
-                <div class="tweet-zh">→ 如何帮助孩子享受做困难的事情，而不是只试图取悦成年人</div>
-                <div class="tweet-en" style="margin-top:4px;">→ Why her #1 product principle is "Never tell the learner the answer"</div>
-                <div class="tweet-zh">→ 为什么她的第一产品原则是「永远不要告诉学习者答案」</div>
-                <div class="quote-block" style="margin-top:12px;">
-                    <div style="font-weight:600;margin-bottom:8px;">Sue 的一些引言：</div>
-                    <div style="margin-bottom:8px;">"Using AI to skip learning is like bringing a robotic arm to the gym to lift weights for you."</div>
-                    <div style="margin-bottom:8px;">「用 AI 跳过学习，就像带一只机械臂去健身房替你举铁。」</div>
-                    <div style="margin-bottom:8px;">"Learning isn't about the answer. It is about strengthening that part of you that can concentrate and struggle, that's unafraid of trying new problems."</div>
-                    <div style="margin-bottom:8px;">「学习不是为了答案。学习是为了强化你内心那个能够专注、能够坚持、不畏惧尝试新问题的部分。」</div>
-                    <div>"When building AI products, try to find areas where you have unique data that makes your product better over time."</div>
-                    <div>「在构建 AI 产品时，尽量找到你拥有独特数据的领域，让产品随时间推移不断变得更好。」</div>
-                </div>
-                <div class="tweet-en" style="margin-top:12px;">Watch the full episode: https://t.co/jzogacrhiK</div>
-                <div class="tweet-zh">观看完整节目：https://t.co/jzogacrhiK</div>
-                <div class="tweet-en" style="margin-top:8px;">Thanks to our sponsors: @linear: The AI agent platform for modern teams https://t.co/tgWf9oL4bs @RiversidedotFM: All-in-one AI studio for podcasts and video https://t.co/uWnS6aiMPE</div>
-                <div class="tweet-zh">感谢我们的赞助商：@linear：面向现代团队的 AI Agent 平台 https://t.co/tgWf9oL4bs @RiversidedotFM：一体化播客和视频 AI 工作室 https://t.co/uWnS6aiMPE</div>
-                <a href="https://x.com/petergyang/status/2096612718098911590" class="tweet-link" target="_blank" rel="noopener">查看原文 →</a>
-            </div>
-
-            <div class="tweet-item">
-                <div class="tweet-en">I've been sleeping on Widow's Bay and in general Apple's shows are so much better any other streamer</div>
-                <div class="tweet-zh">我之前一直忽略了《Widow's Bay》，而且总的来说，Apple 的剧集比其他任何流媒体平台都要好得多。</div>
-                <a href="https://x.com/petergyang/status/2096466888935276719" class="tweet-link" target="_blank" rel="noopener">查看原文 →</a>
+            <div class="tweet">
+                <div class="tweet-en">"This man isn't even on Time's 100 Top AI List so why are we listening to him /s"</div>
+                <div class="tweet-zh">"这个人甚至没进《时代》AI 百大榜单，那我们为什么还要听他说话 /狗头"</div>
+                <a class="tweet-link" href="https://x.com/petergyang/status/2096815819997204639" target="_blank">查看原文 →</a>
             </div>
         </div>
 
         <!-- Nan Yu -->
         <div class="builder-card">
             <div class="builder-header">
-                <div class="builder-name">Nan Yu</div>
-                <div class="builder-handle">@thenanyu</div>
-                <div class="builder-bio">(soon) member of product staff @openai. prev head of product @linear. I am grader.</div>
+                <span class="builder-name">Nan Yu</span>
+                <span class="builder-handle">@thenanyu</span>
+                <div class="builder-bio">（即将上任）@openai 产品团队成员。前 @linear 产品负责人。我是一名评分者。</div>
             </div>
-            
-            <div class="tweet-item">
-                <div class="tweet-en">Every tech startup logo https://t.co/52Prjggey0</div>
-                <div class="tweet-zh">每个科技初创公司的 logo https://t.co/52Prjggey0</div>
-                <a href="https://x.com/thenanyu/status/2096438571838370096" class="tweet-link" target="_blank" rel="noopener">查看原文 →</a>
+            <div class="tweet">
+                <div class="tweet-en">"J-dog calling AGI"</div>
+                <div class="tweet-zh">"J-dog 在呼唤 AGI"</div>
+                <a class="tweet-link" href="https://x.com/thenanyu/status/2096796392102752507" target="_blank">查看原文 →</a>
             </div>
         </div>
 
-        <!-- Peter Steinberger -->
+        <!-- Aaron Levie -->
         <div class="builder-card">
             <div class="builder-header">
-                <div class="builder-name">Peter Steinberger</div>
-                <div class="builder-handle">@steipete</div>
-                <div class="builder-bio">Polyagentmorous ClawFather. Came back from retirement to mess with AI and help a lobster take over the world. @OpenClaw</div>
+                <span class="builder-name">Aaron Levie</span>
+                <span class="builder-handle">@levie</span>
+                <div class="builder-bio">@box CEO — 你的业务存在于内容之中。用 AI 释放其潜力。</div>
             </div>
-            
-            <div class="tweet-item">
-                <div class="tweet-en">Can't remember last time we had such a large jump in capabilities. https://t.co/iGxVUYmGHj</div>
-                <div class="tweet-zh">不记得上次出现如此巨大的能力跃升是什么时候了。https://t.co/iGxVUYmGHj</div>
-                <a href="https://x.com/steipete/status/2096403459579015374" class="tweet-link" target="_blank" rel="noopener">查看原文 →</a>
-            </div>
-
-            <div class="tweet-item">
-                <div class="tweet-en">One step closer in building the harness I wanna use. The one thing that's not yet there are cloud sessions, goal is seconds, which requires clever snapshotting. (Right now it still clones repos fresh which isn't fast enough.)</div>
-                <div class="tweet-zh">距离构建我想要使用的 harness 又近了一步。目前还缺少的是云端会话，目标是秒级启动，这需要巧妙的快照技术。（目前它仍然会重新克隆仓库，速度不够快。）</div>
-                <div class="tweet-en" style="margin-top:8px;">Will have that next week. https://t.co/lpiszOtVGP</div>
-                <div class="tweet-zh">下周就能实现。https://t.co/lpiszOtVGP</div>
-                <a href="https://x.com/steipete/status/2096400749869830325" class="tweet-link" target="_blank" rel="noopener">查看原文 →</a>
+            <div class="tweet">
+                <div class="tweet-en">"The internet is almost entirely unprepared for a future where everyone's personal agents are running around executing tasks for them. There are going to be endless new challenges and opportunities at the infrastructure layer, for user experiences, new business models, and more."</div>
+                <div class="tweet-zh">"互联网几乎完全没有为这样一个未来做好准备：每个人的个人代理都在四处奔跑，替他们执行任务。在基础设施层面、用户体验、新商业模式等方面，将涌现无穷无尽的新挑战与新机遇。"</div>
+                <a class="tweet-link" href="https://x.com/levie/status/2096735726750908464" target="_blank">查看原文 →</a>
             </div>
         </div>
 
-        <!-- Podcast -->
+        <!-- Zara Zhang -->
+        <div class="builder-card">
+            <div class="builder-header">
+                <span class="builder-name">Zara Zhang</span>
+                <span class="builder-handle">@zarazhangrui</span>
+                <div class="builder-bio">Builder。做出人们想要的东西，然后让人们想要它。哈佛 17 届。GitHub: <a href="https://t.co/KCuEaje1wd">https://t.co/KCuEaje1wd</a> YouTube: htt</div>
+            </div>
+            <div class="tweet">
+                <div class="tweet-en">"One of the biggest crises of our time is the shortening of the human attention span. Agents just make things worse"</div>
+                <div class="tweet-zh">"我们这个时代最大的危机之一，是人类注意力的不断缩短。智能体只会让事情变得更糟。"</div>
+                <a class="tweet-link" href="https://x.com/zarazhangrui/status/2096824861108928701" target="_blank">查看原文 →</a>
+            </div>
+        </div>
+
+        <!-- Nikunj Kothari -->
+        <div class="builder-card">
+            <div class="builder-header">
+                <span class="builder-name">Nikunj Kothari</span>
+                <span class="builder-handle">@nikunj</span>
+                <div class="builder-bio">@fpvventures 合伙人 — 投资种子/A 轮。此前：@meter、@opendoor、@atlassian 等公司的早期成员。爱 @shimoleej</div>
+            </div>
+            <div class="tweet">
+                <div class="tweet-en">"Fable reviewing literally every Astra code change.. 'this fix is the real deal' — Fable PM, Astra engineer is undefeated"</div>
+                <div class="tweet-zh">"Fable 在审查 Astra 的每一行代码改动……'这个修复是真材实料' — Fable PM，Astra 工程师不败神话"</div>
+                <a class="tweet-link" href="https://x.com/nikunj/status/2096798671547646134" target="_blank">查看原文 →</a>
+            </div>
+        </div>
+
+        <!-- 播客部分 -->
+        <div class="section-title">
+            <span class="icon">✦</span> 播客
+        </div>
+
         <div class="podcast-card">
-            <div class="podcast-header">
-                <div class="podcast-name">The MAD Podcast with Matt Turck</div>
-                <div class="podcast-title">AI Could Take Over in 2029. Is It Already Too Late? | Ryan Greenblatt</div>
-                <a href="https://www.youtube.com/watch?v=SK9ITBK5osA" class="podcast-url" target="_blank" rel="noopener">https://www.youtube.com/watch?v=SK9ITBK5osA</a>
-            </div>
-            <div class="podcast-points">
-                <div class="point-item">
-                    <div class="point-en">AI Could Take Over in 2029. Is It Already Too Late?</div>
-                    <div class="point-zh">AI 可能在 2029 年接管一切。现在是否已经太迟？</div>
-                </div>
-            </div>
+            <div class="podcast-name">No Priors</div>
+            <div class="podcast-title">重新思考传统数据基础设施 — 与 Eon 联合创始人 Ofir Ehrlich 和 Gonen Stein 的对谈</div>
+            <ul class="podcast-points">
+                <li>
+                    <div class="point-en">Eon is building a new kind of data infrastructure designed for the AI era, moving beyond legacy systems that weren't built for modern workloads.</div>
+                    <div class="point-zh">Eon 正在构建一种专为 AI 时代设计的新型数据基础设施，超越那些并非为现代工作负载而构建的传统系统。</div>
+                </li>
+                <li>
+                    <div class="point-en">The founders discuss how AI agents require fundamentally different data access patterns — real-time, context-aware, and semantically rich.</div>
+                    <div class="point-zh">创始人讨论了 AI 智能体如何需要根本不同的数据访问模式——实时、上下文感知且语义丰富。</div>
+                </li>
+                <li>
+                    <div class="point-en">Legacy data infrastructure creates a massive gap between what enterprises store and what AI systems can actually leverage.</div>
+                    <div class="point-zh">传统数据基础设施在企业存储内容与 AI 系统实际可利用内容之间造成了巨大鸿沟。</div>
+                </li>
+                <li>
+                    <div class="point-en">The future of data is not just about storage — it's about making data actionable for autonomous systems that operate alongside humans.</div>
+                    <div class="point-zh">数据的未来不仅仅是存储——而是让数据对与人类并肩工作的自主系统变得可操作。</div>
+                </li>
+            </ul>
+            <a class="podcast-link" href="https://www.youtube.com/@NoPriorsPodcast" target="_blank">收听完整播客 →</a>
         </div>
 
-        <footer>
+        <!-- 页脚 -->
+        <div class="footer">
             由 AI Daily Bot 自动生成 · 每日 10:00 (北京时间)
-        </footer>
+        </div>
     </div>
 </body>
 </html>
