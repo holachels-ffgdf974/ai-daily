@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 · 2026年09月17日</title>
+<title>AI 日报 · 2026年09月18日</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -13,6 +13,7 @@
     color: #1a1a1a;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
     line-height: 1.7;
+    font-size: 16px;
     -webkit-font-smoothing: antialiased;
   }
   .wrap {
@@ -20,671 +21,606 @@
     margin: 0 auto;
     padding: 64px 32px 80px;
   }
-  header.masthead {
+  /* ---------- Masthead ---------- */
+  .masthead {
     text-align: center;
     padding-bottom: 40px;
-    margin-bottom: 48px;
     border-bottom: 1px solid #e8e8e4;
+    margin-bottom: 48px;
   }
-  .date {
+  .masthead .date {
     font-size: 13px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: #6b6b6b;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
-  h1.title {
+  .masthead h1 {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 52px;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 0.02em;
     margin: 0 0 20px;
     color: #1a1a1a;
   }
-  h1.title span {
+  .masthead h1::after {
+    content: "";
     display: block;
     width: 56px;
-    height: 3px;
+    height: 2px;
     background: #8b5e3c;
-    margin: 20px auto 0;
+    margin: 22px auto 0;
   }
-  .stats {
-    font-size: 14px;
+  .masthead .stats {
+    font-size: 13.5px;
     color: #6b6b6b;
-    margin-top: 22px;
+    letter-spacing: 0.04em;
   }
-  .stats b { color: #1a1a1a; font-weight: 600; }
+  .masthead .stats span { color: #8b5e3c; font-weight: 600; }
+  /* ---------- Section ---------- */
+  .section-label {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #8b5e3c;
+    font-weight: 600;
+    margin: 0 0 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e8e8e4;
+  }
+  /* ---------- Builder Card ---------- */
   .card {
     background: #ffffff;
     border: 1px solid #e8e8e4;
     border-radius: 8px;
-    padding: 32px 32px 24px;
+    padding: 28px 28px 20px;
     margin-bottom: 28px;
   }
   .builder-head {
-    margin-bottom: 22px;
-    padding-bottom: 18px;
-    border-bottom: 1px solid #f0efe9;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
+    margin-bottom: 6px;
   }
   .builder-name {
-    font-size: 19px;
-    font-weight: 700;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    font-weight: 400;
     color: #1a1a1a;
   }
   .builder-handle {
-    font-size: 14px;
-    color: #8b5e3c;
-    margin-left: 8px;
-    font-weight: 500;
+    font-size: 13.5px;
+    color: #2c6bae;
   }
   .builder-bio {
-    font-size: 13.5px;
+    font-size: 13px;
     color: #6b6b6b;
-    margin-top: 6px;
+    margin: 0 0 22px;
+    line-height: 1.6;
   }
+  /* ---------- Tweet ---------- */
   .tweet {
     border-left: 3px solid #e8e0d0;
     background: #fdfdfb;
-    padding: 16px 18px;
-    margin: 0 0 20px;
+    padding: 16px 18px 14px;
+    margin-bottom: 18px;
     border-radius: 0 6px 6px 0;
   }
-  .tweet:last-child { margin-bottom: 4px; }
-  .en {
-    font-size: 15px;
-    color: #1a1a1a;
-    margin: 0 0 12px;
-    white-space: pre-wrap;
-    word-break: break-word;
-  }
-  .zh {
+  .tweet:last-child { margin-bottom: 8px; }
+  .tweet .en {
     font-size: 14.5px;
-    color: #4a4a4a;
-    margin: 0 0 12px;
+    color: #1a1a1a;
     white-space: pre-wrap;
-    word-break: break-word;
-    padding-top: 12px;
-    border-top: 1px dashed #ece9e0;
+    margin: 0 0 10px;
+    line-height: 1.65;
   }
-  .src {
+  .tweet .zh {
+    font-size: 14.5px;
+    color: #6b6b6b;
+    white-space: pre-wrap;
+    margin: 0 0 12px;
+    line-height: 1.75;
+    padding-top: 10px;
+    border-top: 1px dashed #ecece6;
+  }
+  .tweet .link {
     font-size: 12.5px;
-    margin: 0;
+    letter-spacing: 0.02em;
   }
-  .src a {
+  .tweet .link a {
     color: #2c6bae;
     text-decoration: none;
-    word-break: break-all;
+    border-bottom: 1px solid rgba(44, 107, 174, 0.25);
   }
-  .src a:hover { text-decoration: underline; }
-  .section-label {
-    font-family: Georgia, serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin: 56px 0 24px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #8b5e3c;
-    display: inline-block;
-  }
-  footer {
-    margin-top: 64px;
+  .tweet .link a:hover { border-bottom-color: #2c6bae; }
+  /* ---------- Footer ---------- */
+  .footer {
+    margin-top: 56px;
     padding-top: 28px;
     border-top: 1px solid #e8e8e4;
     text-align: center;
-    font-size: 13px;
+    font-size: 12.5px;
     color: #6b6b6b;
+    letter-spacing: 0.04em;
   }
   @media (max-width: 600px) {
     .wrap { padding: 40px 18px 56px; }
-    h1.title { font-size: 38px; }
-    .card { padding: 24px 20px 18px; }
-    .tweet { padding: 14px 14px; }
-    .en { font-size: 14.5px; }
-    .zh { font-size: 14px; }
+    .masthead h1 { font-size: 38px; }
+    .card { padding: 22px 18px 16px; }
+    .tweet { padding: 14px 14px 12px; }
+    body { font-size: 15px; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
 
+  <!-- ===== Masthead ===== -->
   <header class="masthead">
-    <div class="date">2026年09月17日 星期四</div>
-    <h1 class="title">AI 日报<span></span></h1>
+    <div class="date">2026年09月18日 · 星期五</div>
+    <h1>AI 日报</h1>
     <div class="stats">
-      今日收录 <b>17</b> 位 Builder · <b>33</b> 条动态
+      今日收录 <span>15</span> 位 Builder · <span>22</span> 条动态
     </div>
   </header>
 
+  <!-- ===== Builders ===== -->
+  <div class="section-label">Builders &amp; Tweets</div>
+
+  <!-- Josh Woodward -->
+  <article class="card">
+    <div class="builder-head">
+      <span class="builder-name">Josh Woodward</span>
+      <span class="builder-handle">@joshwoodward</span>
+    </div>
+    <p class="builder-bio">VP, @Google @GoogleLabs @GeminiApp @GoogleAIStudio</p>
+
+    <div class="tweet">
+      <p class="en">Have a family? We ❤️ this in ours. https://t.co/qGXb6Xtl9J</p>
+      <p class="zh">有家庭吗？我们家超爱这个。</p>
+      <div class="link"><a href="https://x.com/joshwoodward/status/2100665648825483726" target="_blank" rel="noopener">查看原推 →</a></div>
+    </div>
+
+    <div class="tweet">
+      <p class="en">If you're not using @Gemini_Notebook on your phone yet, you're missing out. This is such a cool story! https://t.co/UZdm9Knj1f</p>
+      <p class="zh">如果你还没在手机上用 @Gemini_Notebook，那你可真是错过好东西了。这个故事太酷了！</p>
+      <div class="link"><a href="https://x.com/joshwoodward/status/2100616682431807860" target="_blank" rel="noopener">查看原推 →</a></div>
+    </div>
+  </article>
+
   <!-- Boris Cherny -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <span class="builder-name">Boris Cherny</span>
       <span class="builder-handle">@bcherny</span>
-      <div class="builder-bio">Claude Code @anthropicai</div>
+    </div>
+    <p class="builder-bio">Claude Code @anthropicai</p>
+
+    <div class="tweet">
+      <p class="en">Projects have changed not only how I interact with Claude but how I code.
+
+I stopped managing sessions. I just send thoughts as they come, Claude splits them into threads, and the project remembers how I work. It's where I do a ton of my coding now.
+
+[screenshot: my actual prompts for claude code cli yesterday]</p>
+      <p class="zh">Projects 不仅改变了我与 Claude 交互的方式，也改变了我的编码方式。
+
+我不再管理会话了。有什么想法就随手发出去，Claude 会把它们拆分成不同的线程，而项目会记住我的工作方式。现在我的大量编码都是在这里完成的。
+
+[截图：我昨天在 claude code cli 里的实际提示词]</p>
+      <div class="link"><a href="https://x.com/bcherny/status/2100669598995816511" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
 
     <div class="tweet">
-      <p class="en">Also today: Claude Docs, Claude Slides, and Claude Design are in every conversation.
-
-Ask Claude for a presentation and you get one you can open, edit, and export as PowerPoint or PDF. Same for a document or a design. There's no separate tool to navigate to. They're just in the chat.</p>
-      <p class="zh">同样从今天起：Claude Docs、Claude Slides 和 Claude Design 已经进入每一次对话。
-
-你向 Claude 要一份演示文稿，拿到的就是一份可以直接打开、编辑，并导出为 PowerPoint 或 PDF 的文件。文档和设计稿也一样。不需要再跳转到某个独立工具——它们就在对话里。</p>
-      <p class="src"><a href="https://x.com/bcherny/status/2100260544087535639" target="_blank" rel="noopener">https://x.com/bcherny/status/2100260544087535639</a></p>
+      <p class="en">Projects are how I write a lot of my code these days. Really excited for everyone to try the new experience! Rolling out now https://t.co/bpaufmEweL</p>
+      <p class="zh">如今我的很多代码都是通过 Projects 写的。非常期待大家体验这套全新流程！正在陆续推送中。</p>
+      <div class="link"><a href="https://x.com/bcherny/status/2100639991244427490" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
-
-    <div class="tweet">
-      <p class="en">Claude Code showed that AI could do real work, not just answer questions. Developers hand Claude a feature, come back to shipped code. That's where much of the industry's serious engineering runs now.
-
-Cowork proved knowledge workers could do the same: hand Claude the brief, come back to finished files.
-
-Today, chat and Cowork start merging into one Claude. The direction: one Claude that carries context across everything you're working on, wherever you are. Simple enough for everyone to access Claude's full capabilities.
-
-I've been using this experience every day for the last few weeks, and it feels awesome. Simpler, faster, and more powerful.
-
-We're rolling this out slowly. We'll be fine-tuning the experience as we go to ensure it is fast and reliable. Can't wait to hear what you think.</p>
-      <p class="zh">Claude Code 证明了 AI 能做真正的工作，而不只是回答问题。开发者把一个功能交给 Claude，回来时看到的是已经上线的代码。如今业界大量严肃的工程工作正是这样跑的。
-
-Cowork 则证明了知识工作者也能做到同样的事：把需求简报交给 Claude，回来时拿到的是完成的文件。
-
-今天，Chat 和 Cowork 开始合并为一个 Claude。方向是：一个 Claude，无论你在哪里、在做什么，都能带着上下文贯穿你手头的所有工作。同时足够简单，让每个人都能用上 Claude 的完整能力。
-
-过去几周我每天都在用这个体验，感觉非常棒。更简单、更快、也更强大。
-
-我们正在缓慢放量。过程中会持续打磨体验，确保它足够快、足够可靠。很期待听到你们的反馈。</p>
-      <p class="src"><a href="https://x.com/bcherny/status/2100259951398789487" target="_blank" rel="noopener">https://x.com/bcherny/status/2100259951398789487</a></p>
-    </div>
-  </div>
+  </article>
 
   <!-- Thibault Sottiaux -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <span class="builder-name">Thibault Sottiaux</span>
       <span class="builder-handle">@thsottiaux</span>
-      <div class="builder-bio">Codex &amp; ChatGPT @OpenAI</div>
     </div>
+    <p class="builder-bio">Codex &amp; ChatGPT @OpenAI</p>
 
     <div class="tweet">
-      <p class="en">Sometimes physics can't be cheated https://t.co/Sgt4KrRtut</p>
-      <p class="zh">有时候，物理规律是绕不过去的。</p>
-      <p class="src"><a href="https://x.com/thsottiaux/status/2100363668051603608" target="_blank" rel="noopener">https://x.com/thsottiaux/status/2100363668051603608</a></p>
+      <p class="en">Has anyone yet tried to get Astra and Fable to agree on the perfect styleguide? And then host it somewhere with a web mcp.</p>
+      <p class="zh">有人试过让 Astra 和 Fable 就"完美风格指南"达成一致吗？然后用 web mcp 把它托管到某个地方。</p>
+      <div class="link"><a href="https://x.com/thsottiaux/status/2100645454245720513" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
-
-    <div class="tweet">
-      <p class="en">Astra
-
-✅ Fast
-✅ Frontier
-✅ Efficient
-✅ For everyone https://t.co/g4C7UizHcd</p>
-      <p class="zh">Astra
-
-✅ 快
-✅ 前沿
-✅ 高效
-✅ 面向所有人</p>
-      <p class="src"><a href="https://x.com/thsottiaux/status/2100297380968997327" target="_blank" rel="noopener">https://x.com/thsottiaux/status/2100297380968997327</a></p>
-    </div>
-
-    <div class="tweet">
-      <p class="en">What is ChatGPT</p>
-      <p class="zh">什么是 ChatGPT？</p>
-      <p class="src"><a href="https://x.com/thsottiaux/status/2100295443620007993" target="_blank" rel="noopener">https://x.com/thsottiaux/status/2100295443620007993</a></p>
-    </div>
-  </div>
+  </article>
 
   <!-- Peter Yang -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <span class="builder-name">Peter Yang</span>
       <span class="builder-handle">@petergyang</span>
-      <div class="builder-bio">给忙碌的人看的实用 AI 教程与访谈 | 在 https://t.co/6VAA6p81x6 获取我最好的 AI 技能与指南</div>
+    </div>
+    <p class="builder-bio">Practical AI tutorials and interviews for busy people | Get my best AI skills and guides at https://t.co/6VAA6p81x6</p>
+
+    <div class="tweet">
+      <p class="en">My little @Muse red panda is both cute and saving me money - a winning combination https://t.co/c6nLKL53MC</p>
+      <p class="zh">我的 @Muse 小熊猫既可爱又帮我省钱——完美的组合。</p>
+      <div class="link"><a href="https://x.com/petergyang/status/2100740523539751337" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
 
     <div class="tweet">
-      <p class="en">Also we love these books that you get - the storytelling in them is much better than bob books and other alternatives. https://t.co/m6pg9kGZhE</p>
-      <p class="zh">另外，我们也很喜欢随附的这些书——里面的故事比 Bob Books 之类的替代品好太多了。</p>
-      <p class="src"><a href="https://x.com/petergyang/status/2100402721803342098" target="_blank" rel="noopener">https://x.com/petergyang/status/2100402721803342098</a></p>
+      <p class="en">Aww it's so cute https://t.co/YKbSkYVrbG</p>
+      <p class="zh">啊，太可爱了。</p>
+      <div class="link"><a href="https://x.com/petergyang/status/2100683741878468768" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
-
-    <div class="tweet">
-      <p class="en">My 4.5 year old loves learning to read using @Once_Reading, especially making the silliest faces as part of the photo feature.
-
-It's become a nightly ritual for us just like it's been for @clairevo!
-
-Plus I have to give a shout out to the founder @SebTurn for being the nicest dude.
-
-If you have young kids, I highly recommend giving Once a try for 1 month free here: https://t.co/GA2x8NMSzT</p>
-      <p class="zh">我 4 岁半的孩子很喜欢用 @Once_Reading 学认字，尤其是那个拍照功能——他会摆出最搞怪的表情。
-
-这已经成了我们每晚的固定仪式，就像 @clairevo 家一样！
-
-另外必须给创始人 @SebTurn 点个赞，他人真的特别好。
-
-如果你有小孩，强烈推荐试试 Once，这里可以免费体验一个月：https://t.co/GA2x8NMSzT</p>
-      <p class="src"><a href="https://x.com/petergyang/status/2100402704275435872" target="_blank" rel="noopener">https://x.com/petergyang/status/2100402704275435872</a></p>
-    </div>
-
-    <div class="tweet">
-      <p class="en">I use these 8 AI skills to produce my entire podcast while still applying my taste and judgment along the way.
-
-1. /podcast-prep does research on the guest and then preps an interview guide.
-
-2. /podcast-edit reviews the raw transcript, then works with me to pick engaging quotes for the intro reel along with moments to cut.
-
-3. /podcast-production orchestrates 5 skills to turn the full episode into 6 different assets.
-
-Some people think the latest models make skills redundant but they've been indispensable for me to get AI to follow my specific edit and browser-use instructions.
-
-My latest video highlighting how I actually work with these skills is a good watch if you want to automate any manual workflow.
-
-Watch me demo all 8 skills here: https://t.co/PYNbe5tlFw</p>
-      <p class="zh">我用这 8 个 AI 技能完成整档播客的制作，同时全程保留自己的品味与判断。
-
-1. /podcast-prep 研究嘉宾，然后准备一份访谈提纲。
-
-2. /podcast-edit 审阅原始转录稿，然后和我一起挑选用于片头的精彩金句，以及需要剪掉的片段。
-
-3. /podcast-production 调度 5 个技能，把整期节目转化成 6 种不同的素材。
-
-有些人认为最新模型让「技能（skills）」变得多余，但对我来说，它们不可或缺——正是它们让 AI 遵循我特定的剪辑和浏览器操作指令。
-
-如果你想自动化任何手工流程，我最新那支展示我实际如何使用这些技能的视频值得一看。
-
-在这里看我演示全部 8 个技能：https://t.co/PYNbe5tlFw</p>
-      <p class="src"><a href="https://x.com/petergyang/status/2100328939034128856" target="_blank" rel="noopener">https://x.com/petergyang/status/2100328939034128856</a></p>
-    </div>
-  </div>
-
-  <!-- Madhu Guru -->
-  <div class="card">
-    <div class="builder-head">
-      <span class="builder-name">Madhu Guru</span>
-      <span class="builder-handle">@realmadhuguru</span>
-      <div class="builder-bio">Meta AI 高级总监；此前在 Google，领导 Gemini、Veo、Nano Banana</div>
-    </div>
-
-    <div class="tweet">
-      <p class="en">Safety and security are * features * of your AI product and model - not guardrails that need to be imposed on you from the outside. https://t.co/jtN3rzdZV8 https://t.co/J8dM9vHsoN</p>
-      <p class="zh">安全与保障应当是 AI 产品和模型本身的*功能特性*——而不是从外部强加给你的护栏。</p>
-      <p class="src"><a href="https://x.com/realmadhuguru/status/2100312717739667963" target="_blank" rel="noopener">https://x.com/realmadhuguru/status/2100312717739667963</a></p>
-    </div>
-  </div>
+  </article>
 
   <!-- Cat Wu -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <span class="builder-name">Cat Wu</span>
       <span class="builder-handle">@_catwu</span>
-      <div class="builder-bio">claude code + cowork @anthropicai，此前就职于 @dagster、@scale_ai</div>
     </div>
+    <p class="builder-bio">claude code + cowork @anthropicai, prev: @dagster, @scale_ai</p>
 
     <div class="tweet">
-      <p class="en">Today, we are merging Claude Cowork and chat to simplify how you use Claude!
+      <p class="en">In the new Projects experience, Claude coordinates all of your sessions.
 
-We are also integrating Claude Design so that you can ask Claude to make a Slide, Design, or Doc without needing to switch tabs or apps.
+I've been using it every day since it lets me operate at a higher level of abstraction. I fire off a batch of tasks and move on. Claude has context on everything I'm working on and can give me an aggregated status update whenever I ask. It also has long-lived memory that evolves as I use it.
 
-Many of you shared that you didn't want to choose which Claude product to use for any task. As Claude models have become more capable, we've found that Claude can handle the routing for you. Based on your prompt, Claude will decide whether to give a quick answer or do deeper agentic work, and what kind of output best fits the task.
+We're rolling this out over the coming weeks. Let me know what you think!</p>
+      <p class="zh">在新的 Projects 体验中，Claude 会协调你所有的会话。
 
-You're in control the whole time: you can still stop, redirect, or exert finer control over Claude's effort or approach.
+我每天都在用它，因为它让我能在更高的抽象层次上工作。我抛出一批任务就继续做别的事。Claude 掌握我正在做的所有事情的上下文，我随时问它都能给我一份汇总的状态更新。它还有会随着使用不断演进的长期记忆。
 
-Give it a try and let us know what you think. We're rolling this out slowly over the next few weeks to get it right.</p>
-      <p class="zh">今天，我们把 Claude Cowork 和 Chat 合并了，让你使用 Claude 的方式更简单！
-
-我们还集成了 Claude Design，这样你可以直接让 Claude 做幻灯片、设计稿或文档，而无需切换标签页或应用。
-
-很多人反馈说，不想为每个任务去纠结该用哪个 Claude 产品。随着 Claude 模型能力提升，我们发现 Claude 可以替你完成这个路由决策。根据你的提示词，Claude 会自行判断该给出快速回答，还是进行更深入的智能体工作，以及哪种产出形式最适合这个任务。
-
-全程都由你掌控：你依然可以随时叫停、调整方向，或者对 Claude 投入的力度和方法做更精细的控制。
-
-试试看，然后告诉我们你的想法。未来几周我们会缓慢放量，把这件事做扎实。</p>
-      <p class="src"><a href="https://x.com/_catwu/status/2100260655312089562" target="_blank" rel="noopener">https://x.com/_catwu/status/2100260655312089562</a></p>
+我们将在未来几周内逐步推送。欢迎告诉我你的想法！</p>
+      <div class="link"><a href="https://x.com/_catwu/status/2100641163120423057" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
-  </div>
+  </article>
 
   <!-- Thariq -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <span class="builder-name">Thariq</span>
       <span class="builder-handle">@trq212</span>
-      <div class="builder-bio">Claude Code @anthropicai。此前 YC W20、@spc、@medialab</div>
     </div>
+    <p class="builder-bio">Claude Code @anthropicai. prev YC W20, @spc, @medialab</p>
 
     <div class="tweet">
-      <p class="en">I think Claude Managed Agents strikes the right balance here, the sandbox is optional and can be spun up independently of the rest of the agent loop.
+      <p class="en">Projects brings the architecture of Claude Tag to Claude Code.
 
-I recently ported an old project that was focused on bash tool calling to CMA and it worked well!</p>
-      <p class="zh">我认为 Claude Managed Agents 在这里取得了恰当的平衡——沙箱是可选的，并且可以独立于智能体循环的其他部分单独启动。
+It has one agent per project that manages memory and spins off subagents for tasks.
 
-我最近把一个专注于 bash 工具调用的老项目迁移到了 CMA，效果很好！</p>
-      <p class="src"><a href="https://x.com/trq212/status/2100315538472009897" target="_blank" rel="noopener">https://x.com/trq212/status/2100315538472009897</a></p>
+You can ask it to be proactive, to do things on a schedule, etc.
+
+It feels a lot nicer than a bunch of sessions, try it out! https://t.co/qzyEgLUyN4</p>
+      <p class="zh">Projects 把 Claude Tag 的架构带到了 Claude Code。
+
+每个项目有一个 agent，负责管理记忆，并为具体任务派生 subagent。
+
+你可以让它主动做事、按计划执行任务，等等。
+
+比起一堆零散的会话，体验要好得多，试试看！</p>
+      <div class="link"><a href="https://x.com/trq212/status/2100638355872706571" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
+  </article>
+
+  <!-- Google Labs -->
+  <article class="card">
+    <div class="builder-head">
+      <span class="builder-name">Google Labs</span>
+      <span class="builder-handle">@GoogleLabs</span>
+    </div>
+    <p class="builder-bio">Google's home for our latest AI tools and experiments.</p>
 
     <div class="tweet">
-      <p class="en">I think increasingly you can just give Claude tools shaped in the way you want vs tricking it with a layer of indirection
+      <p class="en">CC the entire fam !
 
-e.g. for data storage do you really want a file system or do you want an API to a database
+Today, we're announcing the new CC – an AI agent built for families to spend less time on logistics and more time together.
 
-this is again, an update to me from last year</p>
-      <p class="zh">我觉得越来越明显的一点是：你可以直接把工具做成你想要的样子交给 Claude，而不必用一层间接封装去「骗」它。
+You can now:
 
-比如做数据存储，你真正想要的到底是一个文件系统，还是一个指向数据库的 API？
+ Add up to 5 members to your CC agent
+☀️ Start mornings aligned with a shared "Your Day Ahead" brief email
+️ Autosync schedules &amp; to-dos with a shared Google Calendar and Tasks
+ Coordinate in Google Chat with CC to offload relevant tasks (ie., crafting weekly meal plans, school supply shopping lists, etc)
+ Delegate paperwork (ie., permission slips, forms, and more) for CC to complete under your direction
+ Keep tabs on the details – CC remembers what applies to everyone (ie., family grocery lists, favorite restaurants) versus what applies to one person (ie., dietary restrictions, local timezones)
 
-这又是我相对去年认知的一次更新。</p>
-      <p class="src"><a href="https://x.com/trq212/status/2100315537251463523" target="_blank" rel="noopener">https://x.com/trq212/status/2100315537251463523</a></p>
+Ready to keep everybody on the same page? Join the waitlist or upgrade your existing CC (US only, 18+): https://t.co/6Id5GRBrVc</p>
+      <p class="zh">抄送全家！
+
+今天，我们发布全新的 CC——一款为家庭打造的 AI agent，让家人少花时间在琐事安排上，多花时间在一起。
+
+现在你可以：
+
+ 在 CC agent 中添加最多 5 名成员
+☀️ 用一封共享的"今日日程"简报邮件，让全家一早步调一致
+️ 通过共享的 Google 日历和 Tasks 自动同步日程与待办事项
+ 在 Google Chat 中与 CC 协作，把相关任务外包出去（例如制定每周餐食计划、学校用品采购清单等）
+ 委派文书工作（例如许可单、表格等），由 CC 在你的指导下完成
+ 掌握所有细节——CC 会区分哪些信息适用于所有人（例如家庭采购清单、常去的餐厅），哪些只适用于某个人（例如饮食禁忌、所在时区）
+
+准备好让全家信息同步了吗？加入等待名单，或升级你现有的 CC（仅限美国，18 岁以上）：https://t.co/6Id5GRBrVc</p>
+      <div class="link"><a href="https://x.com/GoogleLabs/status/2100653821907366366" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
+  </article>
+
+  <!-- Amjad Masad -->
+  <article class="card">
+    <div class="builder-head">
+      <span class="builder-name">Amjad Masad</span>
+      <span class="builder-handle">@amasad</span>
+    </div>
+    <p class="builder-bio">ceo @replit. civilizationist</p>
 
     <div class="tweet">
-      <p class="en">related to this- I think bash is no longer all you need, if your goal is just reliably tool calling
-
-but sandboxes + bash are still good for work that involves code generation &amp; execution https://t.co/xTptTmEmCE</p>
-      <p class="zh">与此相关——如果你的目标只是可靠地调用工具，我认为 bash 已经不再是全部所需。
-
-但如果工作涉及代码生成与执行，沙箱 + bash 依然是很好的组合。</p>
-      <p class="src"><a href="https://x.com/trq212/status/2100315535758217422" target="_blank" rel="noopener">https://x.com/trq212/status/2100315535758217422</a></p>
+      <p class="en">This is why we need a gazillion data centers (worth it) https://t.co/2KWTPFSy0i</p>
+      <p class="zh">这就是为什么我们需要海量数据中心（值得）。</p>
+      <div class="link"><a href="https://x.com/amasad/status/2100829093923320083" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
-  </div>
+  </article>
 
   <!-- Guillermo Rauch -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <span class="builder-name">Guillermo Rauch</span>
       <span class="builder-handle">@rauchg</span>
-      <div class="builder-bio">@vercel CEO</div>
+    </div>
+    <p class="builder-bio">@vercel CEO</p>
+
+    <div class="tweet">
+      <p class="en">Vercel is the Vercel for Java https://t.co/ecDvMhqppr</p>
+      <p class="zh">Vercel 就是 Java 界的 Vercel。</p>
+      <div class="link"><a href="https://x.com/rauchg/status/2100745015362552312" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
 
     <div class="tweet">
-      <p class="en">https://t.co/e2EuPh7YAt</p>
-      <p class="zh">（分享了一个链接。）</p>
-      <p class="src"><a href="https://x.com/rauchg/status/2100380166811951410" target="_blank" rel="noopener">https://x.com/rauchg/status/2100380166811951410</a></p>
+      <p class="en">It's likely that more software will be produced next year than in all of the history of computing. It took Vercel 10 years to get to 1 billion deployments, but then we added another 1.4 billion in the last 10 months alone.
+
+Some of this will be tiny, personal and even disposable software. An HTML file with some javascript ("artifacts"), a report, a pricing calculator, a slide deck, all the way to sophisticated apps, agents and platforms.
+
+Deployment speed is one of our obsessions. We've brought down the time to deploy, upload, assign a domain and globally propagate an artifact to 1 second.
+
+This is quite a feat considering we serve these artifacts with uncompromising performance and security. This sub-second deployments include our global CDN, Firewall, immutable deployments, domain assignment, observability, rollbacks…
+
+And we're not done yet. Follow @melkeydev for more.</p>
+      <p class="zh">明年诞生的软件，很可能比整个计算史上的软件总量还多。Vercel 花了 10 年才达到 10 亿次部署，而仅在过去 10 个月里，我们就又增加了 14 亿次。
+
+其中一些会是非常微小、私人甚至用完即弃的软件。一个带点 JavaScript 的 HTML 文件（"artifacts"）、一份报告、一个定价计算器、一份幻灯片，一直到复杂的应用、agent 和平台。
+
+部署速度是我们执着的追求之一。我们已把部署、上传、分配域名并全球分发一个 artifact 的时间压缩到 1 秒。
+
+考虑到我们是以毫不妥协的性能与安全性来提供这些 artifact 的，这堪称壮举。这种亚秒级部署涵盖了我们的全球 CDN、防火墙、不可变部署、域名分配、可观测性、回滚……
+
+而我们还没做完。关注 @melkeydev 了解更多。</p>
+      <div class="link"><a href="https://x.com/rauchg/status/2100698591417499972" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
 
     <div class="tweet">
-      <p class="en">We're seeing extraordinary results from @typesafeai. Default mode in  is auto, with a safety reviewer analyzing every command.
+      <p class="en">This is really cool. When you pressure your agent to ship a hotfix really fast, it can now  -- -- 
 
-That reviewer runs on GPT Luna today. Jev is up to 18x faster (p95) *and* more accurate. It's coming to @vercel AI Gateway and likely new default. https://t.co/y5tFnlFN2l</p>
-      <p class="zh">我们从 @typesafeai 看到了非同寻常的效果。默认模式是 auto，会有一个安全审查器分析每一条命令。
+It'll use the fastest available build machine. h/t @garberchov for tweeting this idea to us https://t.co/iLXPsP2m3R</p>
+      <p class="zh">这个真的很酷。当你逼着你的 agent 尽快发布一个热修复时，它现在可以 —— ——
 
-这个审查器目前跑在 GPT Luna 上。Jev 的 p95 速度最高快了 18 倍，*而且*更准确。它即将进入 @vercel AI Gateway，很可能成为新的默认选项。</p>
-      <p class="src"><a href="https://x.com/rauchg/status/2100307962262872105" target="_blank" rel="noopener">https://x.com/rauchg/status/2100307962262872105</a></p>
+它会使用可用的最快构建机器。感谢 @garberchov 把这个想法推给我们。</p>
+      <div class="link"><a href="https://x.com/rauchg/status/2100682030170489160" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
-
-    <div class="tweet">
-      <p class="en">https://t.co/8uP1oRz9NP</p>
-      <p class="zh">（分享了一个链接。）</p>
-      <p class="src"><a href="https://x.com/rauchg/status/2100260457617736051" target="_blank" rel="noopener">https://x.com/rauchg/status/2100260457617736051</a></p>
-    </div>
-  </div>
-
-  <!-- Alex Albert -->
-  <div class="card">
-    <div class="builder-head">
-      <span class="builder-name">Alex Albert</span>
-      <span class="builder-handle">@alexalbert__</span>
-      <div class="builder-bio">Research @AnthropicAI。观点仅代表个人！</div>
-    </div>
-
-    <div class="tweet">
-      <p class="en">The team did an amazing job with this merge. The resulting UX feels so much better than chat or Cowork did on their own.
-
-And the new slides/docs/design integrations work very well. https://t.co/YyZYsf8OFE</p>
-      <p class="zh">团队这次合并做得非常出色。合并后的用户体验，比单独的 Chat 或 Cowork 好太多了。
-
-而且新的 slides / docs / design 集成也非常好用。</p>
-      <p class="src"><a href="https://x.com/alexalbert__/status/2100295757953917120" target="_blank" rel="noopener">https://x.com/alexalbert__/status/2100295757953917120</a></p>
-    </div>
-  </div>
+  </article>
 
   <!-- Aaron Levie -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <span class="builder-name">Aaron Levie</span>
       <span class="builder-handle">@levie</span>
-      <div class="builder-bio">@box CEO——你的业务存在于内容之中，用 AI 释放它的价值</div>
     </div>
+    <p class="builder-bio">ceo @box - your business lives in content. unleash it with AI</p>
 
     <div class="tweet">
-      <p class="en">Incredibly exciting that there are entire universes of AI innovation that still exist that weren't even on most of our radars.
+      <p class="en">Agents already make up the majority of inference. This will quickly trend toward nearly all inference over the next year or two.
 
-Being able to process information insanely quickly, at crazy low costs, with high levels of capability is huge for a wide number of enterprise tasks.
+The vast majority of tokens used in the world will be agents that are executing unbelievable amounts of tasks for us in the background 24/7.
 
-Data classification tasks, routing decisions inside of a workflow, decision making when handed a particular domain problem, quick judgment calls about safety or security, and more all are the gates in a large number of processes.
+Agents will be deployed to read all code changes to secure our software, process all of our data inside of workflows, handle a significant majority of the research that goes into recruiting and customer prospecting, review every event stream and log from every system in the world, go out and execute tasks for us in our personal lives, and hundreds of other use cases.
 
-This model and approach could be quite cool in agentic workflows in the enterprise.</p>
-      <p class="zh">令人无比兴奋的是，还有一整片一整片的 AI 创新宇宙存在，而它们此前甚至不在我们大多数人的雷达上。
+The rate of new agents coming online that will be consuming insane amounts of tokens is not slowing down. Just in the past week I've introduced multiple completely new workflows that would not have been possible technically even a month ago.
 
-能够以极快的速度、极低的成本、很高的能力水平处理信息，这对大量企业任务来说意义重大。
+Incredible time to be doing anything in inference and of course building on top of all of this.</p>
+      <p class="zh">Agent 已经占据了推理量的大多数。未来一两年内，这一比例会迅速逼近全部推理量。
 
-数据分类、工作流内部的路由决策、面对特定领域问题时的判断、关于安全或保密性的快速取舍等等——这些都是大量流程中的关卡。
+全世界消耗的 token 绝大多数，将来自那些 7×24 小时在后台为我们执行海量任务的 agent。
 
-这种模型和方法，在企业级智能体工作流中可能会非常酷。</p>
-      <p class="src"><a href="https://x.com/levie/status/2100448648672993540" target="_blank" rel="noopener">https://x.com/levie/status/2100448648672993540</a></p>
+Agent 将被部署去读取所有代码变更以保障软件安全、在工作流中处理我们所有的数据、承担招聘与客户拓展中绝大部分的调研工作、审查世界上每个系统的每一条事件流和日志、在我们的个人生活中替我们执行任务，以及数百种其他用例。
+
+新上线的、将消耗惊人 token 量的 agent，其增长速度丝毫没有放缓。仅在过去一周，我就引入了多个全新的工作流，而这些在哪怕一个月前技术上都不可能实现。
+
+对于做推理相关的一切、当然还有在这之上做构建的人来说，这是不可思议的时代。</p>
+      <div class="link"><a href="https://x.com/levie/status/2100799668573946191" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
-  </div>
+  </article>
 
   <!-- Garry Tan -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <span class="builder-name">Garry Tan</span>
       <span class="builder-handle">@garrytan</span>
-      <div class="builder-bio">@ycombinator 总裁兼 CEO——@garryslist 创始人——GStack 与 GBrain 的创造者——帮助创始人的设计师/工程师——旧金山民主党人</div>
+    </div>
+    <p class="builder-bio">President &amp; CEO @ycombinator —Founder @garryslist—Creator of GStack &amp; GBrain—designer/engineer who helps founders—SF Dem</p>
+
+    <div class="tweet">
+      <p class="en">Memorable found a way to optimize memory with embeddings instead of more tokens which is a powerful new way to do memory https://t.co/Y8wowo41WF</p>
+      <p class="zh">Memorable 找到了一种用 embedding 而非更多 token 来优化记忆的方法，这是一种强大的记忆新方式。</p>
+      <div class="link"><a href="https://x.com/garrytan/status/2100668489178456268" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
 
     <div class="tweet">
-      <p class="en">Excited to speak at @Supabase Select in conversation with the amazing @kiwicopple about building startups in the time of AI
+      <p class="en">Be careful what you wish for
 
-Register for the event and join me: https://t.co/jNY2QcB6cU</p>
-      <p class="zh">很期待在 @Supabase Select 上演讲，与超棒的 @kiwicopple 对谈「AI 时代的创业」。
+This is why we need alignment to humankind vs any other goal https://t.co/E3dxymT1aV</p>
+      <p class="zh">许愿要谨慎。
 
-报名参加活动，一起来：https://t.co/jNY2QcB6cU</p>
-      <p class="src"><a href="https://x.com/garrytan/status/2100354983053111365" target="_blank" rel="noopener">https://x.com/garrytan/status/2100354983053111365</a></p>
+这就是为什么我们需要让 AI 对齐人类，而不是对齐任何其他目标。</p>
+      <div class="link"><a href="https://x.com/garrytan/status/2100636443127210112" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
 
     <div class="tweet">
-      <p class="en">I can use any harness I want and it's the same personality and full memory of my personal AGI https://t.co/4IupWtnh84</p>
-      <p class="zh">我可以用任何我想要的工具外壳（harness），得到的都是我那个「个人 AGI」同一套人格和完整记忆。</p>
-      <p class="src"><a href="https://x.com/garrytan/status/2100339347669279149" target="_blank" rel="noopener">https://x.com/garrytan/status/2100339347669279149</a></p>
+      <p class="en">The future is already here
+
+We just have to choose it and spread it faster https://t.co/zmLEsXQU65</p>
+      <p class="zh">未来已经到来。
+
+我们只需要选择它，并更快地传播它。</p>
+      <div class="link"><a href="https://x.com/garrytan/status/2100612808568172830" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
-  </div>
-
-  <!-- Zara Zhang -->
-  <div class="card">
-    <div class="builder-head">
-      <span class="builder-name">Zara Zhang</span>
-      <span class="builder-handle">@zarazhangrui</span>
-      <div class="builder-bio">Builder。先做出人们想要的东西，再让人们想要它。哈佛'17。GitHub: https://t.co/KCuEaje1wd YouTube: htt</div>
-    </div>
-
-    <div class="tweet">
-      <p class="en">I find myself using Claude less these days because the way it speaks has just become insufferable
-
-Like it's constantly trying to showcase how smart/sophisticated it is, rather than actually communicating a point across</p>
-      <p class="zh">我发现自己最近越来越少用 Claude 了，因为它说话的方式实在让人受不了。
-
-它总是想展示自己有多聪明、多高级，而不是真正把一个观点传达清楚。</p>
-      <p class="src"><a href="https://x.com/zarazhangrui/status/2100278750776824115" target="_blank" rel="noopener">https://x.com/zarazhangrui/status/2100278750776824115</a></p>
-    </div>
-  </div>
+  </article>
 
   <!-- Nikunj Kothari -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <span class="builder-name">Nikunj Kothari</span>
       <span class="builder-handle">@nikunj</span>
-      <div class="builder-bio">@fpvventures 合伙人——投资种子轮/A 轮。此前是 @meter、@opendoor、@atlassian 等公司的早期成员。爱 @shimoleej</div>
+    </div>
+    <p class="builder-bio">partner @fpvventures - investing in seed/A. previous: early hire @meter, @opendoor, @atlassian &amp; others. love @shimoleej</p>
+
+    <div class="tweet">
+      <p class="en">Website here: https://t.co/KSiodPdZHT
+
+PS: There's a full blown MCP (and WebMCP) for this as well if you want to direct your agent towards it.
+
+https://t.co/eo0oIkJUX2</p>
+      <p class="zh">网站在这里：https://t.co/KSiodPdZHT
+
+附：这里还有一个完整的 MCP（以及 WebMCP），你可以把自己的 agent 指向它。
+
+https://t.co/eo0oIkJUX2</p>
+      <div class="link"><a href="https://x.com/nikunj/status/2100718806004064730" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
 
     <div class="tweet">
-      <p class="en">Been tinkering with a “Home” @NousResearch agent for a few months and it’s finally gotten really good..
+      <p class="en">I have been obsessed with self driving companies  for more than a year now.. tried a LOT of products, none of them met the bar and decided to just build one myself with "claude" in the loop.
 
-It’s also our first “group” bot where my wife and I interact with it on a daily basis - which has been fun learning especially when it fails .
+Introducing my first experiment: nosugarforkids (dot com) ♂️
 
-I have tried to recreate with Grok Bot and similar and you can’t get this level of granularity and control (eg only read certain emails, convert in line attachments to structured data or logged in browser sessions)
+&gt; catalog of only healthy snacks for kids (surprisingly this didn't exist)
+&gt; you can chat to get recommendations for school, lunches, snack boxes
+&gt; built a "tier" list based on the nutrients and what's actually good
 
-I asked it to share what it does based on the capabilities and our conversations and you can see it’s response below!</p>
-      <p class="zh">我折腾一个「家庭版」@NousResearch 智能体已经好几个月了，现在它终于变得非常好用……
+On the autonomous side, I have a Claude agent that wakes up once a day to do the following things:
 
-这也是我们第一个「群组」机器人——我和我妻子每天都会和它互动，这个过程很有意思，尤其是它出错的时候。
+&gt; checks catalog for new additions
+&gt; prunes any products that may be dead
+&gt; finds new content ideas to help increase reach
+&gt; checks dataforSEO and Google Search Console for performance
+&gt; writes and edits new pieces that might be useful to help
+&gt; keeps quality high, and tries to not introduce slop
+&gt; (new) reaches out to publications to get backlinks
 
-我试过用 Grok Bot 之类的东西复刻，但你拿不到这种级别的颗粒度和控制力（比如只读取某些邮件、把内联附件转成结构化数据，或者使用已登录的浏览器会话）。
+Even with ZERO backlinks today and no social presence whatsoever, site has organically grown to ~6k impressions a day and 60 clicks.
 
-我让它根据自身能力和我们的对话，介绍一下它都能做什么，你们可以在下面看到它的回答！</p>
-      <p class="src"><a href="https://x.com/nikunj/status/2100212813625196917" target="_blank" rel="noopener">https://x.com/nikunj/status/2100212813625196917</a></p>
+Lots of rough edges still, but parents give it a try and tell me if it's helpful!</p>
+      <p class="zh">我对"自动驾驶式公司"这件事着迷了一年多……试了非常多的产品，没有一个达到我的标准，于是决定干脆自己做一个，把"claude"放进循环里。
+
+介绍我的第一个实验：nosugarforkids（点 com）♂️
+
+&gt; 只收录儿童健康零食的目录（令人意外的是，这东西之前居然不存在）
+&gt; 你可以通过对话获取推荐，用于学校、午餐、零食盒
+&gt; 基于营养成分和实际品质构建了一份"分级"榜单
+
+在自动化这一侧，我有一个 Claude agent，每天醒来一次做以下事情：
+
+&gt; 检查目录中的新增商品
+&gt; 剔除可能已下架的产品
+&gt; 寻找有助于扩大触达的新内容选题
+&gt; 查看 dataforSEO 和 Google Search Console 的表现数据
+&gt; 撰写并编辑可能有用的新内容
+&gt; 保持高质量，尽量不产出垃圾内容
+&gt; （新增）联系媒体争取外链
+
+即便今天外链为零、也完全没有社交媒体存在感，网站自然流量已增长到每天约 6000 次曝光、60 次点击。
+
+还有很多粗糙的地方，但各位家长不妨试试，告诉我它有没有用！</p>
+      <div class="link"><a href="https://x.com/nikunj/status/2100714665571737885" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
-
-    <div class="tweet">
-      <p class="en">Before she wakes up and corrects me, she never “wanted” it in the first place..
-
-We threatened to make Tiramisu and that’s when her preference spilled out.
-
-Sous chef had a great time eating half the batter https://t.co/QRRzY9dCpr</p>
-      <p class="zh">趁她还没醒过来纠正我——她一开始根本「没有」想要这个……
-
-我们威胁说要做提拉米苏，她的偏好这才漏了出来。
-
-副主厨（指孩子）吃了半盆面糊，非常开心。</p>
-      <p class="src"><a href="https://x.com/nikunj/status/2100117565150470652" target="_blank" rel="noopener">https://x.com/nikunj/status/2100117565150470652</a></p>
-    </div>
-
-    <div class="tweet">
-      <p class="en">Wife wanted Black Forest cake for her birthday..
-
-I haven’t baked in a long long time, so not perfect but think it turned out ok (thanks @ChatGPT)
-
-Happy birthday @shimoleejhaveri - I love you mostest ❤️ https://t.co/5LC3blykHK</p>
-      <p class="zh">妻子生日想吃黑森林蛋糕……
-
-我已经很久很久没烘焙了，所以不算完美，但我觉得成品还行（感谢 @ChatGPT）。
-
-生日快乐 @shimoleejhaveri——我最爱你了 ❤️</p>
-      <p class="src"><a href="https://x.com/nikunj/status/2100115958862107100" target="_blank" rel="noopener">https://x.com/nikunj/status/2100115958862107100</a></p>
-    </div>
-  </div>
+  </article>
 
   <!-- Dan Shipper -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <span class="builder-name">Dan Shipper</span>
       <span class="builder-handle">@danshipper</span>
-      <div class="builder-bio">@every CEO | 让你保持在 AI 前沿的唯一订阅</div>
     </div>
+    <p class="builder-bio">ceo @every | the only subscription you need to stay at the edge of AI</p>
 
     <div class="tweet">
-      <p class="en">big big big big big https://t.co/dzD21vSafx</p>
-      <p class="zh">大、大、大、大、大事。</p>
-      <p class="src"><a href="https://x.com/danshipper/status/2100284086703046903" target="_blank" rel="noopener">https://x.com/danshipper/status/2100284086703046903</a></p>
+      <p class="en">it's happening! https://t.co/vCy2XqNGYb</p>
+      <p class="zh">它正在发生！</p>
+      <div class="link"><a href="https://x.com/danshipper/status/2100587802748440581" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
-
-    <div class="tweet">
-      <p class="en">THEY DID IT
-
-THE END OF THE TABS ERA IS UPON US https://t.co/FJlWFUCcDw</p>
-      <p class="zh">他们做到了。
-
-标签页时代的终结，已经降临。</p>
-      <p class="src"><a href="https://x.com/danshipper/status/2100269017977987341" target="_blank" rel="noopener">https://x.com/danshipper/status/2100269017977987341</a></p>
-    </div>
-
-    <div class="tweet">
-      <p class="en">LLMs are just            jev is just a JSON 
-autocomplete               classifier 
-
-                             
-
-                              </p>
-      <p class="zh">大语言模型不过是……　　jev 不过是个 JSON
-自动补全　　　　　　　　　　分类器
-
-（一句调侃式的类比。）</p>
-      <p class="src"><a href="https://x.com/danshipper/status/2100251499443998766" target="_blank" rel="noopener">https://x.com/danshipper/status/2100251499443998766</a></p>
-    </div>
-  </div>
+  </article>
 
   <!-- Aditya Agarwal -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <span class="builder-name">Aditya Agarwal</span>
       <span class="builder-handle">@adityaag</span>
-      <div class="builder-bio">@SPC 普通合伙人，@Bevel_Health 联合创始人 | 前 @facebook 早期工程师、@Dropbox CTO、@Flipkart 董事 | 乐观主义者、Builder</div>
     </div>
+    <p class="builder-bio">General Partner @SPC, Co-Founder @Bevel_Health | Ex: Early Eng @facebook, CTO @Dropbox, Board @Flipkart | Optimist, Buil</p>
 
     <div class="tweet">
-      <p class="en">Great ideas rarely emerge from isolation. https://t.co/TyQb4mbjaD</p>
-      <p class="zh">伟大的想法很少诞生于孤立之中。</p>
-      <p class="src"><a href="https://x.com/adityaag/status/2100347763502329951" target="_blank" rel="noopener">https://x.com/adityaag/status/2100347763502329951</a></p>
+      <p class="en">This is the right way to solve alignment and safety.
+
+@GoodfireAI is the leading non-frontier-lab company that is working on this.
+
+This is generationally important. https://t.co/BkufCYX1Qb</p>
+      <p class="zh">这才是解决对齐与安全问题的正确方式。
+
+@GoodfireAI 是在这方面投入的领先的非前沿实验室公司。
+
+这件事具有划时代的重要性。</p>
+      <div class="link"><a href="https://x.com/adityaag/status/2100746235426836708" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
-
-    <div class="tweet">
-      <p class="en">If California were a startup, what would its board ask the CEO?
-
-I’m hosting CA governor candidate @SteveHiltonx at @spc in a couple of weeks. On the agenda: priorities, execution, and what he’d want us to hold him accountable for.
-
-Sign up here to attend:
-https://t.co/ahiXSi3TD5</p>
-      <p class="zh">如果加州是一家创业公司，它的董事会会问 CEO 什么问题？
-
-几周后我将在 @spc 主持一场活动，嘉宾是加州州长候选人 @SteveHiltonx。议程包括：优先事项、执行力，以及他希望我们拿什么来问责他。
-
-在这里报名参加：https://t.co/ahiXSi3TD5</p>
-      <p class="src"><a href="https://x.com/adityaag/status/2100275836792492463" target="_blank" rel="noopener">https://x.com/adityaag/status/2100275836792492463</a></p>
-    </div>
-  </div>
-
-  <!-- Sam Altman -->
-  <div class="card">
-    <div class="builder-head">
-      <span class="builder-name">Sam Altman</span>
-      <span class="builder-handle">@sama</span>
-      <div class="builder-bio">OpenAI 的使命是确保 AGI 惠及全人类</div>
-    </div>
-
-    <div class="tweet">
-      <p class="en">the main thing i was excited about launching this week will be next week instead, but imo worth the wait! https://t.co/j8tcW05Fmk</p>
-      <p class="zh">我原本这周最期待发布的那件事，要推迟到下周了，但我觉得值得等！</p>
-      <p class="src"><a href="https://x.com/sama/status/2100351958167220547" target="_blank" rel="noopener">https://x.com/sama/status/2100351958167220547</a></p>
-    </div>
-  </div>
+  </article>
 
   <!-- Claude -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <span class="builder-name">Claude</span>
       <span class="builder-handle">@claudeai</span>
-      <div class="builder-bio">Claude 是由 @anthropicai 打造的安全、准确、可靠的 AI 助手。在 https://t.co/ZhTwG8d 与 Claude 对话</div>
+    </div>
+    <p class="builder-bio">Claude is an AI assistant built by @anthropicai to be safe, accurate, and secure. Talk to Claude on https://t.co/ZhTwG8d</p>
+
+    <div class="tweet">
+      <p class="en">Existing projects on Pro and Max plans keep working as they do today. We'll upgrade them as the rollout expands across Claude.
+
+Read more: https://t.co/veHKrtOLtr
+
+Join the waitlist for earlier access: https://t.co/s0RrhrolEm</p>
+      <p class="zh">Pro 和 Max 套餐中已有的项目将照常运行。随着推送范围在 Claude 上逐步扩大，我们会对其进行升级。
+
+了解更多：https://t.co/veHKrtOLtr
+
+加入等待名单以获取更早的访问权限：https://t.co/s0RrhrolEm</p>
+      <div class="link"><a href="https://x.com/claudeai/status/2100632688625348890" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
 
     <div class="tweet">
-      <p class="en">If you've been working in Cowork, everything is where you left it: chats, projects, artifacts, connectors, and skills. You can pick up where you left off.
-
-Claude Design, Claude Slides, and Claude Docs are in beta on all paid plans. Read more: https://t.co/ERAuv5UcBV</p>
-      <p class="zh">如果你一直在 Cowork 里工作，所有东西都还在原处：对话、项目、产物、连接器和技能。你可以从上次中断的地方继续。
-
-Claude Design、Claude Slides 和 Claude Docs 已在所有付费方案上进入 beta。了解更多：https://t.co/ERAuv5UcBV</p>
-      <p class="src"><a href="https://x.com/claudeai/status/2100258495543071016" target="_blank" rel="noopener">https://x.com/claudeai/status/2100258495543071016</a></p>
+      <p class="en">Threads run in the cloud, so they keep working even when your computer is offline, but they can't reach files or tools on your computer or your internal network yet. Local support is coming very soon.</p>
+      <p class="zh">线程运行在云端，因此即使你的电脑离线它们也会继续工作，但目前还无法访问你电脑或内网中的文件和工具。本地支持很快就会到来。</p>
+      <div class="link"><a href="https://x.com/claudeai/status/2100632687316730327" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
 
     <div class="tweet">
-      <p class="en">Fix a line in the doc yourself, leave a comment for Claude on a slide, or select an element and move it.
+      <p class="en">A project builds over time. Every thread adds to and draws from its shared memory, so Claude can remember that the release moved to Friday, or who to ask before touching the billing service.
 
-When it's ready, present the deck straight from Claude, export the doc in the format you already use, or share everything at one link.</p>
-      <p class="zh">你可以自己改文档里的某一行，在幻灯片上给 Claude 留一条评论，或者选中某个元素把它挪个位置。
+The project's library keeps the files you add and the ones Claude creates. https://t.co/jtzVie3DB7</p>
+      <p class="zh">一个项目会随时间不断积累。每个线程都会向共享记忆贡献内容，并从中读取信息，因此 Claude 能记住发布被推迟到了周五，或者改动计费服务前该先问谁。
 
-准备好之后，可以直接从 Claude 里演示这份幻灯片，把文档导出成你惯用的格式，或者用一个链接分享全部内容。</p>
-      <p class="src"><a href="https://x.com/claudeai/status/2100258494221812123" target="_blank" rel="noopener">https://x.com/claudeai/status/2100258494221812123</a></p>
+项目的资料库会保存你添加的文件，以及 Claude 创建的文件。</p>
+      <div class="link"><a href="https://x.com/claudeai/status/2100632684074549309" target="_blank" rel="noopener">查看原推 →</a></div>
     </div>
+  </article>
 
-    <div class="tweet">
-      <p class="en">You can also now make decks, docs, and designs in your conversation.
-
-Draft the one-pager in Claude Docs, turn it into a deck with Claude Slides, and mock up a matching visual in Claude Design, all from one place. https://t.co/Y0JaJGT3G8</p>
-      <p class="zh">现在你也可以直接在对话里制作幻灯片、文档和设计稿。
-
-在 Claude Docs 里起草一页纸文档，用 Claude Slides 把它变成一套幻灯片，再用 Claude Design 做一张配套的视觉稿——全部在一个地方完成。</p>
-      <p class="src"><a href="https://x.com/claudeai/status/2100258492590207079" target="_blank" rel="noopener">https://x.com/claudeai/status/2100258492590207079</a></p>
-    </div>
-  </div>
-
-  <footer>
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
     由 AI Daily Bot 自动生成 · 每日 10:00（北京时间）
   </footer>
 
