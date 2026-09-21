@@ -1,534 +1,77 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 · 2026年09月20日</title>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>AI 日报</title>
 <style>
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 0;
-    background: #fafaf8;
-    color: #1a1a1a;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-    font-size: 16px;
-    line-height: 1.75;
-    -webkit-font-smoothing: antialiased;
-  }
-  .wrap {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 56px 28px 80px;
-  }
-  /* ---------- Masthead ---------- */
-  .masthead {
-    text-align: center;
-    padding-bottom: 36px;
-    border-bottom: 1px solid #e8e8e4;
-    margin-bottom: 44px;
-  }
-  .masthead .date {
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #6b6b6b;
-    margin-bottom: 14px;
-  }
-  .masthead h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 46px;
-    line-height: 1.15;
-    font-weight: 700;
-    margin: 0 0 18px;
-    letter-spacing: 0.01em;
-  }
-  .masthead h1 .accent {
-    color: #8b5e3c;
-  }
-  .masthead .stats {
-    font-size: 14px;
-    color: #6b6b6b;
-  }
-  .masthead .stats span {
-    display: inline-block;
-    margin: 0 8px;
-  }
-  .masthead .stats b {
-    color: #1a1a1a;
-    font-weight: 600;
-  }
-  /* ---------- Section ---------- */
-  .section-label {
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #8b5e3c;
-    font-weight: 600;
-    margin: 0 0 24px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #e8e0d0;
-  }
-  /* ---------- Builder card ---------- */
-  .card {
-    background: #ffffff;
-    border: 1px solid #e8e8e4;
-    border-radius: 8px;
-    padding: 26px 26px 10px;
-    margin-bottom: 26px;
-  }
-  .builder-head {
-    margin-bottom: 20px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #f0f0ec;
-  }
-  .builder-name {
-    font-size: 19px;
-    font-weight: 700;
-    margin: 0 0 2px;
-    letter-spacing: -0.01em;
-  }
-  .builder-handle {
-    font-size: 13px;
-    color: #6b6b6b;
-    margin: 0 0 8px;
-  }
-  .builder-bio {
-    font-size: 13.5px;
-    color: #6b6b6b;
-    margin: 0;
-    line-height: 1.6;
-  }
-  /* ---------- Tweet ---------- */
-  .tweet {
-    border-left: 3px solid #e8e0d0;
-    background: #fdfdfb;
-    border-radius: 0 6px 6px 0;
-    padding: 16px 18px 14px;
-    margin: 0 0 18px;
-  }
-  .tweet .en {
-    font-size: 15px;
-    line-height: 1.7;
-    color: #1a1a1a;
-    margin: 0 0 12px;
-    white-space: pre-wrap;
-  }
-  .tweet .zh {
-    font-size: 15px;
-    line-height: 1.75;
-    color: #333;
-    margin: 0 0 12px;
-    padding-top: 12px;
-    border-top: 1px dashed #ecece6;
-    white-space: pre-wrap;
-  }
-  .tweet .zh::before {
-    content: "译";
-    display: inline-block;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    color: #8b5e3c;
-    border: 1px solid #e8e0d0;
-    border-radius: 3px;
-    padding: 0 4px;
-    margin-right: 8px;
-    vertical-align: 2px;
-    line-height: 1.5;
-  }
-  .tweet .link {
-    display: inline-block;
-    font-size: 12.5px;
-    color: #2c6bae;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(44, 107, 174, 0.3);
-    padding-bottom: 1px;
-    word-break: break-all;
-  }
-  .tweet .link:hover {
-    border-bottom-color: #2c6bae;
-  }
-  /* ---------- Podcast ---------- */
-  .podcast {
-    background: #ffffff;
-    border: 1px solid #e8e8e4;
-    border-radius: 8px;
-    padding: 26px;
-    margin-bottom: 26px;
-  }
-  .podcast .pod-name {
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #8b5e3c;
-    font-weight: 600;
-    margin: 0 0 8px;
-  }
-  .podcast h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 22px;
-    line-height: 1.35;
-    font-weight: 700;
-    margin: 0 0 6px;
-  }
-  .podcast .pod-sub {
-    font-size: 13.5px;
-    color: #6b6b6b;
-    margin: 0 0 18px;
-  }
-  .podcast .pod-link {
-    font-size: 12.5px;
-    color: #2c6bae;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(44, 107, 174, 0.3);
-    word-break: break-all;
-  }
-  .podcast .pod-link:hover { border-bottom-color: #2c6bae; }
-  .takeaways {
-    list-style: none;
-    margin: 18px 0 0;
-    padding: 0;
-  }
-  .takeaways li {
-    border-left: 3px solid #e8e0d0;
-    background: #fdfdfb;
-    border-radius: 0 6px 6px 0;
-    padding: 14px 18px;
-    margin-bottom: 14px;
-  }
-  .takeaways .en {
-    font-size: 14.5px;
-    line-height: 1.7;
-    margin: 0 0 10px;
-    color: #1a1a1a;
-  }
-  .takeaways .zh {
-    font-size: 14.5px;
-    line-height: 1.7;
-    margin: 0;
-    padding-top: 10px;
-    border-top: 1px dashed #ecece6;
-    color: #333;
-  }
-  .takeaways .zh::before {
-    content: "译";
-    display: inline-block;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    color: #8b5e3c;
-    border: 1px solid #e8e0d0;
-    border-radius: 3px;
-    padding: 0 4px;
-    margin-right: 8px;
-    vertical-align: 2px;
-    line-height: 1.5;
-  }
-  /* ---------- Footer ---------- */
-  .footer {
-    margin-top: 56px;
-    padding-top: 26px;
-    border-top: 1px solid #e8e8e4;
-    text-align: center;
-    font-size: 12.5px;
-    color: #6b6b6b;
-    letter-spacing: 0.04em;
-  }
-  /* ---------- Responsive ---------- */
-  @media (max-width: 600px) {
-    .wrap { padding: 36px 16px 56px; }
-    .masthead h1 { font-size: 34px; }
-    .masthead .stats span { display: block; margin: 4px 0; }
-    .card { padding: 20px 18px 6px; }
-    .podcast { padding: 20px 18px; }
-    .tweet { padding: 14px 14px 12px; }
-    .takeaways li { padding: 12px 14px; }
-    body { font-size: 15px; }
-  }
-</style>
-</head>
-<body>
-<div class="wrap">
+:root{--bg:#fafaf8;--card:#fff;--text:#1a1a1a;--muted:#6b6b6b;--border:#e8e8e4;--accent:#8b5e3c;--link:#2c6bae;--quote:#e8e0d0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
+.magazine{max-width:680px;margin:0 auto;padding:60px 32px 80px}
+.masthead{text-align:center;padding-bottom:48px;margin-bottom:48px;border-bottom:1px solid var(--border)}
+.masthead .date{font-size:14px;color:var(--muted);letter-spacing:.08em;margin-bottom:16px}
+.masthead h1{font-family:Georgia,serif;font-size:40px;color:var(--accent);margin-bottom:12px}
+.masthead .lede{font-size:15px;color:var(--muted);max-width:400px;margin:0 auto}
+.section-title{font-family:Georgia,serif;font-size:20px;color:var(--accent);margin:48px 0 24px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block}
+.builder{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:28px 28px 12px;margin-bottom:24px}
+.builder h3{font-size:18px;font-weight:600}.builder .handle{font-weight:400;color:var(--muted);font-size:14px}
+.builder .bio{font-size:13px;color:var(--muted);margin-bottom:16px;font-style:italic}
+.tweet{margin:16px 0;padding:14px 18px;border-left:3px solid var(--quote);background:#fdfdfb;border-radius:0 6px 6px 0;font-size:15px;line-height:1.7}
+.tweet p{margin-bottom:8px;white-space:pre-wrap;word-break:break-word}
+.tweet footer{font-size:12px;color:var(--muted)}.tweet footer a{color:var(--link);text-decoration:none}
+.page-footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--border);text-align:center;font-size:12px;color:var(--muted)}
+@media(max-width:600px){.magazine{padding:32px 16px 48px}.masthead h1{font-size:28px}.builder{padding:20px 16px 8px}}
+</style></head><body><div class="magazine">
+<header class="masthead"><div class="date">2026年09月21日 星期一</div><h1>AI 日报</h1><p class="lede">追踪 AI builders — 10 位开发者 · 14 条推文</p></header>
+<article class="builder"><header><h3>Swyx <span class="handle">@swyx</span></h3><p class="bio">achieve ambition with intentionality, intensity, integrity &amp; insanity.
 
-  <!-- ============ MASTHEAD ============ -->
-  <header class="masthead">
-    <div class="date">2026 年 09 月 20 日 · 星期日</div>
-    <h1>AI <span class="accent">日报</span></h1>
-    <div class="stats">
-      <span><b>8</b> 位 Builder</span>
-      <span><b>12</b> 条动态</span>
-      <span><b>1</b> 期播客</span>
-    </div>
-  </header>
+affiliations:
+- @smol_ai
+- @dxtipshq
+- @cognitio</p></header><blockquote class="tweet"><p>Jev pod tomorrow
 
-  <!-- ============ BUILDERS ============ -->
-  <p class="section-label">Builders &amp; Tweets</p>
+subscribe on apple /youtube @latentspacepod 
 
-  <!-- Thibault Sottiaux -->
-  <article class="card">
-    <div class="builder-head">
-      <p class="builder-name">Thibault Sottiaux</p>
-      <p class="builder-handle">@thsottiaux</p>
-      <p class="builder-bio">Codex &amp; ChatGPT @OpenAI</p>
-    </div>
+thanks to @allenpark and Ke for making this happen! https://t.co/5kDekuLbuS https://t.co/vgkesXELrf</p><footer><a href="https://x.com/swyx/status/2101873256097804529" target="_blank">X.com</a></footer></blockquote></article>
+<article class="builder"><header><h3>Peter Yang <span class="handle">@petergyang</span></h3><p class="bio">Practical AI tutorials and interviews for busy people | Get my best AI skills and guides at https://t.co/6VAA6p81x6</p></header><blockquote class="tweet"><p>If you enjoyed this, sign up for free to my newsletter to get my best AI and product guides.
 
-    <div class="tweet">
-      <p class="en">2026 is the year of linux desktop</p>
-      <p class="zh">2026 年将是 Linux 桌面之年。</p>
-      <a class="link" href="https://x.com/thsottiaux/status/2101431497437950458" target="_blank" rel="noopener">x.com/thsottiaux/status/2101431497437950458</a>
-    </div>
-  </article>
+Join 110,000+ subscribers here:
+https://t.co/yz9xcsfrhF</p><footer><a href="https://x.com/petergyang/status/2101917073081598255" target="_blank">X.com</a></footer></blockquote><blockquote class="tweet"><p>6. I forgot to mention Apple and Siri. They have all the devices and a great reputation on privacy. 
 
-  <!-- Peter Yang -->
-  <article class="card">
-    <div class="builder-head">
-      <p class="builder-name">Peter Yang</p>
-      <p class="builder-handle">@petergyang</p>
-      <p class="builder-bio">为忙碌人群打造的实用 AI 教程与访谈 | 在我的网站获取最优质的 AI 技能与指南</p>
-    </div>
+They can easily win this race but what holds them back imo is their annual release cycle for major updates and not being on @X and all the other platforms seeking user feedback. The iteration speed for Siri (from the outside) just feels far too slow to compete.</p><footer><a href="https://x.com/petergyang/status/2101865476145959373" target="_blank">X.com</a></footer></blockquote><blockquote class="tweet"><p>My “armchair” thoughts on the personal agent race:
 
-    <div class="tweet">
-      <p class="en">I have a simple markdown file and a /tastemaker skill that I use to add ratings for movies, TV shows, and books I've seen. 
+1. Muse is poised to become the leader. The app is intuitive, and Meta is aggressively promoting it across all its properties. Once you use the Muse app, you realize that it makes little sense for an agent to live in an existing messaging app like iMessage. Unless Meta runs out of compute or something, I think this will become the company’s most successful homegrown app after Facebook. It will be much bigger than Threads.
 
-Then every week it looks up new releases and stuff I haven't seen and makes incredibly relevant suggestions.
+2. ChatGPT is probably still the personal agent leader because it already has 1B+ users. OpenAI’s models, computer use, and voice are arguably better than Muse feature by feature. But it’s hard to build one product for both work and personal use, and harder still to serve enterprises and consumers with the same UX. Even for work, I started using Grok Bot because the Work/Codex split remains too confusing. I’m sure the team is cooking, and we’ll see something good in the next few weeks.
 
-Should I open source this?</p>
-      <p class="zh">我有一个简单的 markdown 文件，外加一个叫 /tastemaker 的技能，用来给我看过的电影、剧集和书打分。
+3. Grok Bot isn’t really a Muse competitor because it’s focused on work. Multiple bots naturally fit team-based knowledge work IMO. My bull case for Grok Bot is that it's a few features away from becoming multiplayer agentic Slack for both bots and humans.
 
-然后它每周会去检索新上线的内容和我还没看过的作品，并给出极其贴合我口味的推荐。
+4. Google is obviously the dark horse candidate. All these personal agents live off Gmail, Google Calendar, and your Google app's data. Google has their own personal agent in Spark but the last I checked it's a secondary tab in Gemini. I think Google needs to be far more aggressive in making Spark the primary experience and making it intuitive and competitive with Muse. Google however doesn't have a great track record in multiplayer AI...
 
-我要不要把它开源？</p>
-      <a class="link" href="https://x.com/petergyang/status/2101503916743749878" target="_blank" rel="noopener">x.com/petergyang/status/2101503916743749878</a>
-    </div>
+5. Speaking of multiplayer, nobody has figured this out yet. I can’t easily add my spouse to a Muse chat to plan a vacation. I also can’t loop coworkers into ChatGPT or Grok Bot threads. Multiplayer AI today mostly means tagging bots in Slack. Every major provider is probably working on this, and I think it will be the next big unlock.
 
-    <div class="tweet">
-      <p class="en">Apple TV is full of bangers, canceled my Netflix.
+My personal AI stack right now is Muse for personal, Grok Bot for cloud tasks, Claude for specific use cases, and ChatGPT for everything else.
 
-Widow's Peak, 9.5/10
-Silo season 3, 9/10
+But I think we’re going to see some major updates this week.
 
-What's next? Already seen:
+Everyone should design their personal skills and files so they’re easy to port between harnesses and agents. Otherwise, you’ll spend half your time moving from one tool to another.</p><footer><a href="https://x.com/petergyang/status/2101862331345154469" target="_blank">X.com</a></footer></blockquote></article>
+<article class="builder"><header><h3>Thariq <span class="handle">@trq212</span></h3><p class="bio">Claude Code @anthropicai. prev YC W20, @spc, @medialab</p></header><blockquote class="tweet"><p>there is something about video games that give high stakes and responsibilities to young people who couldn’t really get them irl
 
-Severance, 9.5/10
-Slow Horses, 8/10, gonna wait for more episodes for new season</p>
-      <p class="zh">Apple TV 上好剧扎堆，我已经把 Netflix 退了。
+but it is a fine line and at some point you need to graduate https://t.co/wwRAmV7Sce</p><footer><a href="https://x.com/trq212/status/2101844435353145452" target="_blank">X.com</a></footer></blockquote></article>
+<article class="builder"><header><h3>Amjad Masad <span class="handle">@amasad</span></h3><p class="bio">ceo @replit. civilizationist</p></header><blockquote class="tweet"><p>Built my son his first computer https://t.co/9tQWZFSkku</p><footer><a href="https://x.com/amasad/status/2101852258468299182" target="_blank">X.com</a></footer></blockquote></article>
+<article class="builder"><header><h3>Guillermo Rauch <span class="handle">@rauchg</span></h3><p class="bio">@vercel CEO</p></header><blockquote class="tweet"><p>The thoroughness with which agents can test and QA software is unrivaled. I pointed out something wasn't rendering right in a mobile (in-app) browser. The thing goes to the depths of Mordor to reproduce, simulate, fix, deploy, verify. It created an ephemeral vercel deployment to throw at an iPhone simulator! The absolute grind on these things.
 
-《Widow's Peak》，9.5/10
-《末日地堡》第三季，9/10
+Humans could simply never match this level of intensity. We'd run of energy, we'd extrapolate, we'd hope it'd work out. The software of the future will be of a quality and performance we've never experienced before. It's amazing to watch this shift.</p><footer><a href="https://x.com/rauchg/status/2101846262840799251" target="_blank">X.com</a></footer></blockquote><blockquote class="tweet"><p>https://t.co/mioa6FKIqK https://t.co/JyaI4gQMYW</p><footer><a href="https://x.com/rauchg/status/2101728091710341176" target="_blank">X.com</a></footer></blockquote></article>
+<article class="builder"><header><h3>Aaron Levie <span class="handle">@levie</span></h3><p class="bio">ceo @box - your business lives in content. unleash it with AI</p></header><blockquote class="tweet"><p>Literally impenetrable from agent swarms https://t.co/tg7SZ4d0xu</p><footer><a href="https://x.com/levie/status/2101731574668747081" target="_blank">X.com</a></footer></blockquote></article>
+<article class="builder"><header><h3>Matt Turck <span class="handle">@mattturck</span></h3><p class="bio">VC at @FirstMarkCap.  Host: MAD Podcast; Organizer: Data Driven NYC, Author: MAD Landscape.</p></header><blockquote class="tweet"><p>Everyone is obsessed with Jev now, but I'm old enough to remember when people couldn't shut up about Instinct, all the way back to mid last week.  Simpler times.</p><footer><a href="https://x.com/mattturck/status/2101820308009206077" target="_blank">X.com</a></footer></blockquote></article>
+<article class="builder"><header><h3>Nikunj Kothari <span class="handle">@nikunj</span></h3><p class="bio">partner @fpvventures - investing in seed/A. previous: early hire @meter, @opendoor, @atlassian &amp; others. love @shimoleej</p></header><blockquote class="tweet"><p>Jokingly thinking of starting a new cloud kitchen called “next day curry”.. 
 
-下一部看什么？已经看过的：
+Where I order the best curries, store it overnight and serve it the next day. 
 
-《人生切割术》，9.5/10
-《流人》，8/10，新一季打算等集数多一些再追</p>
-      <a class="link" href="https://x.com/petergyang/status/2101497327861248090" target="_blank" rel="noopener">x.com/petergyang/status/2101497327861248090</a>
-    </div>
+Saying this as I devour my leftover Manchurian. Have the exact same experience with Ramen, Indian food, Thai curry and others. 
 
-    <div class="tweet">
-      <p class="en">My next podcast episode is almost guaranteed to save you some money.
+Might be blasphemous to the purists but they taste so much better!</p><footer><a href="https://x.com/nikunj/status/2101742225906655315" target="_blank">X.com</a></footer></blockquote></article>
+<article class="builder"><header><h3>Peter Steinberger <span class="handle">@steipete</span></h3><p class="bio">Polyagentmorous ClawFather. Came back from retirement to mess with AI and help a lobster take over the world.
+@OpenClaw�</p></header><blockquote class="tweet"><p>Your claw can now FaceTime you! https://t.co/bUFzBG4e7h</p><footer><a href="https://x.com/steipete/status/2101748928274419843" target="_blank">X.com</a></footer></blockquote><blockquote class="tweet"><p>New benchmark dropped https://t.co/5lFZNcDNCh</p><footer><a href="https://x.com/steipete/status/2101748820237500557" target="_blank">X.com</a></footer></blockquote></article>
+<article class="builder"><header><h3>Dan Shipper <span class="handle">@danshipper</span></h3><p class="bio">ceo @every | the only subscription you need to stay at the edge of AI</p></header><blockquote class="tweet"><p>highly recommend
 
-It's with my friend @ebloch, product lead for ChatGPT Finances at @OpenAI.
-
-I asked him to share six practical personal finance prompts that anyone can try to:
-
-1. Find tax savings proactively
-2. Maximize credit card rewards
-3. Create interactive forecasts like your path to financial independence
-...and more
-
- Subscribe to get our full episode tomorrow: https://t.co/NSTj7ijxE0</p>
-      <p class="zh">我下一期播客几乎可以肯定能帮你省下一些钱。
-
-嘉宾是我的朋友 @ebloch，@OpenAI 旗下 ChatGPT Finances 的产品负责人。
-
-我请他分享了六个任何人都能上手的实用个人理财提示词，用来：
-
-1. 主动发现节税空间
-2. 最大化信用卡返现与权益
-3. 生成交互式预测，比如你的财务自由路径
-……以及更多
-
-订阅即可在明天收到完整节目：https://t.co/NSTj7ijxE0</p>
-      <a class="link" href="https://x.com/petergyang/status/2101342055352201519" target="_blank" rel="noopener">x.com/petergyang/status/2101342055352201519</a>
-    </div>
-  </article>
-
-  <!-- Nan Yu -->
-  <article class="card">
-    <div class="builder-head">
-      <p class="builder-name">Nan Yu</p>
-      <p class="builder-handle">@thenanyu</p>
-      <p class="builder-bio">（即将）@openai 产品团队核心成员。此前任 @linear 产品负责人</p>
-    </div>
-
-    <div class="tweet">
-      <p class="en">I'm trying to place calls with both muse and instinct and they both claim to be unable to do so… is this still rolling out?</p>
-      <p class="zh">我想用 muse 和 instinct 来打电话，结果两个都说自己做不到……这功能还在灰度推送中吗？</p>
-      <a class="link" href="https://x.com/thenanyu/status/2101383106372805103" target="_blank" rel="noopener">x.com/thenanyu/status/2101383106372805103</a>
-    </div>
-  </article>
-
-  <!-- Guillermo Rauch -->
-  <article class="card">
-    <div class="builder-head">
-      <p class="builder-name">Guillermo Rauch</p>
-      <p class="builder-handle">@rauchg</p>
-      <p class="builder-bio">@vercel CEO</p>
-    </div>
-
-    <div class="tweet">
-      <p class="en">"I've spoken of the shining city […] a tall, proud city built on rocks stronger than oceans, wind-swept, God-blessed, and teeming with people of all kinds living in harmony and peace; a city with free ports that hummed with commerce and creativity. And if there had to be city walls, the walls had doors and the doors were open to anyone with the will and the heart to get here. That's how I saw it, and see it still." – Ronald Reagan (January 11, 1989)</p>
-      <p class="zh">"我曾谈到过那座闪耀之城……一座高耸而自豪的城市，建立在比海洋更坚固的岩石之上，任凭风吹，蒙受神佑，聚集着形形色色的人们，和谐而安宁地生活；那是一座拥有自由港口的城市，商业与创造力在此嗡嗡作响。即使不得不筑起城墙，墙上也有门，而门向任何有意愿、有心来到这里的人敞开。这就是我当年看到的它，如今我依然这样看它。"——罗纳德·里根（1989 年 1 月 11 日）</p>
-      <a class="link" href="https://x.com/rauchg/status/2101420720807100855" target="_blank" rel="noopener">x.com/rauchg/status/2101420720807100855</a>
-    </div>
-
-    <div class="tweet">
-      <p class="en">The coolest thing about the recent wave of AI is that everyone is excited about building.
-
-All short-term drama aside, this is an immeasurably good development for the world. The people want to create and ship, not just consume.</p>
-      <p class="zh">这一波 AI 浪潮最酷的地方在于，所有人都对"动手构建"充满热情。
-
-撇开所有短期纷扰不谈，这对世界而言是一个好到无法估量的进展。人们想要创造和发布，而不只是消费。</p>
-      <a class="link" href="https://x.com/rauchg/status/2101397206595231765" target="_blank" rel="noopener">x.com/rauchg/status/2101397206595231765</a>
-    </div>
-  </article>
-
-  <!-- Aaron Levie -->
-  <article class="card">
-    <div class="builder-head">
-      <p class="builder-name">Aaron Levie</p>
-      <p class="builder-handle">@levie</p>
-      <p class="builder-bio">@box CEO —— 你的业务存在于内容之中，用 AI 释放它的价值</p>
-    </div>
-
-    <div class="tweet">
-      <p class="en">Personal agents are the ultimate manifestation of "build something that agents want".
-
-The form factor of a product like Muse is you want to be able to hand off a task to the agent and ensure that it is fully completed end to end. To do this, the agent must be able to successfully operate with your tools or use its own to complete the task. Use your MCP or CLI, easily navigate your site, be able to transact, and more.
-
-The new attention you need to compete for is not from the user itself but instead for the agent. This means that the tools that allow agents to order food, handle ecommerce transactions, book flights, work with the local economy, and interact with our data and information best, are the ones that will get used the most.
-
-This will ultimately be the biggest opportunity and shakeup in consumer tech since the App Store itself.</p>
-      <p class="zh">个人 Agent 是"打造 Agent 想要的东西"这一理念的终极体现。
-
-像 Muse 这类产品的形态意味着，你希望能把一项任务交给 Agent，并确保它端到端地彻底完成。要做到这一点，Agent 必须能够顺利地调用你的工具，或使用它自己的工具来完成任务：使用你的 MCP 或 CLI、轻松浏览你的网站、完成交易，等等。
-
-你如今需要争夺的新"注意力"，不再来自用户本身，而是来自 Agent。这意味着，那些能让 Agent 最好地点外卖、处理电商交易、预订机票、参与本地经济、并与我们的数据和信息交互的工具，将会被使用得最多。
-
-这最终将成为自 App Store 问世以来，消费科技领域最大的一次机遇与洗牌。</p>
-      <a class="link" href="https://x.com/levie/status/2101427997597446636" target="_blank" rel="noopener">x.com/levie/status/2101427997597446636</a>
-    </div>
-  </article>
-
-  <!-- Garry Tan -->
-  <article class="card">
-    <div class="builder-head">
-      <p class="builder-name">Garry Tan</p>
-      <p class="builder-handle">@garrytan</p>
-      <p class="builder-bio">@ycombinator 总裁兼 CEO —— @garryslist 创始人 —— GStack 与 GBrain 创造者 —— 帮助创始人的设计师/工程师 —— 旧金山民主党人</p>
-    </div>
-
-    <div class="tweet">
-      <p class="en">Stop racial discrimination in the University of California system https://t.co/og9xm3Almf</p>
-      <p class="zh">停止加州大学系统中的种族歧视 https://t.co/og9xm3Almf</p>
-      <a class="link" href="https://x.com/garrytan/status/2101456284482441656" target="_blank" rel="noopener">x.com/garrytan/status/2101456284482441656</a>
-    </div>
-  </article>
-
-  <!-- Nikunj Kothari -->
-  <article class="card">
-    <div class="builder-head">
-      <p class="builder-name">Nikunj Kothari</p>
-      <p class="builder-handle">@nikunj</p>
-      <p class="builder-bio">@fpvventures 合伙人 —— 投资种子轮/A 轮。此前：@meter、@opendoor、@atlassian 等公司早期成员。爱 @shimoleej</p>
-    </div>
-
-    <div class="tweet">
-      <p class="en">I spend ~2 hours a day programming, building side projects, tinkering obsessively, trying new repos..
-
-I get basically a DM a day asking "aren't you a VC, why are you doing this?"
-
-Unlike other eras, things are moving SO fast that if you don't do this, I simply don't understand how folks will ever learn what's coming next. 
-
-For me, it's quite simple if you want to invest in the AI era:
-
-1) You have to understand the model capabilities to see where the next set of models will improve - still so much alpha in reading technical papers (model research)
-
-2) You need to see what tools do they need to be successful and complete even longer long horizon tasks (infra) 
-
-3) You need to understand the harness capabilities that will make these models help building autonomous companies (app layer)
-
-You can obviously learn this by talking to researchers / builders and simply betting on founders - and I do that too. But, I was never honestly good at learning without getting my hands dirty so just leaning in to what I know best. It's also honestly so fun!
-
-So, my push to other folks who want to learn is just get started and find time to tinker daily. Once you do it for 10 days, I'm sure you'll be equally obsessed!</p>
-      <p class="zh">我每天花大约 2 小时写代码、做副业项目、痴迷地折腾、尝试新的代码仓库……
-
-我基本上每天都会收到一条私信问："你不是做 VC 的吗，为什么干这个？"
-
-与以往的时代不同，现在一切都快得离谱，如果你不这么做，我实在无法理解人们要怎么才能学到接下来会发生什么。
-
-对我来说，如果想在 AI 时代做投资，逻辑其实很简单：
-
-1）你必须理解模型的能力边界，才能看清下一批模型会在哪里改进——读技术论文依然有大量超额认知（模型研究）
-
-2）你需要看清它们需要哪些工具才能成功、才能完成更长的长时程任务（基础设施）
-
-3）你需要理解那些能让这些模型帮助构建自治公司的"驾驭层"能力（应用层）
-
-当然，你也可以通过和研究者/构建者聊天、直接押注创始人来学到这些——我也在这么做。但说实话，我从来都不擅长不动手就能学会东西，所以干脆一头扎进我最熟悉的事里。而且说实话，这真的非常有意思！
-
-所以，我对其他想学习的人的建议就是：先开始，每天找出时间来折腾。坚持 10 天，我相信你也会同样上瘾！</p>
-      <a class="link" href="https://x.com/nikunj/status/2101340098356990058" target="_blank" rel="noopener">x.com/nikunj/status/2101340098356990058</a>
-    </div>
-  </article>
-
-  <!-- Aditya Agarwal -->
-  <article class="card">
-    <div class="builder-head">
-      <p class="builder-name">Aditya Agarwal</p>
-      <p class="builder-handle">@adityaag</p>
-      <p class="builder-bio">@SPC 普通合伙人，@Bevel_Health 联合创始人 | 曾任：@facebook 早期工程师、@Dropbox CTO、@Flipkart 董事 | 乐观主义者、构建者</p>
-    </div>
-
-    <div class="tweet">
-      <p class="en">After seeing the rush of announcements by Gemini (Google), OpenAi and Anthropic about even more agent intrusions......I take it for 100% granted that a number of of major companies have been penetrated by nation states without them knowing about it.</p>
-      <p class="zh">在看罢 Gemini（Google）、OpenAI 和 Anthropic 接连发布关于更多 Agent 侵入行为的公告之后……我百分之百确信，已经有不少大型公司被国家行为体渗透，而它们自己却毫不知情。</p>
-      <a class="link" href="https://x.com/adityaag/status/2101426570850451914" target="_blank" rel="noopener">x.com/adityaag/status/2101426570850451914</a>
-    </div>
-  </article>
-
-  <!-- ============ PODCASTS ============ -->
-  <p class="section-label">Podcasts</p>
-
-  <article class="podcast">
-    <p class="pod-name">The MAD Podcast with Matt Turck</p>
-    <h3>When AI Improves Itself | Richard Socher (Recursive)</h3>
-    <p class="pod-sub">嘉宾：Richard Socher（Recursive）· 主持人：Matt Turck</p>
-    <a class="pod-link" href="https://www.youtube.com/@DataDrivenNYC/videos" target="_blank" rel="noopener">youtube.com/@DataDrivenNYC/videos</a>
-
-    <ul class="takeaways">
-      <li>
-        <p class="en">The conversation centers on recursive self-improvement: how AI systems that help build, evaluate, and improve the next generation of AI could compress research cycles dramatically.</p>
-        <p class="zh">本期对话围绕"递归式自我改进"展开：能够帮助构建、评估并改进下一代 AI 的 AI 系统，如何可能大幅压缩研究周期。</p>
-      </li>
-      <li>
-        <p class="en">Socher argues that the bottleneck is shifting from raw model capability toward evaluation, verification, and the ability to reliably measure progress.</p>
-        <p class="zh">Socher 认为，瓶颈正在从模型本身的原始能力，转向评估、验证，以及可靠衡量进展的能力。</p>
-      </li>
-      <li>
-        <p class="en">They discuss what an "AI researcher agent" would actually need to be useful in practice — tooling, memory, and long-horizon task execution.</p>
-        <p class="zh">两人探讨了一个"AI 研究员 Agent"要在实践中真正有用，究竟需要什么——工具链、记忆，以及长时程任务的执行能力。</p>
-      </li>
-      <li>
-        <p class="en">The episode closes on the safety and governance questions that arise once systems start participating in their own improvement loops.</p>
-        <p class="zh">节目最后谈到，一旦系统开始参与自身的改进循环，随之而来的安全与治理问题。</p>
-      </li>
-    </ul>
-  </article>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="footer">
-    由 AI Daily Bot 自动生成 · 每日 10:00（北京时间）
-  </footer>
-
-</div>
-</body>
-</html>
+this is my favorite book https://t.co/H4wpR6eQ5O</p><footer><a href="https://x.com/danshipper/status/2101816740741329218" target="_blank">X.com</a></footer></blockquote></article>
+<footer class="page-footer"><p>由 AI Daily Bot 自动生成 · 每日 10:00 (北京时间)</p></footer>
+</div></body></html>
