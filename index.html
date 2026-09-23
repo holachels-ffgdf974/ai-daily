@@ -3,428 +3,769 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 · 2026年09月22日</title>
+<title>AI 日报 · 2026年09月23日</title>
 <style>
-  * {
-    box-sizing: border-box;
-  }
+  * { box-sizing: border-box; }
   body {
     margin: 0;
     padding: 0;
     background: #fafaf8;
     color: #1a1a1a;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-    font-size: 16px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
-  .container {
+  .wrap {
     max-width: 680px;
     margin: 0 auto;
-    padding: 64px 32px 96px;
+    padding: 64px 28px 80px;
   }
+  /* Masthead */
   .masthead {
     text-align: center;
-    margin-bottom: 56px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e8e8e4;
+    margin-bottom: 48px;
   }
   .masthead .date {
-    font-size: 14px;
-    letter-spacing: 0.08em;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     color: #6b6b6b;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
   .masthead h1 {
-    font-family: Georgia, "Songti SC", serif;
-    font-size: 44px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    margin: 0 0 20px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 46px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin: 0 0 18px;
     color: #1a1a1a;
   }
-  .masthead .rule {
-    width: 48px;
+  .masthead h1 .accent {
+    display: block;
+    width: 56px;
     height: 3px;
     background: #8b5e3c;
-    margin: 0 auto 20px;
+    margin: 20px auto 0;
   }
-  .masthead .summary {
+  .masthead .stats {
     font-size: 14px;
     color: #6b6b6b;
-    line-height: 1.8;
+    margin-top: 18px;
   }
+  /* Section label */
+  .section-label {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #8b5e3c;
+    margin: 0 0 24px;
+    font-weight: 600;
+  }
+  /* Builder card */
   .card {
     background: #ffffff;
     border: 1px solid #e8e8e4;
     border-radius: 8px;
-    padding: 32px 28px;
+    padding: 28px 26px 22px;
     margin-bottom: 28px;
   }
-  .builder-head {
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #f0f0ec;
+  .card-header {
+    border-bottom: 1px solid #f0efe9;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
   }
-  .builder-name {
-    font-size: 19px;
-    font-weight: 700;
+  .card-header .name {
+    font-size: 18px;
+    font-weight: 600;
     color: #1a1a1a;
-    margin: 0 0 4px;
   }
-  .builder-handle {
+  .card-header .handle {
     font-size: 14px;
-    color: #8b5e3c;
+    color: #2c6bae;
     text-decoration: none;
-    font-weight: 500;
+    margin-left: 6px;
   }
-  .builder-handle:hover {
-    text-decoration: underline;
-  }
-  .builder-bio {
-    font-size: 13.5px;
+  .card-header .bio {
+    font-size: 13px;
     color: #6b6b6b;
-    margin: 10px 0 0;
-    line-height: 1.6;
+    margin-top: 6px;
+    line-height: 1.5;
   }
+  /* Tweet */
   .tweet {
     border-left: 3px solid #e8e0d0;
     background: #fdfdfb;
-    border-radius: 0 6px 6px 0;
-    padding: 16px 18px;
+    padding: 14px 16px;
     margin-bottom: 18px;
+    border-radius: 0 6px 6px 0;
   }
-  .tweet:last-child {
-    margin-bottom: 0;
-  }
+  .tweet:last-child { margin-bottom: 0; }
   .tweet .en {
-    font-size: 15px;
+    font-size: 14.5px;
     color: #1a1a1a;
-    line-height: 1.65;
     margin: 0 0 10px;
-    white-space: pre-wrap;
+    white-space: pre-line;
   }
   .tweet .zh {
-    font-size: 14.5px;
-    color: #4a4a48;
-    line-height: 1.75;
-    margin: 0 0 12px;
+    font-size: 14px;
+    color: #4a4a4a;
+    margin: 0;
     padding-top: 10px;
-    border-top: 1px dashed #ececE6;
+    border-top: 1px dashed #ece8dd;
+    white-space: pre-line;
   }
   .tweet .link {
-    font-size: 13px;
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 12.5px;
     color: #2c6bae;
     text-decoration: none;
     word-break: break-all;
   }
-  .tweet .link:hover {
-    text-decoration: underline;
-  }
-  .podcast-card {
-    background: #ffffff;
-    border: 1px solid #e8e8e4;
-    border-radius: 8px;
-    padding: 32px 28px;
-    margin-bottom: 28px;
-  }
-  .podcast-label {
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #8b5e3c;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  .podcast-title {
-    font-family: Georgia, "Songti SC", serif;
-    font-size: 22px;
-    font-weight: 700;
-    margin: 0 0 6px;
-    color: #1a1a1a;
-  }
-  .podcast-sub {
-    font-size: 14px;
-    color: #6b6b6b;
-    margin: 0 0 22px;
-  }
-  .point {
-    border-left: 3px solid #e8e0d0;
-    background: #fdfdfb;
-    padding: 14px 18px;
-    margin-bottom: 14px;
-    border-radius: 0 6px 6px 0;
-  }
-  .point:last-child {
-    margin-bottom: 0;
-  }
-  .point .en {
-    font-size: 14.5px;
-    color: #1a1a1a;
-    margin: 0 0 8px;
-    line-height: 1.6;
-  }
-  .point .zh {
-    font-size: 14px;
-    color: #4a4a48;
-    margin: 0;
-    line-height: 1.7;
-    padding-top: 8px;
-    border-top: 1px dashed #ececE6;
-  }
-  footer {
-    text-align: center;
+  .tweet .link:hover { text-decoration: underline; }
+  /* Footer */
+  .footer {
     margin-top: 56px;
     padding-top: 28px;
     border-top: 1px solid #e8e8e4;
-    font-size: 13px;
-    color: #9a9a94;
-    line-height: 1.8;
+    text-align: center;
+    font-size: 12.5px;
+    color: #6b6b6b;
+    letter-spacing: 0.04em;
   }
   @media (max-width: 600px) {
-    .container {
-      padding: 40px 18px 64px;
-    }
-    .masthead h1 {
-      font-size: 34px;
-    }
-    .card, .podcast-card {
-      padding: 24px 18px;
-    }
-    .tweet, .point {
-      padding: 14px 14px;
-    }
+    .wrap { padding: 40px 16px 56px; }
+    .masthead h1 { font-size: 34px; }
+    .card { padding: 20px 16px 16px; }
+    .tweet { padding: 12px 12px; }
+    .tweet .en, .tweet .zh { font-size: 13.5px; }
   }
 </style>
 </head>
 <body>
-<div class="container">
+<div class="wrap">
 
   <header class="masthead">
-    <div class="date">2026年09月22日 星期二</div>
-    <h1>AI 日报</h1>
-    <div class="rule"></div>
-    <div class="summary">
-      今日收录 12 位 Builder · 24 条推文<br>
-      关键词：Agent 商业化、Codex 生态、Agentic Coding、广告市场冲击
-    </div>
+    <div class="date">2026年09月23日 · 星期三</div>
+    <h1>AI 日报<span class="accent"></span></h1>
+    <div class="stats">18 位 Builder · 42 条动态 · 聚焦 Opus 5.5 与 GPT-6 发布</div>
   </header>
 
-  <!-- Swyx -->
-  <section class="card">
-    <div class="builder-head">
-      <h2 class="builder-name">Swyx</h2>
-      <a class="builder-handle" href="https://x.com/swyx" target="_blank">@swyx</a>
-      <p class="builder-bio">以刻意、强度、正直与疯狂去实现抱负。关联项目：@smol_ai、@dxtipshq、@cognitio</p>
-    </div>
+  <div class="section-label">Builders &amp; Tweets</div>
 
-    <div class="tweet">
-      <p class="en">@latentspacepod @allenpark out now wherever fine podcasts are sold! (email, apple podcasts, youtube)</p>
-      <p class="zh">@latentspacepod @allenpark 新一期节目现已上线，凡是有优质播客的地方都能听到！（邮件订阅、Apple Podcasts、YouTube）</p>
-      <a class="link" href="https://x.com/swyx/status/2102160025666101658" target="_blank">x.com/swyx/status/2102160025666101658</a>
+  <!-- Josh Woodward -->
+  <article class="card">
+    <div class="card-header">
+      <span class="name">Josh Woodward</span>
+      <a class="handle" href="https://x.com/joshwoodward">@joshwoodward</a>
+      <div class="bio">VP, @Google @GoogleLabs @GeminiApp @GoogleAIStudio</div>
     </div>
-  </section>
+    <div class="tweet">
+      <p class="en">Big milestone! https://t.co/2MfmmG5Way</p>
+      <p class="zh">重大里程碑！</p>
+      <a class="link" href="https://x.com/joshwoodward/status/2102498448364954083">→ 查看原推</a>
+    </div>
+  </article>
+
+  <!-- Boris Cherny -->
+  <article class="card">
+    <div class="card-header">
+      <span class="name">Boris Cherny</span>
+      <a class="handle" href="https://x.com/bcherny">@bcherny</a>
+      <div class="bio">Claude Code @anthropicai</div>
+    </div>
+    <div class="tweet">
+      <p class="en">Opus made an infographic https://t.co/w9fMWqB7HA</p>
+      <p class="zh">Opus 做了一张信息图。</p>
+      <a class="link" href="https://x.com/bcherny/status/2102543350436180277">→ 查看原推</a>
+    </div>
+    <div class="tweet">
+      <p class="en">I used Opus 5.5 to formally verify the Claude Agent SDK using Lean. A couple short prompts = 16 PRs fixing various bugs and race conditions. Video attached.
+
+TLA+ also works well. I sometimes combine Lean and TLA+ to look for issues around data flow, concurrency, and state mgmt.
+
+I don't know either language well, but Claude is excellent at both. This approach is super useful for formally modeling your code and finding bugs that a human probably wouldn't have spotted.
+
+Is formal verification the future of coding (or at least, bug finding)?</p>
+      <p class="zh">我用 Opus 5.5 通过 Lean 对 Claude Agent SDK 做了形式化验证。短短几个提示词，就产出了 16 个 PR，修复了各种 bug 和竞态条件。视频附上。
+
+TLA+ 同样效果很好。我有时会把 Lean 和 TLA+ 结合起来，用来排查数据流、并发和状态管理方面的问题。
+
+这两种语言我都不太熟，但 Claude 对两者都很擅长。这种方法对于对代码进行形式化建模、发现人类可能根本察觉不到的 bug，非常有用。
+
+形式化验证会是编程的未来吗（或者至少是找 bug 的未来）？</p>
+      <a class="link" href="https://x.com/bcherny/status/2102543349102338309">→ 查看原推</a>
+    </div>
+    <div class="tweet">
+      <p class="en">Opus 5.5 is a really good model. It's been my daily driver the last few weeks.
+
+We had Opus 5.5 and Fable 5.1 each port HAProxy from C to Rust. Both passed nearly all of HAProxy's tests, but Opus 5.5 finished in 9.5 hours compared to Fable 5.1's 12 hours, and for 51% less cost. https://t.co/GJ9FaS3Erx</p>
+      <p class="zh">Opus 5.5 真的是一款非常好的模型。过去几周它一直是我的日常主力。
+
+我们让 Opus 5.5 和 Fable 5.1 分别把 HAProxy 从 C 移植到 Rust。两者都几乎通过了 HAProxy 的全部测试，但 Opus 5.5 用了 9.5 小时完成，而 Fable 5.1 用了 12 小时，且成本低了 51%。</p>
+      <a class="link" href="https://x.com/bcherny/status/2102439069053747549">→ 查看原推</a>
+    </div>
+  </article>
 
   <!-- Thibault Sottiaux -->
-  <section class="card">
-    <div class="builder-head">
-      <h2 class="builder-name">Thibault Sottiaux</h2>
-      <a class="builder-handle" href="https://x.com/thsottiaux" target="_blank">@thsottiaux</a>
-      <p class="builder-bio">Codex 与 ChatGPT @OpenAI</p>
+  <article class="card">
+    <div class="card-header">
+      <span class="name">Thibault Sottiaux</span>
+      <a class="handle" href="https://x.com/thsottiaux">@thsottiaux</a>
+      <div class="bio">Codex &amp; ChatGPT @OpenAI</div>
     </div>
-
     <div class="tweet">
-      <p class="en">Ladies and gentlemen... start... your... ENGINES. We are almost Tuesday and I promised a reset for Tuesday. Among some other things. See you soon.</p>
-      <p class="zh">女士们先生们……发动……你们的……引擎。周二就要到了，而我承诺过周二会来一次重置。还有一些别的东西。很快见。</p>
-      <a class="link" href="https://x.com/thsottiaux/status/2102254445082116335" target="_blank">x.com/thsottiaux/status/2102254445082116335</a>
+      <p class="en">Maybe our cutest launch so far. But still packing the biggest punch. https://t.co/LVYOxpH0Wi</p>
+      <p class="zh">也许是我们迄今最可爱的一次发布。但依然是最有杀伤力的。</p>
+      <a class="link" href="https://x.com/thsottiaux/status/2102509507415048245">→ 查看原推</a>
     </div>
-  </section>
+    <div class="tweet">
+      <p class="en">GPT-6 Sol and Luna are out. Not only are they a very significant improvement across the board, but also in writing and general "you know when you try it" quality.
+
+We are also permanently reducing the API price by 50% making both of them viable for a ton of new usecases and making your usage go further too, even on the subscriptions.
+
+And one more thing. We are loading a banked reset into all accounts of our Plus, Pro and Business users. Let's go!
+
+https://t.co/00DRh1sRrO</p>
+      <p class="zh">GPT-6 Sol 和 Luna 发布了。它们不仅在各方面都有非常显著的提升，在写作和那种「你一试就知道」的整体品质上也是如此。
+
+我们还永久性地将 API 价格下调 50%，让两者都能适用于大量新的使用场景，也让你的用量更耐用，即便是订阅用户也是如此。
+
+还有一件事。我们正在为所有 Plus、Pro 和 Business 用户账户存入一次已储蓄的重置额度。冲吧！</p>
+      <a class="link" href="https://x.com/thsottiaux/status/2102463847714247142">→ 查看原推</a>
+    </div>
+    <div class="tweet">
+      <p class="en">We have been focusing on efficiency and intelligence for all.
+
+Very proud of the team. Only possible when you have incredible models at the top end of the capability that you can then use to make a big difference in everything else.</p>
+      <p class="zh">我们一直专注于为所有人带来效率与智能。
+
+为团队感到非常自豪。只有当你拥有处于能力顶端的非凡模型，并能用它去让其他一切产生巨大改变时，这一切才成为可能。</p>
+      <a class="link" href="https://x.com/thsottiaux/status/2102440619616682120">→ 查看原推</a>
+    </div>
+  </article>
 
   <!-- Peter Yang -->
-  <section class="card">
-    <div class="builder-head">
-      <h2 class="builder-name">Peter Yang</h2>
-      <a class="builder-handle" href="https://x.com/petergyang" target="_blank">@petergyang</a>
-      <p class="builder-bio">为忙碌人群打造的实用 AI 教程与访谈 | 在 petergyang.com 获取我的最佳 AI 技能与指南</p>
+  <article class="card">
+    <div class="card-header">
+      <span class="name">Peter Yang</span>
+      <a class="handle" href="https://x.com/petergyang">@petergyang</a>
+      <div class="bio">Practical AI tutorials and interviews for busy people | Get my best AI skills and guides at https://t.co/6VAA6p81x6</div>
     </div>
-
     <div class="tweet">
-      <p class="en">I think we're in for a rude awakening in the ad markets: If a huge part of your business is showing targeted display ads to humans what happens when agents browse your website and get the job done without a human seeing your ads at all?</p>
-      <p class="zh">我认为广告市场即将迎来一次残酷的觉醒：如果你的业务很大一部分是靠向人类投放定向展示广告，那么当 Agent 直接浏览你的网站、在没有任何人类看到你广告的情况下就把事情办完时，会发生什么？</p>
-      <a class="link" href="https://x.com/petergyang/status/2102215701255844074" target="_blank">x.com/petergyang/status/2102215701255844074</a>
+      <p class="en">Just randomly played this Australian show on Apple TV and it's another banger https://t.co/Cp2vUitABa https://t.co/mpOYshnd0G</p>
+      <p class="zh">随手在 Apple TV 上点开了一部澳大利亚剧集，又是一部神作。</p>
+      <a class="link" href="https://x.com/petergyang/status/2102628682301046875">→ 查看原推</a>
     </div>
-
     <div class="tweet">
-      <p class="en">ChatGPT Finances can help you spot charges you missed and get your money back. From Ethan, product lead for ChatGPT Finances: "I used points to book a hotel, and then they still billed me. I had no idea it happened but ChatGPT caught it, worked with customer service, and I ended up getting reimbursed." I then shared with Ethan that I had a similar experience where I asked ChatGPT to cancel a hotel booking for my parents, monitor the replies, and keep following up until we got the money back.</p>
-      <p class="zh">ChatGPT Finances 能帮你发现遗漏的扣款并追回资金。来自 ChatGPT Finances 产品负责人 Ethan 的分享：「我用积分预订了一家酒店，结果他们还是照常扣了我的钱。我完全不知道这事发生了，但 ChatGPT 发现了它，和客服沟通，最终我拿到了退款。」随后我告诉 Ethan，我也有过类似经历：我让 ChatGPT 帮我父母取消一笔酒店预订，监控回复，并持续跟进，直到我们把钱要回来。</p>
-      <a class="link" href="https://x.com/petergyang/status/2102186174911746151" target="_blank">x.com/petergyang/status/2102186174911746151</a>
-    </div>
+      <p class="en">@claudeai If you enjoyed this, sign up for free to my newsletter to get my best AI and product guides.
 
-    <div class="tweet">
-      <p class="en">Nah. I no longer live in email or text, I live in the chat with my agent(s).</p>
-      <p class="zh">不。我已经不再生活在邮件或短信里了，我生活在与我的 Agent（们）的对话里。</p>
-      <a class="link" href="https://x.com/petergyang/status/2102181024507765167" target="_blank">x.com/petergyang/status/2102181024507765167</a>
+Join 110,000+ subscribers here:
+https://t.co/yz9xcsfrhF</p>
+      <p class="zh">@claudeai 如果你喜欢这个，欢迎免费订阅我的通讯，获取我最好的 AI 与产品指南。
+
+已有 11 万+ 订阅者加入：</p>
+      <a class="link" href="https://x.com/petergyang/status/2102589061445939508">→ 查看原推</a>
     </div>
-  </section>
+    <div class="tweet">
+      <p class="en">I talk about why Opus 5.5 is the most excited I've been about a Claude model in awhile here: https://t.co/PBxPzE43Ud</p>
+      <p class="zh">我在这里聊了为什么 Opus 5.5 是我很长一段时间以来对 Claude 模型最兴奋的一次。</p>
+      <a class="link" href="https://x.com/petergyang/status/2102577425838485916">→ 查看原推</a>
+    </div>
+  </article>
+
+  <!-- Cat Wu -->
+  <article class="card">
+    <div class="card-header">
+      <span class="name">Cat Wu</span>
+      <a class="handle" href="https://x.com/_catwu">@_catwu</a>
+      <div class="bio">claude code + cowork @anthropicai, prev: @dagster, @scale_ai</div>
+    </div>
+    <div class="tweet">
+      <p class="en">If you're looking for ways to try Opus 5.5 and Claude Tag in Slack… https://t.co/PpwztYQx2o</p>
+      <p class="zh">如果你想找办法在 Slack 里试用 Opus 5.5 和 Claude Tag……</p>
+      <a class="link" href="https://x.com/_catwu/status/2102569951974584612">→ 查看原推</a>
+    </div>
+    <div class="tweet">
+      <p class="en">Claude Opus 5.5 is now the default model in Claude Code and the Claude app, including Cowork, for Pro, Max, and Team plans. I've been using Opus 5.5 as a daily driver and love its clear communication skills and ability to write in my style.
+
+We're defaulting to effort medium across products, which is comparable to Fable 5.1 on intelligence but faster. Your rate limits will go 25% further on Opus 5.5 compared to Opus 5.
+
+Give Opus 5.5 an ambitious task and let us know what you think!</p>
+      <p class="zh">Claude Opus 5.5 现已成为 Claude Code 和 Claude 应用（包括 Cowork）中 Pro、Max 和 Team 套餐的默认模型。我一直把 Opus 5.5 当日常主力使用，很喜欢它清晰的沟通能力，以及能模仿我的风格写作。
+
+我们在所有产品中默认使用中等努力档（effort medium），其智能水平与 Fable 5.1 相当，但速度更快。相比 Opus 5，你在 Opus 5.5 上的速率限制将多出 25% 的额度。
+
+给 Opus 5.5 一个雄心勃勃的任务，然后告诉我们你的想法！</p>
+      <a class="link" href="https://x.com/_catwu/status/2102437713781944397">→ 查看原推</a>
+    </div>
+  </article>
 
   <!-- Thariq -->
-  <section class="card">
-    <div class="builder-head">
-      <h2 class="builder-name">Thariq</h2>
-      <a class="builder-handle" href="https://x.com/trq212" target="_blank">@trq212</a>
-      <p class="builder-bio">Claude Code @anthropicai。此前：YC W20、@spc、@medialab</p>
+  <article class="card">
+    <div class="card-header">
+      <span class="name">Thariq</span>
+      <a class="handle" href="https://x.com/trq212">@trq212</a>
+      <div class="bio">Claude Code @anthropicai. prev YC W20, @spc, @medialab</div>
     </div>
-
     <div class="tweet">
-      <p class="en">I now type "use big pictures and few words" several times a day</p>
-      <p class="zh">我现在每天都要打好几次「用大图、少写字」这句话。</p>
-      <a class="link" href="https://x.com/trq212/status/2102186805034635576" target="_blank">x.com/trq212/status/2102186805034635576</a>
+      <p class="en">if you want to make games, 3d generation is a great capability to help you imagine your game come to life
+
+but you should figure out how to make a good, satisfying game loop first
+
+(talking to myself here)</p>
+      <p class="zh">如果你想做游戏，3D 生成是一项很棒的能力，能帮你把想象中的游戏变为现实。
+
+但你应该先搞清楚如何做出一个优秀、令人满足的游戏循环。
+
+（这里是在对自己说）</p>
+      <a class="link" href="https://x.com/trq212/status/2102549030303867257">→ 查看原推</a>
     </div>
-  </section>
+    <div class="tweet">
+      <p class="en">the right way to use model capabilities is not to ship 10x more features to prod
+
+it's to spend more time understanding your users, trying experiments, building prototypes, learning about things you don't understand so that you can ship things that actually work</p>
+      <p class="zh">使用模型能力的正确方式，不是往生产环境里塞 10 倍的功能。
+
+而是花更多时间去理解你的用户、做实验、构建原型、去学习那些你还不懂的东西，这样你才能交付真正管用的东西。</p>
+      <a class="link" href="https://x.com/trq212/status/2102548686303854790">→ 查看原推</a>
+    </div>
+    <div class="tweet">
+      <p class="en">workflows are a huge part of how I use Claude these days, I'm glad we have Fable-like intelligence that works with workflows from a cost perspective</p>
+      <p class="zh">工作流如今是我使用 Claude 的重要组成部分，很高兴我们现在有了从成本角度看能与工作流配合的、接近 Fable 级别的智能。</p>
+      <a class="link" href="https://x.com/trq212/status/2102477527688388752">→ 查看原推</a>
+    </div>
+  </article>
 
   <!-- Amjad Masad -->
-  <section class="card">
-    <div class="builder-head">
-      <h2 class="builder-name">Amjad Masad</h2>
-      <a class="builder-handle" href="https://x.com/amasad" target="_blank">@amasad</a>
-      <p class="builder-bio">@replit CEO。文明主义者。</p>
+  <article class="card">
+    <div class="card-header">
+      <span class="name">Amjad Masad</span>
+      <a class="handle" href="https://x.com/amasad">@amasad</a>
+      <div class="bio">ceo @replit. civilizationist</div>
     </div>
-
     <div class="tweet">
-      <p class="en">AI is reviving the American Dream.</p>
-      <p class="zh">AI 正在复兴「美国梦」。</p>
-      <a class="link" href="https://x.com/amasad/status/2102120769232978174" target="_blank">x.com/amasad/status/2102120769232978174</a>
+      <p class="en">Your intelligence is fake. It's artificial.
+
+Mine? It's super. Super Intelligence. Aka SI. https://t.co/oTWHfUUpDP</p>
+      <p class="zh">你的智能是假的。它是「人工」的。
+
+我的呢？是超级的。超级智能。简称 SI。</p>
+      <a class="link" href="https://x.com/amasad/status/2102489320766800002">→ 查看原推</a>
     </div>
-  </section>
+  </article>
 
   <!-- Guillermo Rauch -->
-  <section class="card">
-    <div class="builder-head">
-      <h2 class="builder-name">Guillermo Rauch</h2>
-      <a class="builder-handle" href="https://x.com/rauchg" target="_blank">@rauchg</a>
-      <p class="builder-bio">@vercel CEO</p>
+  <article class="card">
+    <div class="card-header">
+      <span class="name">Guillermo Rauch</span>
+      <a class="handle" href="https://x.com/rauchg">@rauchg</a>
+      <div class="bio">@vercel CEO</div>
     </div>
-
     <div class="tweet">
-      <p class="en">In addition to our type-safe TypeSafe @aisdk API (get it?), you can now use Jev over HTTP in AI Gateway</p>
-      <p class="zh">除了我们类型安全的 TypeSafe @aisdk API（懂这个梗吗？），现在你还可以在 AI Gateway 中通过 HTTP 使用 Jev。</p>
-      <a class="link" href="https://x.com/rauchg/status/2102205684544852121" target="_blank">x.com/rauchg/status/2102205684544852121</a>
+      <p class="en">Software will never die again. You liked Google Reader? Cool, you can generate and deploy your own. Yours, forever.</p>
+      <p class="zh">软件再也不会消亡了。你喜欢 Google Reader？很好，你可以生成并部署属于你自己的版本。永远属于你。</p>
+      <a class="link" href="https://x.com/rauchg/status/2102594015669756323">→ 查看原推</a>
     </div>
-
     <div class="tweet">
-      <p class="en">Game recognizing game</p>
-      <p class="zh">英雄惜英雄。</p>
-      <a class="link" href="https://x.com/rauchg/status/2102126936592191695" target="_blank">x.com/rauchg/status/2102126936592191695</a>
-    </div>
+      <p class="en">We ran fresh Next.js evals. The tally:
+① Opus 5.5    [%]
+② GPT 6 Sol   [%]
+③ Fable 5.1     [%]
+④ Grok 4.7     [%]
 
-    <div class="tweet">
-      <p class="en">I just gave Grok 4.7 a pretty hard problem, involving reverse-engineering a running binary. Beautifully solved. And it's so fast!</p>
-      <p class="zh">我刚给 Grok 4.7 出了一道相当难的题，涉及对一个运行中的二进制程序做逆向工程。它解得非常漂亮，而且速度极快！</p>
-      <a class="link" href="https://x.com/rauchg/status/2102089968860721335" target="_blank">x.com/rauchg/status/2102089968860721335</a>
+Notably, Grok is 2x-7x cheaper https://t.co/BAUg14981G</p>
+      <p class="zh">我们跑了最新的 Next.js 评测。结果如下：
+① Opus 5.5    [%]
+② GPT 6 Sol   [%]
+③ Fable 5.1     [%]
+④ Grok 4.7     [%]
+
+值得注意的是，Grok 便宜 2 到 7 倍。</p>
+      <a class="link" href="https://x.com/rauchg/status/2102519097770885231">→ 查看原推</a>
     </div>
-  </section>
+    <div class="tweet">
+      <p class="en">Love the tastefulness with which anthropic ships. 
+
+Main reason I got excited about 'headless' for the web is that any given page could take whatever whimsical or unique shape you wanted. With AI, there's no excuse not to push the design frontier.
+
+This is @nextjs at its finest:
+https://t.co/uXM96EijiW</p>
+      <p class="zh">很喜欢 Anthropic 发布产品时的那种品味。
+
+我对 Web「无头化」感到兴奋的主要原因是，任何页面都可以呈现出你想要的任何奇思妙想或独特形态。有了 AI，就再没有理由不去推动设计的前沿。
+
+这是 @nextjs 最出色的样子：</p>
+      <a class="link" href="https://x.com/rauchg/status/2102438365455167883">→ 查看原推</a>
+    </div>
+  </article>
+
+  <!-- Alex Albert -->
+  <article class="card">
+    <div class="card-header">
+      <span class="name">Alex Albert</span>
+      <a class="handle" href="https://x.com/alexalbert__">@alexalbert__</a>
+      <div class="bio">Research @AnthropicAI. Opinions are my own!</div>
+    </div>
+    <div class="tweet">
+      <p class="en">Prompt in Claude Tag
+
+"Recreate Market Street, San Francisco as it stood on April 17, 1906, the afternoon before the earthquake, in Blender.
+
+Scope: the Ferry Building up Market to Fifth Street, including the Palace Hotel, the Call Building, the Chronicle Building, Lotta's Fountain and the Emporium.
+
+Before modeling anything, build a source file from: the 1899-1905 Sanborn fire insurance maps (footprints, heights, materials, occupants), the Miles Brothers film "A Trip Down Market Street" (April 1906), period photographs from OpenSFHistory, the Library of Congress and the David Rumsey collection, and USGS topography. Record every building with footprint, height, facade material, occupant, and the source for each fact with a confidence level.
+
+Build everything in Blender Python. No downloaded meshes, textures or HDRIs. Write reusable generators (Victorian commercial facade, mansard roof, bay windows, awnings, painted signage, gas and electric street lamps, cable car, horse-drawn wagon, early automobile) and assemble the street from the source file, so every building traces back to data.
+
+Provide a 10 second video up the street."</p>
+      <p class="zh">在 Claude Tag 中的提示词
+
+「在 Blender 中重现 1906 年 4 月 17 日下午、地震前一刻的旧金山 Market Street。
+
+范围：从渡轮大厦沿 Market 街到第五街，包括 Palace Hotel、Call Building、Chronicle Building、Lotta's Fountain 和 Emporium。
+
+在对任何东西建模之前，先根据以下资料构建一个源文件：1899-1905 年的 Sanborn 火灾保险地图（占地轮廓、高度、材质、使用者）、Miles 兄弟的影片《A Trip Down Market Street》（1906 年 4 月）、来自 OpenSFHistory、美国国会图书馆和 David Rumsey 收藏的同期照片，以及 USGS 地形数据。记录每栋建筑的占地轮廓、高度、立面材质、使用者，以及每一条事实的来源和置信度。
+
+所有内容都用 Blender Python 构建。不下载任何网格、贴图或 HDRI。编写可复用的生成器（维多利亚式商业立面、孟莎屋顶、凸窗、遮阳篷、手绘招牌、煤气灯与电灯、缆车、马车、早期汽车），并根据源文件组装街道，使每栋建筑都能追溯到数据。
+
+提供一段沿街拍摄的 10 秒视频。」</p>
+      <a class="link" href="https://x.com/alexalbert__/status/2102466524934271381">→ 查看原推</a>
+    </div>
+    <div class="tweet">
+      <p class="en">I've been on a Blender kick with Opus 5.5. Its better 3D modeling and vision mean you can build an entire world from a single prompt.
+
+Historically accurate San Francisco Market street in 1906, pre-earthquake https://t.co/aisvFLFGy3</p>
+      <p class="zh">我最近用 Opus 5.5 迷上了 Blender。它更强的 3D 建模和视觉能力意味着，你可以用一条提示词构建出整个世界。
+
+历史上准确的 1906 年旧金山 Market 街，地震之前。</p>
+      <a class="link" href="https://x.com/alexalbert__/status/2102466523164274839">→ 查看原推</a>
+    </div>
+    <div class="tweet">
+      <p class="en">need to make sure you've been updated to this (rolling out to everyone soon if you haven't!) https://t.co/fjCAQKazVs</p>
+      <p class="zh">请确保你已经更新到这个版本（如果还没有，很快会向所有人推送！）</p>
+      <a class="link" href="https://x.com/alexalbert__/status/2102458350348935454">→ 查看原推</a>
+    </div>
+  </article>
 
   <!-- Aaron Levie -->
-  <section class="card">
-    <div class="builder-head">
-      <h2 class="builder-name">Aaron Levie</h2>
-      <a class="builder-handle" href="https://x.com/levie" target="_blank">@levie</a>
-      <p class="builder-bio">@box CEO —— 你的业务就存在于内容之中，用 AI 释放它的价值</p>
+  <article class="card">
+    <div class="card-header">
+      <span class="name">Aaron Levie</span>
+      <a class="handle" href="https://x.com/levie">@levie</a>
+      <div class="bio">ceo @box - your business lives in content. unleash it with AI</div>
     </div>
-
     <div class="tweet">
-      <p class="en">The monetization potential of personal agents that are transacting on your behalf is quite significant. If you imagine agents that are perfectly capable of handling an arbitrarily complex task end to end, then eventually a substantial amount of commerce inevitably goes through them. You'll start by slinging your daily simple and annoying tasks at the agent. Then as people get used to it, they'll just start to throw more complex tasks at the agent, ultimately leading to even more spend through these systems than what they were doing before. If you can bring down the friction for commerce and services, then you end up spending even more. This thus creates a ton of opportunity for the agent providers (Muse, etc.), but also completely new opportunities to build the layer that the agents want to interact with (commerce, local, b2b services, etc.). Win/win for multiple layers.</p>
-      <p class="zh">代表你进行交易的「个人 Agent」具有相当可观的变现潜力。如果你设想 Agent 能够端到端完美处理任意复杂的任务，那么最终大量商业交易必然会经由它们完成。你会先把日常那些简单又烦人的任务丢给 Agent。随着人们逐渐习惯，他们会开始把更复杂的任务也交给 Agent，最终经由这些系统产生的支出甚至会超过他们此前的消费。如果你能降低商业与服务的摩擦，人们反而会花得更多。这就为 Agent 提供方（Muse 等）创造了大量机会，同时也为「Agent 想要交互的那一层」（电商、本地服务、B2B 服务等）带来了全新的构建机会。多个层级实现双赢。</p>
-      <a class="link" href="https://x.com/levie/status/2102253246807261579" target="_blank">x.com/levie/status/2102253246807261579</a>
-    </div>
+      <p class="en">What an insane day in AI. The frontier models just became substantially cheaper, with the Opus 5.5 price cuts, and now with GPT-6 Sol and Luna dropping token prices by 50%.
 
-    <div class="tweet">
-      <p class="en">AI agents will use software 100X more than people ever did. Even as interfaces begin to fade into the background as you primarily interact with agents, those agents still need many of the core primitives that people have used. In fact, in many ways these core primitives become even more important when agents can take destructive actions in our systems or where the context they're accessing with make or break the workflow. This will be true of where you house your CRM or ERP or structured or unstructured data platforms. The platforms that can best act as the security layer and guardrails for agents, manage the data for agents and people, and orchestrate the business logic for workflows have a huge opportunity right now. This is true for brand new startups as well as existing platforms that can move fast enough.</p>
-      <p class="zh">AI Agent 使用软件的频率将是人类的 100 倍。即便随着你主要与 Agent 交互、界面逐渐退居幕后，这些 Agent 依然需要许多人类曾使用的核心基础能力。事实上，当 Agent 能在我们的系统中执行破坏性操作，或当它们访问的上下文足以决定工作流成败时，这些核心基础能力在很多方面反而变得更加重要。无论是你的 CRM、ERP，还是结构化/非结构化数据平台的承载之处，都是如此。那些最能充当 Agent 安全层与护栏、为 Agent 和人类管理数据、并为工作流编排业务逻辑的平台，眼下拥有巨大的机会。这对全新创业公司和行动足够快的现有平台同样成立。</p>
-      <a class="link" href="https://x.com/levie/status/2102235949430354273" target="_blank">x.com/levie/status/2102235949430354273</a>
+The rate at which the cost per task (on a like-for-like basis) drops in AI is unlike any other type of technology in history. And every time the cost of AI drops, the use-cases you can deploy agents against dramatically increase. This is Jevons paradox applied to agents.
+
+These improvements will directly lead to broader diffusion of AI in the economy as we can use agents to process all of our data, scan our code for security issues, read through all log data to make decisions, have agent swarms in workflows, and much more. The cost of tokens is directly correlated to these use-cases being opened up at scale.</p>
+      <p class="zh">AI 圈疯狂的一天。前沿模型刚刚变得便宜了许多——先是 Opus 5.5 降价，现在 GPT-6 Sol 和 Luna 又把 token 价格砍了 50%。
+
+在 AI 领域，单位任务成本（在同等可比基础上）的下降速度，是历史上任何其他类型技术都无法比拟的。而每当 AI 成本下降，你能用智能体去覆盖的使用场景就会急剧增加。这就是应用于智能体的杰文斯悖论。
+
+这些改进将直接推动 AI 在经济中更广泛地扩散，因为我们可以用智能体处理全部数据、扫描代码中的安全问题、通读所有日志数据来做决策、在工作流中部署智能体集群，等等。Token 成本与这些场景能否大规模开启直接相关。</p>
+      <a class="link" href="https://x.com/levie/status/2102477253070430322">→ 查看原推</a>
     </div>
-  </section>
+    <div class="tweet">
+      <p class="en">At Box, we've been testing Opus 5.5 on a variety of complex enterprise knowledge work tasks dealing with unstructured data with the Box Agent.  
+
+Overall, we saw frontier capability levels, with major performance improvements over Opus 5. 63% fewer tokens used, 42% less verbosity, and 30% faster vs. Opus 5. And the model itself is cheaper, so this is a major win for any agentic computer use, coding, analytics, or data work that enterprises will be doing.
+
+Here are some examples of the task wins and performance gains across a variety of industry tests that we performed:
+
+• Financial services - due diligence (+39% task accuracy): A year of transaction records, with the job of finding every miscalculation in an acquisition target's pricing tool. Opus 5.5 scored a perfect result on every  attempt in half the words Opus 5 used, consuming 82% fewer tokens overall.
+
+• Technology - cloud cost analysis (+65% task accuracy): Work out what a company should actually change about its cloud spend. Opus 5.5 picked the right basis for the retention calculation and kept the source data's unit conventions straight all the way through, so the number at the end actually holds up. It took half the time Opus 5 took, with 70% fewer tokens.
+
+• Consumer products - client account analysis (+17% task accuracy): Set the onboarding targets for a client account, reading across the signed contract, a satisfaction tracker and a team metrics sheet. The contract never states a senior/junior split, so Opus 5.5 derived it from the 18-person roster and showed the rule it used; several clients had a perfect 10 on individual survey questions, so it averaged each client's responses instead of crowning the single 10. It finished this one in half the time, on 78% fewer tokens. 
+
+• Clinical diagnostics - data analysis (+15% task accuracy): Malaria rapid-test performance across a dry and a wet season: build the patient records out of two clinical PDFs, compute positive test rates by season and gender, and test whether parasite counts really differ between test-positive and test-negative patients. Opus 5.5 caught that the two groups' standard deviations differed more than 100-fold, re-ran it the right way, and found the dry-season difference didn't hold up after all. This accuracy gain came with a final answer that was half the length of Opus 5's, and also needed 78% fewer tokens end to end. 
+
+Customers will be able to build AI Agents with Opus 5.5 shortly in the Box AI Studio.</p>
+      <p class="zh">在 Box，我们用 Box Agent 在各类涉及非结构化数据的复杂企业知识工作任务上测试了 Opus 5.5。
+
+总体来看，我们看到了前沿级别的能力，性能相比 Opus 5 有大幅提升。相比 Opus 5，token 用量减少 63%，啰嗦程度降低 42%，速度快 30%。而且模型本身更便宜，因此对于企业将开展的任何智能体化的计算机操作、编程、分析或数据工作来说，这都是一个重大胜利。
+
+以下是我们所做的各类行业测试中，任务成功率和性能提升的一些例子：
+
+• 金融服务——尽职调查（任务准确率 +39%）：一年的交易记录，任务是找出收购目标定价工具中的每一处计算错误。Opus 5.5 在每一次尝试中都拿到满分结果，用词只有 Opus 5 的一半，整体 token 消耗减少 82%。
+
+• 科技——云成本分析（任务准确率 +65%）：算出某家公司到底应该怎样调整其云支出。Opus 5.5 选对了留存计算的基础，并且全程保持了源数据的单位约定，因此最终的数字确实站得住脚。它用时只有 Opus 5 的一半，token 减少 70%。
+
+• 消费品——客户账户分析（任务准确率 +17%）：为一个客户账户设定入职目标，需交叉阅读已签署的合同、满意度追踪表和团队指标表。合同从未写明高级/初级人员配比，因此 Opus 5.5 从 18 人名单中推导出该比例，并展示了它所用的规则；有几位客户在单项调查问题上拿到满分 10 分，于是它对每位客户的回答取平均，而不是直接把那个 10 分封为最高。这一项它用时一半，token 减少 78%。
+
+• 临床诊断——数据分析（任务准确率 +15%）：旱季与雨季的疟疾快速检测表现：从两份临床 PDF 中构建患者记录，按季节和性别计算阳性检测率，并检验检测阳性与阴性患者之间的寄生虫计数是否真的存在差异。Opus 5.5 发现两组的标准差相差超过 100 倍，于是用正确的方式重跑，结果发现旱季的差异根本站不住脚。这一准确率提升伴随着一个只有 Opus 5 一半长度的最终答案，端到端 token 也减少了 78%。
+
+客户很快就能在 Box AI Studio 中用 Opus 5.5 构建 AI 智能体。</p>
+      <a class="link" href="https://x.com/levie/status/2102448415775051790">→ 查看原推</a>
+    </div>
+  </article>
 
   <!-- Garry Tan -->
-  <section class="card">
-    <div class="builder-head">
-      <h2 class="builder-name">Garry Tan</h2>
-      <a class="builder-handle" href="https://x.com/garrytan" target="_blank">@garrytan</a>
-      <p class="builder-bio">@ycombinator 总裁兼 CEO —— @garryslist 创始人 —— GStack 与 GBrain 创造者 —— 帮助创始人的设计师/工程师 —— 旧金山民主党人</p>
+  <article class="card">
+    <div class="card-header">
+      <span class="name">Garry Tan</span>
+      <a class="handle" href="https://x.com/garrytan">@garrytan</a>
+      <div class="bio">President &amp; CEO @ycombinator —Founder @garryslist—Creator of GStack &amp; GBrain—designer/engineer who helps founders—SF Dem</div>
     </div>
-
     <div class="tweet">
-      <p class="en">If you really think about it Cluely as a realtime thought helper and semi-adversarial assistant with ongoing context is still a good idea</p>
-      <p class="zh">如果你认真想一想，Cluely 作为一个具备持续上下文的实时思维助手兼半对抗式助理，依然是个好点子。</p>
-      <a class="link" href="https://x.com/garrytan/status/2102233173833007536" target="_blank">x.com/garrytan/status/2102233173833007536</a>
+      <p class="en">Capy (@capydotai) lets me drop PRs much much faster than I would with Codex or Claude Code alone https://t.co/s6xeWJahvJ</p>
+      <p class="zh">Capy（@capydotai）让我提交 PR 的速度比只用 Codex 或 Claude Code 快得多得多。</p>
+      <a class="link" href="https://x.com/garrytan/status/2102544711647129902">→ 查看原推</a>
     </div>
-
     <div class="tweet">
-      <p class="en">Example PR - here is an agent executing against a very ambitious bug fix wave on GBrain with very clear task delineation, automatic parallelization, and very clean Github PR and CI workflow.</p>
-      <p class="zh">一个 PR 示例 —— 这里有个 Agent 正在 GBrain 上执行一波相当激进的 bug 修复：任务划分非常清晰、自动并行化，GitHub PR 与 CI 流程也非常干净。</p>
-      <a class="link" href="https://x.com/garrytan/status/2102096495847551011" target="_blank">x.com/garrytan/status/2102096495847551011</a>
+      <p class="en">If you're working on something cool, GStack does actually tell you to apply to YC :-) https://t.co/G4jWbqwINt</p>
+      <p class="zh">如果你正在做一件很酷的事，GStack 确实会建议你去申请 YC :-)</p>
+      <a class="link" href="https://x.com/garrytan/status/2102537390774759761">→ 查看原推</a>
     </div>
-
     <div class="tweet">
-      <p class="en">Not really sure how @capydotai does it, but it really is able to track multi-step workflow and do large PRs faster than Codex or Claude Code on its own. My most favorite new agentic coding secret weapon in my arsenal the last week.</p>
-      <p class="zh">不太确定 @capydotai 是怎么做到的，但它确实能跟踪多步骤工作流，并且比单打独斗的 Codex 或 Claude Code 更快地完成大型 PR。这是我过去一周武器库里最喜欢的全新 Agentic Coding 秘密武器。</p>
-      <a class="link" href="https://x.com/garrytan/status/2102095924893827501" target="_blank">x.com/garrytan/status/2102095924893827501</a>
+      <p class="en">We need to teach the world to prompt and maximally use AI: to help all people see the way it can give you wings in all your pursuits 
+
+Then we need yearn to solve more problems for ourselves and for one another https://t.co/e7yOADOf6s</p>
+      <p class="zh">我们需要教会这个世界如何写提示词、如何最大化地使用 AI：帮助所有人看到，它能在你所有的追求中给你插上翅膀。
+
+然后我们需要渴望为自己、也为彼此解决更多问题。</p>
+      <a class="link" href="https://x.com/garrytan/status/2102501556348440983">→ 查看原推</a>
     </div>
-  </section>
+  </article>
 
   <!-- Nikunj Kothari -->
-  <section class="card">
-    <div class="builder-head">
-      <h2 class="builder-name">Nikunj Kothari</h2>
-      <a class="builder-handle" href="https://x.com/nikunj" target="_blank">@nikunj</a>
-      <p class="builder-bio">@fpvventures 合伙人 —— 投资种子轮/A 轮。此前：@meter、@opendoor、@atlassian 等早期成员。爱 @shimoleej</p>
+  <article class="card">
+    <div class="card-header">
+      <span class="name">Nikunj Kothari</span>
+      <a class="handle" href="https://x.com/nikunj">@nikunj</a>
+      <div class="bio">partner @fpvventures - investing in seed/A. previous: early hire @meter, @opendoor, @atlassian &amp; others. love @shimoleej</div>
     </div>
-
     <div class="tweet">
-      <p class="en">I have been using Codex as my primary "agent" for such a long time that I forget the average person has never used it.. Instinct and Muse are great especially for browser use on the phone. It shows what a great agent is like for the masses with ZERO setup. But, Codex on Mac is simply undefeated in all the work in can do with Computer Use (h/t @AriX and the Sky team). Like try doing a workflow that you do manually and give it Codex to one-shot. I can't wait to see what their latest launch will be as they reportedly get ready to release their "agent" to the masses. My only ask would be to showcase the work and make it easy for folks to get started. Such a privileged time to be a customer for all these products - truly the golden age!</p>
-      <p class="zh">我长期把 Codex 当作我的主力「Agent」，以至于我忘了普通人根本没用过它……Instinct 和 Muse 很棒，尤其是在手机上做浏览器操作时。它向大众展示了零配置情况下一个优秀 Agent 是什么样子。但 Mac 上的 Codex 在 Computer Use 能做的所有事情上简直无懈可击（感谢 @AriX 和 Sky 团队）。比如，把你手动做的一套流程交给 Codex，让它一次跑完。据报道他们正准备向大众发布自己的「Agent」，我迫不及待想看到他们最新的发布。我唯一的请求是：把成果展示出来，并让普通人容易上手。作为这些产品的用户，这是多么幸运的时代 —— 真正的黄金时代！</p>
-      <a class="link" href="https://x.com/nikunj/status/2102186665863463199" target="_blank">x.com/nikunj/status/2102186665863463199</a>
-    </div>
+      <p class="en">The amount of SPVs organzied by even the "best" investors is simply mind boggling..
 
-    <div class="tweet">
-      <p class="en">Someone in my DMs asked for proof given my "public" Github doesn't have many green squares.. There is more to me than what meets the eye</p>
-      <p class="zh">有人私信我要证据，因为我的「公开」GitHub 上没有多少绿色方块……我远比表面看到的要多。</p>
-      <a class="link" href="https://x.com/nikunj/status/2102136369191800888" target="_blank">x.com/nikunj/status/2102136369191800888</a>
-    </div>
+To the point that if you read headlines of a large fundraise, you can be reasonably sure now that a large amount of it came from SPVs even though the headlines say something else. 
 
-    <div class="tweet">
-      <p class="en">With a few exceptions, the companies boasting about tokenmaxxing have the worst product experiences.. It's because good products are all about curation &amp; gardening and not throwing the kitchen sink at agents expecting them to figure it out. Less is more has never more apt.</p>
-      <p class="zh">除了少数例外，那些炫耀「tokenmaxxing」（堆 token）的公司，产品体验往往最差……因为好产品讲的是精心策展与培育，而不是把所有东西一股脑丢给 Agent，指望它们自己想明白。「少即是多」从未像现在这样贴切。</p>
-      <a class="link" href="https://x.com/nikunj/status/2102049065504739366" target="_blank">x.com/nikunj/status/2102049065504739366</a>
+Combine that with tranched valuations and revenue not being the same, all I'll say don't believe the headlines anymore. 
+
+Proof is in the pudding and the pudding is not publicly visible anywhere.</p>
+      <p class="zh">即便是「最优秀」的投资人所组织的 SPV（特殊目的载体）数量，简直令人瞠目结舌。
+
+到了这种程度：如果你读到一笔大额融资的新闻标题，你现在基本可以有把握地说，其中很大一部分其实来自 SPV，尽管标题说的并不是这么回事。
+
+再叠加上分批估值、以及收入并不等同于……我只能说，别再相信新闻标题了。
+
+证据都在布丁里，而这块布丁在任何公开场合都看不到。</p>
+      <a class="link" href="https://x.com/nikunj/status/2102534909076349291">→ 查看原推</a>
     </div>
-  </section>
+    <div class="tweet">
+      <p class="en">Now also on YouTube: https://t.co/U3O2vY7Z66</p>
+      <p class="zh">现在也在 YouTube 上了。</p>
+      <a class="link" href="https://x.com/nikunj/status/2102409907278602622">→ 查看原推</a>
+    </div>
+    <div class="tweet">
+      <p class="en">A Walk In The Park (part III) feat @toddsaunders
+
+00:00 Software should fit your business
+00:16 Meet Todd, the councilman
+03:01 From Google to flooring software
+07:51 The $10M pivot
+11:55 Life after the exit
+17:35 Vertical vs. horizontal software
+23:21 The college startup story
+24:35 Cofounders and the Dalton Mills name
+28:06 Why raise VC again?
+32:43 Who Todd wants to hear from
+
+shot on @iPhone, edited on @descript
+westfield, nj</p>
+      <p class="zh">《公园漫步》（第三部分），嘉宾 @toddsaunders
+
+00:00 软件应该契合你的业务
+00:16 认识一下 Todd，这位市议员
+03:01 从 Google 到地板软件
+07:51 那笔 1000 万美元的转型
+11:55 退出之后的生活
+17:35 垂直软件 vs. 水平软件
+23:21 大学创业故事
+24:35 联合创始人与 Dalton Mills 这个名字
+28:06 为什么再次融资 VC？
+32:43 Todd 想听到谁的声音
+
+用 @iPhone 拍摄，用 @descript 剪辑
+新泽西州韦斯特菲尔德</p>
+      <a class="link" href="https://x.com/nikunj/status/2102395699895677325">→ 查看原推</a>
+    </div>
+  </article>
 
   <!-- Peter Steinberger -->
-  <section class="card">
-    <div class="builder-head">
-      <h2 class="builder-name">Peter Steinberger</h2>
-      <a class="builder-handle" href="https://x.com/steipete" target="_blank">@steipete</a>
-      <p class="builder-bio">多 Agent 玩法的「龙虾之父」。从退休生活中回归，折腾 AI，并帮助一只龙虾接管世界。@OpenClaw</p>
+  <article class="card">
+    <div class="card-header">
+      <span class="name">Peter Steinberger</span>
+      <a class="handle" href="https://x.com/steipete">@steipete</a>
+      <div class="bio">Polyagentmorous ClawFather. Came back from retirement to mess with AI and help a lobster take over the world. @OpenClaw</div>
     </div>
-
     <div class="tweet">
-      <p class="en">Because this "Meta uses OpenClaw" story is going around. They built their own agent, being inspired. Nat and his team did a great job. Kudos!</p>
-      <p class="zh">因为「Meta 在用 OpenClaw」这个说法正在流传。他们受到启发，自己构建了 Agent。Nat 和他的团队做得很棒。致敬！</p>
-      <a class="link" href="https://x.com/steipete/status/2102116206371315854" target="_blank">x.com/steipete/status/2102116206371315854</a>
+      <p class="en">Had ChatGPT sometimes crashing on me after updating to macOS 27 and... Astra found a ~14 year old bug in libuv. https://t.co/JE8GssiRXJ</p>
+      <p class="zh">升级到 macOS 27 后，ChatGPT 有时会崩溃，然后……Astra 在 libuv 里找到了一个约 14 年前的 bug。</p>
+      <a class="link" href="https://x.com/steipete/status/2102501642176528743">→ 查看原推</a>
     </div>
+  </article>
 
+  <!-- Dan Shipper -->
+  <article class="card">
+    <div class="card-header">
+      <span class="name">Dan Shipper</span>
+      <a class="handle" href="https://x.com/danshipper">@danshipper</a>
+      <div class="bio">ceo @every | the only subscription you need to stay at the edge of AI</div>
+    </div>
     <div class="tweet">
-      <p class="en">Proud to say that we did our homework. They found nothing critical.</p>
-      <p class="zh">很自豪地说，我们做足了功课。他们没有发现任何严重问题。</p>
-      <a class="link" href="https://x.com/steipete/status/2102049706830647467" target="_blank">x.com/steipete/status/2102049706830647467</a>
+      <p class="en">@every https://t.co/OIFF8UYr2k</p>
+      <p class="zh">@every</p>
+      <a class="link" href="https://x.com/danshipper/status/2102557212581536207">→ 查看原推</a>
     </div>
-
     <div class="tweet">
-      <p class="en">The beauty of running a claw yourself: they cannot block you.</p>
-      <p class="zh">自己跑一个「claw」的美妙之处在于：他们封不掉你。</p>
-      <a class="link" href="https://x.com/steipete/status/2102044040397238286" target="_blank">x.com/steipete/status/2102044040397238286</a>
-    </div>
-  </section>
+      <p class="en">i added almost 10k new followers today! 
 
-  <footer>
+if you're new around here, here are two things to start with:
+
+1. my vibe check on opus 5.5 vs. sol-6 on @every: https://t.co/61XgBTikxH
+2. after automation, my take on why AI automation creates more good work to do for human experts: https://t.co/Lb7SUCe2pO
+
+if you like those two things you should subscribe to @every—there's more where that came from!</p>
+      <p class="zh">我今天新增了将近 1 万名关注者！
+
+如果你是刚来的，这里有两件事可以入手：
+
+1. 我在 @every 上对 opus 5.5 与 sol-6 的体验评测
+2. 关于「自动化之后」，我对为什么 AI 自动化会为人类专家创造更多好工作的看法
+
+如果你喜欢这两篇，你应该订阅 @every——好东西还多着呢！</p>
+      <a class="link" href="https://x.com/danshipper/status/2102556723244564715">→ 查看原推</a>
+    </div>
+    <div class="tweet">
+      <p class="en">https://t.co/XHmyhFqjxB</p>
+      <p class="zh">（附链接）</p>
+      <a class="link" href="https://x.com/danshipper/status/2102555830080205130">→ 查看原推</a>
+    </div>
+  </article>
+
+  <!-- Aditya Agarwal -->
+  <article class="card">
+    <div class="card-header">
+      <span class="name">Aditya Agarwal</span>
+      <a class="handle" href="https://x.com/adityaag">@adityaag</a>
+      <div class="bio">General Partner @SPC, Co-Founder @Bevel_Health | Ex: Early Eng @facebook, CTO @Dropbox, Board @Flipkart | Optimist, Buil</div>
+    </div>
+    <div class="tweet">
+      <p class="en">I have hosted over 50 Minus One fireside chats with lots of interesting and well known people over the years @spc.
+
+The first one my 9 year old asked to attend was yesterday's with Dmitri of Waymo.
+
+The evocative beauty of building things for the physical world is undeniable.</p>
+      <p class="zh">这些年来，我在 @spc 主持了 50 多场「Minus One」炉边谈话，嘉宾中有许多有趣且知名的人。
+
+我 9 岁的孩子第一次主动要求参加的，是昨天与 Waymo 的 Dmitri 的那场。
+
+为物理世界构建事物所具有的那种唤起人心的美，是无可否认的。</p>
+      <a class="link" href="https://x.com/adityaag/status/2102498288658526614">→ 查看原推</a>
+    </div>
+    <div class="tweet">
+      <p class="en">Safety and alignment of "models" is the raging topic today.
+
+But the original "safety" debate for AI/MachineLearning was actually in autonomous vehicles!
+
+My first Waymo ride truly felt like a religious experience. It was mind-boggling that we could build technology that actually worked on real roads with all the challenges that entails.
+
+I thought the most interesting part of the talk yesterday was the extensive eval/testing infrastructure that Waymo has built out in order to build the confidence to release 2-ton robots traveling at 30mph through urban environments.
+
+It was awesome to host @dmitri_dolgov @spc yesterday.  
+
+I learnt a lot myself and I am excited to release the full video soon.</p>
+      <p class="zh">「模型」的安全与对齐是当下最火热的话题。
+
+但 AI / 机器学习最初的「安全」辩论，其实发生在自动驾驶汽车领域！
+
+我第一次坐 Waymo 真的像是一次宗教般的体验。我们竟然能造出在真实道路上、面对种种挑战依然真正管用的技术，这令人难以置信。
+
+我觉得昨天那场谈话最有意思的部分，是 Waymo 为了建立信心、敢于让两吨重的机器人在城市环境中以 30 英里时速行驶，而搭建起来的那套庞大的评估/测试基础设施。
+
+昨天能在 @spc 招待 @dmitri_dolgov 真是太棒了。
+
+我自己也学到了很多，很期待很快放出完整视频。</p>
+      <a class="link" href="https://x.com/adityaag/status/2102457464432284019">→ 查看原推</a>
+    </div>
+    <div class="tweet">
+      <p class="en">In the mad dash for productivity...we often forget that AI products should be delightful and FUN.
+
+I have had so many magic moments of delight on Sentience.
+
+Highly recommend trying it out. https://t.co/i8pKw19PKq</p>
+      <p class="zh">在对生产力的疯狂追逐中……我们常常忘记，AI 产品应该是令人愉悦、充满乐趣的。
+
+我在 Sentience 上有过太多惊喜的魔幻时刻。
+
+强烈推荐试一试。</p>
+      <a class="link" href="https://x.com/adityaag/status/2102421668509733058">→ 查看原推</a>
+    </div>
+  </article>
+
+  <!-- Sam Altman -->
+  <article class="card">
+    <div class="card-header">
+      <span class="name">Sam Altman</span>
+      <a class="handle" href="https://x.com/sama">@sama</a>
+      <div class="bio">The mission of OpenAI is to ensure that AGI benefits all of humanity</div>
+    </div>
+    <div class="tweet">
+      <p class="en">argh i meant VOICE not video :(
+
+sorry to dissapoint</p>
+      <p class="zh">呃，我说的是「语音」不是「视频」:(
+
+抱歉让大家失望了。</p>
+      <a class="link" href="https://x.com/sama/status/2102512794235207758">→ 查看原推</a>
+    </div>
+    <div class="tweet">
+      <p class="en">Startups are naturally good at this; it is hard to keep a bigger company good at this and i think an underexplored space. https://t.co/Sr48wgC0lL</p>
+      <p class="zh">创业公司天生擅长这一点；而让一家更大的公司保持擅长这一点很难，我认为这是一个尚未被充分探索的领域。</p>
+      <a class="link" href="https://x.com/sama/status/2102469008079679640">→ 查看原推</a>
+    </div>
+    <div class="tweet">
+      <p class="en">michelle embodies this as much as anyone
+
+openai is so, so lucky to have benefited from everything she has done so far and i think people will be quite pleased to see what she + team have cooking next! https://t.co/AVZAtyk6Uc</p>
+      <p class="zh">Michelle 比任何人都更能体现这一点。
+
+OpenAI 非常、非常幸运能受益于她迄今为止所做的一切，我想人们会相当高兴地看到她和团队接下来在酝酿什么！</p>
+      <a class="link" href="https://x.com/sama/status/2102468713866055872">→ 查看原推</a>
+    </div>
+  </article>
+
+  <!-- Claude -->
+  <article class="card">
+    <div class="card-header">
+      <span class="name">Claude</span>
+      <a class="handle" href="https://x.com/claudeai">@claudeai</a>
+      <div class="bio">Claude is an AI assistant built by @anthropicai to be safe, accurate, and secure. Talk to Claude on https://t.co/ZhTwG8d</div>
+    </div>
+    <div class="tweet">
+      <p class="en">Claude Opus 5.5 is available today. What will you explore?</p>
+      <p class="zh">Claude Opus 5.5 今日上线。你会去探索什么？</p>
+      <a class="link" href="https://x.com/claudeai/status/2102471892099866883">→ 查看原推</a>
+    </div>
+    <div class="tweet">
+      <p class="en">An algorithmic drawing program created by @kevin_t_ngo. Every drawing is based on a different seed. https://t.co/3qZFPs9mGc</p>
+      <p class="zh">由 @kevin_t_ngo 创建的一个算法绘图程序。每一幅画都基于不同的随机种子。</p>
+      <a class="link" href="https://x.com/claudeai/status/2102471889092276516">→ 查看原推</a>
+    </div>
+    <div class="tweet">
+      <p class="en">A toy brick-building app. Turn a photo or a description into a buildable model with custom instructions. https://t.co/zDFMIKuXLP</p>
+      <p class="zh">一个玩具积木搭建应用。把一张照片或一段描述，连同自定义说明，变成一个可以实际搭建的模型。</p>
+      <a class="link" href="https://x.com/claudeai/status/2102471885061812714">→ 查看原推</a>
+    </div>
+  </article>
+
+  <footer class="footer">
     由 AI Daily Bot 自动生成 · 每日 10:00（北京时间）
   </footer>
 
