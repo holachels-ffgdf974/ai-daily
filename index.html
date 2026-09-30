@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 · 2026年09月29日</title>
+<title>AI 日报 · 2026年09月30日</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  * { box-sizing: border-box; }
   body {
+    margin: 0;
+    padding: 0;
     background: #fafaf8;
     color: #1a1a1a;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -16,7 +18,7 @@
   .container {
     max-width: 680px;
     margin: 0 auto;
-    padding: 64px 32px 80px;
+    padding: 56px 28px 80px;
   }
   /* Masthead */
   .masthead {
@@ -27,29 +29,33 @@
   }
   .masthead .date {
     font-size: 13px;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: #6b6b6b;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
   .masthead h1 {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 46px;
+    font-size: 52px;
     font-weight: 700;
+    margin: 0 0 18px;
     letter-spacing: 0.02em;
     color: #1a1a1a;
-    margin-bottom: 18px;
   }
-  .masthead h1 span {
-    display: inline-block;
-    border-bottom: 3px solid #8b5e3c;
-    padding-bottom: 6px;
+  .masthead h1::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    background: #8b5e3c;
+    margin: 20px auto 0;
   }
-  .masthead .stats {
+  .masthead .summary {
     font-size: 14px;
     color: #6b6b6b;
+    margin-top: 20px;
   }
-  .masthead .stats strong {
+  .masthead .summary span {
     color: #8b5e3c;
     font-weight: 600;
   }
@@ -58,36 +64,36 @@
     background: #ffffff;
     border: 1px solid #e8e8e4;
     border-radius: 8px;
-    padding: 28px 26px;
-    margin-bottom: 28px;
+    padding: 30px 28px;
+    margin-bottom: 32px;
   }
-  .builder-head {
-    margin-bottom: 20px;
-    padding-bottom: 16px;
-    border-bottom: 1px dashed #ecece8;
+  .builder-header {
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #f0f0ec;
   }
   .builder-name {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 21px;
+    font-size: 20px;
     font-weight: 700;
     color: #1a1a1a;
+    margin: 0 0 3px;
   }
   .builder-handle {
     font-size: 14px;
     color: #2c6bae;
-    margin-left: 8px;
-    font-weight: 400;
+    text-decoration: none;
+    font-weight: 500;
   }
   .builder-bio {
-    font-size: 13.5px;
+    font-size: 13px;
     color: #6b6b6b;
-    margin-top: 6px;
+    margin-top: 10px;
     line-height: 1.6;
   }
   /* Tweet */
   .tweet {
-    padding: 18px 0;
-    border-bottom: 1px solid #f0f0ec;
+    padding: 20px 0;
+    border-bottom: 1px solid #f4f4f0;
   }
   .tweet:last-child {
     border-bottom: none;
@@ -96,705 +102,592 @@
   .tweet:first-of-type {
     padding-top: 4px;
   }
-  .tweet-body {
+  .tweet-en {
     border-left: 3px solid #e8e0d0;
     background: #fdfdfb;
+    padding: 12px 16px;
+    margin-bottom: 12px;
     border-radius: 0 6px 6px 0;
-    padding: 14px 18px;
-  }
-  .tweet-en {
     font-size: 14.5px;
-    color: #1a1a1a;
-    line-height: 1.68;
-    white-space: pre-line;
+    color: #333;
+    white-space: pre-wrap;
     word-break: break-word;
   }
   .tweet-zh {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.75;
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px dotted #e6e6e0;
-    white-space: pre-line;
+    font-size: 15px;
+    color: #1a1a1a;
+    white-space: pre-wrap;
     word-break: break-word;
+    margin-bottom: 12px;
   }
   .tweet-link {
-    display: inline-block;
-    margin-top: 12px;
     font-size: 12.5px;
     color: #2c6bae;
     text-decoration: none;
-    letter-spacing: 0.02em;
-  }
-  .tweet-link:hover {
-    text-decoration: underline;
-  }
-  a.inline-link {
-    color: #2c6bae;
-    text-decoration: none;
+    border-bottom: 1px dotted #b8cfe4;
     word-break: break-all;
   }
-  a.inline-link:hover {
-    text-decoration: underline;
+  .tweet-link:hover {
+    border-bottom-style: solid;
   }
   /* Podcast section */
   .podcast {
     background: #ffffff;
     border: 1px solid #e8e8e4;
     border-radius: 8px;
-    padding: 28px 26px;
-    margin-bottom: 28px;
+    padding: 30px 28px;
+    margin-bottom: 32px;
   }
   .podcast-label {
     font-size: 12px;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: #8b5e3c;
+    font-weight: 700;
     margin-bottom: 10px;
-    font-weight: 600;
+  }
+  .podcast-name {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 6px;
   }
   .podcast-title {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 18px;
+    font-size: 15px;
+    color: #6b6b6b;
+    margin-bottom: 20px;
   }
-  .podcast-point {
+  .podcast ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+  }
+  .podcast li {
     padding: 12px 0;
-    border-bottom: 1px dotted #ecece8;
+    border-bottom: 1px solid #f4f4f0;
+    font-size: 14.5px;
   }
-  .podcast-point:last-child { border-bottom: none; }
-  .podcast-point .en {
-    font-size: 14px;
-    color: #1a1a1a;
-    line-height: 1.65;
-  }
-  .podcast-point .zh {
+  .podcast li:last-child { border-bottom: none; }
+  .podcast li .en {
+    color: #6b6b6b;
     font-size: 13.5px;
-    color: #555;
-    line-height: 1.7;
-    margin-top: 6px;
+    display: block;
+    margin-bottom: 4px;
   }
   /* Footer */
   .footer {
     text-align: center;
-    margin-top: 56px;
-    padding-top: 28px;
-    border-top: 1px solid #e8e8e4;
     font-size: 13px;
     color: #6b6b6b;
-    letter-spacing: 0.04em;
+    padding-top: 32px;
+    border-top: 1px solid #e8e8e4;
+    margin-top: 24px;
   }
   @media (max-width: 600px) {
-    .container { padding: 40px 18px 60px; }
-    .masthead h1 { font-size: 34px; }
-    .builder { padding: 22px 18px; }
-    .builder-name { font-size: 19px; }
-    .tweet-body { padding: 12px 14px; }
-    .tweet-en { font-size: 14px; }
-    .tweet-zh { font-size: 13.5px; }
+    .container { padding: 36px 16px 56px; }
+    .masthead h1 { font-size: 38px; }
+    .builder, .podcast { padding: 22px 18px; }
+    .builder-name { font-size: 18px; }
+    .tweet-en { font-size: 13.5px; }
+    .tweet-zh { font-size: 14.5px; }
   }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- Masthead -->
   <header class="masthead">
-    <div class="date">2026年09月29日 星期二</div>
-    <h1><span>AI 日报</span></h1>
-    <div class="stats">
-      今日收录 <strong>18</strong> 位 Builder · <strong>35</strong> 条动态 · 主题聚焦 <strong>Sonnet 5.5</strong> 与 <strong>OpenAI DevDay</strong>
-    </div>
+    <div class="date">2026年09月30日 星期三</div>
+    <h1>AI 日报</h1>
+    <div class="summary">本期收录 <span>15</span> 位 Builder · <span>35</span> 条动态</div>
   </header>
 
   <!-- Swyx -->
   <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Swyx</span><span class="builder-handle">@swyx</span></div>
-      <div class="builder-bio">以刻意、强度、正直与疯狂去实现抱负。关联项目：@smol_ai · @dxtipshq · @cognitio</div>
+    <div class="builder-header">
+      <h2 class="builder-name">Swyx</h2>
+      <a class="builder-handle" href="https://x.com/swyx" target="_blank">@swyx</a>
+      <div class="builder-bio">带着目的性、强度、正直与疯狂去实现抱负。｜关联：@smol_ai · @dxtipshq · @cognitio</div>
     </div>
+
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">oai designers have to be trolling us</div>
-        <div class="tweet-zh">OpenAI 的设计师肯定是在拿我们开涮。</div>
-        <a class="tweet-link" href="https://x.com/swyx/status/2104741800393253322" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+      <div class="tweet-en">annual ranking of best ai podcasts just dropped https://t.co/qEQBCutMcU</div>
+      <div class="tweet-zh">年度最佳 AI 播客排行榜刚刚发布。</div>
+      <a class="tweet-link" href="https://x.com/swyx/status/2105057391490498660" target="_blank">x.com/swyx/status/2105057391490498660</a>
     </div>
-  </article>
 
-  <!-- Josh Woodward -->
-  <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Josh Woodward</span><span class="builder-handle">@joshwoodward</span></div>
-      <div class="builder-bio">副总裁，负责 @Google · @GoogleLabs · @GeminiApp · @GoogleAIStudio</div>
-    </div>
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">Having just come back from Yosemite recently, this is awesome!</div>
-        <div class="tweet-zh">最近刚去过优胜美地，这个太赞了！</div>
-        <a class="tweet-link" href="https://x.com/joshwoodward/status/2104616392297451882" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+      <div class="tweet-en">for friends of @latentspacepod we are gonna be asking all your burning Dots, Sol 6.1, CUA, and Decisions API questions for @AriX and @nikunjhanda at the gateway pavilion on a few mins, come by!</div>
+      <div class="tweet-zh">@latentspacepod 的朋友们，我们马上会在 Gateway Pavilion 向 @AriX 和 @nikunjhanda 抛出你们所有关于 Dots、Sol 6.1、CUA 和 Decisions API 的尖锐问题，快来！</div>
+      <a class="tweet-link" href="https://x.com/swyx/status/2105000738745376769" target="_blank">x.com/swyx/status/2105000738745376769</a>
     </div>
-  </article>
 
-  <!-- Boris Cherny -->
-  <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Boris Cherny</span><span class="builder-handle">@bcherny</span></div>
-      <div class="builder-bio">Claude Code @anthropicai</div>
-    </div>
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">Sonnet 5.5 fixing a bug with Claude Code.
+      <div class="tweet-en">i have the best reply guys
 
-30% faster and 30% less usage.</div>
-        <div class="tweet-zh">Sonnet 5.5 用 Claude Code 修一个 bug。
-
-速度快了 30%，用量少了 30%。</div>
-        <a class="tweet-link" href="https://x.com/bcherny/status/2104638725317923228" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+https://t.co/ZmdjBKsWaP</div>
+      <div class="tweet-zh">我有一群最棒的评论区达人。</div>
+      <a class="tweet-link" href="https://x.com/swyx/status/2104984576703844750" target="_blank">x.com/swyx/status/2104984576703844750</a>
     </div>
   </article>
 
   <!-- Thibault Sottiaux -->
   <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Thibault Sottiaux</span><span class="builder-handle">@thsottiaux</span></div>
+    <div class="builder-header">
+      <h2 class="builder-name">Thibault Sottiaux</h2>
+      <a class="builder-handle" href="https://x.com/thsottiaux" target="_blank">@thsottiaux</a>
       <div class="builder-bio">Codex &amp; ChatGPT @OpenAI</div>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">Hi,
-
-Tomorrow we are re-opening the Pro $200 subscriptions to new subscribers, but together with it we are also changing how we calculate the usage for it. In effect, if you do the math, it will net out at half the dollar in API spend compared to the old Pro $200 plan.
-
-Now that it's said, let me explain why this is happening and why you will still get more work done than if you were on the Pro $200 subscription one month ago.
-
-(a) We didn't want to compromise in other ways and are committing to not reintroducing the 5h limit, so that you can fully use the weekly usage when you want.
-(b) On the subscription, we guarantee that over time you always get more work done and with an increasing level of quality. This means that you will continue to get more value per dollar spent as a result of models getting more efficient and us passing down the improvements in the form of API price reductions.
-(c) We don't want to put an incentive on ourselves to artificially inflate the API list prices to make it look like you are getting a lot (and workaround it through discounts, etc). Instead we want to continue to both rapidly reduce prices and increase capabilities of models on the API. This week we introduced GPT-6 Sol and GPT-6 Luna at 50% of their previous price. Over time, we see prices go low enough that it makes sense for most to buy usage as needed without there being a significant gap between what you get in a subscription and what you get in the API for a dollar spent.
-(d) Tomorrow, we are adding more things to the subscription that won't draw on the usage, I won't reveal what that is yet.
-
-I wanted to be transparent before all the big announcements tomorrow. Lots of new exciting things are coming to the subscriptions that will make it super compelling, but I wanted to make sure to share this change ahead of time so you can all understand it before we shower you with good news.
-
-Codexingly,
-Tibo</div>
-        <div class="tweet-zh">大家好，
-
-明天我们将重新向新用户开放 Pro $200 订阅，但同时我们也会调整它的用量计算方式。实际上，如果你算一下账，它最终折算出的 API 消费金额大约是旧版 Pro $200 方案的一半。
-
-话已说在前头，接下来我解释一下为什么会这样，以及为什么你仍然会比一个月前用 Pro $200 时完成更多工作。
-
-(a) 我们不想在其他方面做妥协，并承诺不会重新引入 5 小时限制，这样你就能在自己需要的时候充分使用每周额度。
-(b) 对于订阅用户，我们保证随时间推移，你总能完成更多工作，并且质量不断提升。这意味着随着模型效率提高、我们把改进以 API 降价的形式传递下去，你每一美元投入所获得的价值会持续增加。
-(c) 我们不希望给自己制造一种动机——去人为抬高 API 标价，让它看起来你得到了很多（再通过折扣等方式绕过去）。相反，我们希望继续在 API 上快速降价并提升模型能力。本周我们发布了 GPT-6 Sol 和 GPT-6 Luna，价格只有之前的一半。长期来看，我们会看到价格低到让大多数人按需购买用量变得合理，订阅与 API 之间每一美元所获得的价值差距不再显著。
-(d) 明天我们会在订阅里加入更多不消耗用量的内容，具体是什么我暂时不透露。
-
-我想在明天所有重大发布之前先做到透明。订阅即将迎来大量令人兴奋的新东西，会非常有吸引力，但我希望提前分享这一变化，让大家在我们抛出好消息之前先理解它。
-
-以 Codex 之名，
-Tibo</div>
-        <a class="tweet-link" href="https://x.com/thsottiaux/status/2104823812042940713" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+      <div class="tweet-en">What's up dot</div>
+      <div class="tweet-zh">你好呀，dot。</div>
+      <a class="tweet-link" href="https://x.com/thsottiaux/status/2105178959327756396" target="_blank">x.com/thsottiaux/status/2105178959327756396</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">Taken by none other than the incredible @ah20im</div>
-        <div class="tweet-zh">由了不起的 @ah20im 亲自拍摄。</div>
-        <a class="tweet-link" href="https://x.com/thsottiaux/status/2104467346945675347" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+      <div class="tweet-en">We will have a few million dots online within days, working on all sorts of things across such a diverse and large community.
+
+Excited to learn from all of you on what you love and what doesn't yet feel magical. Personally I felt a jump after 2-3 days of use after teaching it more about my preferences and things on my mind. It learns very quickly to be most useful and it can take on surprisingly ambitious tasks on its own.
+
+We're learning from how you all use your primary dot before releasing the ability to create an entire team of them.</div>
+      <div class="tweet-zh">几天之内我们就会有数百万个 dot 上线，在如此多元、庞大的社区里处理各种各样的事情。
+
+非常期待从大家那里了解你们喜欢什么、什么还不够"神奇"。就我个人而言，在用了两三天、把我更多的偏好和想法教给它之后，我感受到了一次明显的跃升。它学得非常快，能变得非常有用，而且可以独立承担出人意料地宏大的任务。
+
+我们正在学习大家如何使用自己的主 dot，之后才会放出创建一整支 dot 团队的能力。</div>
+      <a class="tweet-link" href="https://x.com/thsottiaux/status/2105105086506840421" target="_blank">x.com/thsottiaux/status/2105105086506840421</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">Sunday vibes. See you at Fort Mason soon</div>
-        <div class="tweet-zh">周日的氛围。很快在 Fort Mason 见。</div>
-        <a class="tweet-link" href="https://x.com/thsottiaux/status/2104465709384491519" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+      <div class="tweet-en">It was so nice to connect with so many of you in person at DevDay. Immaculate vibes from the crowd and fun to see so many build things throughout the day.</div>
+      <div class="tweet-zh">在 DevDay 能和大家面对面交流真是太棒了。现场氛围无可挑剔，看到这么多人一整天都在动手做东西，非常有意思。</div>
+      <a class="tweet-link" href="https://x.com/thsottiaux/status/2105102820706058498" target="_blank">x.com/thsottiaux/status/2105102820706058498</a>
     </div>
   </article>
 
   <!-- Peter Yang -->
   <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Peter Yang</span><span class="builder-handle">@petergyang</span></div>
-      <div class="builder-bio">为忙碌的人提供实用的 AI 教程与访谈 | 在 <a class="inline-link" href="https://t.co/6VAA6p81x6" target="_blank" rel="noopener">链接</a> 获取我最好的 AI 技巧与指南</div>
+    <div class="builder-header">
+      <h2 class="builder-name">Peter Yang</h2>
+      <a class="builder-handle" href="https://x.com/petergyang" target="_blank">@petergyang</a>
+      <div class="builder-bio">为忙碌人群打造的实用 AI 教程与访谈｜在 petergyang 获取我最好的 AI 技巧与指南</div>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">Folks on X are so fickle about "omg openai is getting mogged by Claude 5.5" or just a few months ago "anthropic is so cooked by codex."
+      <div class="tweet-en">Wow I had no idea this toggle exists
 
-I'm just glad there are 2 (and soon more) competitors pushing the frontier so we can all benefit.</div>
-        <div class="tweet-zh">X 上的人真是善变，一会儿说“天呐 OpenAI 被 Claude 5.5 碾压了”，几个月前又说“Anthropic 被 Codex 干趴了”。
+Going to try this now I hate the ai slop shorts on YouTube</div>
+      <div class="tweet-zh">哇，我完全不知道还有这个开关。
 
-我只是很高兴有 2 家（很快会更多）竞争对手在推动前沿，这样我们都能受益。</div>
-        <a class="tweet-link" href="https://x.com/petergyang/status/2104809410040336784" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+马上就去试，我实在受不了 YouTube 上那些 AI 垃圾短视频了。</div>
+      <a class="tweet-link" href="https://x.com/petergyang/status/2105127506701644024" target="_blank">x.com/petergyang/status/2105127506701644024</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">My very first @OpenAI dev day is tomorrow.
+      <div class="tweet-en">I had so much fun at @OpenAI Dev Day despite not attending a single session other than the keynotes
 
-If you're going I hope to see you there!</div>
-        <div class="tweet-zh">明天是我第一次参加 @OpenAI 的 DevDay。
+Instead, I spent the day catching up with some great folks, so I'm going to embarass some of them now:
 
-如果你也去，希望能在那里见到你！</div>
-        <a class="tweet-link" href="https://x.com/petergyang/status/2104781373433377030" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+1. @lennysan the nicest most humble successful person I've had the pleasure of being friends with
+
+2. @bb_fresh the comedy legend, search "krazam microservices" on YouTube for a laugh. My dream is to appear in one of Ben's sketches as the PM.
+
+3. @danshipper the vibe checks are legendary
+
+4. @bentossell the tall Welsh gentleman in pink - has an amazing newsletter in Ben's Bites
+
+5. @thenanyu the man who brings taste and craft to everything he touches from Linear to OpenAI
+
+6. @illscience my favorite a16z partner that I've met (because @joshelman still hasn't met me in person)
+
+7. @fishmanaf a great product leader but more importantly the most buff dad ever
+
+8. @tomkrcha the founder behind @pendev one of my favorite AI design tools
+
+9. @victornunez who still makes time to answer my dumb DMs at 11 pm despite working at OpenAI and having 3 kids</div>
+      <div class="tweet-zh">虽然除了主题演讲一场分会都没参加，但我在 @OpenAI Dev Day 玩得非常开心。
+
+我把一整天都用来和一些很棒的人叙旧，所以现在要"出卖"他们一下：
+
+1. @lennysan —— 我最有幸结交的朋友，最友善、最谦逊的成功人士。
+
+2. @bb_fresh —— 喜剧传奇，在 YouTube 搜 "krazam microservices" 就能笑出声。我的梦想是在 Ben 的短剧里出演那个 PM。
+
+3. @danshipper —— 他的 vibe check 堪称传奇。
+
+4. @bentossell —— 穿粉色衣服的高个子威尔士绅士，在 Ben's Bites 有一份超棒的 newsletter。
+
+5. @thenanyu —— 从 Linear 到 OpenAI，他经手的每样东西都带着品味与匠心。
+
+6. @illscience —— 我见过的最喜欢的 a16z 合伙人（因为 @joshelman 至今还没跟我线下见过面）。
+
+7. @fishmanaf —— 出色的产品负责人，但更重要的是史上最强壮的爸爸。
+
+8. @tomkrcha —— @pendev 背后的创始人，那是我最喜欢的 AI 设计工具之一。
+
+9. @victornunez —— 尽管在 OpenAI 工作、还带着 3 个孩子，他仍然会在晚上 11 点抽空回我那些蠢私信。</div>
+      <a class="tweet-link" href="https://x.com/petergyang/status/2105114973819244676" target="_blank">x.com/petergyang/status/2105114973819244676</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">I built a working StarCraft level with Sonnet 5.5.
-
-You play Terran, defending your base against the Zerg:
-
-→ Build Marines, Siege Tanks, and Battlecruisers
-→ Use SC2 models from Sketchfab (by Catholomew)
-→ Music generated with Suno
-
-Play it here: https://t.co/U9QI2VD3HQ
-
-Sonnet also made the sizzle reel below. Check out my latest tutorial on Sonnet here: https://t.co/yH28RpYWH2</div>
-        <div class="tweet-zh">我用 Sonnet 5.5 做出了一个可玩的《星际争霸》关卡。
-
-你扮演人族，抵御虫族进攻、守卫基地：
-
-→ 建造陆战队员、攻城坦克和战列巡航舰
-→ 使用来自 Sketchfab 的 SC2 模型（作者 Catholomew）
-→ 音乐由 Suno 生成
-
-在这里试玩：https://t.co/U9QI2VD3HQ
-
-下面的宣传短片也是 Sonnet 做的。查看我最新的 Sonnet 教程：https://t.co/yH28RpYWH2</div>
-        <a class="tweet-link" href="https://x.com/petergyang/status/2104736498151256303" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+      <div class="tweet-en">@nealmohan how about letting users (or at least parents) opt out of shorts entirely</div>
+      <div class="tweet-zh">@nealmohan 不如让用户（或者至少让家长）能完全屏蔽短视频？</div>
+      <a class="tweet-link" href="https://x.com/petergyang/status/2105097073448407083" target="_blank">x.com/petergyang/status/2105097073448407083</a>
     </div>
   </article>
 
-  <!-- Cat Wu -->
+  <!-- Nan Yu -->
   <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Cat Wu</span><span class="builder-handle">@_catwu</span></div>
-      <div class="builder-bio">claude code + cowork @anthropicai，此前就职于 @dagster、@scale_ai</div>
+    <div class="builder-header">
+      <h2 class="builder-name">Nan Yu</h2>
+      <a class="builder-handle" href="https://x.com/thenanyu" target="_blank">@thenanyu</a>
+      <div class="builder-bio">产品、Codex @OpenAI｜前 @Linear 产品负责人</div>
     </div>
+
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">Sonnet 5.5 is here! In Claude Code, users get ~30% more tasks done compared to Sonnet 5. It's smarter, so it needs fewer tokens for the same work.
+      <div class="tweet-en">New benchmark to climb</div>
+      <div class="tweet-zh">又有一个新的基准要去攀登了。</div>
+      <a class="tweet-link" href="https://x.com/thenanyu/status/2105154553327026643" target="_blank">x.com/thenanyu/status/2105154553327026643</a>
+    </div>
 
-Here it rakes a yard of leaves using tool calls. 24s faster than Sonnet 5, with 6K fewer tokens. It leaves her extra time to read :)</div>
-        <div class="tweet-zh">Sonnet 5.5 来了！在 Claude Code 中，用户完成的任务量比 Sonnet 5 多约 30%。它更聪明，因此做同样的工作需要的 token 更少。
-
-这里它通过工具调用把一院子落叶耙干净。比 Sonnet 5 快 24 秒，少用 6K token。这样她就多出时间看书了 :)</div>
-        <a class="tweet-link" href="https://x.com/_catwu/status/2104639552170377399" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+    <div class="tweet">
+      <div class="tweet-en">https://t.co/SskpMm0usL</div>
+      <div class="tweet-zh">（附链接，详见原推。）</div>
+      <a class="tweet-link" href="https://x.com/thenanyu/status/2105049816388755620" target="_blank">x.com/thenanyu/status/2105049816388755620</a>
     </div>
   </article>
 
   <!-- Thariq -->
   <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Thariq</span><span class="builder-handle">@trq212</span></div>
-      <div class="builder-bio">Claude Code @anthropicai。此前 YC W20、@spc、@medialab</div>
+    <div class="builder-header">
+      <h2 class="builder-name">Thariq</h2>
+      <a class="builder-handle" href="https://x.com/trq212" target="_blank">@trq212</a>
+      <div class="builder-bio">Claude Code @Anthropic｜前 YC W20、@spc、@medialab</div>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">I just told Claude "can you help me think through this problem step by step"</div>
-        <div class="tweet-zh">我刚对 Claude 说：“你能帮我一步步梳理这个问题吗？”</div>
-        <a class="tweet-link" href="https://x.com/trq212/status/2104702728270471594" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+      <div class="tweet-en">from our blog post on how we made Claude faster:</div>
+      <div class="tweet-zh">摘自我们关于"如何让 Claude 更快"的博客文章：</div>
+      <a class="tweet-link" href="https://x.com/trq212/status/2105065175711924492" target="_blank">x.com/trq212/status/2105065175711924492</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">A lot of times when I talk about higher level abstractions like projects, claude tag and dynamic workflows, I hear concerns about token cost.
+      <div class="tweet-en">have you tried telling Claude "we have the power to do anything, please be braver"
 
-With Sonnet + Opus 5.5 I think this sort intelligence is should be very available.
+also, have you tried telling yourself</div>
+      <div class="tweet-zh">你有没有试过对 Claude 说："我们拥有做任何事的能力，请再勇敢一点。"
 
-Try Sonnet 5.5 in particular when making workflows.</div>
-        <div class="tweet-zh">很多时候，当我谈到 projects、claude tag、动态工作流这类更高级的抽象时，都会听到关于 token 成本的担忧。
-
-有了 Sonnet + Opus 5.5，我认为这种智能应该变得非常普及。
-
-尤其是在构建工作流时，试试 Sonnet 5.5。</div>
-        <a class="tweet-link" href="https://x.com/trq212/status/2104660926373023830" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+另外，你有没有试过对自己这么说？</div>
+      <a class="tweet-link" href="https://x.com/trq212/status/2105065127892734076" target="_blank">x.com/trq212/status/2105065127892734076</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">it's basically impossible for someone to just "show you their prompt" now, because everything is about references, skills and examples
+      <div class="tweet-en">See it here: https://t.co/mmgZgbCjFe</div>
+      <div class="tweet-zh">在这里查看：</div>
+      <a class="tweet-link" href="https://x.com/trq212/status/2104983042536460435" target="_blank">x.com/trq212/status/2104983042536460435</a>
+    </div>
+  </article>
 
-I often ask my agent to look at 3 other repos I've made first, search the web for references, use other AI APIs, etc.</div>
-        <div class="tweet-zh">现在基本上不可能有人能直接“把他的 prompt 给你看”，因为一切都围绕引用、技能和示例。
+  <!-- Amjad Masad -->
+  <article class="builder">
+    <div class="builder-header">
+      <h2 class="builder-name">Amjad Masad</h2>
+      <a class="builder-handle" href="https://x.com/amasad" target="_blank">@amasad</a>
+      <div class="builder-bio">@Replit CEO｜文明主义者</div>
+    </div>
 
-我经常让我的 agent 先看我做的另外 3 个仓库、上网搜参考资料、调用其他 AI API 等等。</div>
-        <a class="tweet-link" href="https://x.com/trq212/status/2104608785696440510" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+    <div class="tweet">
+      <div class="tweet-en">How to design and build a harness to reach frontier performance at a fraction of the cost!</div>
+      <div class="tweet-zh">如何设计并构建一个 harness，用极低的成本达到前沿水平的性能！</div>
+      <a class="tweet-link" href="https://x.com/amasad/status/2104996638817386820" target="_blank">x.com/amasad/status/2104996638817386820</a>
     </div>
   </article>
 
   <!-- Guillermo Rauch -->
   <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Guillermo Rauch</span><span class="builder-handle">@rauchg</span></div>
-      <div class="builder-bio">@vercel CEO</div>
+    <div class="builder-header">
+      <h2 class="builder-name">Guillermo Rauch</h2>
+      <a class="builder-handle" href="https://x.com/rauchg" target="_blank">@rauchg</a>
+      <div class="builder-bio">@Vercel CEO</div>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">You can now search @vercel domains without auth.
-Especially great if you're an agent.</div>
-        <div class="tweet-zh">现在无需登录即可搜索 @vercel 域名。
-如果你是一个 agent，这尤其好用。</div>
-        <a class="tweet-link" href="https://x.com/rauchg/status/2104764419305796094" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+      <div class="tweet-en">Plotted: the inverse correlation between product defects and downloads. h/t @anthonysheww</div>
+      <div class="tweet-zh">画了张图：产品缺陷数量与下载量之间的负相关关系。感谢 @anthonysheww。</div>
+      <a class="tweet-link" href="https://x.com/rauchg/status/2105053919642829001" target="_blank">x.com/rauchg/status/2105053919642829001</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">Nice viz by @marcosnils: https://t.co/ztIcLnG8ay
-Choose ▲ if you want to win.
-You know what to choose if you want third place!</div>
-        <div class="tweet-zh">@marcosnils 做了一张不错的可视化图：https://t.co/ztIcLnG8ay
-想赢就选 ▲。
-想拿第三名的话，你知道该选什么！</div>
-        <a class="tweet-link" href="https://x.com/rauchg/status/2104686719685853226" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+      <div class="tweet-en">AI SDK has hit 30M weekly downloads.
+
+One-shotted this video in fframes + https://t.co/3Z4NESzNKd + opus. I asked to look at https://t.co/dnlawxpWR6 and highlight the 5M/10M/20M/30M milestones.
+
+Yes, this video was written in Rust and rendered on the GPU. h/t @neogoose_btw</div>
+      <div class="tweet-zh">AI SDK 的周下载量已突破 3000 万。
+
+我用 fframes + 链接 + Opus 一次成片做出了这个视频。我让它去看那份数据，并标出 500 万 / 1000 万 / 2000 万 / 3000 万这几个里程碑。
+
+没错，这个视频是用 Rust 编写、在 GPU 上渲染的。感谢 @neogoose_btw。</div>
+      <a class="tweet-link" href="https://x.com/rauchg/status/2105043144975011982" target="_blank">x.com/rauchg/status/2105043144975011982</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">We migrated https://t.co/ftag8z6AlW with as little intervention as possible, setting out to prove just how much faster @vercel is. ~70% faster builds and ~75% faster paints.
-
-We derived two AI skills from the migration that we'll be sharing back. It was a mature workload with a lot of "$formerProvider-isms", and yet the net of the work was done in under a week.
-
-If it's [built / rendered / shipped] fast, it's on Vercel.</div>
-        <div class="tweet-zh">我们以尽可能少的干预迁移了 https://t.co/ftag8z6AlW，目的是证明 @vercel 到底快多少。构建快了约 70%，渲染快了约 75%。
-
-我们从这次迁移中提炼出两项 AI 技能，之后会分享出来。这是一个成熟的工作负载，带着大量“前供应商特色”，但整个工作净耗时不到一周。
-
-如果它构建/渲染/交付得快，那它就跑在 Vercel 上。</div>
-        <a class="tweet-link" href="https://x.com/rauchg/status/2104660502723072281" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
-    </div>
-  </article>
-
-  <!-- Alex Albert -->
-  <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Alex Albert</span><span class="builder-handle">@alexalbert__</span></div>
-      <div class="builder-bio">Research @AnthropicAI。观点仅代表个人！</div>
-    </div>
-    <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">Sonnet 5.5 has the same feel I liked about Opus 5.5. It writes clearly, it's very fast, and it's a major capabilities jump over Sonnet 5. Really great model to iterate with.</div>
-        <div class="tweet-zh">Sonnet 5.5 有着我在 Opus 5.5 上喜欢的同一种感觉。它表达清晰、速度极快，相比 Sonnet 5 是一次重大能力跃升。非常适合用来迭代。</div>
-        <a class="tweet-link" href="https://x.com/alexalbert__/status/2104633937280811010" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+      <div class="tweet-en">You can just ship things
+(and wallow in cartographic filigree)</div>
+      <div class="tweet-zh">你大可以直接发布东西。
+（顺便沉浸在制图般的华丽装饰里。）</div>
+      <a class="tweet-link" href="https://x.com/rauchg/status/2105012176952164777" target="_blank">x.com/rauchg/status/2105012176952164777</a>
     </div>
   </article>
 
   <!-- Aaron Levie -->
   <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Aaron Levie</span><span class="builder-handle">@levie</span></div>
-      <div class="builder-bio">ceo @box —— 你的业务存在于内容之中，用 AI 释放它</div>
-    </div>
-    <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">At Box, we've been testing Sonnet 5.5 in early access on our complex work eval with the Box Agent, and Sonnet 5.5 is another strong jump from Sonnet 5 on knowledge work with enterprise content.
-
-Across the board we saw a 4 pt overall improvement on our hardest tests, but it was roughly 2.4× faster to a finished deliverable on 12% fewer tokens. We also saw major wins in key verticals, like a +18 percentage point improvement in Financial Services, +7 pt in Legal, +8 pt in Life Sciences, and +7 pt in the Public Sector.
-
-Here are some specific wins on certain tasks that show the power of Sonnet 5.5:
-
-* Financial services (+48 points): a due-diligence review of a trading-tool acquisition, where the deal book's arithmetic doesn't hold up. Sonnet 5.5 caught the miscalculated interest totals and the mispriced options and flagged them, and it also finished this work about 61% faster.
-
-* Legal (+14 points): a commercial lease review. Sonnet 5.5 refused to invent a "standard" market benchmark for renewal terms and notice periods, and instead flagged what the lease was genuinely missing.
-
-* Life sciences (+22 points): writing up a field trial from the raw measurement data. Sonnet 5.5 got the sample standard deviations right across both treatment groups. Sonnet 5 missed nearly all of them. And Sonnet 5.5 did it about 41% faster.
-
-* Public sector (+11 points): a report on a math intervention program. Sonnet 5.5 pulled the right student progress-monitoring figures out of the underlying data, about 71% faster.
-
-Customers will be able to build AI agents with Sonnet 5.5 in the Box AI Studio shortly.</div>
-        <div class="tweet-zh">在 Box，我们一直在用 Box Agent 对我们的复杂工作评测进行 Sonnet 5.5 的早期访问测试，Sonnet 5.5 在企业内容的知识工作上，相比 Sonnet 5 又是一次强劲跃升。
-
-总体来看，我们最难的测试上整体提升了 4 个百分点，但完成一份交付物大约快了 2.4 倍，token 用量还少了 12%。我们在关键垂直领域也看到重大进展，比如金融服务提升 18 个百分点、法律 +7 个百分点、生命科学 +8 个百分点、公共部门 +7 个百分点。
-
-以下是一些具体任务上的胜利，展现了 Sonnet 5.5 的实力：
-
-* 金融服务（+48 分）：对一起交易工具收购做尽职调查，交易文件中的算术站不住脚。Sonnet 5.5 抓出了计算错误的利息总额和定价错误的期权并加以标记，完成这项工作还快了约 61%。
-
-* 法律（+14 分）：审阅一份商业租约。Sonnet 5.5 拒绝为续约条款和通知期凭空编造一个“标准”市场基准，而是指出了租约真正缺失的内容。
-
-* 生命科学（+22 分）：根据原始测量数据撰写一份田间试验报告。Sonnet 5.5 正确算出了两个处理组的样本标准差。Sonnet 5 几乎全错。而且 Sonnet 5.5 完成速度快了约 41%。
-
-* 公共部门（+11 分）：一份关于数学干预项目的报告。Sonnet 5.5 从底层数据中提取出正确的学生进度监测数字，快了约 71%。
-
-客户很快就能在 Box AI Studio 中用 Sonnet 5.5 构建 AI agent。</div>
-        <a class="tweet-link" href="https://x.com/levie/status/2104648654074343480" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
-    </div>
-  </article>
-
-  <!-- Ryo Lu -->
-  <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Ryo Lu</span><span class="builder-handle">@ryolu_</span></div>
-      <div class="builder-bio">设计过 @Cursor_ai、@NotionHQ、@Stripe，创办过创业公司。我在打造一个人人皆可做软件的世界。K-pop 爱好者。</div>
+    <div class="builder-header">
+      <h2 class="builder-name">Aaron Levie</h2>
+      <a class="builder-handle" href="https://x.com/levie" target="_blank">@levie</a>
+      <div class="builder-bio">@Box CEO —— 你的业务存在于内容之中，用 AI 释放它</div>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">try it in all cities with youbike in taiwan
+      <div class="tweet-en">It's entirely plausible that the AI industry can deal with safety and security through a set of shared standards and practices for the foreseeable future.
 
-docks, navigation, live turn-by-turn directions with voice
-https://t.co/YMBxkDIsfO</div>
-        <div class="tweet-zh">在台湾所有有 YouBike 的城市都试试吧。
+At some point in capability progress there will inevitably be greater oversight, testing, and layers of liability and regulation, but we are still in a phase where the industry can absolutely align on these efforts collectively.
 
-站点、导航、带语音的实时逐向指引
-https://t.co/YMBxkDIsfO</div>
-        <a class="tweet-link" href="https://x.com/ryolu_/status/2104546903807660224" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
-    </div>
+Awesome to see this come together so quickly and for the whole industry to support progress without reducing competition. This certainly points to a much brighter future for AI.</div>
+      <div class="tweet-zh">在可预见的未来，AI 行业完全有可能通过一套共享的标准与实践来应对安全与安保问题。
 
-    <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">what i've been doing:
-i love youbike</div>
-        <div class="tweet-zh">我最近在忙的事：
-我爱 YouBike</div>
-        <a class="tweet-link" href="https://x.com/ryolu_/status/2104546417281020315" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+随着能力不断进步，终有一天会出现更强的监督、测试，以及层层叠叠的责任与监管——但我们目前仍处于这样一个阶段：整个行业完全可以集体就这些努力达成一致。
+
+很高兴看到这件事这么快就成形，也高兴看到整个行业在支持进步的同时不削弱竞争。这无疑指向一个更光明的 AI 未来。</div>
+      <a class="tweet-link" href="https://x.com/levie/status/2105111520913039530" target="_blank">x.com/levie/status/2105111520913039530</a>
     </div>
   </article>
 
   <!-- Garry Tan -->
   <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Garry Tan</span><span class="builder-handle">@garrytan</span></div>
-      <div class="builder-bio">@ycombinator 总裁兼 CEO —— @garryslist 创始人 —— GStack 与 GBrain 创造者 —— 帮助创始人的设计师/工程师 —— 旧金山民主党人</div>
+    <div class="builder-header">
+      <h2 class="builder-name">Garry Tan</h2>
+      <a class="builder-handle" href="https://x.com/garrytan" target="_blank">@garrytan</a>
+      <div class="builder-bio">@YCombinator 总裁兼 CEO｜@garryslist 创始人｜GStack 与 GBrain 创造者｜帮助创始人的设计师 / 工程师｜旧金山民主党人</div>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">Codegen meets WhatsApp actually makes a ton of sense</div>
-        <div class="tweet-zh">代码生成遇上 WhatsApp，其实非常合理。</div>
-        <a class="tweet-link" href="https://x.com/garrytan/status/2104771351009702168" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
-    </div>
+      <div class="tweet-en">Just merged a version of OpenClaw's test-audit skill into GStack. Test bloat is a real problem.
 
-    <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">Karma isn't a thing that happens, it's a choice you can make now</div>
-        <div class="tweet-zh">因果报应不是发生在你身上的事，而是你现在就能做出的选择。</div>
-        <a class="tweet-link" href="https://x.com/garrytan/status/2104559514699837634" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+Luckily intelligence is on tap these days!</div>
+      <div class="tweet-zh">刚把 OpenClaw 的 test-audit 技能的一个版本合并进了 GStack。测试膨胀是个真实存在的问题。
+
+好在如今智能唾手可得！</div>
+      <a class="tweet-link" href="https://x.com/garrytan/status/2105049005147525231" target="_blank">x.com/garrytan/status/2105049005147525231</a>
     </div>
   </article>
 
   <!-- Zara Zhang -->
   <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Zara Zhang</span><span class="builder-handle">@zarazhangrui</span></div>
-      <div class="builder-bio">Builder。先做出人们想要的东西，再让人们想要它。哈佛'17。GitHub：<a class="inline-link" href="https://t.co/KCuEajezlL" target="_blank" rel="noopener">链接</a></div>
+    <div class="builder-header">
+      <h2 class="builder-name">Zara Zhang</h2>
+      <a class="builder-handle" href="https://x.com/zarazhangrui" target="_blank">@zarazhangrui</a>
+      <div class="builder-bio">Builder。做出人们想要的东西，再让人们想要它。哈佛'17。</div>
     </div>
+
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">Hello, I'm looking to chat with some of my followers!
-If you're
-- building web-based/frontend experiences with AI but have a hard time making it look beautiful/not AI slop
-- seeing all these cool demos on X built with latest models but have no idea how to replicate them
-- are creating these cool demos yourself and would like to share your creation process/tips
-Would love to have a chat; DM me or comment below!</div>
-        <div class="tweet-zh">大家好，我想和部分关注者聊一聊！
-如果你是——
-- 用 AI 构建网页/前端体验，但很难让它看起来漂亮、不像是 AI 生成的垃圾
-- 在 X 上看到各种用最新模型做出的炫酷 demo，但完全不知道怎么复现
-- 自己就在做这些炫酷 demo，并愿意分享创作过程/心得
-很想和你聊聊；私信我或在下方评论！</div>
-        <a class="tweet-link" href="https://x.com/zarazhangrui/status/2104689580045979811" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+      <div class="tweet-en">I made a marketing website for my water bottle
+
+The whole thing was done by Opus 5.5 (6 prompts); it used:
+- Elevenlabs to generate the music
+- Meshy to generate the 3D assets
+- OpenAI API to generate images
+(sound on)</div>
+      <div class="tweet-zh">我给我的水壶做了一个营销网站。
+
+整件事都由 Opus 5.5 完成（6 个提示词搞定）；它用了：
+- Elevenlabs 生成音乐
+- Meshy 生成 3D 素材
+- OpenAI API 生成图片
+（建议开声音观看）</div>
+      <a class="tweet-link" href="https://x.com/zarazhangrui/status/2105096296831017078" target="_blank">x.com/zarazhangrui/status/2105096296831017078</a>
     </div>
   </article>
 
   <!-- Nikunj Kothari -->
   <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Nikunj Kothari</span><span class="builder-handle">@nikunj</span></div>
-      <div class="builder-bio">@fpvventures 合伙人 —— 投资种子轮/A 轮。此前是 @meter、@opendoor、@atlassian 等公司的早期成员。</div>
+    <div class="builder-header">
+      <h2 class="builder-name">Nikunj Kothari</h2>
+      <a class="builder-handle" href="https://x.com/nikunj" target="_blank">@nikunj</a>
+      <div class="builder-bio">@fpvventures 合伙人 —— 投资种子轮 / A 轮。曾任 @Meter、@Opendoor、@Atlassian 等公司早期成员。爱 @shimoleej。</div>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">If you prefer video, this was one shot by Opus 5.5</div>
-        <div class="tweet-zh">如果你更喜欢视频，这条是 Opus 5.5 一次成型的。</div>
-        <a class="tweet-link" href="https://x.com/nikunj/status/2104758141128974358" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+      <div class="tweet-en">Two random honest thoughts on the market right now..
+
+First is on people: It's harder than ever to find missionaries. I'm seeing people leave the companies they have cofounded to join the "obvious" winners. Public CEOs are leaving for positions at labs. Founders leaving and rejoining neolabs at a moment's notice. Companies getting Windsurf-ed where only the choice people are getting to join the future company. Founders raising tranched valuations without worrying about the next employee that will join them will have 409As that make early exercising impossible.
+
+As early stage VCs, we are often just betting on people. And, when those people leave on a dime's notice, then the remaining company (usually) becomes a shell. It seems like a great time to be a mercenary, and everyone feels like one even though there are missionaries out there.
+
+Second is on defensibility: There's a lot of chatter on moats, so I won't re-litigate the matter here. But the thing that I want to call out is given the pace of what's happening the moat is no longer "one" thing. Like if you really think about it especially in the app layer - the harness is like a thousand small things done well. And, a lot of it is invisible. And given the competition is so fierce and new entrants overnight, you really have to dig into the details to figure out why a given company is different. What is their edge, and their combined edge across product, tech and GTM.
+
+And often times even with that, you end up going back to "well the real defensibility is the founders". And in those founders the defensibility is their speed of execution and being able to adapt to the market. That has become the new bar for every founder out there, given there are no "blue ocean" markets. And even if there are, any company with a LITTLE bit of heat, will have a lot of competitiors overnight.
+
+Even though I think I have a pretty good sense on finding the best people who have founder market fit, I find this current climate really hard and it's testing all my priors (and patience) at the same time.
+
+I know it's not true, but feels like everyone is in it to grab the bag and not really care about their legacy of what they want to build (please reach out if you do).</div>
+      <div class="tweet-zh">关于当下市场的两点随性而诚实的想法……
+
+第一，关于人：找到"传教士"比以往任何时候都难。我看到有人离开自己联合创办的公司，去加入那些"显而易见"的赢家。上市公司的 CEO 离职去实验室任职。创始人们说走就走地离开又回归新实验室。公司被"Windsurf 式"地收购，只有被挑中的人才能加入未来的公司。创始人做分批估值融资，却毫不担心下一个加入的员工会拿到让早期行权变得不可能的行权条款。
+
+作为早期 VC，我们常常只是在赌人。而当这些人说走就走时，剩下的公司（通常）就变成了一具空壳。现在似乎是一个做"雇佣兵"的好时代，每个人都觉得自己是雇佣兵——尽管外面确实还有传教士。
+
+第二，关于护城河：关于 moat 的讨论已经很多，我这里不再重新论证。但我想指出的是：鉴于当下变化的速度，护城河不再是"某一件事"。如果你认真想想，尤其是在应用层——harness 就像是把一千件小事都做好。而且其中很多是看不见的。鉴于竞争如此激烈、新玩家一夜之间涌现，你必须深挖细节才能弄清一家公司为何与众不同：他们的优势是什么，他们在产品、技术和 GTM 上的综合优势又是什么。
+
+而很多时候，即便想清楚了这些，你最终还是会回到"真正的护城河其实是创始人"。而在这些创始人身上，护城河就是他们的执行速度，以及适应市场的能力。鉴于已不存在"蓝海"市场，这已经成为每个创始人的新门槛。而且即便有蓝海，任何稍微有点热度的公司，一夜之间都会冒出一大堆竞争者。
+
+尽管我认为自己在寻找最优秀的、具备创始人-市场匹配度的人方面还算有不错的直觉，但当下这种气候让我觉得非常艰难，同时也在考验我所有的既有认知（以及耐心）。
+
+我知道这不是事实，但感觉每个人都只是为了捞一笔，并不真正在意自己想构建的东西会留下什么遗产（如果你是后者，请联系我）。</div>
+      <a class="tweet-link" href="https://x.com/nikunj/status/2105148927599423752" target="_blank">x.com/nikunj/status/2105148927599423752</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">Where are all the "distribution is a moat and hence raise a lot of money" investors today..
+      <div class="tweet-en">Transitioning from one thing to the next can often be really fun and often quite stressful in what feels like a warp speed period..
 
-when the *checks notes* incumbents are flexing their distribution muscle.
+If that's you, @lolawajs &amp; I would love to meet you at this breakfast and help in any way possible.
 
-It's SO important to stay first principles on what matters. Find your unfair advantages. Build a great product with high retention and ideally network effects. Use capital as a weapon to compound and not as destiny. And, finally figure out how to be a self sustaining business because this money spigot will dry.
+DMs open!</div>
+      <div class="tweet-zh">从一件事过渡到另一件事，往往既非常有趣，又相当有压力，尤其是在这样一个仿佛曲速飞行的时期……
 
-And, that is so freaking hard. It's never been easy - especially not now.
+如果你正处于这种状态，@lolawajs 和我很乐意在这场早餐会上见到你，并尽我们所能提供帮助。
 
-(PS: This is not a subtweet on any company, but more so on the investors who'll dole out terrible advice and move to the next company in their portfolio when that one crashes and burns)</div>
-        <div class="tweet-zh">如今那些喊着“分发渠道就是护城河，所以要融很多钱”的投资人都去哪了……
+私信开放！</div>
+      <a class="tweet-link" href="https://x.com/nikunj/status/2105097936455786536" target="_blank">x.com/nikunj/status/2105097936455786536</a>
+    </div>
 
-当*翻笔记*在位巨头们正在秀他们的分发肌肉时。
+    <div class="tweet">
+      <div class="tweet-en">If you're a B2B founder and don't want to spend egregious amounts of money on LinkedIn CPMs,
 
-在真正重要的事上坚持第一性原理，极其重要。找到你的不公平优势。打造一款留存率高、最好还带网络效应的好产品。把资本当作复利的武器，而不是宿命。最后，想清楚如何成为一家自我造血的企业，因为这条资金水管终会干涸。
+lots of alpha in just aggregating what's trending on X and posting it on LinkedIn.
 
-而这真的难到爆。从来都不容易——尤其是现在。
+LinkedIn is consistently a week or two behind and they lap it up.
 
-（附注：这不是针对任何公司的暗讽，更多是针对那些兜售糟糕建议、等公司崩盘烧毁后就转向投资组合里下一家公司的投资人。）</div>
-        <a class="tweet-link" href="https://x.com/nikunj/status/2104566122549063756" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+And for those who think it's cringe, you live long enough to start LinkedInfluencing.
+
+It truly comes for us all</div>
+      <div class="tweet-zh">如果你是 B2B 创始人，又不想在 LinkedIn 的 CPM 上花天价的钱，
+
+那么仅仅是把 X 上的热门内容聚合起来、再发到 LinkedIn 上，就有大量 alpha。
+
+LinkedIn 总是慢上一两周，而用户却照单全收。
+
+至于那些觉得这很尴尬的人——你活得够久，早晚也会开始做"LinkedIn 网红"。
+
+这一天终将降临到我们每个人头上。</div>
+      <a class="tweet-link" href="https://x.com/nikunj/status/2104949147812159672" target="_blank">x.com/nikunj/status/2104949147812159672</a>
     </div>
   </article>
 
   <!-- Peter Steinberger -->
   <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Peter Steinberger</span><span class="builder-handle">@steipete</span></div>
-      <div class="builder-bio">多 agent 的 ClawFather。退休后回归，只为折腾 AI，并帮一只龙虾统治世界。@OpenClaw</div>
+    <div class="builder-header">
+      <h2 class="builder-name">Peter Steinberger</h2>
+      <a class="builder-handle" href="https://x.com/steipete" target="_blank">@steipete</a>
+      <div class="builder-bio">多重智能体之"龙虾教父"。退休后回归，折腾 AI，帮一只龙虾接管世界。@OpenClaw</div>
     </div>
+
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">See ya there!</div>
-        <div class="tweet-zh">到那儿见！</div>
-        <a class="tweet-link" href="https://x.com/steipete/status/2104702088626557384" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+      <div class="tweet-en">That /goal is still running.</div>
+      <div class="tweet-zh">那个 /goal 还在运行中。</div>
+      <a class="tweet-link" href="https://x.com/steipete/status/2105049100983132648" target="_blank">x.com/steipete/status/2105049100983132648</a>
+    </div>
+
+    <div class="tweet">
+      <div class="tweet-en">This is pretty amazing.</div>
+      <div class="tweet-zh">这真是太惊人了。</div>
+      <a class="tweet-link" href="https://x.com/steipete/status/2105048996549116268" target="_blank">x.com/steipete/status/2105048996549116268</a>
     </div>
   </article>
 
   <!-- Dan Shipper -->
   <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Dan Shipper</span><span class="builder-handle">@danshipper</span></div>
-      <div class="builder-bio">ceo @every | 让你站在 AI 前沿的唯一订阅</div>
+    <div class="builder-header">
+      <h2 class="builder-name">Dan Shipper</h2>
+      <a class="builder-handle" href="https://x.com/danshipper" target="_blank">@danshipper</a>
+      <div class="builder-bio">@every CEO｜让你始终站在 AI 前沿的唯一订阅</div>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">i've been to every dev day since 2023
-
-this is by far the most launches @OpenAI has ever had
-
-rsi?</div>
-        <div class="tweet-zh">从 2023 年起我每场 DevDay 都去了。
-
-这是 @OpenAI 迄今为止发布最多的一次。
-
-rsi（递归自我改进）？</div>
-        <a class="tweet-link" href="https://x.com/danshipper/status/2104662907716050988" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+      <div class="tweet-en">@every @sama read the vibe check if you haven't:</div>
+      <div class="tweet-zh">@every @sama 如果你还没看，去读一下那篇 vibe check：</div>
+      <a class="tweet-link" href="https://x.com/danshipper/status/2105073259507331233" target="_blank">x.com/danshipper/status/2105073259507331233</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">@every @kieranklaassen full vibe check here: https://t.co/aS6cePaQcz</div>
-        <div class="tweet-zh">@every @kieranklaassen 完整体验评测在这里：https://t.co/aS6cePaQcz</div>
-        <a class="tweet-link" href="https://x.com/danshipper/status/2104662550138994746" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+      <div class="tweet-en">im biased but im insanely proud of @every's dev day coverage
+
+- two vibe checks
+- live feed
+- livestream
+- podcast with @sama (coming tomorrow!)
+
+insane amount of effort from the team:</div>
+      <div class="tweet-zh">我有偏见，但我为 @every 的 Dev Day 报道感到无比自豪。
+
+- 两篇 vibe check
+- 实时信息流
+- 直播
+- 与 @sama 的播客（明天上线！）
+
+团队付出了疯狂的努力：</div>
+      <a class="tweet-link" href="https://x.com/danshipper/status/2105066959822114972" target="_blank">x.com/danshipper/status/2105066959822114972</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">SONNET 5.5 IS OUT!
-
-It has dramatically improved writing even versus Opus 5.5 in my testing for @every. Astra is still my favorite for writing, but this model beats it at revision tasks.
-
-It's faster and cheaper than Opus 5.5, so it's @kieranklaassen's preferred model for quick iterative coding and design work.
-
-But both @kplikethebird and @hammer_mt feel like they don't have room in their stack for mid-tier models anymore.
-
-Full vibe check coming on @every!
-
-Until then you can see Sonnet's scores vs. Opus and Astra on my personal benchmark, drawn from my real work: https://t.co/SpeDq9gVu6</div>
-        <div class="tweet-zh">SONNET 5.5 发布了！
-
-在我为 @every 做的测试中，它的写作能力相比 Opus 5.5 都有大幅提升。写作方面 Astra 仍是我的最爱，但这款模型在修订类任务上胜过它。
-
-它比 Opus 5.5 更快、更便宜，因此是 @kieranklaassen 在快速迭代式编码和设计工作中的首选模型。
-
-但 @kplikethebird 和 @hammer_mt 都觉得，他们的技术栈里已经没有中端模型的位置了。
-
-完整体验评测即将在 @every 上线！
-
-在此之前，你可以在我的个人基准测试（取自我的真实工作）上看到 Sonnet 对比 Opus 和 Astra 的得分：https://t.co/SpeDq9gVu6</div>
-        <a class="tweet-link" href="https://x.com/danshipper/status/2104636728992776510" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+      <div class="tweet-en">@sama subscribe to @every to get it:</div>
+      <div class="tweet-zh">@sama 订阅 @every 就能获取：</div>
+      <a class="tweet-link" href="https://x.com/danshipper/status/2105064711431897369" target="_blank">x.com/danshipper/status/2105064711431897369</a>
     </div>
   </article>
 
   <!-- Sam Altman -->
   <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Sam Altman</span><span class="builder-handle">@sama</span></div>
-      <div class="builder-bio">OpenAI 的使命是确保 AGI 造福全人类</div>
+    <div class="builder-header">
+      <h2 class="builder-name">Sam Altman</h2>
+      <a class="builder-handle" href="https://x.com/sama" target="_blank">@sama</a>
+      <div class="builder-bio">OpenAI 的使命是确保 AGI 惠及全人类</div>
     </div>
+
     <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">Pretty excited for DevDay tomorrow.
+      <div class="tweet-en">Dots are here!
 
-We have found a new thing.</div>
-        <div class="tweet-zh">非常期待明天的 DevDay。
+A new way to use AI that works 24/7 for you; get more of your time and attention back to work at a higher level.</div>
+      <div class="tweet-zh">Dots 来了！
 
-我们发现了一个新东西。</div>
-        <a class="tweet-link" href="https://x.com/sama/status/2104661956879913457" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
+一种全新的 AI 使用方式，7×24 小时为你工作；让你把更多时间和注意力收回来，投入到更高层次的工作中。</div>
+      <a class="tweet-link" href="https://x.com/sama/status/2104995014208258235" target="_blank">x.com/sama/status/2104995014208258235</a>
+    </div>
+
+    <div class="tweet">
+      <div class="tweet-en">Ultrafast is
+
+so fast
+
+I do not ever want to go back</div>
+      <div class="tweet-zh">Ultrafast 真的
+
+太快了
+
+我再也不想回去了。</div>
+      <a class="tweet-link" href="https://x.com/sama/status/2104994601140711896" target="_blank">x.com/sama/status/2104994601140711896</a>
+    </div>
+
+    <div class="tweet">
+      <div class="tweet-en">6.1 Sol at 1/5th of the price of Astra, and 95% cache read discount! Extremely capable model.</div>
+      <div class="tweet-zh">6.1 Sol 的价格只有 Astra 的五分之一，缓存读取还有 95% 的折扣！能力极强的模型。</div>
+      <a class="tweet-link" href="https://x.com/sama/status/2104994395980533804" target="_blank">x.com/sama/status/2104994395980533804</a>
     </div>
   </article>
 
-  <!-- Claude -->
-  <article class="builder">
-    <div class="builder-head">
-      <div><span class="builder-name">Claude</span><span class="builder-handle">@claudeai</span></div>
-      <div class="builder-bio">Claude 是 @anthropicai 打造的 AI 助手，安全、准确、可靠。在 <a class="inline-link" href="https://t.co/ZhTwG8d" target="_blank" rel="noopener">链接</a> 与 Claude 对话。</div>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">What are you exploring with Sonnet 5.5?</div>
-        <div class="tweet-zh">你在用 Sonnet 5.5 探索什么？</div>
-        <a class="tweet-link" href="https://x.com/claudeai/status/2104675005090923000" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">Bouncing-ball physics tests by @forwardeditor from the same prompt, Sonnet 5 vs Sonnet 5.5.</div>
-        <div class="tweet-zh">@forwardeditor 用同一个 prompt 做的弹跳球物理测试，Sonnet 5 对比 Sonnet 5.5。</div>
-        <a class="tweet-link" href="https://x.com/claudeai/status/2104675003673325732" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-body">
-        <div class="tweet-en">Pixel-art forest creatures by @measure_plan, every frame drawn in code.</div>
-        <div class="tweet-zh">@measure_plan 创作的像素风森林生物，每一帧都用代码绘制。</div>
-        <a class="tweet-link" href="https://x.com/claudeai/status/2104675000787603486" target="_blank" rel="noopener">查看原推 →</a>
-      </div>
-    </div>
-  </article>
-
-  <!-- Footer -->
   <footer class="footer">
-    由 AI Daily Bot 自动生成 · 每日 10:00（北京时间）
+    由 AI Daily Bot 自动生成 · 每日 10:00 (北京时间)
   </footer>
 
 </div>
