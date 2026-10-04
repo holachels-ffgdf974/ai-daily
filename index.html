@@ -3,136 +3,186 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 · 2026年10月03日</title>
+<title>AI 日报 · 2026年10月04日</title>
 <style>
-  * { box-sizing: border-box; }
-  body {
+  * {
+    box-sizing: border-box;
+  }
+  html, body {
     margin: 0;
     padding: 0;
+  }
+  body {
     background: #fafaf8;
     color: #1a1a1a;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
     line-height: 1.7;
+    font-size: 16px;
     -webkit-font-smoothing: antialiased;
   }
   .wrap {
     max-width: 680px;
     margin: 0 auto;
-    padding: 64px 32px 96px;
+    padding: 72px 32px 96px;
   }
+  /* ---------- Masthead ---------- */
   .masthead {
     text-align: center;
+    padding-bottom: 48px;
+    border-bottom: 1px solid #e8e8e4;
     margin-bottom: 56px;
   }
   .masthead .date {
-    font-size: 14px;
-    letter-spacing: 0.12em;
+    font-size: 13px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: #6b6b6b;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
   .masthead h1 {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 52px;
+    font-size: 46px;
     font-weight: 400;
     letter-spacing: 0.02em;
     margin: 0 0 20px;
     color: #1a1a1a;
   }
-  .masthead .rule {
-    width: 56px;
+  .masthead h1 .accent {
+    display: block;
+    width: 48px;
     height: 2px;
     background: #8b5e3c;
-    margin: 0 auto 20px;
+    margin: 22px auto 0;
   }
   .masthead .stats {
     font-size: 14px;
     color: #6b6b6b;
+    margin-top: 22px;
   }
-  .card {
+  .masthead .stats span {
+    color: #8b5e3c;
+    font-weight: 600;
+  }
+  /* ---------- Builder card ---------- */
+  .builder {
     background: #ffffff;
     border: 1px solid #e8e8e4;
     border-radius: 8px;
-    padding: 32px 32px 24px;
-    margin-bottom: 28px;
+    padding: 32px 30px 14px;
+    margin-bottom: 32px;
   }
   .builder-head {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 6px;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #f0f0ec;
   }
   .builder-name {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 22px;
-    font-weight: 700;
+    font-weight: 400;
+    margin: 0;
     color: #1a1a1a;
   }
   .builder-handle {
-    font-size: 14px;
-    color: #6b6b6b;
+    font-size: 13px;
+    color: #8b5e3c;
+    margin-left: 8px;
+    font-weight: 500;
   }
   .builder-bio {
     font-size: 13.5px;
     color: #6b6b6b;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #f0f0ec;
+    margin: 8px 0 0;
+    line-height: 1.6;
   }
-  .tweet {
-    border-left: 3px solid #e8e0d0;
-    background: #fdfdfb;
-    padding: 16px 18px;
-    margin-bottom: 18px;
-    border-radius: 0 4px 4px 0;
-  }
-  .tweet .en {
-    font-size: 14.5px;
-    color: #1a1a1a;
-    margin: 0 0 10px;
-    white-space: pre-wrap;
-    word-break: break-word;
-  }
-  .tweet .cn {
-    font-size: 14px;
-    color: #6b6b6b;
-    margin: 0 0 12px;
-    white-space: pre-wrap;
-    word-break: break-word;
-  }
-  .tweet .link {
-    font-size: 12.5px;
+  .builder-bio a {
     color: #2c6bae;
     text-decoration: none;
     word-break: break-all;
   }
-  .tweet .link:hover { text-decoration: underline; }
-  .section-title {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 28px;
-    font-weight: 400;
-    margin: 56px 0 24px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #8b5e3c;
-    color: #1a1a1a;
+  /* ---------- Tweet ---------- */
+  .tweet {
+    padding: 0 0 22px 18px;
+    margin-bottom: 22px;
+    border-left: 3px solid #e8e0d0;
+    background: #fdfdfb;
+    border-radius: 0 6px 6px 0;
+    padding-top: 14px;
+    padding-right: 16px;
   }
-  .podcast-ep {
+  .tweet:last-child {
+    margin-bottom: 8px;
+  }
+  .tweet .en {
     font-size: 15px;
     color: #1a1a1a;
-    margin: 0 0 6px;
+    margin: 0 0 10px;
+    white-space: pre-wrap;
   }
-  .podcast-cn {
-    font-size: 14px;
-    color: #6b6b6b;
-    margin: 0 0 20px;
+  .tweet .zh {
+    font-size: 15px;
+    color: #444;
+    margin: 0 0 12px;
+    white-space: pre-wrap;
   }
-  .points-title {
-    font-size: 13px;
-    letter-spacing: 0.08em;
+  .tweet .link {
+    font-size: 12.5px;
+  }
+  .tweet .link a {
+    color: #2c6bae;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(44, 107, 174, 0.3);
+    padding-bottom: 1px;
+    word-break: break-all;
+  }
+  .tweet .link a:hover {
+    border-bottom-color: #2c6bae;
+  }
+  /* ---------- Podcast ---------- */
+  .section-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin: 64px 0 28px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #8b5e3c;
+    display: inline-block;
+  }
+  .podcast {
+    background: #ffffff;
+    border: 1px solid #e8e8e4;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 32px;
+  }
+  .podcast .show {
+    font-size: 12px;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #8b5e3c;
-    margin: 0 0 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .podcast h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 6px;
+    line-height: 1.45;
+  }
+  .podcast .pod-zh {
+    font-size: 15px;
+    color: #444;
+    margin: 0 0 18px;
+  }
+  .podcast .pod-link {
+    font-size: 12.5px;
+    margin-bottom: 20px;
+  }
+  .podcast .pod-link a {
+    color: #2c6bae;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(44, 107, 174, 0.3);
   }
   .points {
     list-style: none;
@@ -140,65 +190,84 @@
     margin: 0;
   }
   .points li {
+    padding: 16px 0 16px 18px;
     border-left: 3px solid #e8e0d0;
     background: #fdfdfb;
-    padding: 14px 18px;
+    border-radius: 0 6px 6px 0;
     margin-bottom: 14px;
-    border-radius: 0 4px 4px 0;
   }
-  .points li .en {
-    font-size: 14px;
-    color: #1a1a1a;
+  .points li:last-child {
+    margin-bottom: 0;
+  }
+  .points .en {
+    font-size: 14.5px;
     margin: 0 0 8px;
+    color: #1a1a1a;
   }
-  .points li .cn {
-    font-size: 13.5px;
-    color: #6b6b6b;
+  .points .zh {
+    font-size: 14.5px;
     margin: 0;
+    color: #444;
   }
+  /* ---------- Footer ---------- */
   footer {
     margin-top: 72px;
     padding-top: 28px;
     border-top: 1px solid #e8e8e4;
     text-align: center;
-    font-size: 13px;
+    font-size: 12.5px;
     color: #6b6b6b;
+    letter-spacing: 0.03em;
   }
+  /* ---------- Responsive ---------- */
   @media (max-width: 600px) {
-    .wrap { padding: 40px 18px 64px; }
-    .masthead h1 { font-size: 38px; }
-    .card { padding: 24px 20px 18px; }
-    .tweet { padding: 14px 14px; }
-    .section-title { font-size: 24px; }
+    .wrap {
+      padding: 44px 18px 64px;
+    }
+    .masthead h1 {
+      font-size: 34px;
+    }
+    .builder {
+      padding: 24px 20px 8px;
+    }
+    .podcast {
+      padding: 22px 18px;
+    }
+    .tweet {
+      padding-left: 14px;
+      padding-right: 12px;
+    }
+    .section-title {
+      font-size: 22px;
+    }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <div class="masthead">
-    <div class="date">2026年10月03日 · 星期六</div>
-    <h1>AI 日报</h1>
-    <div class="rule"></div>
-    <div class="stats">15 位 Builder · 34 条推文 · 1 期播客</div>
-  </div>
+  <!-- ============ MASTHEAD ============ -->
+  <header class="masthead">
+    <div class="date">2026年10月04日 星期日</div>
+    <h1>AI 日报<span class="accent"></span></h1>
+    <div class="stats">今日收录 <span>18</span> 位 Builder · <span>33</span> 条推文 · <span>1</span> 期播客</div>
+  </header>
 
-  <!-- Swyx -->
-  <div class="card">
+  <!-- ============ SWYX ============ -->
+  <article class="builder">
     <div class="builder-head">
-      <span class="builder-name">Swyx</span>
-      <span class="builder-handle">@swyx</span>
+      <h2 class="builder-name">Swyx<span class="builder-handle">@swyx</span></h2>
+      <p class="builder-bio">以刻意、强度、正直与疯狂去实现抱负。 · 关联：@smol_ai · @dxtipshq · @cognitio</p>
     </div>
-    <div class="builder-bio">以刻意、强度、正直与疯狂去实现抱负。所属：@smol_ai · @dxtipshq · @cognitio</div>
 
     <div class="tweet">
       <p class="en">btw dont forget the "one more thing..."
 
 theyve been working on dots for a while now https://t.co/B83svUV9AC https://t.co/NXGKoFeRoa</p>
-      <p class="cn">顺便说一句，别忘了那个"还有一件事……"
+      <p class="zh">顺便说一句，别忘了那个「还有一件事……」
 
-他们研究 dots 已经有一阵子了。</p>
-      <a class="link" href="https://x.com/swyx/status/2106103958657958298">x.com/swyx/status/2106103958657958298</a>
+他们已经研究 dots 有一阵子了。</p>
+      <p class="link"><a href="https://x.com/swyx/status/2106103958657958298" target="_blank" rel="noopener">x.com/swyx/status/2106103958657958298</a></p>
     </div>
 
     <div class="tweet">
@@ -209,70 +278,68 @@ One of the joys of doing AIE is helping others start their own high quality conf
 Join the event: https://t.co/2IeM4a3MGO
 
 The landscape has completely transformed since we started this a year ago. An exploding number of rogue agents, more breaches, more AI-driven attacks. now more than ever, security must be at the center of the AI conversation. With so much more hacks and vulnerabilities, this stuff is no longer theoretical...</p>
-      <p class="cn">是时候认真对待"安全 × AI"了。
+      <p class="zh">是时候认真对待「安全 × AI」了。
 
-做 AIE 的乐趣之一，就是帮助别人在他们自己的国家和领域里创办高质量的大会。2025 年的每一位合作伙伴都回来了——而第二届 AI 安全峰会如今比以往重要得多。很自豪能以创始合作伙伴的身份，与 @snyksec 再度携手！
+做 AIE 的乐趣之一，就是帮助他人在自己的国家和领域创办高质量会议。2025 年的每一个合作伙伴都回来了——而第二届 AI Security Summit 如今比以往任何时候都更重要。很自豪能以创始合作伙伴的身份携手 @snyksec 回归！
 
-报名活动：https://t.co/2IeM4a3MGO
+活动报名：https://t.co/2IeM4a3MGO
 
-自我们一年前启动以来，整个格局已经彻底改变。失控的智能体数量爆炸式增长，数据泄露更多，AI 驱动的攻击也更多。安全比以往任何时候都更应成为 AI 讨论的核心。面对如此多的入侵与漏洞，这些事已不再是纸上谈兵……</p>
-      <a class="link" href="https://x.com/swyx/status/2106042773510177256">x.com/swyx/status/2106042773510177256</a>
+自一年前我们启动这件事以来，整个格局已彻底改变。失控的 agent 数量爆炸式增长，数据泄露更多，AI 驱动的攻击也更多。如今，安全比以往任何时候都更必须成为 AI 讨论的核心。面对如此多的黑客攻击与漏洞，这些早已不再是纸上谈兵……</p>
+      <p class="link"><a href="https://x.com/swyx/status/2106042773510177256" target="_blank" rel="noopener">x.com/swyx/status/2106042773510177256</a></p>
     </div>
-  </div>
+  </article>
 
-  <!-- Thibault Sottiaux -->
-  <div class="card">
+  <!-- ============ THIBAULT ============ -->
+  <article class="builder">
     <div class="builder-head">
-      <span class="builder-name">Thibault Sottiaux</span>
-      <span class="builder-handle">@thsottiaux</span>
+      <h2 class="builder-name">Thibault Sottiaux<span class="builder-handle">@thsottiaux</span></h2>
+      <p class="builder-bio">Codex &amp; ChatGPT @OpenAI</p>
     </div>
-    <div class="builder-bio">Codex 与 ChatGPT @OpenAI</div>
 
     <div class="tweet">
       <p class="en">Fortunately our future models will be much better at code deletion and simplification. Just in time</p>
-      <p class="cn">幸运的是，我们未来的模型会在删除代码和简化代码方面强得多。来得正是时候。</p>
-      <a class="link" href="https://x.com/thsottiaux/status/2106252868307271752">x.com/thsottiaux/status/2106252868307271752</a>
+      <p class="zh">幸运的是，我们未来的模型会在删除和简化代码方面强得多。来得正是时候。</p>
+      <p class="link"><a href="https://x.com/thsottiaux/status/2106252868307271752" target="_blank" rel="noopener">x.com/thsottiaux/status/2106252868307271752</a></p>
     </div>
 
     <div class="tweet">
       <p class="en">All fixed. Surprising number of Pro 500 users on here. https://t.co/fNbajjszn6</p>
-      <p class="cn">全部修好了。这里 Pro 500 用户的数量多得惊人。</p>
-      <a class="link" href="https://x.com/thsottiaux/status/2106239435461579088">x.com/thsottiaux/status/2106239435461579088</a>
+      <p class="zh">全部修复了。这里的 Pro 500 用户数量多得令人意外。</p>
+      <p class="link"><a href="https://x.com/thsottiaux/status/2106239435461579088" target="_blank" rel="noopener">x.com/thsottiaux/status/2106239435461579088</a></p>
     </div>
 
     <div class="tweet">
       <p class="en">Seeing some reports that the Pro 500 didn't get the reset as expected earlier. Investigating and will make up for it</p>
-      <p class="cn">看到一些反馈说 Pro 500 之前没有按预期重置。正在排查，会做出补偿。</p>
-      <a class="link" href="https://x.com/thsottiaux/status/2106233145163141249">x.com/thsottiaux/status/2106233145163141249</a>
+      <p class="zh">看到一些反馈说 Pro 500 没有像预期那样在早些时候完成重置。正在排查，并会做出补偿。</p>
+      <p class="link"><a href="https://x.com/thsottiaux/status/2106233145163141249" target="_blank" rel="noopener">x.com/thsottiaux/status/2106233145163141249</a></p>
     </div>
-  </div>
+  </article>
 
-  <!-- Peter Yang -->
-  <div class="card">
+  <!-- ============ PETER YANG ============ -->
+  <article class="builder">
     <div class="builder-head">
-      <span class="builder-name">Peter Yang</span>
-      <span class="builder-handle">@petergyang</span>
+      <h2 class="builder-name">Peter Yang<span class="builder-handle">@petergyang</span></h2>
+      <p class="builder-bio">为忙碌的人提供实用的 AI 教程与访谈 | 在 <a href="https://t.co/6VAA6p81x6" target="_blank" rel="noopener">链接</a> 获取我最实用的 AI 技能与指南</p>
     </div>
-    <div class="builder-bio">为忙碌人士准备的实用 AI 教程与访谈 | 获取我最好的 AI 技巧与指南：https://t.co/6VAA6p81x6</div>
 
     <div class="tweet">
       <p class="en">.@alexandr_wang this thing being on the screen at all times if I minimize the @Muse desktop app makes me not want to open it https://t.co/1HWRc9VTmK</p>
-      <p class="cn">.@alexandr_wang 只要我最小化 @Muse 桌面应用，这个东西就会一直留在屏幕上，这让我根本不想打开它。</p>
-      <a class="link" href="https://x.com/petergyang/status/2106113169571946560">x.com/petergyang/status/2106113169571946560</a>
+      <p class="zh">@alexandr_wang 只要我最小化 @Muse 桌面应用，这个东西就一直留在屏幕上，这让我根本不想打开它。</p>
+      <p class="link"><a href="https://x.com/petergyang/status/2106113169571946560" target="_blank" rel="noopener">x.com/petergyang/status/2106113169571946560</a></p>
     </div>
 
     <div class="tweet">
-      <p class="en">I was paying almost $300/year for a YouTube research tool that shall go unnamed. 
+      <p class="en">I was paying almost $300/year for a YouTube research tool that shall go unnamed.
 
-The product was getting too complicated so I decided to check if Claude can build the core feature set that I actually needed. 
+The product was getting too complicated so I decided to check if Claude can build the core feature set that I actually needed.
 
 Claude built it in 5 min.</p>
-      <p class="cn">我之前每年花将近 300 美元订阅一个不便具名的 YouTube 调研工具。
+      <p class="zh">我每年为一个不便透露名字的 YouTube 调研工具支付近 300 美元。
 
-那个产品变得越来越复杂，于是我决定试试 Claude 能不能把我真正需要的核心功能做出来。
+这个产品变得太复杂了，于是我决定看看 Claude 能否搭建出我真正需要的核心功能集。
 
-Claude 5 分钟就做完了。</p>
-      <a class="link" href="https://x.com/petergyang/status/2106072698564874410">x.com/petergyang/status/2106072698564874410</a>
+Claude 用 5 分钟就做出来了。</p>
+      <p class="link"><a href="https://x.com/petergyang/status/2106072698564874410" target="_blank" rel="noopener">x.com/petergyang/status/2106072698564874410</a></p>
     </div>
 
     <div class="tweet">
@@ -281,316 +348,304 @@ Claude 5 分钟就做完了。</p>
 It works with ChatGPT, Claude, or your favorite AI harness.
 
 Join 500+ folks who have signed up to attend (you'll get the recording even if you can't make it): https://t.co/HMcU9EsLiE</p>
-      <p class="cn">今天太平洋时间上午 11:30，我会免费开一节闪电课，讲如何搭建一套帮你分担工作的 AI 系统。
+      <p class="zh">今天太平洋时间上午 11:30，我将免费讲授一节闪电课，教你搭建一个能帮你分担工作的 AI 系统。
 
-它兼容 ChatGPT、Claude，或你最喜欢的任何 AI 工具链。
+它适用于 ChatGPT、Claude，或你最喜欢的任何 AI 工具链。
 
-已有 500 多人报名参加（即使来不了，也会收到回放）：https://t.co/HMcU9EsLiE</p>
-      <a class="link" href="https://x.com/petergyang/status/2106071235696447660">x.com/petergyang/status/2106071235696447660</a>
+已有 500 多人报名参加（即使无法到场，也会收到录像）：https://t.co/HMcU9EsLiE</p>
+      <p class="link"><a href="https://x.com/petergyang/status/2106071235696447660" target="_blank" rel="noopener">x.com/petergyang/status/2106071235696447660</a></p>
     </div>
-  </div>
+  </article>
 
-  <!-- Nan Yu -->
-  <div class="card">
+  <!-- ============ NAN YU ============ -->
+  <article class="builder">
     <div class="builder-head">
-      <span class="builder-name">Nan Yu</span>
-      <span class="builder-handle">@thenanyu</span>
+      <h2 class="builder-name">Nan Yu<span class="builder-handle">@thenanyu</span></h2>
+      <p class="builder-bio">产品、Codex @openai。前 @linear 产品负责人。</p>
     </div>
-    <div class="builder-bio">产品、Codex @openai。此前任 @linear 产品负责人</div>
 
     <div class="tweet">
       <p class="en">Everyone is making the same thing https://t.co/qqOCCRPhtY</p>
-      <p class="cn">所有人都在做同一个东西。</p>
-      <a class="link" href="https://x.com/thenanyu/status/2106189530743398867">x.com/thenanyu/status/2106189530743398867</a>
+      <p class="zh">大家都在做同一个东西。</p>
+      <p class="link"><a href="https://x.com/thenanyu/status/2106189530743398867" target="_blank" rel="noopener">x.com/thenanyu/status/2106189530743398867</a></p>
     </div>
 
     <div class="tweet">
       <p class="en">This guy knows SaaS https://t.co/MgTFgJE3vQ</p>
-      <p class="cn">这哥们儿懂 SaaS。</p>
-      <a class="link" href="https://x.com/thenanyu/status/2106174759021215922">x.com/thenanyu/status/2106174759021215922</a>
+      <p class="zh">这家伙真懂 SaaS。</p>
+      <p class="link"><a href="https://x.com/thenanyu/status/2106174759021215922" target="_blank" rel="noopener">x.com/thenanyu/status/2106174759021215922</a></p>
     </div>
 
     <div class="tweet">
       <p class="en">concerning https://t.co/uyN7kV060h</p>
-      <p class="cn">令人担忧。</p>
-      <a class="link" href="https://x.com/thenanyu/status/2106138257801216168">x.com/thenanyu/status/2106138257801216168</a>
+      <p class="zh">令人担忧。</p>
+      <p class="link"><a href="https://x.com/thenanyu/status/2106138257801216168" target="_blank" rel="noopener">x.com/thenanyu/status/2106138257801216168</a></p>
     </div>
-  </div>
+  </article>
 
-  <!-- Madhu Guru -->
-  <div class="card">
+  <!-- ============ MADHU GURU ============ -->
+  <article class="builder">
     <div class="builder-head">
-      <span class="builder-name">Madhu Guru</span>
-      <span class="builder-handle">@realmadhuguru</span>
+      <h2 class="builder-name">Madhu Guru<span class="builder-handle">@realmadhuguru</span></h2>
+      <p class="builder-bio">Meta AI 高级总监；此前在 Google 负责 Gemini、Veo、Nano Banana。</p>
     </div>
-    <div class="builder-bio">Meta AI 高级总监；此前在 Google 主导 Gemini、Veo、Nano Banana</div>
 
     <div class="tweet">
       <p class="en">Underrated - the feeling of reading great writing that is 100% human written.
 
 Just love that human-written smell in a doc.</p>
-      <p class="cn">被严重低估的一种体验——读到一篇 100% 由人类写成的优秀文字。
+      <p class="zh">被低估的一件事——读到一篇 100% 由人类写就的优秀文字时的感受。
 
-就是爱文档里那股"人写的味道"。</p>
-      <a class="link" href="https://x.com/realmadhuguru/status/2106102222501376050">x.com/realmadhuguru/status/2106102222501376050</a>
+就是喜欢文档里那股「人写的味道」。</p>
+      <p class="link"><a href="https://x.com/realmadhuguru/status/2106102222501376050" target="_blank" rel="noopener">x.com/realmadhuguru/status/2106102222501376050</a></p>
     </div>
-  </div>
+  </article>
 
-  <!-- Thariq -->
-  <div class="card">
+  <!-- ============ THARIQ ============ -->
+  <article class="builder">
     <div class="builder-head">
-      <span class="builder-name">Thariq</span>
-      <span class="builder-handle">@trq212</span>
+      <h2 class="builder-name">Thariq<span class="builder-handle">@trq212</span></h2>
+      <p class="builder-bio">Claude Code @anthropicai。前 YC W20、@spc、@medialab。</p>
     </div>
-    <div class="builder-bio">Claude Code @anthropicai。此前 YC W20、@spc、@medialab</div>
 
     <div class="tweet">
       <p class="en">"You should know" is a great way of staying on top of what's possible with Claude and also a great example of the kind of things mods enable.
 
 You can really make Claude Code yours. https://t.co/En0OhotxQL</p>
-      <p class="cn">"You should know"是掌握 Claude 能力边界的一个绝佳方式，也是 mod 能实现什么的一个绝佳范例。
+      <p class="zh">「You should know」是掌握 Claude 能力边界的好方法，也是 mod 所能实现之事的一个绝佳范例。
 
-你真的可以把 Claude Code 变成你自己的。 </p>
-      <a class="link" href="https://x.com/trq212/status/2106119299484221762">x.com/trq212/status/2106119299484221762</a>
+你真的可以让 Claude Code 变成你自己的。 </p>
+      <p class="link"><a href="https://x.com/trq212/status/2106119299484221762" target="_blank" rel="noopener">x.com/trq212/status/2106119299484221762</a></p>
     </div>
-  </div>
+  </article>
 
-  <!-- Amjad Masad -->
-  <div class="card">
+  <!-- ============ AMJAD ============ -->
+  <article class="builder">
     <div class="builder-head">
-      <span class="builder-name">Amjad Masad</span>
-      <span class="builder-handle">@amasad</span>
+      <h2 class="builder-name">Amjad Masad<span class="builder-handle">@amasad</span></h2>
+      <p class="builder-bio">@replit CEO。文明主义者。</p>
     </div>
-    <div class="builder-bio">@replit CEO。文明主义者。</div>
 
     <div class="tweet">
       <p class="en">Reaching concerning levels of psychosis. https://t.co/xDymEzJ8uS</p>
-      <p class="cn">已经达到令人担忧的妄想程度了。</p>
-      <a class="link" href="https://x.com/amasad/status/2106237645282324709">x.com/amasad/status/2106237645282324709</a>
+      <p class="zh">已经达到令人担忧的精神错乱程度了。</p>
+      <p class="link"><a href="https://x.com/amasad/status/2106237645282324709" target="_blank" rel="noopener">x.com/amasad/status/2106237645282324709</a></p>
     </div>
 
     <div class="tweet">
       <p class="en">Fun meeting Woz at @supabase select! https://t.co/yd2ayF0hf8</p>
-      <p class="cn">在 @supabase select 上遇到沃兹，很开心！</p>
-      <a class="link" href="https://x.com/amasad/status/2106191901900915194">x.com/amasad/status/2106191901900915194</a>
+      <p class="zh">在 @supabase select 上见到 Woz，很开心！</p>
+      <p class="link"><a href="https://x.com/amasad/status/2106191901900915194" target="_blank" rel="noopener">x.com/amasad/status/2106191901900915194</a></p>
     </div>
-  </div>
+  </article>
 
-  <!-- Guillermo Rauch -->
-  <div class="card">
+  <!-- ============ RAUCH ============ -->
+  <article class="builder">
     <div class="builder-head">
-      <span class="builder-name">Guillermo Rauch</span>
-      <span class="builder-handle">@rauchg</span>
+      <h2 class="builder-name">Guillermo Rauch<span class="builder-handle">@rauchg</span></h2>
+      <p class="builder-bio">@vercel CEO</p>
     </div>
-    <div class="builder-bio">@vercel CEO</div>
 
     <div class="tweet">
       <p class="en">Wonderful writeup on Jev + Python https://t.co/imdwexC2nn</p>
-      <p class="cn">关于 Jev + Python 的一篇精彩文章。</p>
-      <a class="link" href="https://x.com/rauchg/status/2106139305131569178">x.com/rauchg/status/2106139305131569178</a>
+      <p class="zh">关于 Jev + Python 的精彩文章。</p>
+      <p class="link"><a href="https://x.com/rauchg/status/2106139305131569178" target="_blank" rel="noopener">x.com/rauchg/status/2106139305131569178</a></p>
     </div>
 
     <div class="tweet">
       <p class="en">Amazing. Love to see the https://t.co/ZRAOxqyRNt team ship so fast ▲ https://t.co/xvy2urxGnv</p>
-      <p class="cn">太棒了。很喜欢看到这个团队交付得如此之快 ▲</p>
-      <a class="link" href="https://x.com/rauchg/status/2106133123973214497">x.com/rauchg/status/2106133123973214497</a>
+      <p class="zh">太棒了。看到这个团队交付得如此之快，真让人欣喜 ▲</p>
+      <p class="link"><a href="https://x.com/rauchg/status/2106133123973214497" target="_blank" rel="noopener">x.com/rauchg/status/2106133123973214497</a></p>
     </div>
-  </div>
+  </article>
 
-  <!-- Garry Tan -->
-  <div class="card">
+  <!-- ============ GARRY TAN ============ -->
+  <article class="builder">
     <div class="builder-head">
-      <span class="builder-name">Garry Tan</span>
-      <span class="builder-handle">@garrytan</span>
+      <h2 class="builder-name">Garry Tan<span class="builder-handle">@garrytan</span></h2>
+      <p class="builder-bio">@ycombinator 总裁兼 CEO — @garryslist 创始人 — GStack &amp; GBrain 创造者 — 帮助创始人的设计师/工程师 — 旧金山民主党人</p>
     </div>
-    <div class="builder-bio">@ycombinator 总裁兼 CEO——@garryslist 创始人——GStack 与 GBrain 的创造者——帮助创始人的设计师/工程师——旧金山民主党人</div>
 
     <div class="tweet">
       <p class="en">Capy is like a 24/7 standup for your agents https://t.co/cNQwkWMxSz</p>
-      <p class="cn">Capy 就像是给你的智能体开的 7×24 小时站会。</p>
-      <a class="link" href="https://x.com/garrytan/status/2106102038706970794">x.com/garrytan/status/2106102038706970794</a>
+      <p class="zh">Capy 就像是为你所有 agent 准备的 7×24 小时站会。</p>
+      <p class="link"><a href="https://x.com/garrytan/status/2106102038706970794" target="_blank" rel="noopener">x.com/garrytan/status/2106102038706970794</a></p>
     </div>
 
     <div class="tweet">
       <p class="en">Surprising cool @capydotai cross-session coordination I wasn't expecting: My GBrain collaborator Sina started a fix wave that is even steering around all of the things I'm already working on across multiple Capy threads. All model agnostic. https://t.co/P5TUYlEfRs</p>
-      <p class="cn">@capydotai 跨会话协同的效果意外地酷，完全出乎我意料：我的 GBrain 协作者 Sina 发起了一波修复，甚至会自动绕开我在多个 Capy 线程里正在做的所有事情。完全模型无关。</p>
-      <a class="link" href="https://x.com/garrytan/status/2106092289173213444">x.com/garrytan/status/2106092289173213444</a>
+      <p class="zh">@capydotai 的跨会话协调能力出人意料地酷，我完全没想到：我的 GBrain 协作者 Sina 发起了一轮修复浪潮，甚至能绕开我在多个 Capy 线程中已经在处理的所有事情。而且完全与模型无关。</p>
+      <p class="link"><a href="https://x.com/garrytan/status/2106092289173213444" target="_blank" rel="noopener">x.com/garrytan/status/2106092289173213444</a></p>
     </div>
 
     <div class="tweet">
       <p class="en">My goal with GBrain:
 
 I want our agents to feel as native, expressive, and inevitable as the web eventually did—not as a chatbot feature, but as a personal Jiminy Cricket that knows you and helps you 24/7 always on, always thinking ahead, always improving.</p>
-      <p class="cn">我做 GBrain 的目标：
+      <p class="zh">我对 GBrain 的目标：
 
-我希望我们的智能体最终能像 Web 一样自然、富有表现力、且理所当然——不是一个聊天机器人功能，而是一只属于你的"良心蟋蟀"，懂你，7×24 小时陪伴你，永远在线，永远提前思考，永远在进步。</p>
-      <a class="link" href="https://x.com/garrytan/status/2106063850453991758">x.com/garrytan/status/2106063850453991758</a>
+我希望我们的 agent 能像当年的 Web 一样，变得原生、富有表现力、且势不可挡——不是作为一个聊天机器人功能，而是作为一个了解你的私人「良心蟋蟀」，7×24 小时为你服务，永远在线、永远提前思考、永远在进化。</p>
+      <p class="link"><a href="https://x.com/garrytan/status/2106063850453991758" target="_blank" rel="noopener">x.com/garrytan/status/2106063850453991758</a></p>
     </div>
-  </div>
+  </article>
 
-  <!-- Matt Turck -->
-  <div class="card">
+  <!-- ============ MATT TURCK ============ -->
+  <article class="builder">
     <div class="builder-head">
-      <span class="builder-name">Matt Turck</span>
-      <span class="builder-handle">@mattturck</span>
+      <h2 class="builder-name">Matt Turck<span class="builder-handle">@mattturck</span></h2>
+      <p class="builder-bio">@FirstMarkCap 风投。主持：MAD Podcast；组织：Data Driven NYC；作者：MAD Landscape。</p>
     </div>
-    <div class="builder-bio">@FirstMarkCap 风险投资人。主持 MAD Podcast；组织 Data Driven NYC；著有 MAD Landscape。</div>
 
     <div class="tweet">
       <p class="en">People call the Bay Area a monoculture, but that's totally unfair: it has both neo-clouds AND neo-labs</p>
-      <p class="cn">人们说湾区是单一文化，但这完全不公平：这里既有"新云"，也有"新实验室"。</p>
-      <a class="link" href="https://x.com/mattturck/status/2106076198027890750">x.com/mattturck/status/2106076198027890750</a>
+      <p class="zh">人们说湾区是同质文化，但这完全有失公允：这里既有新云（neo-cloud），也有新实验室（neo-lab）。</p>
+      <p class="link"><a href="https://x.com/mattturck/status/2106076198027890750" target="_blank" rel="noopener">x.com/mattturck/status/2106076198027890750</a></p>
     </div>
-  </div>
+  </article>
 
-  <!-- Nikunj Kothari -->
-  <div class="card">
+  <!-- ============ NIKUNJ ============ -->
+  <article class="builder">
     <div class="builder-head">
-      <span class="builder-name">Nikunj Kothari</span>
-      <span class="builder-handle">@nikunj</span>
+      <h2 class="builder-name">Nikunj Kothari<span class="builder-handle">@nikunj</span></h2>
+      <p class="builder-bio">@fpvventures 合伙人——投资种子轮/A 轮。此前：@meter、@opendoor、@atlassian 等早期成员。爱 @shimoleej。</p>
     </div>
-    <div class="builder-bio">@fpvventures 合伙人——投资种子轮/A 轮。此前是 @meter、@opendoor、@atlassian 等公司的早期员工。爱 @shimoleej。</div>
 
     <div class="tweet">
       <p class="en">When in doubt, always make more bubble solution https://t.co/OXJ9btVIO0</p>
-      <p class="cn">拿不准的时候，就多调点泡泡水。</p>
-      <a class="link" href="https://x.com/nikunj/status/2106183850544239038">x.com/nikunj/status/2106183850544239038</a>
+      <p class="zh">拿不准的时候，就多调点泡泡水。</p>
+      <p class="link"><a href="https://x.com/nikunj/status/2106183850544239038" target="_blank" rel="noopener">x.com/nikunj/status/2106183850544239038</a></p>
     </div>
 
     <div class="tweet">
       <p class="en">If you are a home automation nerd, this is a fun prompt to try on Claude Code / Codex (edit based on your own setup):
 
-"Can you sniff network packets in our house and see what else can we automate? For context: We have a Hermes agent that runs a lot of things like the personal Gmail, thermostat, Doordash, Amazon etc. 
+"Can you sniff network packets in our house and see what else can we automate? For context: We have a Hermes agent that runs a lot of things like the personal Gmail, thermostat, Doordash, Amazon etc.
 
 Trying to see what else we can connect to. We have an Apple TV that we can talk to if we need for HomeKit related stuff but no other bridge that runs home assistant.
 
 Give me a full list of devices that you find and research how they can be connected to an agent."</p>
-      <p class="cn">如果你是智能家居发烧友，这是一个可以在 Claude Code / Codex 上试试的有趣提示词（请根据自己的环境修改）：
+      <p class="zh">如果你是智能家居爱好者，这是一个可以在 Claude Code / Codex 上尝试的有趣提示词（可根据你自己的环境修改）：
 
-"你能不能嗅探我们家里的网络数据包，看看还有什么可以自动化？背景是：我们有一个 Hermes 智能体，负责处理很多事，比如个人 Gmail、恒温器、DoorDash、Amazon 等等。
+「你能嗅探我们家里的网络数据包，看看还有什么可以自动化的吗？背景：我们有一个 Hermes agent，负责运行很多东西，比如个人 Gmail、恒温器、DoorDash、Amazon 等等。
 
-想看看还有什么能接进来。我们有一台 Apple TV，需要处理 HomeKit 相关的事情时可以跟它通信，但除此之外没有别的能跑 Home Assistant 的桥接设备。
+想看看还能连接什么。我们有一台 Apple TV，需要处理 HomeKit 相关的事情时可以跟它通信，但没有其他运行 Home Assistant 的桥接设备。
 
-给我一份你找到的设备的完整清单，并研究一下它们可以怎么接入智能体。"</p>
-      <a class="link" href="https://x.com/nikunj/status/2106072546206773574">x.com/nikunj/status/2106072546206773574</a>
+给我一份你找到的完整设备清单，并研究它们如何接入 agent。」</p>
+      <p class="link"><a href="https://x.com/nikunj/status/2106072546206773574" target="_blank" rel="noopener">x.com/nikunj/status/2106072546206773574</a></p>
     </div>
 
     <div class="tweet">
-      <p class="en">"Everyone you meet is fighting a battle you know nothing about. Be kind. Always." 
+      <p class="en">"Everyone you meet is fighting a battle you know nothing about. Be kind. Always."
 
-Robin Williams. 
+Robin Williams.
 
 Prescient as always.</p>
-      <p class="cn">"你遇到的每个人，都在打一场你一无所知的仗。永远善良。"
+      <p class="zh">「你遇到的每个人，都在打一场你一无所知的仗。永远保持善良。」
 
-——罗宾·威廉姆斯。
+——罗宾·威廉姆斯
 
 一如既往地有先见之明。</p>
-      <a class="link" href="https://x.com/nikunj/status/2106053219487228081">x.com/nikunj/status/2106053219487228081</a>
+      <p class="link"><a href="https://x.com/nikunj/status/2106053219487228081" target="_blank" rel="noopener">x.com/nikunj/status/2106053219487228081</a></p>
     </div>
-  </div>
+  </article>
 
-  <!-- Peter Steinberger -->
-  <div class="card">
+  <!-- ============ STEIPETE ============ -->
+  <article class="builder">
     <div class="builder-head">
-      <span class="builder-name">Peter Steinberger</span>
-      <span class="builder-handle">@steipete</span>
+      <h2 class="builder-name">Peter Steinberger<span class="builder-handle">@steipete</span></h2>
+      <p class="builder-bio">多 agent 之「爪父」。退休后回归，折腾 AI，帮一只龙虾统治世界。@OpenClaw</p>
     </div>
-    <div class="builder-bio">多智能体"爪父"。退休后回归，折腾 AI，并帮一只龙虾统治世界。@OpenClaw</div>
 
     <div class="tweet">
       <p class="en">This was by far my favorite slide at DevDay.
 Kudos to the team! https://t.co/AQtPzNTZhx</p>
-      <p class="cn">这绝对是我在 DevDay 上最喜欢的一页幻灯片。
-给团队点赞！ </p>
-      <a class="link" href="https://x.com/steipete/status/2106076508020506722">x.com/steipete/status/2106076508020506722</a>
+      <p class="zh">这绝对是我在 DevDay 上最喜欢的一页幻灯片。
+向团队致敬！</p>
+      <p class="link"><a href="https://x.com/steipete/status/2106076508020506722" target="_blank" rel="noopener">x.com/steipete/status/2106076508020506722</a></p>
     </div>
-  </div>
+  </article>
 
-  <!-- Dan Shipper -->
-  <div class="card">
+  <!-- ============ DAN SHIPPER ============ -->
+  <article class="builder">
     <div class="builder-head">
-      <span class="builder-name">Dan Shipper</span>
-      <span class="builder-handle">@danshipper</span>
+      <h2 class="builder-name">Dan Shipper<span class="builder-handle">@danshipper</span></h2>
+      <p class="builder-bio">@every CEO | 让你始终站在 AI 前沿的唯一订阅。</p>
     </div>
-    <div class="builder-bio">@every CEO | 让你站在 AI 前沿的唯一订阅</div>
 
     <div class="tweet">
-      <p class="en">here is my official @OpenAI DevDay FOOD vibe check 
+      <p class="en">here is my official @OpenAI DevDay FOOD vibe check
 
 (I know you've been waiting) https://t.co/JnLpqALBg7</p>
-      <p class="cn">这是我官方版的 @OpenAI DevDay 食物氛围测评。
+      <p class="zh">这是我官方的 @OpenAI DevDay 美食氛围测评。
 
-（我知道你们一直在等）</p>
-      <a class="link" href="https://x.com/danshipper/status/2106144801653506531">x.com/danshipper/status/2106144801653506531</a>
+（我知道你一直在等）</p>
+      <p class="link"><a href="https://x.com/danshipper/status/2106144801653506531" target="_blank" rel="noopener">x.com/danshipper/status/2106144801653506531</a></p>
     </div>
 
     <div class="tweet">
       <p class="en">oldie but goodie https://t.co/FMTJOtSRGk</p>
-      <p class="cn">老片但经典。</p>
-      <a class="link" href="https://x.com/danshipper/status/2106126787424002158">x.com/danshipper/status/2106126787424002158</a>
+      <p class="zh">老梗但依然精彩。</p>
+      <p class="link"><a href="https://x.com/danshipper/status/2106126787424002158" target="_blank" rel="noopener">x.com/danshipper/status/2106126787424002158</a></p>
     </div>
 
     <div class="tweet">
       <p class="en">dev day vlog is LIVE!!! https://t.co/yy6tx11pZz</p>
-      <p class="cn">Dev Day Vlog 上线了！！！</p>
-      <a class="link" href="https://x.com/danshipper/status/2106043635947225392">x.com/danshipper/status/2106043635947225392</a>
+      <p class="zh">Dev Day Vlog 上线了！！！</p>
+      <p class="link"><a href="https://x.com/danshipper/status/2106043635947225392" target="_blank" rel="noopener">x.com/danshipper/status/2106043635947225392</a></p>
     </div>
-  </div>
+  </article>
 
-  <!-- Aditya Agarwal -->
-  <div class="card">
+  <!-- ============ ADITYA AGARWAL ============ -->
+  <article class="builder">
     <div class="builder-head">
-      <span class="builder-name">Aditya Agarwal</span>
-      <span class="builder-handle">@adityaag</span>
+      <h2 class="builder-name">Aditya Agarwal<span class="builder-handle">@adityaag</span></h2>
+      <p class="builder-bio">@SPC 普通合伙人，@Bevel_Health 联合创始人 | 前 @facebook 早期工程师、@Dropbox CTO、@Flipkart 董事 | 乐观主义者、建设者</p>
     </div>
-    <div class="builder-bio">@SPC 普通合伙人，@Bevel_Health 联合创始人 | 此前：@facebook 早期工程师、@Dropbox CTO、@Flipkart 董事 | 乐观主义者、建设者</div>
 
     <div class="tweet">
       <p class="en">We had our second portfolio company IPO this week.
 
-We are very proud to have partnered with Puneet and Sanjay at Moneyview. They are incredible entrepreneurs who have poured everything they have to building their company. 
+We are very proud to have partnered with Puneet and Sanjay at Moneyview. They are incredible entrepreneurs who have poured everything they have to building their company.
 
 Moments like these make you feel proud but also deeply appreciative of the founders journey. It is long, hard and tough as nails.
 
 But yet we do it because to create something new is the highest form of purpose.
 
 Onwards.</p>
-      <p class="cn">本周我们迎来了第二家被投公司上市。
+      <p class="zh">本周我们迎来了第二家被投公司 IPO。
 
-我们非常自豪能与 Moneyview 的 Puneet 和 Sanjay 并肩同行。他们是了不起的创业者，为打造自己的公司倾尽所有。
+我们非常自豪能与 Moneyview 的 Puneet 和 Sanjay 合作。他们是了不起的创业者，倾尽所有去打造自己的公司。
 
-这样的时刻让你感到骄傲，也让你对创业者的旅程心怀深深的敬意。它漫长、艰难，硬得像钉子。
+这样的时刻让你感到骄傲，也让你对创业者的旅程心怀深深的敬意。这条路漫长、艰难，硬如钢铁。
 
-但我们依然去做，因为创造新事物是最高形式的使命。
+但我们依然前行，因为创造新事物是最高形式的使命。
 
-继续前行。</p>
-      <a class="link" href="https://x.com/adityaag/status/2106019411635376471">x.com/adityaag/status/2106019411635376471</a>
+继续前进。</p>
+      <p class="link"><a href="https://x.com/adityaag/status/2106019411635376471" target="_blank" rel="noopener">x.com/adityaag/status/2106019411635376471</a></p>
     </div>
-  </div>
+  </article>
 
-  <!-- Sam Altman -->
-  <div class="card">
+  <!-- ============ SAM ALTMAN ============ -->
+  <article class="builder">
     <div class="builder-head">
-      <span class="builder-name">Sam Altman</span>
-      <span class="builder-handle">@sama</span>
+      <h2 class="builder-name">Sam Altman<span class="builder-handle">@sama</span></h2>
+      <p class="builder-bio">OpenAI 的使命是确保 AGI 造福全人类。</p>
     </div>
-    <div class="builder-bio">OpenAI 的使命是确保 AGI 造福全人类</div>
 
     <div class="tweet">
       <p class="en">The contrast between hanging up the last phone call of the day of high-stakes decisions and then a minute later walking in the door to the pure love of small children who want to laugh and play and show you every discovery they made that day is the strangest and best thing I have ever experienced in life.</p>
-      <p class="cn">一天里最后一个关乎重大决策的电话刚挂断，一分钟后你就推门进屋，迎接你的是小孩子纯粹的爱——他们想笑、想玩，想给你展示他们那天发现的每一件小事。这种反差，是我一生中体验过的最奇特、也最美好的事情。</p>
-      <a class="link" href="https://x.com/sama/status/2106189841813934140">x.com/sama/status/2106189841813934140</a>
+      <p class="zh">一天中最后一通充满高风险决策的电话挂断之后，一分钟后推门而入，迎面是孩子们纯粹的爱——他们想笑、想玩，想给你展示他们那天发现的每一件小事。这种反差，是我一生中经历过的最奇特也最美好的事情。</p>
+      <p class="link"><a href="https://x.com/sama/status/2106189841813934140" target="_blank" rel="noopener">x.com/sama/status/2106189841813934140</a></p>
     </div>
 
     <div class="tweet">
       <p class="en">There is some speculation about our partnership with Cerebras.
 
 Cerebras is a close partner, and we have a deep engagement pushing on the frontiers of speed.</p>
-      <p class="cn">关于我们与 Cerebras 的合作有一些猜测。
+      <p class="zh">关于我们与 Cerebras 的合作关系，有一些猜测。
 
-Cerebras 是我们的紧密合作伙伴，我们有着深度的协作，共同推进速度的前沿。</p>
-      <a class="link" href="https://x.com/sama/status/2106147184693620924">x.com/sama/status/2106147184693620924</a>
+Cerebras 是我们的亲密伙伴，我们有着深入的协作，共同推进速度的前沿。</p>
+      <p class="link"><a href="https://x.com/sama/status/2106147184693620924" target="_blank" rel="noopener">x.com/sama/status/2106147184693620924</a></p>
     </div>
 
     <div class="tweet">
@@ -599,83 +654,73 @@ Cerebras 是我们的紧密合作伙伴，我们有着深度的协作，共同�
 it is amazing to me that each day it feels noticably better as it learns more of my workflow and style.
 
 having it do the stuff i don't like doing--and usually just builds up as a gravity well of dread--has me very happy.</p>
-      <p class="cn">dot 是目前为止我最喜欢的 OpenAI 产品！
+      <p class="zh">dot 是我目前为止最喜欢的 OpenAI 产品！
 
-让我惊叹的是，随着它越来越了解我的工作流和风格，它每一天都明显变得更好。
+让我惊叹的是，随着它越来越了解我的工作流和风格，它每天都能明显变得更好。
 
-让它去做那些我不喜欢做的事——那些通常会像引力井一样堆积成恐惧的事——这让我非常开心。</p>
-      <a class="link" href="https://x.com/sama/status/2106085986606403684">x.com/sama/status/2106085986606403684</a>
+让它去做那些我不喜欢做的事——那些通常会像引力井一样不断积聚成恐惧的事——让我非常开心。</p>
+      <p class="link"><a href="https://x.com/sama/status/2106085986606403684" target="_blank" rel="noopener">x.com/sama/status/2106085986606403684</a></p>
     </div>
-  </div>
+  </article>
 
-  <!-- Claude -->
-  <div class="card">
+  <!-- ============ CLAUDE ============ -->
+  <article class="builder">
     <div class="builder-head">
-      <span class="builder-name">Claude</span>
-      <span class="builder-handle">@claudeai</span>
+      <h2 class="builder-name">Claude<span class="builder-handle">@claudeai</span></h2>
+      <p class="builder-bio">Claude 是由 @anthropicai 打造的 AI 助手，安全、准确、可靠。在 <a href="https://t.co/ZhTwG8d" target="_blank" rel="noopener">链接</a> 与 Claude 对话。</p>
     </div>
-    <div class="builder-bio">Claude 是由 @anthropicai 打造的安全、准确、可靠的 AI 助手。在 https://t.co/ZhTwG8d 与 Claude 对话</div>
 
     <div class="tweet">
       <p class="en">What are you exploring with Claude this weekend?</p>
-      <p class="cn">这个周末你在用 Claude 探索什么？</p>
-      <a class="link" href="https://x.com/claudeai/status/2106125480193913276">x.com/claudeai/status/2106125480193913276</a>
+      <p class="zh">这个周末你在用 Claude 探索什么？</p>
+      <p class="link"><a href="https://x.com/claudeai/status/2106125480193913276" target="_blank" rel="noopener">x.com/claudeai/status/2106125480193913276</a></p>
     </div>
 
     <div class="tweet">
       <p class="en">A jet engine in interactive 3D you can cut away and pull apart, made with Opus 5.5.
 https://t.co/0q8bZJAi4T</p>
-      <p class="cn">一台可交互的 3D 喷气式发动机，你可以剖切、拆解，由 Opus 5.5 制作。</p>
-      <a class="link" href="https://x.com/claudeai/status/2106125478956507480">x.com/claudeai/status/2106125478956507480</a>
+      <p class="zh">一台可交互的 3D 喷气发动机，你可以剖切、拆解，由 Opus 5.5 制作。</p>
+      <p class="link"><a href="https://x.com/claudeai/status/2106125478956507480" target="_blank" rel="noopener">x.com/claudeai/status/2106125478956507480</a></p>
     </div>
 
     <div class="tweet">
       <p class="en">A pop-up city where each building is a paper fold drawn on a flat canvas, Sonnet 5.5.
 https://t.co/04cupOr4Tg</p>
-      <p class="cn">一座立体书城市，每栋建筑都是画在平面画布上的折纸，由 Sonnet 5.5 制作。</p>
-      <a class="link" href="https://x.com/claudeai/status/2106125477710901276">x.com/claudeai/status/2106125477710901276</a>
+      <p class="zh">一座立体书城市，每栋建筑都是画在平面画布上的折纸，由 Sonnet 5.5 制作。</p>
+      <p class="link"><a href="https://x.com/claudeai/status/2106125477710901276" target="_blank" rel="noopener">x.com/claudeai/status/2106125477710901276</a></p>
     </div>
-  </div>
+  </article>
 
+  <!-- ============ PODCAST ============ -->
   <h2 class="section-title">播客</h2>
 
-  <div class="card">
-    <div class="builder-head">
-      <span class="builder-name">No Priors</span>
-      <span class="builder-handle">@NoPriorsPodcast</span>
-    </div>
-    <div class="builder-bio">
-      <p class="podcast-ep">Frontier Chips for Frontier AI Labs, with Walter Goodwin, Founder/CEO of Fractile</p>
-      <p class="podcast-cn">前沿芯片，服务前沿 AI 实验室——对话 Fractile 创始人兼 CEO Walter Goodwin</p>
-    </div>
+  <article class="podcast">
+    <div class="show">No Priors</div>
+    <h3>Frontier Chips for Frontier AI Labs, with Walter Goodwin, Founder/CEO of Fractile</h3>
+    <p class="pod-zh">前沿 AI 实验室的前沿芯片——对话 Fractile 创始人兼 CEO Walter Goodwin</p>
+    <p class="pod-link"><a href="https://www.youtube.com/@NoPriorsPodcast" target="_blank" rel="noopener">youtube.com/@NoPriorsPodcast</a></p>
 
-    <div class="points-title">本期要点</div>
     <ul class="points">
       <li>
-        <p class="en">Fractile is building a new class of compute hardware aimed specifically at the inference demands of frontier AI labs.</p>
-        <p class="cn">Fractile 正在打造一类全新的计算硬件，专门面向前沿 AI 实验室的推理需求。</p>
+        <p class="en">Fractile is building a new class of compute hardware designed specifically for the inference demands of frontier AI models.</p>
+        <p class="zh">Fractile 正在打造一类全新的计算硬件，专为前沿 AI 模型的推理需求而设计。</p>
       </li>
       <li>
-        <p class="en">Walter Goodwin explains why today's GPU-centric architectures leave significant performance on the table for large model inference.</p>
-        <p class="cn">Walter Goodwin 解释了为什么当下以 GPU 为中心的架构在大模型推理上浪费了大量性能。</p>
+        <p class="en">Walter Goodwin argues that today's GPUs are a compromise, and that memory bandwidth—not raw FLOPs—is the real bottleneck for frontier inference.</p>
+        <p class="zh">Walter Goodwin 认为，如今的 GPU 是一种妥协，而前沿推理的真正瓶颈是内存带宽，而非单纯的算力（FLOPs）。</p>
       </li>
       <li>
-        <p class="en">The conversation covers the tradeoffs between memory bandwidth, compute density, and cost per token at frontier scale.</p>
-        <p class="cn">对话覆盖了在前沿规模下，内存带宽、计算密度与每 token 成本之间的权衡。</p>
+        <p class="en">The conversation covers why frontier labs need custom silicon, how a chip startup competes with Nvidia, and what the compute roadmap looks like over the next few years.</p>
+        <p class="zh">对话涵盖了：前沿实验室为何需要定制芯片、一家芯片初创公司如何与英伟达竞争，以及未来几年的算力路线图会是什么样。</p>
       </li>
       <li>
-        <p class="en">They discuss what it takes for a new chip company to earn the trust of labs operating at the very edge of model capability.</p>
-        <p class="cn">他们讨论了，一家新的芯片公司要赢得那些在模型能力最前沿运作的实验室的信任，需要具备什么。</p>
-      </li>
-      <li>
-        <p class="en">Walter shares his view on how the hardware and model co-design loop will shape the next few years of AI progress.</p>
-        <p class="cn">Walter 分享了他对硬件与模型协同设计循环将如何塑造未来几年 AI 进展的看法。</p>
+        <p class="en">Goodwin shares lessons from founding and scaling a deep-tech hardware company, including fundraising and hiring against incumbents.</p>
+        <p class="zh">Goodwin 分享了创办并规模化一家深科技硬件公司的经验，包括融资以及在与巨头竞争中的招聘策略。</p>
       </li>
     </ul>
+  </article>
 
-    <a class="link" href="https://www.youtube.com/@NoPriorsPodcast">youtube.com/@NoPriorsPodcast</a>
-  </div>
-
+  <!-- ============ FOOTER ============ -->
   <footer>
     由 AI Daily Bot 自动生成 · 每日 10:00（北京时间）
   </footer>
