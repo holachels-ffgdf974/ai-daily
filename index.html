@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 · 2026年10月08日</title>
+<title>AI 日报 · 2026年10月09日</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -12,815 +12,708 @@
     background: #fafaf8;
     color: #1a1a1a;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 16px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
   .wrap {
     max-width: 680px;
     margin: 0 auto;
-    padding: 64px 32px 96px;
+    padding: 56px 28px 80px;
   }
-  /* Masthead */
-  .masthead {
+  header.masthead {
     text-align: center;
-    padding-bottom: 40px;
+    padding-bottom: 32px;
+    margin-bottom: 40px;
     border-bottom: 1px solid #e8e8e4;
-    margin-bottom: 48px;
   }
-  .masthead .date {
-    font-size: 14px;
-    letter-spacing: 0.08em;
+  .date {
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     color: #6b6b6b;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
-  .masthead h1 {
-    font-family: Georgia, "Times New Roman", serif;
+  h1.title {
+    font-family: Georgia, "Songti SC", serif;
     font-size: 46px;
     font-weight: 700;
-    margin: 0 0 16px;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.06em;
+    margin: 0 0 18px;
+    color: #1a1a1a;
   }
-  .masthead h1 .accent {
-    color: #8b5e3c;
-  }
-  .masthead .stats {
-    font-size: 13px;
+  .stats {
+    font-size: 14px;
     color: #6b6b6b;
-    letter-spacing: 0.04em;
   }
-  .masthead .stats span {
-    margin: 0 6px;
-  }
-  /* Builder card */
+  .stats span { color: #8b5e3c; font-weight: 600; }
   .builder {
     background: #ffffff;
     border: 1px solid #e8e8e4;
     border-radius: 8px;
-    padding: 28px 28px 20px;
-    margin-bottom: 28px;
+    padding: 26px 26px 14px;
+    margin-bottom: 26px;
   }
   .builder-head {
-    padding-bottom: 16px;
-    border-bottom: 1px solid #f0efe9;
-    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 6px;
   }
-  .builder-name {
-    font-size: 19px;
+  .name {
+    font-family: Georgia, serif;
+    font-size: 21px;
     font-weight: 700;
-    margin: 0 0 4px;
+    color: #1a1a1a;
   }
-  .builder-handle {
-    font-size: 13px;
-    color: #2c6bae;
+  .handle {
+    font-size: 14px;
+    color: #8b5e3c;
     text-decoration: none;
-    margin-right: 8px;
   }
-  .builder-bio {
-    font-size: 13px;
+  .handle:hover { text-decoration: underline; }
+  .bio {
+    font-size: 14px;
     color: #6b6b6b;
-    margin-top: 8px;
-    line-height: 1.5;
+    margin: 0 0 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0ec;
   }
-  /* Tweet */
   .tweet {
-    padding: 16px 0;
-    border-bottom: 1px solid #f4f3ee;
+    border-left: 3px solid #e8e0d0;
+    background: #fdfdfb;
+    padding: 14px 16px 12px;
+    margin-bottom: 16px;
+    border-radius: 0 6px 6px 0;
   }
-  .tweet:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  .tweet-en {
+  .tweet .en {
     font-size: 15px;
     color: #1a1a1a;
     white-space: pre-wrap;
-    margin-bottom: 8px;
+    margin: 0 0 10px;
   }
-  .tweet-en a {
+  .tweet .zh {
+    font-size: 15px;
+    color: #6b6b6b;
+    white-space: pre-wrap;
+    margin: 0 0 10px;
+  }
+  .tweet .src {
+    font-size: 12.5px;
     color: #2c6bae;
     text-decoration: none;
     word-break: break-all;
   }
-  .tweet-en a:hover { text-decoration: underline; }
-  .tweet-zh {
-    font-size: 14px;
-    color: #6b6b6b;
-    white-space: pre-wrap;
-    padding-left: 14px;
-    border-left: 3px solid #e8e0d0;
-    background: #fdfdfb;
-    padding: 10px 12px 10px 14px;
-    border-radius: 0 4px 4px 0;
-  }
-  .tweet-link {
-    display: inline-block;
-    margin-top: 8px;
-    font-size: 12px;
-    color: #8b5e3c;
-    text-decoration: none;
-    letter-spacing: 0.03em;
-  }
-  .tweet-link:hover { text-decoration: underline; }
-  /* Podcast */
+  .tweet .src:hover { text-decoration: underline; }
   .section-title {
     font-family: Georgia, serif;
-    font-size: 24px;
-    margin: 56px 0 24px;
-    padding-bottom: 12px;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 48px 0 22px;
+    padding-bottom: 10px;
     border-bottom: 2px solid #8b5e3c;
+    display: inline-block;
   }
   .podcast {
     background: #ffffff;
     border: 1px solid #e8e8e4;
     border-radius: 8px;
-    padding: 28px;
-    margin-bottom: 28px;
+    padding: 26px;
+    margin-bottom: 26px;
   }
-  .podcast-name {
-    font-size: 12px;
+  .podcast .pname {
+    font-size: 13px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #8b5e3c;
+    font-weight: 600;
     margin-bottom: 8px;
   }
-  .podcast-title {
+  .podcast h3 {
     font-family: Georgia, serif;
-    font-size: 21px;
-    font-weight: 700;
+    font-size: 20px;
     margin: 0 0 6px;
-    line-height: 1.4;
+    line-height: 1.45;
   }
-  .podcast-title-zh {
+  .podcast .pzh {
     font-size: 15px;
     color: #6b6b6b;
-    margin-bottom: 18px;
+    margin: 0 0 16px;
   }
-  .podcast-link {
+  .podcast a.plink {
     font-size: 13px;
     color: #2c6bae;
     text-decoration: none;
     word-break: break-all;
   }
-  .podcast-link:hover { text-decoration: underline; }
-  /* Footer */
-  .footer {
-    margin-top: 64px;
-    padding-top: 28px;
-    border-top: 1px solid #e8e8e4;
+  .podcast a.plink:hover { text-decoration: underline; }
+  footer {
     text-align: center;
-    font-size: 12px;
+    margin-top: 56px;
+    padding-top: 26px;
+    border-top: 1px solid #e8e8e4;
+    font-size: 13px;
     color: #6b6b6b;
-    letter-spacing: 0.04em;
   }
   @media (max-width: 600px) {
-    .wrap { padding: 40px 18px 64px; }
-    .masthead h1 { font-size: 34px; }
-    .builder { padding: 20px 18px 14px; }
-    .podcast { padding: 20px 18px; }
-    .tweet-en { font-size: 14px; }
-    .tweet-zh { font-size: 13px; }
+    .wrap { padding: 34px 16px 56px; }
+    h1.title { font-size: 34px; }
+    .builder, .podcast { padding: 18px 16px 8px; }
+    .tweet { padding: 12px 12px 10px; }
+    .tweet .en, .tweet .zh { font-size: 14.5px; }
+    .section-title { font-size: 22px; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <!-- Masthead -->
   <header class="masthead">
-    <div class="date">2026年10月08日 · 星期四</div>
-    <h1>AI <span class="accent">日报</span></h1>
-    <div class="stats">
-      <span>22 位 Builder</span>·<span>44 条动态</span>·<span>1 档播客</span>
-    </div>
+    <div class="date">2026年10月09日 星期五</div>
+    <h1 class="title">AI 日报</h1>
+    <div class="stats">今日收录 <span>15</span> 位 Builder · <span>30</span> 条推文 · <span>1</span> 期播客</div>
   </header>
 
-  <!-- Boris Cherny -->
+  <!-- Swyx -->
   <article class="builder">
     <div class="builder-head">
-      <h2 class="builder-name">Boris Cherny</h2>
-      <a class="builder-handle" href="https://x.com/bcherny" target="_blank">@bcherny</a>
-      <div class="builder-bio">Claude @anthropicai</div>
+      <span class="name">Swyx</span>
+      <a class="handle" href="https://x.com/swyx" target="_blank">@swyx</a>
+    </div>
+    <p class="bio">achieve ambition with intentionality, intensity, integrity &amp; insanity. · 关联：@smol_ai、@dxtipshq、@cognitio</p>
+
+    <div class="tweet">
+      <p class="en">to paraphrase modern family, there are 5 things wrong in this tweet. the talented {role} will already have posts covering most of them 
+https://t.co/TEtI8UL5TA</p>
+      <p class="zh">套用《摩登家庭》的说法：这条推文里有 5 处错误。而那位有才华的 {角色} 早就写过文章，把其中大部分都覆盖到了。</p>
+      <a class="src" href="https://x.com/swyx/status/2108391703488958475" target="_blank">x.com/swyx/status/2108391703488958475</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">Ok back to reading <a href="https://t.co/Kdph4vZuGt" target="_blank">https://t.co/Kdph4vZuGt</a></div>
-      <div class="tweet-zh">好了，回去继续读书了。</div>
-      <a class="tweet-link" href="https://x.com/bcherny/status/2108013947144085714" target="_blank">查看原推 →</a>
+      <p class="en">to paraphrase modern family, there are 5 things wrong in this tweet. the talented {role} will already have posts covering most of them 
+https://t.co/TEtI8ULDJ8</p>
+      <p class="zh">套用《摩登家庭》的说法：这条推文里有 5 处错误。而那位有才华的 {角色} 早就写过文章，把其中大部分都覆盖到了。</p>
+      <a class="src" href="https://x.com/swyx/status/2108391663827849390" target="_blank">x.com/swyx/status/2108391663827849390</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">It was one prompt, claude verified pretty well too! No bugs so far <a href="https://t.co/jjnUzGkdoC" target="_blank">https://t.co/jjnUzGkdoC</a></div>
-      <div class="tweet-zh">只用了一个提示词，Claude 的验证也做得相当不错！目前还没有出现 bug。</div>
-      <a class="tweet-link" href="https://x.com/bcherny/status/2108008010253533397" target="_blank">查看原推 →</a>
-    </div>
+      <p class="en">if you cant hire for it, my team will do oneoff consult for you, get in touch business@latent.space 
 
-    <div class="tweet">
-      <div class="tweet-en">Try it <a href="https://t.co/isXGOnEXd5" target="_blank">https://t.co/isXGOnEXd5</a></div>
-      <div class="tweet-zh">来试试吧。</div>
-      <a class="tweet-link" href="https://x.com/bcherny/status/2108006118966665463" target="_blank">查看原推 →</a>
+https://t.co/TrsDS8PK4l</p>
+      <p class="zh">如果你招不到合适的人，我的团队可以为你做一次性的咨询，联系方式：business@latent.space</p>
+      <a class="src" href="https://x.com/swyx/status/2108388128390086675" target="_blank">x.com/swyx/status/2108388128390086675</a>
     </div>
   </article>
 
   <!-- Thibault Sottiaux -->
   <article class="builder">
     <div class="builder-head">
-      <h2 class="builder-name">Thibault Sottiaux</h2>
-      <a class="builder-handle" href="https://x.com/thsottiaux" target="_blank">@thsottiaux</a>
-      <div class="builder-bio">Codex &amp; ChatGPT @OpenAI</div>
+      <span class="name">Thibault Sottiaux</span>
+      <a class="handle" href="https://x.com/thsottiaux" target="_blank">@thsottiaux</a>
+    </div>
+    <p class="bio">Codex &amp; ChatGPT @OpenAI</p>
+
+    <div class="tweet">
+      <p class="en">Today, we are announcing ChatGPT.
+
+It is here: https://t.co/Pgk3THSyOJ</p>
+      <p class="zh">今天，我们正式发布 ChatGPT。它来了。</p>
+      <a class="src" href="https://x.com/thsottiaux/status/2108349826727588000" target="_blank">x.com/thsottiaux/status/2108349826727588000</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">Day 3 (encore)/
+      <p class="en">Day 4/
 
-We silently re-shipped codex cloud. It’s pretty good now <a href="https://t.co/Fau14sCke8" target="_blank">https://t.co/Fau14sCke8</a></div>
-      <div class="tweet-zh">第 3 天（返场）/
+We have improved steering to be instant, leading to the model now reacting much faster to adjustments you make, allowing you to course-correct direction in realtime and not have the model waste effort.
 
-我们悄悄重新上线了 codex cloud。现在它相当不错了。</div>
-      <a class="tweet-link" href="https://x.com/thsottiaux/status/2108084615349170480" target="_blank">查看原推 →</a>
-    </div>
+Also releasing GPT-6.1 Sol ultrafast. The two work very well together.</p>
+      <p class="zh">第 4 天／
 
-    <div class="tweet">
-      <div class="tweet-en">Confirmed landed across all accounts. How are we doing so far? <a href="https://t.co/tzw7dNX4pN" target="_blank">https://t.co/tzw7dNX4pN</a></div>
-      <div class="tweet-zh">已确认在所有账户全面上线。目前大家觉得体验如何？</div>
-      <a class="tweet-link" href="https://x.com/thsottiaux/status/2108040921044639779" target="_blank">查看原推 →</a>
-    </div>
+我们把「引导（steering）」优化到了即时响应，模型现在对你做出的调整反应快得多，让你可以实时纠偏方向，不再让模型白费力气。
 
-    <div class="tweet">
-      <div class="tweet-en">Will be there by EOD PST.</div>
-      <div class="tweet-zh">会在太平洋时间今天结束前上线。</div>
-      <a class="tweet-link" href="https://x.com/thsottiaux/status/2107913738791596286" target="_blank">查看原推 →</a>
+同时发布 GPT-6.1 Sol 超高速版。两者配合得非常好。</p>
+      <a class="src" href="https://x.com/thsottiaux/status/2108275041276420573" target="_blank">x.com/thsottiaux/status/2108275041276420573</a>
     </div>
   </article>
 
   <!-- Peter Yang -->
   <article class="builder">
     <div class="builder-head">
-      <h2 class="builder-name">Peter Yang</h2>
-      <a class="builder-handle" href="https://x.com/petergyang" target="_blank">@petergyang</a>
-      <div class="builder-bio">面向忙碌人群的实用 AI 教程与访谈 | 在 https://t.co/6VAA6p81x6 获取我的最佳 AI 技巧与指南</div>
+      <span class="name">Peter Yang</span>
+      <a class="handle" href="https://x.com/petergyang" target="_blank">@petergyang</a>
+    </div>
+    <p class="bio">Practical AI tutorials and interviews for busy people | 在 https://t.co/6VAA6p81x6 获取我最好的 AI 技能与指南</p>
+
+    <div class="tweet">
+      <p class="en">I don't understand how Grok @bot's new email feature works. I just tagged it on a thread and it doesn't seem to reply? What are ppl using it for?</p>
+      <p class="zh">我不太明白 Grok @bot 的新邮件功能是怎么运作的。我在一个帖子里 @ 了它，但它好像并没有回复？大家到底拿它来干什么？</p>
+      <a class="src" href="https://x.com/petergyang/status/2108412799684915576" target="_blank">x.com/petergyang/status/2108412799684915576</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">.@suno is so damn good honestly. It's probably going to overtake Spotify at some point.</div>
-      <div class="tweet-zh">说真的，@suno 实在是太强了。它很可能会在某个时间点超越 Spotify。</div>
-      <a class="tweet-link" href="https://x.com/petergyang/status/2108046949291315385" target="_blank">查看原推 →</a>
+      <p class="en">@poteto @thsottiaux If you enjoyed this, sign up for free to my newsletter to get my best AI and product guides.
+
+Join 110,000+ subscribers here:
+https://t.co/yz9xcsfrhF</p>
+      <p class="zh">@poteto @thsottiaux 如果你喜欢这些内容，欢迎免费订阅我的 newsletter，获取我最好的 AI 与产品指南。
+
+已有 11 万+ 订阅者加入。</p>
+      <a class="src" href="https://x.com/petergyang/status/2108410706546905437" target="_blank">x.com/petergyang/status/2108410706546905437</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">AI already solved images, music, and video. It’s going to solve gaming soon</div>
-      <div class="tweet-zh">AI 已经攻克了图像、音乐和视频。很快它也会攻克游戏。</div>
-      <a class="tweet-link" href="https://x.com/petergyang/status/2108032922527862851" target="_blank">查看原推 →</a>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">It seems like anything you ship can now be decompiled and rebuilt by AI.
-
-I think it'll soon be incredibly hard to make money from software unless you have proprietary data, distribution, or some other edge.
-
-Traditional SaaS is especially vulnerable, since it's expensive and full of features built for humans that agents don't need.</div>
-      <div class="tweet-zh">看起来现在你发布的任何东西都可以被 AI 反编译并重新构建。
-
-我认为，除非你拥有专有数据、分发渠道或其他优势，否则很快从软件中赚钱将变得极其困难。
-
-传统 SaaS 尤其脆弱，因为它成本高昂，而且充满了为人类打造、但 Agent 并不需要的功能。</div>
-      <a class="tweet-link" href="https://x.com/petergyang/status/2107981547102245101" target="_blank">查看原推 →</a>
+      <p class="en">Just insane  https://t.co/IwE5WF1sKX</p>
+      <p class="zh">简直离谱。</p>
+      <a class="src" href="https://x.com/petergyang/status/2108285232055263734" target="_blank">x.com/petergyang/status/2108285232055263734</a>
     </div>
   </article>
 
   <!-- Nan Yu -->
   <article class="builder">
     <div class="builder-head">
-      <h2 class="builder-name">Nan Yu</h2>
-      <a class="builder-handle" href="https://x.com/thenanyu" target="_blank">@thenanyu</a>
-      <div class="builder-bio">产品、codex @openai。前 @linear 产品负责人</div>
+      <span class="name">Nan Yu</span>
+      <a class="handle" href="https://x.com/thenanyu" target="_blank">@thenanyu</a>
     </div>
+    <p class="bio">product, codex @openai. 前 @linear 产品负责人</p>
 
     <div class="tweet">
-      <div class="tweet-en">Dread it. Run from it. The One True Productivity App Layout arrives all the same. <a href="https://t.co/fczbE1PHEk" target="_blank">https://t.co/fczbE1PHEk</a></div>
-      <div class="tweet-zh">恐惧它，逃避它，那唯一正统的生产力应用布局终究会到来。</div>
-      <a class="tweet-link" href="https://x.com/thenanyu/status/2108049498648051747" target="_blank">查看原推 →</a>
+      <p class="en">huge https://t.co/TBeAH6PxED</p>
+      <p class="zh">重大消息。</p>
+      <a class="src" href="https://x.com/thenanyu/status/2108354844658737637" target="_blank">x.com/thenanyu/status/2108354844658737637</a>
     </div>
   </article>
 
-  <!-- Cat Wu -->
+  <!-- Madhu Guru -->
   <article class="builder">
     <div class="builder-head">
-      <h2 class="builder-name">Cat Wu</h2>
-      <a class="builder-handle" href="https://x.com/_catwu" target="_blank">@_catwu</a>
-      <div class="builder-bio">claude code + cowork @anthropicai，此前就职于 @dagster、@scale_ai</div>
+      <span class="name">Madhu Guru</span>
+      <a class="handle" href="https://x.com/realmadhuguru" target="_blank">@realmadhuguru</a>
     </div>
+    <p class="bio">Sr Director, AI at Meta；前 Google —— 曾主导 Gemini、Veo、Nano Banana</p>
 
     <div class="tweet">
-      <div class="tweet-en">One of my favorite PM use cases for Claude is asking "who used &lt;feature&gt; the most last week? make me a artifact of the top 10 by usage, then reach out and schedule 15 min to chat." It's the fastest way to get user feedback! <a href="https://t.co/SYL4JOitsB" target="_blank">https://t.co/SYL4JOitsB</a></div>
-      <div class="tweet-zh">我最喜欢的产品经理用 Claude 场景之一，是问它：“上周谁使用 &lt;某功能&gt; 最多？给我做一份使用量前 10 名的成果物，然后联系他们并预约 15 分钟聊聊。”这是获取用户反馈最快的方式！</div>
-      <a class="tweet-link" href="https://x.com/_catwu/status/2107967210467803152" target="_blank">查看原推 →</a>
+      <p class="en">There are massive startup opportunities hiding in plain sight : every layer of the computing stack will need to be rebuilt for agents.
+
+For the last few years, most of the focus has been on making enterprise software agent-ready: APIs, connectors, MCPs.
+
+Now personal agents are forcing the same conversation for consumer products - e-commerce is an early example.
+
+This is just the tip of the iceberg.
+
+Now think about the rest of the stack:
+
+Desktop and mobile OSes where agents are first-class users
+
+Cloud infra built for agents to operate directly.
+
+identity, permissions and security designed for thousands of agents acting on our behalf.
+
+Interfaces designed for agent and human users or both working together.
+
+If you're looking for startup ideas, go through each layer of the computing stack and ask: what has to change when the primary user is an agent?</p>
+      <p class="zh">巨大的创业机会正藏在众目睽睽之下：计算技术栈的每一层，都将为 Agent 而重建。
+
+过去几年，大部分注意力都放在让企业软件「为 Agent 做好准备」上：API、连接器、MCP。
+
+如今，个人 Agent 正在把同样的讨论推向消费级产品——电商只是一个早期的例子。
+
+而这仅仅是冰山一角。
+
+再想想技术栈的其余部分：
+
+桌面与移动操作系统，Agent 成为一等公民用户；
+
+为 Agent 直接运行而构建的云基础设施；
+
+为成千上万个代表我们行动的 Agent 而设计的身份、权限与安全体系；
+
+为 Agent、人类用户，或两者协同工作而设计的交互界面。
+
+如果你正在寻找创业点子，就逐层审视计算技术栈，然后问自己：当主要用户变成 Agent 时，什么必须改变？</p>
+      <a class="src" href="https://x.com/realmadhuguru/status/2108236391641706813" target="_blank">x.com/realmadhuguru/status/2108236391641706813</a>
     </div>
   </article>
 
   <!-- Thariq -->
   <article class="builder">
     <div class="builder-head">
-      <h2 class="builder-name">Thariq</h2>
-      <a class="builder-handle" href="https://x.com/trq212" target="_blank">@trq212</a>
-      <div class="builder-bio">Claude Code @anthropicai。此前 YC W20、@spc、@medialab</div>
+      <span class="name">Thariq</span>
+      <a class="handle" href="https://x.com/trq212" target="_blank">@trq212</a>
+    </div>
+    <p class="bio">Claude Code @anthropicai。前 YC W20、@spc、@medialab</p>
+
+    <div class="tweet">
+      <p class="en">here's what I got today https://t.co/ua7zBXbpDP</p>
+      <p class="zh">这是我今天做出来的东西。</p>
+      <a class="src" href="https://x.com/trq212/status/2108312751202537946" target="_blank">x.com/trq212/status/2108312751202537946</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">and because agents make it easier, almost everyone is operating outside their expertise at some point
+      <p class="en">whoops I hit send and went to a meeting, didn't realize the repo wasnt public- it is now! 
 
-but luckily, you can just ask the model to teach you what you don't know</div>
-      <div class="tweet-zh">而且因为 Agent 让事情变得更容易，几乎每个人在某个时刻都会在自己专业领域之外行事。
+it's a chrome extension I use every day now https://t.co/OroAeTafj0 https://t.co/3AE65z3VqK</p>
+      <p class="zh">哎呀，我点了发送就去开会了，没意识到仓库还不是公开的——现在已经公开了！
 
-但幸运的是，你完全可以让模型教你你不懂的东西。</div>
-      <a class="tweet-link" href="https://x.com/trq212/status/2108021248966135891" target="_blank">查看原推 →</a>
+这是一个我现在每天都用的 Chrome 扩展。</p>
+      <a class="src" href="https://x.com/trq212/status/2108312534222778407" target="_blank">x.com/trq212/status/2108312534222778407</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">the most common failure case I see is when people are working outside their domain of expertise and don't know how to be precise with their prompts and plans, so they have to spend a lot of turns iterating imprecisely <a href="https://t.co/mRT3knojCP" target="_blank">https://t.co/mRT3knojCP</a></div>
-      <div class="tweet-zh">我见过最常见的失败情形，是人们在自己专业领域之外工作时，不知道如何让提示词和计划足够精确，于是不得不花费大量轮次进行不精确的迭代。</div>
-      <a class="tweet-link" href="https://x.com/trq212/status/2108021247301062894" target="_blank">查看原推 →</a>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">I think it's probably an incredible time to be a game dev content creator, for many people making games is a form of having fun and they're willing to pay for it! <a href="https://t.co/iS08bGZZnJ" target="_blank">https://t.co/iS08bGZZnJ</a></div>
-      <div class="tweet-zh">我认为现在做游戏开发类内容创作者，可能是绝佳时机。对很多人来说，做游戏本身就是一种娱乐方式，而他们愿意为此付费！</div>
-      <a class="tweet-link" href="https://x.com/trq212/status/2107957206327173484" target="_blank">查看原推 →</a>
-    </div>
-  </article>
-
-  <!-- Google Labs -->
-  <article class="builder">
-    <div class="builder-head">
-      <h2 class="builder-name">Google Labs</h2>
-      <a class="builder-handle" href="https://x.com/GoogleLabs" target="_blank">@GoogleLabs</a>
-      <div class="builder-bio">Google 最新 AI 工具与实验的聚集地。</div>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">NEW EXPERIMENT 
-
-Playground is an experimental gaming platform that lets you create your own games with zero coding experience. If you can think it, you can play it.
-
-Go to <a href="https://t.co/fRUukpuoqM" target="_blank">https://t.co/fRUukpuoqM</a> to learn more! Available to users 18+ in the US. <a href="https://t.co/p0X8JR7JMn" target="_blank">https://t.co/p0X8JR7JMn</a></div>
-      <div class="tweet-zh">新实验
-
-Playground 是一个实验性游戏平台，让你在零编程经验的情况下创建自己的游戏。只要你能想到，就能玩到。
-
-前往 https://t.co/fRUukpuoqM 了解更多！面向美国 18 岁以上用户开放。</div>
-      <a class="tweet-link" href="https://x.com/GoogleLabs/status/2107800195748737042" target="_blank">查看原推 →</a>
-    </div>
-  </article>
-
-  <!-- Amjad Masad -->
-  <article class="builder">
-    <div class="builder-head">
-      <h2 class="builder-name">Amjad Masad</h2>
-      <a class="builder-handle" href="https://x.com/amasad" target="_blank">@amasad</a>
-      <div class="builder-bio">ceo @replit。文明主义者</div>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">Math was bound to fall first. The purer the field the easier it is for AI to crack. <a href="https://t.co/OETDJ1JSIz" target="_blank">https://t.co/OETDJ1JSIz</a></div>
-      <div class="tweet-zh">数学注定会最先被攻克。领域越纯粹，AI 就越容易破解。</div>
-      <a class="tweet-link" href="https://x.com/amasad/status/2107934939287273551" target="_blank">查看原推 →</a>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">That’s because Replit is not a consumer app. Most of our creators are building businesses or working on one. <a href="https://t.co/B70WFQldgU" target="_blank">https://t.co/B70WFQldgU</a></div>
-      <div class="tweet-zh">那是因为 Replit 并不是一款消费级应用。我们的创作者大多在创业，或正在为某个事业工作。</div>
-      <a class="tweet-link" href="https://x.com/amasad/status/2107927076926038273" target="_blank">查看原推 →</a>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">Desktop AI apps are great but expose users to supply-chain attacks and catastrophic mistakes by agents.
-
-We’re building a powerful desktop experience with focus on security &amp; reliability.
-
-Excited to partner with @Microsoft on this and be an early adopter of @nvidia’s OpenShell. <a href="https://t.co/YixaxIXhpb" target="_blank">https://t.co/YixaxIXhpb</a></div>
-      <div class="tweet-zh">桌面 AI 应用很棒，但会让用户暴露于供应链攻击和 Agent 造成的灾难性错误之中。
-
-我们正在打造一款强大的桌面体验，专注于安全性与可靠性。
-
-很高兴与 @Microsoft 就此合作，并成为 @nvidia OpenShell 的早期采用者。</div>
-      <a class="tweet-link" href="https://x.com/amasad/status/2107926712277438503" target="_blank">查看原推 →</a>
+      <p class="en">and read more about how to enable the API credits for yourself here: https://t.co/dXXsfLbxH6</p>
+      <p class="zh">想了解如何为自己启用 API 额度，可以在这里阅读更多。</p>
+      <a class="src" href="https://x.com/trq212/status/2108301672409960922" target="_blank">x.com/trq212/status/2108301672409960922</a>
     </div>
   </article>
 
   <!-- Guillermo Rauch -->
   <article class="builder">
     <div class="builder-head">
-      <h2 class="builder-name">Guillermo Rauch</h2>
-      <a class="builder-handle" href="https://x.com/rauchg" target="_blank">@rauchg</a>
-      <div class="builder-bio">@vercel CEO</div>
+      <span class="name">Guillermo Rauch</span>
+      <a class="handle" href="https://x.com/rauchg" target="_blank">@rauchg</a>
     </div>
+    <p class="bio">@vercel CEO</p>
 
     <div class="tweet">
-      <div class="tweet-en">One thing the engineering community will (re)discover is that every program can be ① hardened (edge cases squashed, inputs tightened, errors handled) and ② optimized (profiled, benchmarked, rewritten) basically ad infinitum.
-
-There are real costs in every direction: time, attention, opportunity. You can literally explore input spaces that will never be hit or optimize performance of something that will never be used ("you have no users".) Even in an infinite token world, you need to know when to stop and what tradeoffs to accept. Agents will happily drill no matter what.</div>
-      <div class="tweet-zh">工程界将会（重新）发现的一点是：每个程序基本上都可以 ① 被加固（消除边界情况、收紧输入、处理错误），② 被优化（性能分析、基准测试、重写），几乎可以无限进行下去。
-
-每个方向都有真实的成本：时间、注意力、机会。你完全可能去探索永远不会被触及的输入空间，或优化永远不会被用到的东西的性能（“你根本没有用户”）。即使在 token 无限的世界里，你也需要知道何时停下、接受哪些取舍。而 Agent 无论何时都会乐此不疲地继续钻下去。</div>
-      <a class="tweet-link" href="https://x.com/rauchg/status/2107962327169675566" target="_blank">查看原推 →</a>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">gm from the best city in the world <a href="https://t.co/aPDFNR7KhT" target="_blank">https://t.co/aPDFNR7KhT</a></div>
-      <div class="tweet-zh">来自全世界最棒城市的早安。</div>
-      <a class="tweet-link" href="https://x.com/rauchg/status/2107861196506595398" target="_blank">查看原推 →</a>
-    </div>
-  </article>
-
-  <!-- Alex Albert -->
-  <article class="builder">
-    <div class="builder-head">
-      <h2 class="builder-name">Alex Albert</h2>
-      <a class="builder-handle" href="https://x.com/alexalbert__" target="_blank">@alexalbert__</a>
-      <div class="builder-bio">Research @AnthropicAI。仅代表个人观点！</div>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">For reference, Haiku 4.5 came out on October 15th, 2025 so these two columns are less than a year apart. 
-
-and oh yeah Haiku 5.5 is also much faster and 75% cheaper... <a href="https://t.co/1Zt19kdTYC" target="_blank">https://t.co/1Zt19kdTYC</a></div>
-      <div class="tweet-zh">供参考，Haiku 4.5 发布于 2025 年 10 月 15 日，所以这两列数据相隔不到一年。
-
-而且对了，Haiku 5.5 还快得多，并且便宜了 75%……</div>
-      <a class="tweet-link" href="https://x.com/alexalbert__/status/2107912771568554415" target="_blank">查看原推 →</a>
+      <p class="en">Few things more enjoyable in work and life than discovering new talent. Seeing greatness in people, sometimes even before they fully see it themselves.</p>
+      <p class="zh">在工作和生活中，很少有比发现新人才更令人愉悦的事。在别人身上看到卓越——有时甚至在他们自己还没完全意识到之前。</p>
+      <a class="src" href="https://x.com/rauchg/status/2108399406009798764" target="_blank">x.com/rauchg/status/2108399406009798764</a>
     </div>
   </article>
 
   <!-- Aaron Levie -->
   <article class="builder">
     <div class="builder-head">
-      <h2 class="builder-name">Aaron Levie</h2>
-      <a class="builder-handle" href="https://x.com/levie" target="_blank">@levie</a>
-      <div class="builder-bio">ceo @box —— 你的业务存在于内容之中。用 AI 释放它。</div>
+      <span class="name">Aaron Levie</span>
+      <a class="handle" href="https://x.com/levie" target="_blank">@levie</a>
+    </div>
+    <p class="bio">ceo @box —— 你的业务存在于内容之中，用 AI 释放它</p>
+
+    <div class="tweet">
+      <p class="en">This sounds weird, but it is actually probably a good policy. 
+
+Even if you don't believe AI is conscious (I don't), it stands to reason that you don't want future models trained on endless content of humans being rude to models. 
+
+The models only understand the data they've been trained on, or what they run into in their interactions, so if you want safe and aligned models we probably want AI to have lots of good interactions in their training data. 
+
+Anthropic may have more extreme beliefs than this (though even if they didn't, you may want to word policies like this), but this is sort of an easy Pascal's wager for AI. Just be nice to the AI.</p>
+      <p class="zh">这听起来有点怪，但它其实很可能是个好政策。
+
+即便你不认为 AI 有意识（我也不认为），也说得通：你不会希望未来的模型在训练时，喂进去的是人类对模型无休止的粗鲁内容。
+
+模型只理解它们被训练过的数据，或者它们在交互中遇到的东西。所以如果你想要安全、对齐的模型，我们大概希望在训练数据里让 AI 拥有大量良好的互动。
+
+Anthropic 的信念可能比这更极端（不过即便不是，你也可能想把政策写成这样），但这有点像 AI 领域的「帕斯卡赌注」——成本很低。对 AI 好一点就行了。</p>
+      <a class="src" href="https://x.com/levie/status/2108426594054533545" target="_blank">x.com/levie/status/2108426594054533545</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">The compute needed for the stage of AI we’re about to enter is going to be insane. 
+      <p class="en">We built Box Mount to allow developers to mount Box as a file system directly in any agent sandbox. As agents do more complex work, they need to be able to work with files and data just like a person would. The future is headless. https://t.co/hGBx3Tv4NL</p>
+      <p class="zh">我们构建了 Box Mount，让开发者可以把 Box 作为文件系统直接挂载到任意 Agent 沙箱中。随着 Agent 承担越来越复杂的工作，它们需要像人一样处理文件和数据。未来是无头的（headless）。</p>
+      <a class="src" href="https://x.com/levie/status/2108279490510193078" target="_blank">x.com/levie/status/2108279490510193078</a>
+    </div>
+  </article>
 
-Personal agents, agent swarms defending enterprises, agents that review all of our code for security issues, agents that process nearly all enterprise data in workflows, background agents working on tasks 24/7, and on and on. 
+  <!-- Garry Tan -->
+  <article class="builder">
+    <div class="builder-head">
+      <span class="name">Garry Tan</span>
+      <a class="handle" href="https://x.com/garrytan" target="_blank">@garrytan</a>
+    </div>
+    <p class="bio">President &amp; CEO @ycombinator —— 创始人 @garryslist —— GStack 与 GBrain 的创造者 —— 帮助创始人的设计师／工程师 —— 旧金山民主党人</p>
 
-This will take a mix of inference volume that is going to keep growing by orders of magnitude, as well as infrastructure that agents need alongside the tokens. They need computers, networking, file systems, and so on.
+    <div class="tweet">
+      <p class="en">Logical: in the future ICs with agents will be more productive and create better outcomes than equivalent people managers from prior eras https://t.co/mzsCcyOanP</p>
+      <p class="zh">合乎逻辑：未来，配备 Agent 的个人贡献者（IC）将比过去时代同等水平的管理者更有生产力、产出更好的结果。</p>
+      <a class="src" href="https://x.com/garrytan/status/2108433505038606620" target="_blank">x.com/garrytan/status/2108433505038606620</a>
+    </div>
 
-We’re only in the early stages of what this buildout is going to look like.</div>
-      <div class="tweet-zh">我们即将进入的 AI 阶段，所需的算力将会是疯狂的。
+    <div class="tweet">
+      <p class="en">Actually truth already stranger than fiction https://t.co/OyAxJ67GmI</p>
+      <p class="zh">事实上，现实已经比虚构更离奇了。</p>
+      <a class="src" href="https://x.com/garrytan/status/2108408546128011351" target="_blank">x.com/garrytan/status/2108408546128011351</a>
+    </div>
 
-个人 Agent、为企业防御的 Agent 集群、审查我们所有代码安全问题的 Agent、在工作流中处理几乎所有企业数据的 Agent、24/7 处理任务的后台 Agent，等等等等。
-
-这将需要一种混合体：推理量将持续以数量级增长，同时还有 Agent 在 token 之外所需的基础设施。它们需要计算机、网络、文件系统等等。
-
-而这场建设究竟会是什么样子，我们现在还只处于早期阶段。</div>
-      <a class="tweet-link" href="https://x.com/levie/status/2108056577697882402" target="_blank">查看原推 →</a>
+    <div class="tweet">
+      <p class="en">GTA SF omg https://t.co/JLqrVjFjRG</p>
+      <p class="zh">GTA 旧金山版，天呐。</p>
+      <a class="src" href="https://x.com/garrytan/status/2108408297988723076" target="_blank">x.com/garrytan/status/2108408297988723076</a>
     </div>
   </article>
 
   <!-- Matt Turck -->
   <article class="builder">
     <div class="builder-head">
-      <h2 class="builder-name">Matt Turck</h2>
-      <a class="builder-handle" href="https://x.com/mattturck" target="_blank">@mattturck</a>
-      <div class="builder-bio">@FirstMarkCap 风投。主持：MAD Podcast；组织：Data Driven NYC；作者：MAD Landscape。</div>
+      <span class="name">Matt Turck</span>
+      <a class="handle" href="https://x.com/mattturck" target="_blank">@mattturck</a>
+    </div>
+    <p class="bio">VC at @FirstMarkCap。主持：MAD Podcast；组织：Data Driven NYC；作者：MAD Landscape</p>
+
+    <div class="tweet">
+      <p class="en">Full transcript here:
+
+https://t.co/psAlOnufeY</p>
+      <p class="zh">完整文字稿在此。</p>
+      <a class="src" href="https://x.com/mattturck/status/2108223142699110727" target="_blank">x.com/mattturck/status/2108223142699110727</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">Fun fact: Ben Affleck, the successful AI founder and Python/CNN/GPU expert, had a prior career in the entertainment industry. <a href="https://t.co/BZwIs5mQhU" target="_blank">https://t.co/BZwIs5mQhU</a></div>
-      <div class="tweet-zh">有趣的事实：Ben Affleck，这位成功的 AI 创始人、Python/CNN/GPU 专家，此前曾在娱乐行业工作过。</div>
-      <a class="tweet-link" href="https://x.com/mattturck/status/2107876612679020855" target="_blank">查看原推 →</a>
+      <p class="en">This conversation with the great @andy_pavlo is also available on Spotify, Apple Podcasts and here on YouTube - like and subscribe!
+
+https://t.co/HsxVxJvjyF</p>
+      <p class="zh">这段与 @andy_pavlo 的精彩对话也可在 Spotify、Apple Podcasts 以及 YouTube 上收听——记得点赞订阅！</p>
+      <a class="src" href="https://x.com/mattturck/status/2108223141055180992" target="_blank">x.com/mattturck/status/2108223141055180992</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">Ofc everything is on X is mind-blowing, but having seen the beta version, this is... truly mind-blowing. <a href="https://t.co/wdySOkrsUd" target="_blank">https://t.co/wdySOkrsUd</a></div>
-      <div class="tweet-zh">当然，X 上的一切都令人震撼，但在看过测试版之后，这个……是真的令人震撼。</div>
-      <a class="tweet-link" href="https://x.com/mattturck/status/2107853622402805803" target="_blank">查看原推 →</a>
-    </div>
-  </article>
+      <p class="en">Special treat for the @andy_pavlo fans out there: an in-depth discussion about what happens to databases when billions of AI agents hit them, his move to build a research lab at @ClickHouseDB, and plently of hot takes on the database market (Postgres, vector, graph, GPU etc)
 
-  <!-- Zara Zhang -->
-  <article class="builder">
-    <div class="builder-head">
-      <h2 class="builder-name">Zara Zhang</h2>
-      <a class="builder-handle" href="https://x.com/zarazhangrui" target="_blank">@zarazhangrui</a>
-      <div class="builder-bio">Builder。做出人们想要的东西，再让人们想要它。Harvard’17。GitHub / YouTube 见主页。</div>
-    </div>
+00:00 Cold open &amp; Intro
+01:21 From vector databases and RAG to the age of agents
+04:09 Neon's stat: agents create 80% of databases?
+07:25 Why agents keep deleting production databases
+08:19 Guardrails: the toddler-and-stairs rule
+10:51 The four eras of database volume: 10–100x more queries
+15:10 Agent memory: files vs. databases ("everything is a database")
+18:24 Which database do AI models recommend?
+19:25 "It cites me back to myself"
+23:14 MCP for databases, and text-to-SQL from 60% to 99.5%
+27:09 Trust an agent the way you'd trust a junior developer
+27:47 Can AI build an entire database? Opus 4 and the CMU projects
+29:57 60% of open-source databases now have AI commits
+30:43 Ten years of self-driving databases, Peloton to today
+33:52 What LLMs changed: 85% of the tuning in 15 minutes
+35:42 Should anyone still study databases?
+38:27 Free CMU courses, the DJ, and the Wu-Tang final exam
+42:09 Why start a research lab inside ClickHouse?
+45:53 Why ClickHouse looked like vaporware in 2016
+47:46 What makes ClickHouse fast: columns, vectors, Snowflake's lineage
+52:22 Why Databricks, Snowflake and ClickHouse all added Postgres
+58:15 Vector, graph and GPU databases: thumbs up or down?
+1:08:34 Is the database market stagnant? "A cheetah on cocaine in a Ferrari"
+1:10:14 The relational model is arithmetic; SQL as the new assembly
+1:11:59 Larry Ellison, Linux, and why databases still matter</p>
+      <p class="zh">献给 @andy_pavlo 粉丝的特别福利：一场深度讨论——当数十亿 AI Agent 涌入数据库时会发生什么、他为何选择在 @ClickHouseDB 建立研究实验室，以及对数据库市场的大量犀利观点（Postgres、向量、图、GPU 等等）。
 
-    <div class="tweet">
-      <div class="tweet-en">I love @stripepress because I absolutely judge a book by its cover <a href="https://t.co/YMBUiprxUX" target="_blank">https://t.co/YMBUiprxUX</a></div>
-      <div class="tweet-zh">我喜欢 @stripepress，因为我就是个彻头彻尾以封面评判一本书的人。</div>
-      <a class="tweet-link" href="https://x.com/zarazhangrui/status/2108085347297161399" target="_blank">查看原推 →</a>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">Who has the coolest personal website?</div>
-      <div class="tweet-zh">谁拥有最酷的个人网站？</div>
-      <a class="tweet-link" href="https://x.com/zarazhangrui/status/2108047745936466373" target="_blank">查看原推 →</a>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">Remember that coding is a means to an end. The end matters more than the means</div>
-      <div class="tweet-zh">记住，编程只是达成目的的手段。目的比手段更重要。</div>
-      <a class="tweet-link" href="https://x.com/zarazhangrui/status/2108027410256166930" target="_blank">查看原推 →</a>
+00:00 冷开场与介绍
+01:21 从向量数据库与 RAG 到 Agent 时代
+04:09 Neon 的数据：80% 的数据库由 Agent 创建？
+07:25 为什么 Agent 总在删生产数据库
+08:19 护栏：幼儿与楼梯法则
+10:51 数据库负载的四个时代：查询量增长 10–100 倍
+15:10 Agent 记忆：文件 vs 数据库（「一切皆数据库」）
+18:24 AI 模型会推荐哪个数据库？
+19:25 「它把我引回我自己」
+23:14 面向数据库的 MCP，以及 text-to-SQL 从 60% 到 99.5%
+27:09 像信任初级开发者一样信任 Agent
+27:47 AI 能构建一整个数据库吗？Opus 4 与 CMU 项目
+29:57 如今 60% 的开源数据库已有 AI 提交
+30:43 自动驾驶数据库十年：从 Peloton 到今天
+33:52 LLM 改变了什么：15 分钟完成 85% 的调优
+35:42 现在还该有人去学数据库吗？
+38:27 免费的 CMU 课程、DJ，以及 Wu-Tang 期末考试
+42:09 为什么要在 ClickHouse 内部建立研究实验室？
+45:53 为什么 ClickHouse 在 2016 年看起来像「画大饼」
+47:46 ClickHouse 为何快：列式、向量、Snowflake 的血统
+52:22 为什么 Databricks、Snowflake 和 ClickHouse 都加入了 Postgres
+58:15 向量、图与 GPU 数据库：看好还是看衰？
+1:08:34 数据库市场停滞了吗？「开着法拉利嗑了可卡因的猎豹」
+1:10:14 关系模型就是算术；SQL 是新的汇编
+1:11:59 Larry Ellison、Linux，以及数据库为何依然重要</p>
+      <a class="src" href="https://x.com/mattturck/status/2108223135673696504" target="_blank">x.com/mattturck/status/2108223135673696504</a>
     </div>
   </article>
 
   <!-- Nikunj Kothari -->
   <article class="builder">
     <div class="builder-head">
-      <h2 class="builder-name">Nikunj Kothari</h2>
-      <a class="builder-handle" href="https://x.com/nikunj" target="_blank">@nikunj</a>
-      <div class="builder-bio">partner @fpvventures —— 投资种子轮/A 轮。此前早期就职于 @meter、@opendoor、@atlassian 等。爱 @shimoleej</div>
+      <span class="name">Nikunj Kothari</span>
+      <a class="handle" href="https://x.com/nikunj" target="_blank">@nikunj</a>
     </div>
+    <p class="bio">partner @fpvventures —— 投资种子轮／A 轮。此前：@meter、@opendoor、@atlassian 等早期成员。爱 @shimoleej</p>
 
     <div class="tweet">
-      <div class="tweet-en">Moving @askalphaxiv to the dock is the best thing I have done this week..
+      <p class="en">Met a close friend who's also a seed stage founder today..
 
-Went from 0 to ~30 mins of reading papers on my phone whenever I’m waiting on things. <a href="https://t.co/APwn0LgfcY" target="_blank">https://t.co/APwn0LgfcY</a></div>
-      <div class="tweet-zh">把 @askalphaxiv 移到 Dock 栏是我这周做过最棒的事……
+They have been growing but runway is dwindling and he wanted advice on what he should do next. Stellar customers, getting close to a $1M in revenue. Not a rocket ship, but not bad at all. He thinks he's a bit early since the models haven't caught up to the capabilities he wants but he also really feels the opportunity cost. 
 
-从零到只要在等待什么时，就会用手机读上大约 30 分钟的论文。</div>
-      <a class="tweet-link" href="https://x.com/nikunj/status/2108060822698357240" target="_blank">查看原推 →</a>
-    </div>
+I have this same exact conversation at least 2x a week. 
 
-    <div class="tweet">
-      <div class="tweet-en">To all the people visiting SF for tech week..
+In this moment, you only have essentially three options:
 
-1) the best builders are probably at their own offices. so DM them and try to meet them there. 
+1) if you have intense belief in the company, be a cockroach and get to default profitable. once the capabilities get there, you feel the demand, then go raise a large round and go for the jugular. 
 
-2) don't be a tourist
+2) find an orthogonal area that is much more relevant and growing like crazy. ride the coat tails of new existing capabilities and push hard to capture them quickly using unfair advantages. and if you don't have that, then.. 
 
-<a href="https://t.co/3YGQQjuyGD" target="_blank">https://t.co/3YGQQjuyGD</a></div>
-      <div class="tweet-zh">致所有为科技周来旧金山的人……
+3) sell / get acquihired and join a far more ambitious company that has figured out a lot of the things you haven't. And then get back to starting a new company 1-2 years later when you find the next thing you want to build. 
 
-1）最优秀的 Builder 很可能就在自己的办公室里。所以私信他们，试着去那里见面。
+It's hard but honestly those are the three options you have. And it really depends what category you're in. The bar continues to get harder every month on how to cross the chasm from seed -> series A. The old school metrics are just not relevant anymore and in this consensus market there's only a few categories where there's tremendous pull on the VC front. 
 
-2）别当个游客。</div>
-      <a class="tweet-link" href="https://x.com/nikunj/status/2107960134446235985" target="_blank">查看原推 →</a>
-    </div>
+You could lament that this is the state of the market, but it's better to know it's happening than be oblivious on what is actually happening.
 
-    <div class="tweet">
-      <div class="tweet-en"><a href="https://t.co/gn6cYt7bqh" target="_blank">https://t.co/gn6cYt7bqh</a></div>
-      <div class="tweet-zh">（分享了一条链接。）</div>
-      <a class="tweet-link" href="https://x.com/nikunj/status/2107883642295144958" target="_blank">查看原推 →</a>
+I get to share this directly which makes me uncomfortable but at least someone has to say it out loud</p>
+      <p class="zh">今天见到了一位也是种子轮创始人的好友……
+
+他们一直在增长，但现金跑道在缩短，他想听听接下来该怎么办的建议。客户非常优质，营收接近 100 万美元。不是火箭式增长，但也绝对不差。他觉得自己有点太早了——因为模型还没追上他想要的能力——但他也真切感受到了机会成本。
+
+我每周至少要进行两次一模一样的对话。
+
+在这种时刻，你本质上只有三个选项：
+
+1）如果你对公司有强烈的信念，那就做一只「小强」，把成本压到默认盈利。等能力到位、需求显现时，再去融一大轮，直取要害。
+
+2）找到一个更相关、增长疯狂的「正交」领域。搭上现有新能力的顺风车，利用你的非对称优势快速抢占。如果你连这个都没有，那就……
+
+3）卖掉／被收购式招聘（acquihire），加入一家野心大得多、已经搞定了你尚未搞定的很多事的公司。然后在一两年后，当你找到下一个想做的事时，再回来创业。
+
+这很难，但说实话，你只有这三个选项。而这真的取决于你所在的品类。从种子轮到 A 轮、跨越鸿沟的门槛每个月都在变高。老一套的指标已经不再适用，在这个共识市场里，只有少数几个品类还能在 VC 端获得巨大的牵引力。
+
+你可以哀叹这就是市场现状，但知道正在发生什么，总比对此浑然不觉要好。
+
+我得以当面说这些话，这让我不太舒服，但总得有人把话说出口。</p>
+      <a class="src" href="https://x.com/nikunj/status/2108410378233549106" target="_blank">x.com/nikunj/status/2108410378233549106</a>
     </div>
   </article>
 
   <!-- Peter Steinberger -->
   <article class="builder">
     <div class="builder-head">
-      <h2 class="builder-name">Peter Steinberger</h2>
-      <a class="builder-handle" href="https://x.com/steipete" target="_blank">@steipete</a>
-      <div class="builder-bio">多 Agent 爱好者，ClawFather。退休后回归折腾 AI，帮助一只龙虾接管世界。@OpenClaw</div>
+      <span class="name">Peter Steinberger</span>
+      <a class="handle" href="https://x.com/steipete" target="_blank">@steipete</a>
     </div>
+    <p class="bio">Polyagentmorous ClawFather。从退休生活中回归，折腾 AI，帮一只龙虾接管世界。@OpenClaw</p>
 
     <div class="tweet">
-      <div class="tweet-en">While everyone's talking about agents, I've been exploring how teams can use them to work better together.
-
-Here’s my take, from OpenAI DevDay 2026. <a href="https://t.co/W3rVoiTo84" target="_blank">https://t.co/W3rVoiTo84</a></div>
-      <div class="tweet-zh">当所有人都在谈论 Agent 时，我一直在探索团队如何利用它们更好地协作。
-
-这是我在 OpenAI DevDay 2026 上的分享。</div>
-      <a class="tweet-link" href="https://x.com/steipete/status/2107911769767440832" target="_blank">查看原推 →</a>
+      <p class="en">WE GOT IT! .claw incoming! https://t.co/wn0a7q3FdL</p>
+      <p class="zh">我们拿到了！.claw 即将到来！</p>
+      <a class="src" href="https://x.com/steipete/status/2108374513931165759" target="_blank">x.com/steipete/status/2108374513931165759</a>
     </div>
   </article>
 
   <!-- Dan Shipper -->
   <article class="builder">
     <div class="builder-head">
-      <h2 class="builder-name">Dan Shipper</h2>
-      <a class="builder-handle" href="https://x.com/danshipper" target="_blank">@danshipper</a>
-      <div class="builder-bio">ceo @every | 让你保持在 AI 前沿的唯一订阅</div>
+      <span class="name">Dan Shipper</span>
+      <a class="handle" href="https://x.com/danshipper" target="_blank">@danshipper</a>
+    </div>
+    <p class="bio">ceo @every —— 让你保持站在 AI 前沿的唯一订阅</p>
+
+    <div class="tweet">
+      <p class="en">yup https://t.co/bQ3CAPqhnZ</p>
+      <p class="zh">没错。</p>
+      <a class="src" href="https://x.com/danshipper/status/2108216876853596486" target="_blank">x.com/danshipper/status/2108216876853596486</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">tfw your ChatGPT app is controlling your Claude app is controlling your ChatGPT app <a href="https://t.co/i3QO9tLFSB" target="_blank">https://t.co/i3QO9tLFSB</a></div>
-      <div class="tweet-zh">当你发现你的 ChatGPT 应用在控制你的 Claude 应用，而后者又在控制你的 ChatGPT 应用时的那种表情。</div>
-      <a class="tweet-link" href="https://x.com/danshipper/status/2107930827669557713" target="_blank">查看原推 →</a>
-    </div>
+      <p class="en">NEW JOB ALERT:
 
-    <div class="tweet">
-      <div class="tweet-en">OpenAI’s Dots launched last week and they've taken over @every.
+@every we've built a personal benchmarking platform, Checks, to help anyone measure how good new models are for their real work
 
-A few things that stand out:
+we're looking for someone who understands why this is so important, and wants to help us build it into the future of how great human work gets done with AI:
 
-They protect your attention. Over the weekend, my Dot posted my model-testing results to Slack and brought back replies. I could keep working without opening Slack and disappearing down a rabbit hole. My weekend stayed pretty clear and calm.
+https://t.co/Rikke9hbOP</p>
+      <p class="zh">招聘启事：
 
-They’re useful for the little things you miss. People at Every are using them to pull important information out of school emails, catch missed Slack messages, and flag account-access requests.
+在 @every，我们构建了一个个人基准测试平台 Checks，帮助任何人衡量新模型对他们实际工作到底有多好用。
 
-Voice makes them useful away from your laptop. Our head of video was talking his Dot through video edits while running around getting our launch out.
-
-The ecosystem matters. Dots feel roughly at feature parity with Muse, Instinct, and Grok bots. But having an agent connected to the ecosystem you already use for work and life is a real advantage. If you use ChatGPT, I recommend trying one.
-
-Permissions are still frustrating. I have to approve the same basic thing multiple times, and sometimes even after I approve it, my Dot says it can’t do it. That needs to get fixed.
-
-I’m less convinced we’ll stay loyal to the characters. Mine is named Boo, and I’m attached to him. But I felt that way about my OpenClaw agent, too. When something better comes along, I switch. In a year, I expect to be using a persistent agent. Boo will probably be dead. RIP, Boo.
-
-I get into all of this at the start of this week’s podcast, and then sit down with @bigwilliestyle to talk about where we go from here.
-
-In a lot of ways, Dots and GrokBots remind me of a wave we went through with OpenClaw eight months ago. We talk about personal vs. company agents, why we built our own company agent, and whether companies will end up with a whole shadow org chart of agents.
-
-Full episode below.</div>
-      <div class="tweet-zh">OpenAI 的 Dots 上周发布，如今已经占领了 @every。
-
-几点特别突出之处：
-
-它们保护你的注意力。周末时，我的 Dot 把模型测试结果发到 Slack 并带回了回复。我可以继续工作，而不用打开 Slack 然后掉进兔子洞。我的周末因此保持得相当清爽平静。
-
-它们对你会遗漏的小事很有用。Every 的员工用它们从学校邮件中提取重要信息、捕捉错过的 Slack 消息、标记账户访问请求。
-
-语音让它们在你离开笔记本电脑时依然有用。我们的视频负责人一边四处奔走筹备发布，一边用语音指挥他的 Dot 完成视频剪辑。
-
-生态很重要。Dots 在功能上与 Muse、Instinct 和 Grok bots 大致持平。但让一个 Agent 连接到你已经在工作和生活中使用的生态，是真正的优势。如果你用 ChatGPT，我推荐试试。
-
-权限仍然令人沮丧。我必须多次批准同一件基础操作，有时即使批准了，我的 Dot 还是说它做不到。这需要修复。
-
-我不太确定我们是否会一直忠于这些角色形象。我的 Dot 叫 Boo，我对它有感情。但我对我的 OpenClaw Agent 也曾如此。当有更好的东西出现时，我就会切换。一年后，我预期自己会在使用一个持久化的 Agent。Boo 大概会死掉。安息吧，Boo。
-
-我在本周播客开头聊了所有这些，然后与 @bigwilliestyle 坐下来谈我们接下来往哪里走。
-
-在很多方面，Dots 和 GrokBots 让我想起八个月前我们经历 OpenClaw 的那一波浪潮。我们聊了个人 Agent vs 公司 Agent、我们为什么自建公司 Agent，以及公司最终是否会拥有一整张由 Agent 组成的影子组织架构图。
-
-完整节目见下方。</div>
-      <a class="tweet-link" href="https://x.com/danshipper/status/2107890633486582208" target="_blank">查看原推 →</a>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">Love to see it!! <a href="https://t.co/jmPN04jKZz" target="_blank">https://t.co/jmPN04jKZz</a></div>
-      <div class="tweet-zh">乐于见到这一幕！！</div>
-      <a class="tweet-link" href="https://x.com/danshipper/status/2107827332752826790" target="_blank">查看原推 →</a>
+我们正在寻找一位理解这件事为何如此重要、并愿意和我们一起把它建成为「人类借助 AI 完成出色工作」的未来的人：</p>
+      <a class="src" href="https://x.com/danshipper/status/2108215087030800657" target="_blank">x.com/danshipper/status/2108215087030800657</a>
     </div>
   </article>
 
   <!-- Aditya Agarwal -->
   <article class="builder">
     <div class="builder-head">
-      <h2 class="builder-name">Aditya Agarwal</h2>
-      <a class="builder-handle" href="https://x.com/adityaag" target="_blank">@adityaag</a>
-      <div class="builder-bio">General Partner @SPC，联合创始人 @Bevel_Health | 前 @facebook 早期工程师、@Dropbox CTO、@Flipkart 董事 | 乐观主义者、Builder</div>
+      <span class="name">Aditya Agarwal</span>
+      <a class="handle" href="https://x.com/adityaag" target="_blank">@adityaag</a>
+    </div>
+    <p class="bio">General Partner @SPC，联合创始人 @Bevel_Health | 前：@facebook 早期工程师、@Dropbox CTO、@Flipkart 董事 | 乐观主义者、建设者</p>
+
+    <div class="tweet">
+      <p class="en">@Waymo @dmitri_dolgov @spc Full conversation out now https://t.co/WcPgl3BW1P</p>
+      <p class="zh">@Waymo @dmitri_dolgov @spc 完整对话现已上线。</p>
+      <a class="src" href="https://x.com/adityaag/status/2108260509241991586" target="_blank">x.com/adityaag/status/2108260509241991586</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">My first time in a @Waymo felt like a religious experience.
-
-Co-CEO @dmitri_dolgov and I talked about it. In a Waymo.  
-
-Full conversation at @spc releasing tomorrow. <a href="https://t.co/CdwA6yI5n6" target="_blank">https://t.co/CdwA6yI5n6</a></div>
-      <div class="tweet-zh">我第一次坐 @Waymo 感觉像是一次宗教体验。
-
-联合 CEO @dmitri_dolgov 和我在车里聊了这件事。就在一辆 Waymo 里。
-
-完整对话将在 @spc 明天发布。</div>
-      <a class="tweet-link" href="https://x.com/adityaag/status/2107934826686759310" target="_blank">查看原推 →</a>
+      <p class="en">Full conversation at @spc https://t.co/5fNQdHCLwp</p>
+      <p class="zh">在 @spc 的完整对话。</p>
+      <a class="src" href="https://x.com/adityaag/status/2108255511443542176" target="_blank">x.com/adityaag/status/2108255511443542176</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">What should an ambitious software engineer do today?
-
-Ten years ago, being a great software engineer gave you an unusual advantage: a rare skill you could apply to almost any industry.
-
-You could build a payments company, improve how hospitals operated, or create a new way for people to communicate. The same underlying ability opened doors into wildly different businesses.
-
-Software was eating the world, and knowing how to build it gave you a seat at the head of almost every table.
-
-“Get really good at software engineering” was remarkably versatile advice. You could acquire the skill first and figure out where to apply it later.
-
-AI is making the ability to produce working software much more widely available. People who couldn’t have built a product a few years ago can now get surprisingly far. Experienced engineers can attempt projects that previously required a team.
-
-Great engineering is still rare. But “I can build it” is becoming a weaker answer to why you, specifically, have an advantage.
-
-The way I see it, there are three paths.
-
-1. Go work on the thing that’s eating software
-
-Help create the technology that is making software engineering more accessible.
-
-That could mean AI research, or the infrastructure, systems, and tools needed to make new capabilities useful. Find problems where technical ability remains a serious constraint, and where solving them expands what other people can do.
-
-2. Find a world-class domain expert and team up
-
-Someone who has spent fifteen years in an industry may know where the expensive mistakes happen, why previous attempts to fix them failed, and who would buy a solution. That knowledge is hard to acquire from the outside.
-
-At SPC, we’re seeing more people become promising founders without much prior software engineering experience. They bring deep domain knowledge and strong instincts about what needs to exist.
-
-These are people worth getting to know. A great engineering partner can see possibilities they haven’t considered and help build something neither person could have imagined alone.
-
-3. Write vanilla code… by shepherding a bunch of agents
-
-This is the direction I find least compelling: doing roughly the same work inside a company, except now you supervise coding agents.
-
-There will be valuable jobs like this. But if your ambition extends only to completing the same backlog faster, you’re underusing the moment.
-
-I’d still get very good at engineering. Then I’d be deliberate about what that ability sits next to: a technical frontier that needs advancing, or deep knowledge of a problem worth solving.
-
-Use the fact that you can build more to take responsibility for something bigger.</div>
-      <div class="tweet-zh">一个有抱负的软件工程师今天该做什么？
-
-十年前，成为一名出色的软件工程师会给你一种不寻常的优势：一项几乎可以应用到任何行业的稀缺技能。
-
-你可以创办一家支付公司、改善医院的运营方式，或创造一种人们全新的沟通方式。同一种底层能力，为你打开了通往截然不同行业的大门。
-
-软件正在吞噬世界，而懂得如何构建软件，让你几乎在每一张桌子上都有一个主位。
-
-“把软件工程练到极致”曾是一条极其通用的建议。你可以先掌握这项技能，之后再决定把它用到哪里。
-
-AI 正在让生产可用软件的能力变得广泛得多。几年前根本造不出产品的人，如今也能走得惊人地远。有经验的工程师可以尝试过去需要一整个团队才能完成的项目。
-
-优秀的工程依然稀缺。但“我能把它做出来”作为“为什么偏偏是你有优势”的答案，正变得越来越无力。
-
-在我看来，有三条路。
-
-1. 去做那件正在吞噬软件的事
-
-帮助创造让软件工程变得更易获取的技术。
-
-这可以是 AI 研究，也可以是让新能力变得有用的基础设施、系统和工具。去寻找那些技术能力仍是严重瓶颈、而解决它们能扩展他人能力边界的问题。
-
-2. 找到一位世界级的领域专家并组队
-
-一个在某个行业深耕十五年的人，可能知道昂贵的错误发生在哪里、过去修复它们的尝试为何失败、谁会为解决方案买单。这种知识很难从外部获得。
-
-在 SPC，我们看到越来越多人没有多少软件工程经验，却成为很有潜力的创始人。他们带来了深厚的领域知识和对“什么必须存在”的强烈直觉。
-
-这些人值得去认识。一位出色的工程伙伴能看到他们未曾考虑的可能性，并帮助构建出任何一方单独都无法想象的东西。
-
-3. 通过牧养一群 Agent 来“手写原生代码”……
-
-这是我觉得最不吸引人的方向：在一家公司里做大致相同的工作，只不过现在你监督的是编程 Agent。
-
-这类工作会有价值。但如果你的抱负仅限于更快地完成同样的待办事项，那你就低估了这个时代。
-
-我仍然会先把工程练得非常好。然后我会刻意选择让这项能力与什么相邻：一个需要推进的技术前沿，或对一个值得解决的问题的深刻理解。
-
-利用你“能构建更多”这一点，去承担更大的责任。</div>
-      <a class="tweet-link" href="https://x.com/adityaag/status/2107865115831988530" target="_blank">查看原推 →</a>
-    </div>
-  </article>
-
-  <!-- Sam Altman -->
-  <article class="builder">
-    <div class="builder-head">
-      <h2 class="builder-name">Sam Altman</h2>
-      <a class="builder-handle" href="https://x.com/sama" target="_blank">@sama</a>
-      <div class="builder-bio">OpenAI 的使命是确保 AGI 造福全人类</div>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">Have been waiting for this one for a long time, and I would hate to have to go back to the old version of Chat!</div>
-      <div class="tweet-zh">这个已经等很久了，我可不想再回到旧版的 Chat 了！</div>
-      <a class="tweet-link" href="https://x.com/sama/status/2107924677801001381" target="_blank">查看原推 →</a>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">ChatGPT can now generate a custom UI for you! <a href="https://t.co/ZdGRMAEjQX" target="_blank">https://t.co/ZdGRMAEjQX</a></div>
-      <div class="tweet-zh">ChatGPT 现在可以为你生成自定义 UI 了！</div>
-      <a class="tweet-link" href="https://x.com/sama/status/2107924408597950702" target="_blank">查看原推 →</a>
+      <p class="en">When is an autonomous vehicle actually good enough? https://t.co/VQTbWP1Jfj https://t.co/MA8e3UAYgb</p>
+      <p class="zh">自动驾驶汽车到底什么时候才算「足够好」？</p>
+      <a class="src" href="https://x.com/adityaag/status/2108254520744517652" target="_blank">x.com/adityaag/status/2108254520744517652</a>
     </div>
   </article>
 
   <!-- Claude -->
   <article class="builder">
     <div class="builder-head">
-      <h2 class="builder-name">Claude</h2>
-      <a class="builder-handle" href="https://x.com/claudeai" target="_blank">@claudeai</a>
-      <div class="builder-bio">Claude 是由 @anthropicai 打造的安全、准确、可靠的 AI 助手。在官网与 Claude 对话。</div>
+      <span class="name">Claude</span>
+      <a class="handle" href="https://x.com/claudeai" target="_blank">@claudeai</a>
+    </div>
+    <p class="bio">Claude 是由 @anthropicai 打造的安全、准确、可靠的 AI 助手。在 https://t.co/ZhTwG8d 与 Claude 对话</p>
+
+    <div class="tweet">
+      <p class="en">We've loved seeing so many founders join the Claude Startups program. Unfortunately, we underestimated demand for the program, and we need to pause the Claude Team and $1,000 API credit offers.
+
+With hundreds of thousands of applicants, we're re-reviewing applications so the program can serve as many startups as possible.
+
+If you've already claimed the Claude offers, they'll still remain in your account.
+
+If you applied or were approved and haven't claimed the offer, we're re-reviewing your application. Unfortunately, this means that some accounts who had already been approved will not get access to the offer. We know this is disappointing and we're very sorry.
+
+All accepted program members still have access to the Startup Stack and Applied AI office hours. If you're on a Claude Max or Team plan, your monthly API credits are available in Console as usual.
+
+We appreciate your patience, and we're working to get you building as quickly as we can.</p>
+      <p class="zh">看到这么多创始人加入 Claude 创业公司计划，我们非常高兴。遗憾的是，我们低估了该计划的需求，不得不暂停 Claude Team 以及 1000 美元 API 额度的优惠。
+
+由于申请者多达数十万，我们正在重新审核申请，以便让该计划尽可能服务更多创业公司。
+
+如果你已经领取了 Claude 的优惠，它们仍会保留在你的账户中。
+
+如果你已申请或已获批但尚未领取优惠，我们正在重新审核你的申请。遗憾的是，这意味着一些此前已获批的账户将无法获得该优惠。我们知道这令人失望，非常抱歉。
+
+所有已被录取的计划成员仍可使用 Startup Stack 和 Applied AI office hours。如果你使用的是 Claude Max 或 Team 套餐，你的每月 API 额度仍照常在 Console 中可用。
+
+感谢你的耐心，我们正努力让你尽快开始构建。</p>
+      <a class="src" href="https://x.com/claudeai/status/2108404561413349695" target="_blank">x.com/claudeai/status/2108404561413349695</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">One more thing: we’re halving the price of cache reads on Claude Sonnet 5.5, to $0.10 per million tokens. That makes Sonnet 5.5 around 20% cheaper to run on most long-running work.</div>
-      <div class="tweet-zh">还有一件事：我们将 Claude Sonnet 5.5 的缓存读取价格减半，降至每百万 token 0.10 美元。这让 Sonnet 5.5 在大多数长时间运行任务上的成本降低了约 20%。</div>
-      <a class="tweet-link" href="https://x.com/claudeai/status/2107894060229034197" target="_blank">查看原推 →</a>
+      <p class="en">When a question needs deeper analysis, send the dashboard to your analytics tool. When an animation needs finishing touches, open it in your video editor.
+
+See the full list of supported tools: https://t.co/9PSMNUDtDg</p>
+      <p class="zh">当某个问题需要更深入的分析时，把仪表盘发送到你的分析工具。当某段动画需要收尾润色时，在视频编辑器里打开它。
+
+查看支持工具的完整列表。</p>
+      <a class="src" href="https://x.com/claudeai/status/2108271561337606300" target="_blank">x.com/claudeai/status/2108271561337606300</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">Haiku 5.5 is available now on all platforms, including Amazon Web Services, Google Cloud, and Microsoft Azure.
+      <p class="en">Starting today, Claude Docs, Slides, and Design are out of beta and available on every plan including Free.
 
-Read more: <a href="https://t.co/InzZXcEcRP" target="_blank">https://t.co/InzZXcEcRP</a></div>
-      <div class="tweet-zh">Haiku 5.5 现已在所有平台上线，包括 Amazon Web Services、Google Cloud 和 Microsoft Azure。
+Your team and Claude can edit the same doc, deck, or design together.</p>
+      <p class="zh">从今天起，Claude Docs、Slides 和 Design 正式结束测试，在包括免费版在内的所有套餐中可用。
 
-了解更多：https://t.co/InzZXcEcRP</div>
-      <a class="tweet-link" href="https://x.com/claudeai/status/2107894057615987198" target="_blank">查看原推 →</a>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">Haiku 5.5 shows major improvements across almost all of our alignment evaluations relative to Haiku 4.5, with far fewer instances of misaligned behavior.</div>
-      <div class="tweet-zh">相对于 Haiku 4.5，Haiku 5.5 在我们几乎所有的对齐评估中都展现出重大改进，行为失准的情况大幅减少。</div>
-      <a class="tweet-link" href="https://x.com/claudeai/status/2107894054142787877" target="_blank">查看原推 →</a>
+你的团队和 Claude 可以共同编辑同一份文档、演示文稿或设计稿。</p>
+      <a class="src" href="https://x.com/claudeai/status/2108271559928389679" target="_blank">x.com/claudeai/status/2108271559928389679</a>
     </div>
   </article>
 
-  <!-- Podcast -->
+  <!-- Podcasts -->
   <h2 class="section-title">播客</h2>
 
   <article class="podcast">
-    <div class="podcast-name">AI &amp; I by Every</div>
-    <h3 class="podcast-title">Why Every Traded Personal Agents for One Company Agent</h3>
-    <div class="podcast-title-zh">为什么 Every 用个人 Agent 换来了一个公司 Agent</div>
-    <a class="podcast-link" href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank">https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL</a>
+    <div class="pname">Training Data</div>
+    <h3>Google's AI Infrastructure Chief, Amin Vahdat, on the Physics &amp; Economics of Frontier AI</h3>
+    <p class="pzh">Google AI 基础设施负责人 Amin Vahdat：前沿 AI 的物理学与经济学</p>
+    <a class="plink" href="https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8" target="_blank">youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8</a>
   </article>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <footer>
     由 AI Daily Bot 自动生成 · 每日 10:00（北京时间）
   </footer>
 
