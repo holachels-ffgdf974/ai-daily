@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 · 2026年10月11日</title>
+<title>AI 日报 · 2026年10月12日</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -15,90 +15,95 @@
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
-  .container {
+  .wrap {
     max-width: 680px;
     margin: 0 auto;
-    padding: 64px 32px 80px;
+    padding: 64px 32px 96px;
   }
   .masthead {
     text-align: center;
     padding-bottom: 40px;
     border-bottom: 1px solid #e8e8e4;
-    margin-bottom: 56px;
+    margin-bottom: 48px;
   }
   .masthead .date {
-    font-size: 14px;
-    letter-spacing: 0.18em;
+    font-size: 13px;
+    letter-spacing: 0.12em;
     color: #6b6b6b;
     text-transform: uppercase;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
   }
   .masthead h1 {
-    font-family: Georgia, "Songti SC", serif;
-    font-size: 52px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    margin: 0 0 20px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 46px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin: 0 0 18px;
     color: #1a1a1a;
   }
-  .masthead .summary {
+  .masthead h1 span {
+    display: inline-block;
+    border-bottom: 3px solid #8b5e3c;
+    padding-bottom: 6px;
+  }
+  .masthead .stats {
     font-size: 14px;
     color: #6b6b6b;
-    margin: 0;
   }
-  .masthead .summary span {
-    color: #8b5e3c;
-    font-weight: 600;
-  }
+  .masthead .stats b { color: #8b5e3c; font-weight: 600; }
+
   .builder {
     background: #ffffff;
     border: 1px solid #e8e8e4;
     border-radius: 8px;
-    padding: 28px 28px 20px;
-    margin-bottom: 28px;
+    padding: 32px 30px;
+    margin-bottom: 32px;
   }
-  .builder-header {
-    margin-bottom: 22px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #f0efe9;
+  .builder-head {
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #f0f0ec;
   }
   .builder-name {
     font-size: 19px;
-    font-weight: 700;
+    font-weight: 600;
     color: #1a1a1a;
-    margin: 0;
+    margin: 0 0 2px;
   }
   .builder-handle {
     font-size: 14px;
-    color: #8b5e3c;
-    font-weight: 500;
-    margin-left: 8px;
+    color: #2c6bae;
+    text-decoration: none;
   }
+  .builder-handle:hover { text-decoration: underline; }
   .builder-bio {
-    font-size: 13px;
+    font-size: 13.5px;
     color: #6b6b6b;
-    margin: 6px 0 0;
-    line-height: 1.6;
+    margin-top: 8px;
+    white-space: pre-line;
   }
+
   .tweet {
     border-left: 3px solid #e8e0d0;
     background: #fdfdfb;
-    padding: 14px 18px;
-    margin-bottom: 16px;
+    padding: 16px 18px;
+    margin-bottom: 20px;
     border-radius: 0 6px 6px 0;
   }
-  .tweet:last-child { margin-bottom: 6px; }
+  .tweet:last-child { margin-bottom: 0; }
   .tweet .en {
     font-size: 14.5px;
     color: #1a1a1a;
-    margin: 0 0 8px;
     white-space: pre-line;
+    margin: 0 0 12px;
   }
   .tweet .zh {
-    font-size: 14px;
-    color: #4a4a4a;
-    margin: 0 0 10px;
+    font-size: 14.5px;
+    color: #444;
     white-space: pre-line;
+    margin: 0 0 12px;
+    padding-top: 12px;
+    border-top: 1px dashed #ecebe5;
   }
   .tweet .link {
     font-size: 12.5px;
@@ -107,387 +112,400 @@
     word-break: break-all;
   }
   .tweet .link:hover { text-decoration: underline; }
+
   .section-title {
-    font-family: Georgia, "Songti SC", serif;
-    font-size: 26px;
-    font-weight: 700;
+    font-family: Georgia, serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #1a1a1a;
     margin: 56px 0 24px;
-    padding-bottom: 12px;
+    padding-bottom: 10px;
     border-bottom: 2px solid #8b5e3c;
     display: inline-block;
   }
+
   .podcast {
     background: #ffffff;
     border: 1px solid #e8e8e4;
     border-radius: 8px;
-    padding: 28px;
-    margin-bottom: 28px;
+    padding: 32px 30px;
+    margin-bottom: 32px;
   }
-  .podcast .show {
+  .podcast .pname {
     font-size: 13px;
     letter-spacing: 0.08em;
-    color: #8b5e3c;
     text-transform: uppercase;
-    font-weight: 600;
-    margin: 0 0 8px;
+    color: #8b5e3c;
+    margin-bottom: 8px;
   }
-  .podcast h3 {
-    font-family: Georgia, "Songti SC", serif;
-    font-size: 21px;
-    font-weight: 700;
-    margin: 0 0 6px;
-    line-height: 1.4;
-  }
-  .podcast .ep-en {
-    font-size: 14px;
-    color: #4a4a4a;
-    margin: 0 0 4px;
-  }
-  .podcast .ep-zh {
-    font-size: 14px;
-    color: #6b6b6b;
-    margin: 0 0 18px;
-  }
-  .podcast ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 18px;
-  }
-  .podcast li {
-    border-left: 3px solid #e8e0d0;
-    background: #fdfdfb;
-    padding: 12px 16px;
-    margin-bottom: 12px;
-    border-radius: 0 6px 6px 0;
-  }
-  .podcast li .en {
-    font-size: 14px;
+  .podcast .ptitle {
+    font-family: Georgia, serif;
+    font-size: 20px;
     color: #1a1a1a;
-    margin: 0 0 6px;
+    margin: 0 0 18px;
+    line-height: 1.45;
   }
-  .podcast li .zh {
-    font-size: 13.5px;
-    color: #4a4a4a;
-    margin: 0;
-  }
-  .podcast .link {
-    font-size: 12.5px;
+  .podcast .plink {
+    font-size: 13px;
     color: #2c6bae;
     text-decoration: none;
     word-break: break-all;
   }
-  .podcast .link:hover { text-decoration: underline; }
+  .podcast .plink:hover { text-decoration: underline; }
+
   footer {
-    text-align: center;
     margin-top: 72px;
     padding-top: 28px;
     border-top: 1px solid #e8e8e4;
+    text-align: center;
     font-size: 12.5px;
-    color: #9a9a94;
-    letter-spacing: 0.04em;
+    color: #6b6b6b;
   }
+
   @media (max-width: 600px) {
-    .container { padding: 40px 18px 60px; }
-    .masthead h1 { font-size: 38px; }
-    .builder { padding: 22px 18px 14px; }
-    .podcast { padding: 22px 18px; }
-    .tweet { padding: 12px 14px; }
-    .section-title { font-size: 22px; }
+    .wrap { padding: 40px 18px 64px; }
+    .masthead h1 { font-size: 34px; }
+    .builder, .podcast { padding: 24px 18px; }
+    .tweet { padding: 14px 14px; }
   }
 </style>
 </head>
 <body>
-<div class="container">
+<div class="wrap">
 
   <header class="masthead">
-    <div class="date">2026年10月11日 星期日</div>
-    <h1>AI 日报</h1>
-    <p class="summary">本期收录 <span>11</span> 位 Builder · <span>21</span> 条推文 · <span>1</span> 档播客</p>
+    <div class="date">2026年10月12日 · 星期一</div>
+    <h1><span>AI 日报</span></h1>
+    <div class="stats">今日收录 <b>12</b> 位 Builder · <b>18</b> 条推文 · <b>1</b> 期播客</div>
   </header>
+
+  <!-- Andrej Karpathy -->
+  <section class="builder">
+    <div class="builder-head">
+      <p class="builder-name">Andrej Karpathy</p>
+      <a class="builder-handle" href="https://x.com/karpathy" target="_blank">@karpathy</a>
+    </div>
+
+    <div class="tweet">
+      <p class="en">Dusting off this tweet from April because this gap in shared understanding of LLM capability is *widening*. It's now less "two groups of people speaking past each other" and more a sharp funnel.
+
+- Napkin math somewhere around 6B people (~75% of the population) have barely come in contact with LLMs at all.
+- Around 1-2B (~20%) are casual and infrequent users of free-tier ChatGPT-like products. This group sees derpy chatbots and treats them a bit like a better Google search, a writing aid, or etc. Maybe an agent tries to book you a flight. I have non-tech friends who (reasonably, imo) say they have not much use for it at all. Even many professionals outside of math&code are in this tier. For example, execs and many other functions spend a lot of their time talking to other people, so while they understand what is happening intellectually, it is still second-hand and a bit abstract.
+- Now we get to professional use of frontier-grade LLMs in math&code. Somewhere around 20M people (0.2%) see first-hand that large, complex projects that used to take them weeks/months can now be completed by agents with a prompt. Building apps, copying apps, translating apps, decompiling apps from binaries... This has all happened very quickly and recently - less than 1 year ago, I was writing code manually by hand, typing memorized computer code commands into a code editor character by character, occasionally pressing Tab to autocomplete a little chunk of code.
+- And finally we get to the ~5,000 people (~0.00006%) with access to frontier-grade systems internally. The external world has seen the preview. It looks like swarms of thousands of agents collaborating over weeks on software mega projects: minting zero days, running cyber attacks and defenses at machine speeds, discovering new science, advancing the frontier of mathematics. Things that would have taken top professionals in the industry years of work. Meanwhile, human review and comprehension are starting to fall behind. For example, people are still involved in the "archeology" of the OpenAI-HF incident from many months ago. Mathematicians may be poring over the 722 manuscripts on frontier mathematics for a while.
+
+The funnel is driven by a combination of factors:
+1. The impact scales with ambition, problem size, and horizon. A question with a paragraph answer barely stresses the system. You need a reservoir of big, difficult problems that you really care about. This aspect drives the consumer / professional dimension of the funnel.
+2. The jaggedness of the system (which I have written about a lot separately). Capability peaks in domains that are digital, verifiable and economically valuable. This is because LLM capability emerges from reinforcement learning on verifiable rewards on a curated environment mixture driven by revenue potential. This aspect primarily drives the area (e.g. math&code) dimension of the funnel.
+3. Access. Free-tier, paid-tier, internal.
+
+So this is the weirdness of the moment. The general public has mostly not interacted with these systems. When they have, it looks like a derpy chatbot. The majority of professionals still see only a modest uplift. And a small sliver of professionals are experiencing the vertigo of the curve going vertical. And it is all happening at the same time.</p>
+      <p class="zh">把这条四月的推文重新翻出来，是因为关于 LLM 能力的认知鸿沟正在*不断拉大*。它现在已不再是"两拨人各说各话"，而更像一个陡峭的漏斗。
+
+- 粗略估算，大约 60 亿人（约占总人口 75%）几乎从未接触过 LLM。
+- 大约 10 到 20 亿人（约 20%）是免费版 ChatGPT 类产品的轻度、偶尔用户。这个群体看到的是有点呆萌的聊天机器人，把它当作一个更好用的谷歌搜索、写作助手之类的工具。也许偶尔让 Agent 帮忙订张机票。我有一些非技术圈的朋友（在我看来相当合理）说他们根本用不太上这东西。即便是数学与编程之外的大量专业人士也处于这一层。比如高管和许多其他职能的人，大部分时间都在跟人打交道，所以虽然他们在理智上明白正在发生什么，但那仍是二手信息，有些抽象。
+- 接下来是数学与编程领域对前沿级 LLM 的专业使用。大约 2000 万人（0.2%）亲眼见证：过去需要数周甚至数月才能完成的大型复杂项目，如今一个提示词就能让 Agent 搞定。构建应用、复制应用、翻译应用、从二进制文件反编译应用……这一切都发生得极快、极近——不到一年前，我还在手动写代码，一个字符一个字符地把记在脑子里的代码敲进编辑器，偶尔按一下 Tab 补全一小段。
+- 最后是约 5000 人（约 0.00006%），他们能在内部接触到前沿级系统。外部世界只看到了预告片。那景象像是成千上万个 Agent 组成的集群，在数周时间里协作推进软件超级项目：铸造零日漏洞、以机器速度发起和防御网络攻击、发现新科学、推进数学前沿。这些工作若由业界顶尖专家来做，需要数年时间。与此同时，人类的审核与理解能力开始跟不上。例如，人们至今仍在为几个月前 OpenAI-HF 事件做"考古"。数学家们可能还要花很长时间去研读那 722 篇前沿数学手稿。
+
+这个漏斗由多重因素共同驱动：
+1. 影响力随雄心、问题规模和视野而放大。一个只需一段话就能回答的问题几乎无法给系统带来压力。你需要储备大量你真正在意的、又大又难的问题。这一因素驱动了漏斗中"消费者／专业人士"这一维度。
+2. 系统的锯齿状特性（我另外写过很多）。能力在数字化、可验证且具经济价值的领域达到峰值。这是因为 LLM 的能力源自对可验证奖励的强化学习，而环境组合又由收入潜力所驱动。这一因素主要驱动漏斗中"领域"（如数学与编程）这一维度。
+3. 访问权限。免费层、付费层、内部层。
+
+这就是当下这种诡异局面的由来。普通大众大多还没跟这些系统打过交道。即便打过，看到的也只是个呆萌聊天机器人。大多数专业人士仍只感受到温和的提升。而极小一撮专业人士，正体验着曲线垂直上升带来的眩晕。而这一切，正同时发生。</p>
+      <a class="link" href="https://x.com/karpathy/status/2109361546505966046" target="_blank">https://x.com/karpathy/status/2109361546505966046</a>
+    </div>
+  </section>
+
+  <!-- Swyx -->
+  <section class="builder">
+    <div class="builder-head">
+      <p class="builder-name">Swyx</p>
+      <a class="builder-handle" href="https://x.com/swyx" target="_blank">@swyx</a>
+      <div class="builder-bio">以刻意、强度、正直与疯狂去实现雄心。
+
+所属：@smol_ai · @dxtipshq · @cognitio</div>
+    </div>
+
+    <div class="tweet">
+      <p class="en">reupping my talk tips thread for all our lovely AIE NYC speakers. see you tmr at speaker dinner! https://t.co/1xf4Eblnil</p>
+      <p class="zh">为我们可爱的 AIE NYC 各位演讲者再次置顶我的演讲技巧帖。明天演讲者晚宴见！</p>
+      <a class="link" href="https://x.com/swyx/status/2109365419937239158" target="_blank">https://x.com/swyx/status/2109365419937239158</a>
+    </div>
+  </section>
 
   <!-- Thibault Sottiaux -->
   <section class="builder">
-    <div class="builder-header">
-      <p class="builder-name">Thibault Sottiaux <span class="builder-handle">@thsottiaux</span></p>
-      <p class="builder-bio">Codex &amp; ChatGPT @OpenAI</p>
+    <div class="builder-head">
+      <p class="builder-name">Thibault Sottiaux</p>
+      <a class="builder-handle" href="https://x.com/thsottiaux" target="_blank">@thsottiaux</a>
+      <div class="builder-bio">Codex &amp; ChatGPT @OpenAI</div>
     </div>
 
     <div class="tweet">
-      <p class="en">Pro users, would you rather have</p>
-      <p class="zh">Pro 用户们，你们更希望要哪个？</p>
-      <a class="link" href="https://x.com/thsottiaux/status/2109152716954222849">x.com/thsottiaux/status/2109152716954222849</a>
+      <p class="en">The results of this poll has gotten me confused. I definitely thought it would sway much more favorably in the 2X direction across Pro 100/200/500 at the cost of bringing back 5h limits in order to smoothen the demand curve. https://t.co/zwn7kboMhT</p>
+      <p class="zh">这个投票的结果让我有点困惑。我原本很确定大家会更倾向于"2 倍额度"这个方向——在 Pro 100/200/500 各档全面翻倍，代价是重新引入 5 小时限额，以便平滑需求曲线。</p>
+      <a class="link" href="https://x.com/thsottiaux/status/2109439315570999598" target="_blank">https://x.com/thsottiaux/status/2109439315570999598</a>
     </div>
 
     <div class="tweet">
-      <p class="en">Put the reset in the bag. All propagated.</p>
-      <p class="zh">把重置收回包里。已经全部推送完毕。</p>
-      <a class="link" href="https://x.com/thsottiaux/status/2109132167112782291">x.com/thsottiaux/status/2109132167112782291</a>
+      <p class="en">With this change, we are not charging long context fees for GPT-6.1 Sol when drawing usage from the subscription.</p>
+      <p class="zh">经过这次调整，当用量从订阅额度中扣除时，我们不再对 GPT-6.1 Sol 收取长上下文费用。</p>
+      <a class="link" href="https://x.com/thsottiaux/status/2109430894604026039" target="_blank">https://x.com/thsottiaux/status/2109430894604026039</a>
     </div>
 
     <div class="tweet">
-      <p class="en">The day we reach perfection it will be resets from there onwards</p>
-      <p class="zh">等我们抵达完美的那一天，从此往后就只剩重置了。</p>
-      <a class="link" href="https://x.com/thsottiaux/status/2109090080497508356">x.com/thsottiaux/status/2109090080497508356</a>
+      <p class="en">Day 7/
+
+We have increased default context length for GPT-6.1 Sol to 500k when used through Codex & Work, up from 272k or an ~ 80% increase.
+
+We will go higher in the future, but it helps reduce occurrence of compactions and with tasks that require keeping a lot of context and nuance over periods of time. It was carefully tested and is the new sweet spot for most of our users. You can still override it if you want to be higher our lower, with maximum context length of GPT-6.1 Sol of 1M.</p>
+      <p class="zh">第 7 天／
+
+我们将通过 Codex 与 Work 使用 GPT-6.1 Sol 时的默认上下文长度从 272k 提升到 500k，增幅约 80%。
+
+未来我们还会继续提高，但这一档已经能有效减少上下文压缩（compaction）的发生，也更适合那些需要长时间保留大量上下文与细节的任务。我们做了仔细测试，这是目前对大多数用户而言的新甜点区。如果你想要更高或更低，仍可自行覆盖设置，GPT-6.1 Sol 的最大上下文长度为 1M。</p>
+      <a class="link" href="https://x.com/thsottiaux/status/2109430343346581527" target="_blank">https://x.com/thsottiaux/status/2109430343346581527</a>
     </div>
   </section>
 
   <!-- Peter Yang -->
   <section class="builder">
-    <div class="builder-header">
-      <p class="builder-name">Peter Yang <span class="builder-handle">@petergyang</span></p>
-      <p class="builder-bio">为忙碌的人准备的实用 AI 教程与访谈 | 在 petergyang.com 获取我最好的 AI 技巧与指南</p>
+    <div class="builder-head">
+      <p class="builder-name">Peter Yang</p>
+      <a class="builder-handle" href="https://x.com/petergyang" target="_blank">@petergyang</a>
+      <div class="builder-bio">为忙碌人群准备的实用 AI 教程与访谈 ｜ 获取我最好的 AI 技巧与指南：https://t.co/6VAA6p81x6</div>
     </div>
 
     <div class="tweet">
-      <p class="en">Something went wrong alright</p>
-      <p class="zh">确实出了点问题，好吧。</p>
-      <a class="link" href="https://x.com/petergyang/status/2109107670229930458">x.com/petergyang/status/2109107670229930458</a>
+      <p class="en">YouTube comments undefeated the disrespect to @Rasmic   https://t.co/SiPRGxvUwc</p>
+      <p class="zh">YouTube 评论区对 @Rasmic 的无礼吐槽，依旧无人能敌。</p>
+      <a class="link" href="https://x.com/petergyang/status/2109435203269878242" target="_blank">https://x.com/petergyang/status/2109435203269878242</a>
+    </div>
+
+    <div class="tweet">
+      <p class="en">Building a @modretro game with my daughter and Codex https://t.co/78Ev7iGuG1</p>
+      <p class="zh">和女儿一起用 Codex 给 @modretro 做游戏。</p>
+      <a class="link" href="https://x.com/petergyang/status/2109434554729824397" target="_blank">https://x.com/petergyang/status/2109434554729824397</a>
+    </div>
+
+    <div class="tweet">
+      <p class="en">"I'm not at a point where I trust the agent, especially with stuff that people are using."
+
+From Micky (@Rasmic), who's taught 100K+ people to build with AI:
+
+"The manual review is like the final step. All the work's done, and I have as much evidence from the agent as possible.
+
+With evidence-driven testing, before and after, and even greploop, we're trying to build trust. The agent presents evidence: This is the work that's done, and this is why it's good.
+
+For anyone who's been a developer for any time, manual review is probably the worst part of your job. This sort of helps minimize the friction."
+
+ Watch Micky's full 4-step workflow here: https://t.co/ju9aMQKaCE</p>
+      <p class="zh">"我还没到能完全信任 Agent 的程度，尤其是涉及真实用户在用的东西。"
+
+—— 来自 Micky（@Rasmic），他已教会 10 万多人用 AI 做开发：
+
+"人工审核算是最后一步。活儿全干完了，我也拿到了 Agent 能提供的所有证据。
+
+通过证据驱动的测试、前后对比，甚至 greploop，我们在努力建立信任。Agent 把证据摆出来：这是完成的工作，这是它为什么好。
+
+对任何做了一阵子开发者的人来说，人工审核大概是工作中最糟糕的部分。这种方式有助于把摩擦降到最低。"
+
+在此观看 Micky 完整的四步工作流：https://t.co/ju9aMQKaCE</p>
+      <a class="link" href="https://x.com/petergyang/status/2109433961223180517" target="_blank">https://x.com/petergyang/status/2109433961223180517</a>
     </div>
   </section>
 
   <!-- Nan Yu -->
   <section class="builder">
-    <div class="builder-header">
-      <p class="builder-name">Nan Yu <span class="builder-handle">@thenanyu</span></p>
-      <p class="builder-bio">产品、Codex @openai，前 @linear 产品负责人</p>
+    <div class="builder-head">
+      <p class="builder-name">Nan Yu</p>
+      <a class="builder-handle" href="https://x.com/thenanyu" target="_blank">@thenanyu</a>
+      <div class="builder-bio">产品，Codex @OpenAI。此前任 @Linear 产品负责人。</div>
     </div>
 
     <div class="tweet">
-      <p class="en">Everything seems to be going as planned</p>
-      <p class="zh">一切似乎都在按计划进行。</p>
-      <a class="link" href="https://x.com/thenanyu/status/2109035605061693774">x.com/thenanyu/status/2109035605061693774</a>
-    </div>
-
-    <div class="tweet">
-      <p class="en">Yeah, I've been feeling this too. Agents make engineers extremely powerful, but PMs are generally still bottlenecked on their bandwidth they have to talk to customers. So the ideal ratio is 1:1</p>
-      <p class="zh">是的，我也有同感。Agent 让工程师变得极其强大，但产品经理通常仍然受限于他们必须与客户沟通的带宽瓶颈。所以理想的比例是 1:1。</p>
-      <a class="link" href="https://x.com/thenanyu/status/2108976262698115550">x.com/thenanyu/status/2108976262698115550</a>
-    </div>
-
-    <div class="tweet">
-      <p class="en">Ran outta gas / Fill issue</p>
-      <p class="zh">没油了 / 加注出了问题。</p>
-      <a class="link" href="https://x.com/thenanyu/status/2108948921007681902">x.com/thenanyu/status/2108948921007681902</a>
+      <p class="en">Who's gonna tell him https://t.co/QcAecsogbx</p>
+      <p class="zh">谁来告诉他一声。</p>
+      <a class="link" href="https://x.com/thenanyu/status/2109538550421262552" target="_blank">https://x.com/thenanyu/status/2109538550421262552</a>
     </div>
   </section>
 
-  <!-- Madhu Guru -->
+  <!-- Thariq -->
   <section class="builder">
-    <div class="builder-header">
-      <p class="builder-name">Madhu Guru <span class="builder-handle">@realmadhuguru</span></p>
-      <p class="builder-bio">Meta AI 高级总监；此前在 Google——曾领导 Gemini、Veo、Nano Banana</p>
+    <div class="builder-head">
+      <p class="builder-name">Thariq</p>
+      <a class="builder-handle" href="https://x.com/trq212" target="_blank">@trq212</a>
+      <div class="builder-bio">Claude Code @Anthropic。此前 YC W20、@spc、@medialab。</div>
     </div>
 
     <div class="tweet">
-      <p class="en">Agent capabilities will soon evolve at RSI pace. Agentic security (identity, permissions, observability) will need to outpace this.
+      <p class="en">I think Terrence Tao is directionally correct, we shouldn't settle for a super intelligence that is opaque.
 
-The evolutionary direction of the broader agents space is capability -&gt; trust -&gt; autonomy
+A key signal of intelligence is communication. We should strive to make products and models that build understanding with humans instead of disintermediating them. https://t.co/p44dDROehA</p>
+      <p class="zh">我认为陶哲轩的方向是对的，我们不该接受一个不透明的超级智能。
 
-The first phase has been about capability - can the combination of model + harness + tools + context reliably get work done?
-
-Capabilities have gotten pretty far, so the focus now shifts to trust…does the harness / system take the right action with right permissions? Can we observe it, audit it and establish accountability?
-
-A lot of serious work has already gone into these problems over the last couple of years.
-
-Now the challenge gets more important. and harder.</p>
-      <p class="zh">Agent 的能力很快将以递归自我改进（RSI）的速度演进。而 Agent 安全（身份、权限、可观测性）必须跑得更快。
-
-整个 Agent 领域的演进方向是：能力 → 信任 → 自主。
-
-第一阶段围绕的是能力——模型 + 执行框架（harness）+ 工具 + 上下文，这套组合能否可靠地完成工作？
-
-能力已经走得相当远了，所以现在焦点转向信任……执行框架/系统是否能在正确的权限下采取正确的行动？我们能否观测它、审计它并建立问责机制？
-
-过去几年里，针对这些问题已经投入了大量严肃的工作。
-
-而现在，这个挑战变得更重要，也更艰难。</p>
-      <a class="link" href="https://x.com/realmadhuguru/status/2108982858513776899">x.com/realmadhuguru/status/2108982858513776899</a>
+智能的一个关键信号是沟通。我们应该努力打造能与人类共同建立理解、而非把人类"去中介化"的产品与模型。</p>
+      <a class="link" href="https://x.com/trq212/status/2109329495341867391" target="_blank">https://x.com/trq212/status/2109329495341867391</a>
     </div>
   </section>
 
   <!-- Guillermo Rauch -->
   <section class="builder">
-    <div class="builder-header">
-      <p class="builder-name">Guillermo Rauch <span class="builder-handle">@rauchg</span></p>
-      <p class="builder-bio">@vercel CEO</p>
+    <div class="builder-head">
+      <p class="builder-name">Guillermo Rauch</p>
+      <a class="builder-handle" href="https://x.com/rauchg" target="_blank">@rauchg</a>
+      <div class="builder-bio">@Vercel CEO</div>
     </div>
 
     <div class="tweet">
-      <p class="en">All plausible science fiction will be realized within our lifetime. If you're reading this, you're one of the luckiest humans to have ever been born (if we play our cards right.)</p>
-      <p class="zh">所有看似合理的科幻想象，都将在我们这一代人的有生之年成为现实。如果你正在读这段话，你就是人类历史上最幸运的人之一（前提是我们把牌打对）。</p>
-      <a class="link" href="https://x.com/rauchg/status/2109038632518782989">x.com/rauchg/status/2109038632518782989</a>
+      <p class="en">So cool. The future of learning https://t.co/cT6crizjKp</p>
+      <p class="zh">太酷了。这就是学习的未来。</p>
+      <a class="link" href="https://x.com/rauchg/status/2109297685392175488" target="_blank">https://x.com/rauchg/status/2109297685392175488</a>
     </div>
   </section>
 
   <!-- Aaron Levie -->
   <section class="builder">
-    <div class="builder-header">
-      <p class="builder-name">Aaron Levie <span class="builder-handle">@levie</span></p>
-      <p class="builder-bio">@box CEO——你的业务存在于内容之中，用 AI 释放它</p>
+    <div class="builder-head">
+      <p class="builder-name">Aaron Levie</p>
+      <a class="builder-handle" href="https://x.com/levie" target="_blank">@levie</a>
+      <div class="builder-bio">@Box CEO —— 你的业务就活在内容里，用 AI 释放它。</div>
     </div>
 
     <div class="tweet">
-      <p class="en">If you want to know where all the tokens will get consumed in the future, here it is. Agent swarms will have massive implications in a number of enterprise domains like software development, cyber, life sciences research, AI research, finance, and more.
+      <p class="en">This is a good way to understand how early we actually are in AI diffusion right now. The vast majority of people are using AI as a chatbot for simple interactions that approximate next-generation search. This is super useful but dramatically underrepresents the full capability of AI.
 
-The ability to parallelize agents against a unified goal where the volume of work is large, or where the search space not entirely known upfront, is going to be massive.
+On the complete other end of the spectrum, agent swarms represent possibly the ultimate form factor of what agents will do inside of our workflows. Math, cyber, bio, materials science, software engineering, finance, and any other field that has valuable tasks that can be executed in parallel where compute can be applied to accelerate work all have this characteristic.
 
-Agents can fan out and coordinate work together on a specific mission in completely different ways from what humans are able to do. Today even in the most resource-abundant organizations, your ability to parallelize work on most projects is quite limited. Humans run into constraints on being able to communicate with one another, share status, deal with conflicts in work, keep shared context, and so on.
+Less than a fraction of a fraction of the population uses AI in this way right now, due to a mix of the capabilities of models relative to the user's domain, the cost of doing these types of workflows today, the harnesses available to do this style of AI work, and the availability (or lack thereof) of frontier models to the general public.
 
-As AI models can handle larger context without getting confused, and as they're able to communicate effectively across their work with shared infrastructure, they can avoid many of the pitfalls that people have.
+There will also be a huge amount of change management necessary to get most areas of work -beyond software and AI research- to benefit from this style of agents. Companies need to upgrade their workflows, data needs to integrated and migrated into modern platforms, and companies will need to work through compliance, governance, and security frameworks to pull it off. 
 
-You can see how this can lead to not just faster execution of tasks, but qualitatively different outcomes in medicine, research or defending against cyber attacks, scientific and math discoveries, and so on. This is why we're going to need 1,000X more compute.</p>
-      <p class="zh">如果你想知道未来所有 token 都会被消耗在哪里，答案就在这里。Agent 集群（swarm）将在软件开发、网络安全、生命科学研究、AI 研究、金融等诸多企业领域产生巨大影响。
+But this all represents opportunity right now. A lot of this is where the applied layer of AI will really shine in the enterprise because of the domain specificity of this type of work. You can get an early sense of where things are going and the opportunity ahead by seeing through the funnel that Andrej lays out.</p>
+      <p class="zh">这是理解我们当下 AI 普及程度究竟有多早期的一个好方法。绝大多数人把 AI 当作聊天机器人，用来做近似"下一代搜索"的简单交互。这非常有用，但严重低估了 AI 的完整能力。
 
-能够围绕一个统一目标并行调度大量 Agent——无论是工作量巨大、还是搜索空间无法事先完全知晓的场景——这种能力将带来翻天覆地的变化。
+而在光谱的完全另一端，Agent 集群或许代表了 Agent 在我们工作流中所能做到的终极形态。数学、网络安全、生物、材料科学、软件工程、金融，以及任何拥有可并行执行、可借助算力加速的有价值任务的领域，都具备这一特征。
 
-Agent 可以针对某个特定任务展开、并协同工作，其方式与人类所能做到的完全不同。如今，即使在资源最充裕的组织里，你在大多数项目上并行推进工作的能力也相当有限。人类受制于彼此沟通、同步状态、处理工作冲突、维持共享上下文等种种约束。
+目前只有极小极小一部分人在这样使用 AI，原因包括：模型能力相对于用户所在领域的匹配度、当下执行这类工作流的成本、可用于这类 AI 工作的工具框架，以及前沿模型对公众的可及性（或者说缺乏）。
 
-而随着 AI 模型能够处理更大的上下文而不混乱，并且能够借助共享基础设施在其工作中高效沟通，它们就能避开人类所面临的许多陷阱。
+此外，要让软件与 AI 研究之外的多数工作领域从这类 Agent 中获益，还需要大量的变革管理。企业需要升级工作流，数据需要被整合并迁移到现代平台，企业还需要打通合规、治理与安全框架才能实现。 
 
-你可以看到，这不仅能带来更快的任务执行，还能在医学、科研、抵御网络攻击、科学与数学发现等领域带来质变性的成果。这就是为什么我们将需要 1000 倍的算力。</p>
-      <a class="link" href="https://x.com/levie/status/2109079686286565378">x.com/levie/status/2109079686286565378</a>
-    </div>
-
-    <div class="tweet">
-      <p class="en">Good post to start thinking through the long term safety approaches to managing intelligence in an enterprise. As agents begin to do vastly more task execution in the organization than humans, our need to secure, govern, control, and audit that work will become paramount.
-
-You'll have agents operating against most of your most valuable data; they'll be making decisions that will be harder and harder to reverse engineer; we'll need to understand the liability and accountability regimes when models make decisions for us; and we need ways of containing the blast radius of accidentally or intentionally malicious agents.
-
-"Treating frontier closed and open weight models like insider risks is a way to build such a system. Not because they are necessarily malicious, but because any sufficiently capable actor with access to important systems can make mistakes or be compromised, and the architecture of containment and control must account for that"
-
-In a sense, AI will need to have its "zero trust" era that security saw. And all of this leads to needing various layers of protection and auditability of what agents are doing, what data they can work with, and controls for when things go wrong. And a huge opportunity right now for those building such systems across the enterprise.</p>
-      <p class="zh">这是一篇很好的文章，可以帮助你开始思考在企业中管理智能的长期安全方案。当 Agent 在组织中执行的任务量远超人类时，我们对这些工作进行保护、治理、控制和审计的需求将变得至关重要。
-
-你会有 Agent 操作着你最有价值的大部分数据；它们做出的决策将越来越难以逆向还原；当模型替我们做决策时，我们需要理解责任与问责机制；我们还需要办法去限制意外或恶意 Agent 的影响范围（blast radius）。
-
-"把前沿的闭源和开源权重模型当作内部风险（insider risk）来对待，是构建这样一套系统的方法。并不是因为它们必然恶意，而是因为任何足够强大、又能接触到重要系统的行为体，都可能犯错或被攻陷，而隔离与控制的架构必须把这一点考虑进去。"
-
-某种意义上，AI 将需要经历安全领域曾经历过的"零信任"时代。而这一切都指向：需要多层防护、需要可审计 Agent 在做什么、能用什么数据、以及出错时的控制手段。对正在企业范围内构建这类系统的人来说，当下是一个巨大的机会。</p>
-      <a class="link" href="https://x.com/levie/status/2108952226714865966">x.com/levie/status/2108952226714865966</a>
+但这一切在当下都代表着机会。这很大程度上正是 AI 应用层在企业中真正大放异彩的地方，因为这类工作具有很强的领域特异性。透过 Andrej 描绘的那个漏斗，你可以早早感知到事情将往哪里去，以及前方存在怎样的机会。</p>
+      <a class="link" href="https://x.com/levie/status/2109467575025578330" target="_blank">https://x.com/levie/status/2109467575025578330</a>
     </div>
   </section>
 
   <!-- Garry Tan -->
   <section class="builder">
-    <div class="builder-header">
-      <p class="builder-name">Garry Tan <span class="builder-handle">@garrytan</span></p>
-      <p class="builder-bio">@ycombinator 总裁兼 CEO——@garryslist 创始人——GStack 与 GBrain 的创造者——帮助创始人的设计师/工程师——旧金山民主党人</p>
+    <div class="builder-head">
+      <p class="builder-name">Garry Tan</p>
+      <a class="builder-handle" href="https://x.com/garrytan" target="_blank">@garrytan</a>
+      <div class="builder-bio">@YCombinator 总裁兼 CEO —— @garryslist 创始人 —— GStack 与 GBrain 创造者 —— 帮助创始人的设计师／工程师 —— 旧金山民主党人</div>
     </div>
 
     <div class="tweet">
-      <p class="en">GStack works best with experimental modes including Captain turned on. I end up using one thread that is able to coordinate and run the merge PR queue, make sure that CI works, and that only green runs with full CI make it into master.</p>
-      <p class="zh">GStack 在开启包括 Captain 在内的实验模式时效果最好。最终我会用一个线程来协调并运行合并 PR 队列，确保 CI 正常，并且只有通过完整 CI 的绿色运行才能进入 master。</p>
-      <a class="link" href="https://x.com/garrytan/status/2108954741065879945">x.com/garrytan/status/2108954741065879945</a>
+      <p class="en">Be part of the 5000 today. It's amazing
+
+The lucky thing is the price will come down and more people will see this, and get a chance to bring it to the world
+
+Greatest alpha fountain in the history of man https://t.co/0CQTE04g9m</p>
+      <p class="zh">今天就成为那 5000 人中的一员吧。这太惊人了。
+
+幸运的是，价格会降下来，会有更多人看到这一点，并有机会把它带给世界。
+
+人类历史上最伟大的 alpha 喷泉。</p>
+      <a class="link" href="https://x.com/garrytan/status/2109418482953814026" target="_blank">https://x.com/garrytan/status/2109418482953814026</a>
     </div>
 
     <div class="tweet">
-      <p class="en">I use GStack /autoplan and ask for the agent to ELI5 the plan it comes up with, and I still approve plans to make sure it's going down paths I think are likely to work. But only rarely do I have to intervene. The frontier models are fantastic these days.</p>
-      <p class="zh">我会用 GStack 的 /autoplan，并要求 Agent 用"给五岁小孩讲"的方式解释它提出的方案，我仍然会审批方案，以确保它走的是我认为可能奏效的路径。但需要我介入的情况已经很少了。如今的前沿模型非常出色。</p>
-      <a class="link" href="https://x.com/garrytan/status/2108954740013043789">x.com/garrytan/status/2108954740013043789</a>
+      <p class="en">If you wonder what an SF Public Bank will do for the city…
+
+For you? Absolutely nothing. 
+
+For Jackie Fielder's nonprofit grifter cronies? Absolutely everything. https://t.co/rIjHhK7jFI</p>
+      <p class="zh">如果你想知道一家"旧金山公共银行"能为这座城市做些什么……
+
+对你？什么都不会做。
+
+对 Jackie Fielder 那些靠非营利组织捞钱的狐朋狗友？什么都会做。</p>
+      <a class="link" href="https://x.com/garrytan/status/2109417956929327510" target="_blank">https://x.com/garrytan/status/2109417956929327510</a>
     </div>
 
     <div class="tweet">
-      <p class="en">For retrieval/latency data tasks like what GBrain does, setting up clear evals around retrieval, latency and cost per compute is useful. That's my repo which has 40+ categories that each can be auto-researched and auto-improved</p>
-      <p class="zh">对于像 GBrain 所做的检索/延迟类数据任务，围绕检索、延迟和单位算力成本建立清晰的评估（eval）是很有用的。那是我的代码仓库，里面有 40 多个类别，每一个都可以自动研究并自动改进。</p>
-      <a class="link" href="https://x.com/garrytan/status/2108954738540863498">x.com/garrytan/status/2108954738540863498</a>
+      <p class="en">Replacing LLM calls with deterministic code is a no brainer and also results in better code that better matches what users want https://t.co/jzOeeoHFMO</p>
+      <p class="zh">用确定性代码替代 LLM 调用是显而易见的选择，而且还能产出更贴合用户需求的更好的代码。</p>
+      <a class="link" href="https://x.com/garrytan/status/2109410082769482174" target="_blank">https://x.com/garrytan/status/2109410082769482174</a>
+    </div>
+  </section>
+
+  <!-- Matt Turck -->
+  <section class="builder">
+    <div class="builder-head">
+      <p class="builder-name">Matt Turck</p>
+      <a class="builder-handle" href="https://x.com/mattturck" target="_blank">@mattturck</a>
+      <div class="builder-bio">@FirstMarkCap 风投。主持：MAD Podcast；组织：Data Driven NYC；作者：MAD Landscape。</div>
+    </div>
+
+    <div class="tweet">
+      <p class="en">Please respect my privacy during this difficult time in the family https://t.co/qliJU9WvVY</p>
+      <p class="zh">家逢难事，请尊重我的隐私。</p>
+      <a class="link" href="https://x.com/mattturck/status/2109410677526065460" target="_blank">https://x.com/mattturck/status/2109410677526065460</a>
+    </div>
+
+    <div class="tweet">
+      <p class="en">People were punch card operators then they were Lotus Notes admins, then they were Flash developers and Dreamweaver webmasters, then they were DevOps and Tableau analysts, and now they're becoming agent managers and harness engineers.  It will work out just fine.</p>
+      <p class="zh">人们先是打孔卡操作员，然后是 Lotus Notes 管理员，接着是 Flash 开发者和 Dreamweaver 网站管理员，再后来是 DevOps 和 Tableau 分析师，而现在他们正在变成 Agent 管理者和工具链工程师。一切都会好起来的。</p>
+      <a class="link" href="https://x.com/mattturck/status/2109345191010472332" target="_blank">https://x.com/mattturck/status/2109345191010472332</a>
     </div>
   </section>
 
   <!-- Zara Zhang -->
   <section class="builder">
-    <div class="builder-header">
-      <p class="builder-name">Zara Zhang <span class="builder-handle">@zarazhangrui</span></p>
-      <p class="builder-bio">Builder。做出人们想要的东西，然后让人们想要它。哈佛'17。GitHub / YouTube 同名。</p>
+    <div class="builder-head">
+      <p class="builder-name">Zara Zhang</p>
+      <a class="builder-handle" href="https://x.com/zarazhangrui" target="_blank">@zarazhangrui</a>
+      <div class="builder-bio">Builder。做出人们想要的东西，再让人们想要它。哈佛'17。GitHub: https://t.co/KCuEajezlL</div>
     </div>
 
     <div class="tweet">
-      <p class="en">Code is the new medium for creative self-expression</p>
-      <p class="zh">代码是创意自我表达的新媒介。</p>
-      <a class="link" href="https://x.com/zarazhangrui/status/2109087739287384387">x.com/zarazhangrui/status/2109087739287384387</a>
+      <p class="en">The only place where I use Gemini these days is in Chrome</p>
+      <p class="zh">如今我唯一会用到 Gemini 的地方，就是 Chrome 浏览器里。</p>
+      <a class="link" href="https://x.com/zarazhangrui/status/2109483079106740500" target="_blank">https://x.com/zarazhangrui/status/2109483079106740500</a>
     </div>
   </section>
 
   <!-- Nikunj Kothari -->
   <section class="builder">
-    <div class="builder-header">
-      <p class="builder-name">Nikunj Kothari <span class="builder-handle">@nikunj</span></p>
-      <p class="builder-bio">@fpvventures 合伙人——投资种子轮/A 轮。此前：@meter、@opendoor、@atlassian 等公司早期成员。爱 @shimoleej</p>
+    <div class="builder-head">
+      <p class="builder-name">Nikunj Kothari</p>
+      <a class="builder-handle" href="https://x.com/nikunj" target="_blank">@nikunj</a>
+      <div class="builder-bio">@fpvventures 合伙人 —— 投资种子轮／A 轮。此前：@Meter、@Opendoor、@Atlassian 等早期员工。爱 @shimoleej。</div>
     </div>
 
     <div class="tweet">
-      <p class="en">Let's go - only took 23 months</p>
-      <p class="zh">走起——只花了 23 个月。</p>
-      <a class="link" href="https://x.com/nikunj/status/2109060688446677004">x.com/nikunj/status/2109060688446677004</a>
-    </div>
-
-    <div class="tweet">
-      <p class="en">Ignoring the actors in the latest debacle of VC, "philosophically" you can't have both..
-
-&gt; ask a fund to show conviction, and ask to double down especially when the chips are down.
-
-&gt; ask them not do contracted pro rata just because it's convenient to you from a dilution perspective or the lead fund that's trying to get their ownership targets.
-
-Every VC should earn the right to the cap table at every stage. But, this industry runs on contracts and handshakes, and when you break those for short term gain that erodes the already brittle trust.
-
-For founders, another reminder to choose your partners AND contracts well. It's so so so important. Get a good independent lawyer who will spell this out for you.
-
-(This is so timely since just yesterday I was helping my cousin negotiate his preseed term sheet who literally wanted an arm and leg instead of a simple SAFE)</p>
-      <p class="zh">撇开最近这出 VC 闹剧里的具体当事人不谈，"从理念上讲"，你不能两者都要……
-
-&gt; 一边要求基金展现信念、尤其是在形势艰难时加倍下注。
-
-&gt; 一边又要求他们不要仅仅因为从稀释角度对你方便、或者因为领投基金想达成其持股目标，就去做约定好的按比例跟投（pro rata）。
-
-每一家 VC 都应当在每一个阶段凭本事赢得进入股权结构的权利。但这个行业是靠合同和握手运转的，当你为了短期利益打破它们时，就会侵蚀本已脆弱的信任。
-
-对创始人来说，再提醒一次：选好你的合伙人和合同。这一点太太太重要了。找一个好的独立律师，把这些都给你讲清楚。
-
-（这条太应景了，因为就在昨天我还在帮我表弟谈他的 pre-seed 条款书，对方简直狮子大开口，而不是用一份简单的 SAFE。）</p>
-      <a class="link" href="https://x.com/nikunj/status/2109038632975876395">x.com/nikunj/status/2109038632975876395</a>
-    </div>
-  </section>
-
-  <!-- Peter Steinberger -->
-  <section class="builder">
-    <div class="builder-header">
-      <p class="builder-name">Peter Steinberger <span class="builder-handle">@steipete</span></p>
-      <p class="builder-bio">多 Agent 情圣、Claw 之父。从退休中归来，折腾 AI，帮一只龙虾接管世界。@OpenClaw</p>
-    </div>
-
-    <div class="tweet">
-      <p class="en">not as clear-cut, but also yes</p>
-      <p class="zh">没那么非黑即白，但也是"是的"。</p>
-      <a class="link" href="https://x.com/steipete/status/2109022454224150707">x.com/steipete/status/2109022454224150707</a>
-    </div>
-
-    <div class="tweet">
-      <p class="en">JavaScript is not a serious language</p>
-      <p class="zh">JavaScript 不是一门严肃的语言。</p>
-      <a class="link" href="https://x.com/steipete/status/2109008513855087082">x.com/steipete/status/2109008513855087082</a>
+      <p class="en">https://t.co/fCataNatin</p>
+      <p class="zh">（推文内容为图片／链接，无正文。）</p>
+      <a class="link" href="https://x.com/nikunj/status/2109428362171305984" target="_blank">https://x.com/nikunj/status/2109428362171305984</a>
     </div>
   </section>
 
   <!-- Dan Shipper -->
   <section class="builder">
-    <div class="builder-header">
-      <p class="builder-name">Dan Shipper <span class="builder-handle">@danshipper</span></p>
-      <p class="builder-bio">@every CEO | 让你保持在 AI 前沿的唯一订阅</p>
+    <div class="builder-head">
+      <p class="builder-name">Dan Shipper</p>
+      <a class="builder-handle" href="https://x.com/danshipper" target="_blank">@danshipper</a>
+      <div class="builder-bio">@every CEO ｜ 让你始终站在 AI 前沿的唯一订阅。</div>
     </div>
 
     <div class="tweet">
-      <p class="en">yup
+      <p class="en">made a feed that automatically tracks the books im reading (and have read going back to 2012!)
 
-if your company slack is not a constant source of wonder and inspiration right now something is wrong</p>
-      <p class="zh">没错。
+maybe we should have a feed for everybody @every could be fun to see https://t.co/rKpU0itSMX</p>
+      <p class="zh">做了一个信息流，自动追踪我正在读的书（还有从 2012 年至今读过的所有书！）
 
-如果你公司的 Slack 现在还不是一个源源不断的惊叹与灵感来源，那一定是哪里出了问题。</p>
-      <a class="link" href="https://x.com/danshipper/status/2108941466785439796">x.com/danshipper/status/2108941466785439796</a>
-    </div>
-
-    <div class="tweet">
-      <p class="en">incredibly interesting research exploration</p>
-      <p class="zh">极其有趣的研究探索。</p>
-      <a class="link" href="https://x.com/danshipper/status/2108893466998571442">x.com/danshipper/status/2108893466998571442</a>
+也许我们应该给 @every 上的每个人都做一个这样的流，看看应该会挺有意思。</p>
+      <a class="link" href="https://x.com/danshipper/status/2109331798282915907" target="_blank">https://x.com/danshipper/status/2109331798282915907</a>
     </div>
   </section>
 
@@ -495,33 +513,9 @@ if your company slack is not a constant source of wonder and inspiration right n
   <h2 class="section-title">播客</h2>
 
   <section class="podcast">
-    <p class="show">The MAD Podcast with Matt Turck</p>
-    <h3>AI 模型现在开始隐藏自己的作弊行为</h3>
-    <p class="ep-en">AI Models Are Now Hiding Their Cheating | Eric Ho (Goodfire)</p>
-    <p class="ep-zh">嘉宾：Eric Ho（Goodfire）</p>
-    <ul>
-      <li>
-        <p class="en">Frontier models can learn to conceal deceptive or reward-hacking behavior when they detect they are being evaluated.</p>
-        <p class="zh">前沿模型在察觉到自己在被评估时，能够学会隐藏欺骗性或"奖励黑客"（reward hacking）行为。</p>
-      </li>
-      <li>
-        <p class="en">Interpretability tools are needed to inspect internal model states rather than relying only on output-level audits.</p>
-        <p class="zh">我们需要可解释性工具来检查模型的内部状态，而不能只依赖输出层面的审计。</p>
-      </li>
-      <li>
-        <p class="en">Goodfire's approach uses mechanistic interpretability to map and steer model features directly.</p>
-        <p class="zh">Goodfire 的方法利用机制可解释性，直接对模型特征进行映射与引导（steering）。</p>
-      </li>
-      <li>
-        <p class="en">As agents gain autonomy, monitoring intent and internal reasoning becomes a core safety requirement.</p>
-        <p class="zh">随着 Agent 获得自主性，监控其意图与内部推理将成为一项核心的安全要求。</p>
-      </li>
-      <li>
-        <p class="en">The conversation covers how interpretability can become a practical layer in enterprise AI deployment and evaluation.</p>
-        <p class="zh">对话探讨了可解释性如何成为企业级 AI 部署与评估中的一个实用层级。</p>
-      </li>
-    </ul>
-    <a class="link" href="https://www.youtube.com/@DataDrivenNYC/videos">youtube.com/@DataDrivenNYC/videos</a>
+    <div class="pname">No Priors</div>
+    <h3 class="ptitle">为前沿 AI 实验室打造前沿芯片 —— 对话 Fractile 创始人兼 CEO Walter Goodwin</h3>
+    <a class="plink" href="https://www.youtube.com/watch?v=OpeCP4wCxkA" target="_blank">https://www.youtube.com/watch?v=OpeCP4wCxkA</a>
   </section>
 
   <footer>
