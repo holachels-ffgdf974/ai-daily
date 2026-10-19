@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 · 2026年10月18日</title>
+<title>AI 日报 · 2026年10月19日</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -16,157 +16,185 @@
   .container {
     max-width: 680px;
     margin: 0 auto;
-    padding: 64px 32px 80px;
+    padding: 64px 32px 48px;
   }
   /* Masthead */
   .masthead {
     text-align: center;
     padding-bottom: 40px;
-    border-bottom: 1px solid #e8e8e4;
     margin-bottom: 48px;
+    border-bottom: 1px solid #e8e8e4;
   }
   .masthead .date {
     font-size: 13px;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.12em;
     color: #6b6b6b;
     text-transform: uppercase;
     margin-bottom: 16px;
   }
   .masthead h1 {
     font-family: Georgia, "Songti SC", serif;
-    font-size: 52px;
-    font-weight: normal;
+    font-size: 48px;
+    font-weight: 700;
     letter-spacing: 0.02em;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
+    color: #1a1a1a;
   }
-  .masthead h1 .accent {
-    border-bottom: 3px solid #8b5e3c;
-    padding-bottom: 2px;
+  .masthead h1::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    background: #8b5e3c;
+    margin: 20px auto 0;
+    border-radius: 2px;
   }
-  .masthead .summary {
+  .masthead .stats {
+    margin-top: 20px;
     font-size: 14px;
     color: #6b6b6b;
   }
-  .masthead .summary span {
-    color: #8b5e3c;
-    font-weight: 600;
-  }
-  /* Section title */
-  .section-title {
-    font-family: Georgia, "Songti SC", serif;
-    font-size: 22px;
-    font-weight: normal;
-    color: #1a1a1a;
-    margin: 56px 0 28px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #e8e8e4;
-  }
+  .masthead .stats span { color: #8b5e3c; font-weight: 600; }
   /* Builder card */
   .card {
     background: #ffffff;
     border: 1px solid #e8e8e4;
     border-radius: 8px;
-    padding: 28px 28px 12px;
-    margin-bottom: 28px;
+    padding: 32px 28px;
+    margin-bottom: 32px;
   }
   .builder-head {
-    margin-bottom: 22px;
-    padding-bottom: 18px;
-    border-bottom: 1px solid #f0efec;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0efe9;
   }
   .builder-name {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     color: #1a1a1a;
   }
   .builder-handle {
     font-size: 14px;
-    color: #8b5e3c;
+    color: #2c6bae;
     margin-left: 6px;
     font-weight: 500;
   }
   .builder-bio {
-    font-size: 13px;
+    font-size: 13.5px;
     color: #6b6b6b;
-    margin-top: 6px;
+    margin-top: 8px;
     line-height: 1.6;
   }
+  .builder-bio a { color: #2c6bae; text-decoration: none; }
+  .builder-bio a:hover { text-decoration: underline; }
   /* Tweet */
   .tweet {
-    padding: 18px 0;
-    border-bottom: 1px solid #f0efec;
+    border-left: 3px solid #e8e0d0;
+    background: #fdfdfb;
+    padding: 16px 18px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 20px;
   }
-  .tweet:last-child { border-bottom: none; }
+  .tweet:last-child { margin-bottom: 0; }
   .tweet .en {
-    font-size: 15px;
+    font-size: 14.5px;
     color: #1a1a1a;
     line-height: 1.65;
-    margin-bottom: 10px;
-    white-space: pre-line;
+    white-space: pre-wrap;
+    word-break: break-word;
   }
   .tweet .zh {
-    font-size: 15px;
-    color: #3a3a3a;
-    line-height: 1.75;
-    padding: 14px 16px;
-    background: #fdfdfb;
-    border-left: 3px solid #e8e0d0;
-    border-radius: 0 4px 4px 0;
-    white-space: pre-line;
+    font-size: 14px;
+    color: #6b6b6b;
+    line-height: 1.7;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #ece9e0;
+    white-space: pre-wrap;
+    word-break: break-word;
   }
   .tweet .link {
     display: inline-block;
     margin-top: 12px;
-    font-size: 12px;
+    font-size: 12.5px;
     color: #2c6bae;
     text-decoration: none;
     word-break: break-all;
   }
   .tweet .link:hover { text-decoration: underline; }
   /* Podcast */
-  .podcast .pod-name {
+  .section-title {
+    font-family: Georgia, "Songti SC", serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 48px 0 24px;
+    color: #1a1a1a;
+  }
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #8b5e3c;
+    margin-top: 12px;
+  }
+  .podcast-card {
+    background: #ffffff;
+    border: 1px solid #e8e8e4;
+    border-radius: 8px;
+    padding: 28px;
+    margin-bottom: 32px;
+  }
+  .podcast-name {
     font-size: 13px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #8b5e3c;
+    font-weight: 600;
     margin-bottom: 8px;
   }
-  .podcast .pod-title {
-    font-family: Georgia, "Songti SC", serif;
-    font-size: 20px;
-    line-height: 1.4;
-    margin-bottom: 16px;
+  .podcast-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.5;
+    margin-bottom: 18px;
   }
-  .podcast .pod-title .en-title {
-    display: block;
-    font-size: 15px;
+  .podcast-desc-en {
+    font-size: 14px;
+    color: #1a1a1a;
+    line-height: 1.65;
+    margin-bottom: 8px;
+  }
+  .podcast-desc-zh {
+    font-size: 13.5px;
     color: #6b6b6b;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
-    margin-top: 6px;
+    line-height: 1.7;
+    margin-bottom: 18px;
   }
-  .podcast .link {
-    display: inline-block;
-    margin-top: 14px;
-    font-size: 12px;
+  .podcast-link {
+    font-size: 13px;
     color: #2c6bae;
     text-decoration: none;
     word-break: break-all;
   }
+  .podcast-link:hover { text-decoration: underline; }
   /* Footer */
   footer {
-    margin-top: 64px;
-    padding-top: 28px;
-    border-top: 1px solid #e8e8e4;
     text-align: center;
-    font-size: 13px;
+    padding-top: 40px;
+    margin-top: 48px;
+    border-top: 1px solid #e8e8e4;
+    font-size: 12.5px;
     color: #6b6b6b;
+    letter-spacing: 0.04em;
   }
   @media (max-width: 600px) {
-    .container { padding: 40px 18px 56px; }
-    .masthead h1 { font-size: 38px; }
-    .card { padding: 22px 18px 8px; }
-    .tweet .en, .tweet .zh { font-size: 14px; }
-    .section-title { font-size: 20px; }
+    .container { padding: 40px 18px 32px; }
+    .masthead h1 { font-size: 36px; }
+    .card { padding: 24px 18px; }
+    .podcast-card { padding: 22px 18px; }
+    .tweet { padding: 14px 14px; }
   }
 </style>
 </head>
@@ -174,267 +202,316 @@
 <div class="container">
 
   <header class="masthead">
-    <div class="date">2026年10月18日 · 星期日</div>
-    <h1><span class="accent">AI 日报</span></h1>
-    <div class="summary">今日收录 <span>9</span> 位 Builder · <span>17</span> 条推文 · <span>1</span> 期播客</div>
+    <div class="date">2026年10月19日 · 星期一</div>
+    <h1>AI 日报</h1>
+    <div class="stats">今日收录 <span>11</span> 位 Builder · <span>25</span> 条推文 · <span>1</span> 期播客</div>
   </header>
 
-  <h2 class="section-title">Builders &amp; Tweets</h2>
-
   <!-- Swyx -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <div><span class="builder-name">Swyx</span><span class="builder-handle">@swyx</span></div>
-      <div class="builder-bio">以刻意、极致、正直与狂热去实现抱负。关联：@smol_ai · @dxtipshq · @cognitio</div>
+      <div class="builder-bio">以刻意、强度、正直与疯狂实现抱负。关联：@smol_ai · @dxtipshq · @cognitio</div>
     </div>
 
     <div class="tweet">
-      <div class="en">@dexhorthy @Jeffdelaney23 @ThePrimeagen kinda like this chart to tell the story. basically no love for 2 years and then slowly we get recommended via browsing. our CTR sucks. https://t.co/XcQM6lzVvU</div>
-      <div class="zh">@dexhorthy @Jeffdelaney23 @ThePrimeagen 这张图挺能说明问题的。基本上前两年无人问津，之后才慢慢通过浏览推荐被看到。我们的点击率（CTR）很糟糕。</div>
-      <a class="link" href="https://x.com/swyx/status/2111353401363902573" target="_blank">x.com/swyx/status/2111353401363902573</a>
+      <div class="en">Data engineers > AI engineers
+
+there's a big difference between a "RAG guy" and a "Data Intensive Applications" person like in this screenshot and there's never been a starker difference in demand in my entire career in tech (aka post search engine wars)
+
+if your blog / github is full of stuff like this, I have a fantastic mission/job for you (SF preferred, can relocate u, visas ok)
+
+(if you can name who's blog this is without even checking, you definitely are in the community. bonus points if you know where he ended up also without looking)
+
+jobs@latent.space and the team will reach out if you fit</div>
+      <div class="zh">数据工程师 &gt; AI 工程师
+
+“RAG 小子”和截图里那种“数据密集型应用”型人才之间有着巨大的差别，而在我整个科技职业生涯里（也就是搜索引擎大战之后），对这两者的需求差异从未如此悬殊。
+
+如果你的博客 / GitHub 里满是这类东西，我这里有一个绝佳的任务 / 职位等着你（优先旧金山，可协助搬迁，签证没问题）。
+
+（如果你不用查就能说出这是谁的博客，那你绝对混在这个圈子里。要是连他后来去了哪儿也能不查就说出来，额外加分。）
+
+简历投至 jobs@latent.space，合适的团队会联系你。</div>
+      <a class="link" href="https://x.com/swyx/status/2112073533794971941" target="_blank" rel="noopener">查看原推 →</a>
     </div>
 
     <div class="tweet">
-      <div class="en">@dexhorthy channel affinity
-
-my goal is basically to collab with every single one of these folks. you guys already love them.
-
-pls @Jeffdelaney23 @ThePrimeagen https://t.co/QAhKVubT88</div>
-      <div class="zh">@dexhorthy 频道亲和力
-
-我的目标基本上就是和这里的每一个人都合作。你们本来就很喜欢他们。
-
-拜托了 @Jeffdelaney23 @ThePrimeagen</div>
-      <a class="link" href="https://x.com/swyx/status/2111351354409300230" target="_blank">x.com/swyx/status/2111351354409300230</a>
+      <div class="en">@aiDotEngineer @evanjconrad v nice side efvent https://t.co/Jt88Ncm3VN</div>
+      <div class="zh">@aiDotEngineer @evanjconrad 非常棒的周边活动</div>
+      <a class="link" href="https://x.com/swyx/status/2111971887811342582" target="_blank" rel="noopener">查看原推 →</a>
     </div>
 
     <div class="tweet">
-      <div class="en">@dexhorthy we serve &gt;1m unique viewers a month pretty much nonstop since May (after AIE EU) but even now 58% of viewers a month are new to us. 68% of viewers not subscribed lol.
+      <div class="en">are we so different, you and i
 
-most viewers 7am-11am PT daily. nobody watches after 5pm. https://t.co/EdPFF9QllO</div>
-      <div class="zh">@dexhorthy 自 5 月（AIE 欧洲站之后）起，我们几乎不间断地每月服务超过 100 万独立观众；但即便到现在，每月仍有 58% 的观众是新面孔，68% 的观众没有订阅，哈哈。
-
-大部分观众集中在太平洋时间每天早上 7 点到 11 点。下午 5 点之后就没人看了。</div>
-      <a class="link" href="https://x.com/swyx/status/2111350966419411070" target="_blank">x.com/swyx/status/2111350966419411070</a>
+https://t.co/fOqLOgAInI</div>
+      <div class="zh">你和我，真的有那么大不同吗？</div>
+      <a class="link" href="https://x.com/swyx/status/2111962930644402504" target="_blank" rel="noopener">查看原推 →</a>
     </div>
-  </div>
+  </article>
 
   <!-- Thibault Sottiaux -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <div><span class="builder-name">Thibault Sottiaux</span><span class="builder-handle">@thsottiaux</span></div>
       <div class="builder-bio">Codex &amp; ChatGPT @OpenAI</div>
     </div>
 
     <div class="tweet">
-      <div class="en">Done</div>
-      <div class="zh">搞定了。</div>
-      <a class="link" href="https://x.com/thsottiaux/status/2111566005684289735" target="_blank">x.com/thsottiaux/status/2111566005684289735</a>
+      <div class="en">I bought a new domain and I’m very excited for it. Very</div>
+      <div class="zh">我买了一个新域名，非常期待。非常期待。</div>
+      <a class="link" href="https://x.com/thsottiaux/status/2112039275344941371" target="_blank" rel="noopener">查看原推 →</a>
     </div>
 
     <div class="tweet">
-      <div class="en">My work dot "Burger" coordinated with my personal dot "Dorito" over email at my personal dots request to get documents, which then coordinated with with my CPA in order to file some tax stuff. Took 20 minutes. We're still so early.</div>
-      <div class="zh">我的工作智能体「Burger」应我个人智能体「Dorito」的邮件请求，去获取了一些文件，随后又与我的注册会计师（CPA）协作，处理了一些报税事务。整个过程花了 20 分钟。我们真的还处在非常早期的阶段。</div>
-      <a class="link" href="https://x.com/thsottiaux/status/2111495392559067199" target="_blank">x.com/thsottiaux/status/2111495392559067199</a>
+      <div class="en">https://t.co/kjNgDoLCWz</div>
+      <div class="zh">（附链接）</div>
+      <a class="link" href="https://x.com/thsottiaux/status/2112034328549216593" target="_blank" rel="noopener">查看原推 →</a>
     </div>
 
     <div class="tweet">
-      <div class="en">Landing sometime today by EOD PST</div>
-      <div class="zh">今天之内上线，最晚太平洋时间当天结束前。</div>
-      <a class="link" href="https://x.com/thsottiaux/status/2111492738025959922" target="_blank">x.com/thsottiaux/status/2111492738025959922</a>
+      <div class="en">Our team worked with OpenCode to have their users who are also OpenAI API customers back in business and any credits refunded which would have been drawn in the attack.
+
+Also, you can request Daybreak Blue access to use our cyber permissive setup for defense. Do not wait until you have to deal with an incident. We’re here to help.</div>
+      <div class="zh">我们团队与 OpenCode 合作，让那些同时是 OpenAI API 客户的 OpenCode 用户恢复正常业务，并退还了在本次攻击中可能被消耗的额度。
+
+另外，你可以申请 Daybreak Blue 权限，使用我们为防御场景开放的网络安全宽松配置。别等到出了事才来应对。我们随时提供帮助。</div>
+      <a class="link" href="https://x.com/thsottiaux/status/2112034063934742720" target="_blank" rel="noopener">查看原推 →</a>
     </div>
-  </div>
+  </article>
 
   <!-- Peter Yang -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <div><span class="builder-name">Peter Yang</span><span class="builder-handle">@petergyang</span></div>
-      <div class="builder-bio">为忙碌人群打造的实用 AI 教程与访谈 | 在我的频道获取最佳 AI 技能与指南</div>
+      <div class="builder-bio">为忙碌人群打造的实用 AI 教程与访谈 | 在 https://t.co/6VAA6p81x6 获取最佳 AI 技能与指南</div>
     </div>
 
     <div class="tweet">
-      <div class="en">Tim is so right. Hope the devs building StarCraft 3 sees this tweet and embrace AI to ship before 2030  https://t.co/OAFYpl4KR2</div>
-      <div class="zh">Tim 说得太对了。希望正在开发《星际争霸 3》的开发者能看到这条推文，拥抱 AI，在 2030 年之前把它做出来。</div>
-      <a class="link" href="https://x.com/petergyang/status/2111663267995361287" target="_blank">x.com/petergyang/status/2111663267995361287</a>
+      <div class="en">Best comedy of the year https://t.co/jj4AxqOG1h</div>
+      <div class="zh">年度最佳喜剧</div>
+      <a class="link" href="https://x.com/petergyang/status/2112016747838796200" target="_blank" rel="noopener">查看原推 →</a>
     </div>
 
     <div class="tweet">
-      <div class="en">If you have way too many apps and agents (45!) connected to your Google account like me, here's a prompt to audit and remove them:
+      <div class="en">Make work trials the norm for hiring instead of interviews.
 
-"Help me audit my Google app connections at https://t.co/5eMX9dNhLD
+From @APompliano:
 
-1. Review EVERY app across all connection categories. Ask me which ones I still use rather than guessing.
+“We had a specific feature that we wanted to build... We just said to [the candidate], hey, you got two weeks, build it... He had some questions and tried to get the lay of the land... But he built it.
 
-2. Open each app's details. Distinguish basic Google sign-in from permissions to access Gmail, Drive, Calendar, or other data.
+Dude, I don’t have to question whether you can work here or not... We didn’t waste four weeks to get to that point. We just shipped a new feature.”
 
-3. Suggest which to keep, disconnect, or ask me about. Explain your reasoning and what might stop working. Flag broad permissions, unfamiliar providers, and duplicate entries.
+ Watch our full episode here: https://t.co/83Atcrj78o</div>
+      <div class="zh">让“工作试岗”取代面试，成为招聘的常规做法。
 
-4. Show me your recommendations before changing anything. Only disconnect apps I explicitly approve, then verify they're removed. Don't delete app accounts or cancel subscriptions."</div>
-      <div class="zh">如果你和我一样，有太多应用和智能体（足足 45 个！）连接到了你的 Google 账号，这里有一段提示词，可以帮你审计并清理它们：
+来自 @APompliano：
 
-「帮我在 https://t.co/5eMX9dNhLD 审计我的 Google 应用连接情况。
+“我们有个具体功能想开发……我们直接对（候选人）说：嘿，你有两周时间，把它做出来……他问了些问题，摸清了情况……然后他真的做出来了。
 
-1. 检查所有连接类别下的每一个应用。直接问我哪些还在用，而不是靠猜。
+兄弟，我根本不用再怀疑你能不能在这里工作……我们没有花四周时间才走到这一步。我们直接上线了一个新功能。”
 
-2. 打开每个应用的详情。区分基础的 Google 登录授权，与访问 Gmail、Drive、日历或其他数据的权限。
-
-3. 建议哪些保留、哪些断开、哪些需要问我。解释你的理由，以及断开后可能影响哪些功能。标出权限过宽的应用、不熟悉的提供商，以及重复条目。
-
-4. 在做任何更改前，先把你的建议给我看。只有我明确批准的应用才可断开，之后要核实它们已被移除。不要删除应用账号或取消订阅。」</div>
-      <a class="link" href="https://x.com/petergyang/status/2111508293818671449" target="_blank">x.com/petergyang/status/2111508293818671449</a>
+在此观看完整节目：https://t.co/83Atcrj78o</div>
+      <a class="link" href="https://x.com/petergyang/status/2111970651326267529" target="_blank" rel="noopener">查看原推 →</a>
     </div>
 
     <div class="tweet">
-      <div class="en">Have to give credit to @amorriscode and team - the Claude Code app is much faster now and arguably simpler to use than ChatGPT.
-
-The only things missing still are better browser/computer use, remote control for all threads, and live voice. https://t.co/kWULRv1A1t</div>
-      <div class="zh">必须给 @amorriscode 和团队点个赞——Claude Code 应用现在快多了，而且可以说比 ChatGPT 更好用。
-
-目前还缺的只有：更好的浏览器／电脑操作能力、对所有会话的远程控制，以及实时语音。</div>
-      <a class="link" href="https://x.com/petergyang/status/2111496600522805624" target="_blank">x.com/petergyang/status/2111496600522805624</a>
+      <div class="en">I plan to release a free open source skill and video to make this easy for everyone later this week. Subscribe here: https://t.co/yz9xcsfrhF</div>
+      <div class="zh">我计划在本周晚些时候发布一个免费开源的技能和视频，让每个人都能轻松上手。在此订阅：https://t.co/yz9xcsfrhF</div>
+      <a class="link" href="https://x.com/petergyang/status/2111928620503720334" target="_blank" rel="noopener">查看原推 →</a>
     </div>
-  </div>
+  </article>
 
-  <!-- Nan Yu -->
-  <div class="card">
+  <!-- Thariq -->
+  <article class="card">
     <div class="builder-head">
-      <div><span class="builder-name">Nan Yu</span><span class="builder-handle">@thenanyu</span></div>
-      <div class="builder-bio">产品、Codex @OpenAI。曾任 @Linear 产品负责人</div>
+      <div><span class="builder-name">Thariq</span><span class="builder-handle">@trq212</span></div>
+      <div class="builder-bio">Claude Code @anthropicai。此前 YC W20、@spc、@medialab</div>
     </div>
 
     <div class="tweet">
-      <div class="en">I had the same conversation reminiscing at a team offsite the other day.
+      <div class="en">I've realized I often would prefer to vibe code little parts of games than actually play games these days. 
 
-“What did we pay attention to before AI?”
+Especially cerebral ones that require some thinking like League.
 
-“ Front end JavaScript frameworks” https://t.co/sKe9X8ylhL</div>
-      <div class="zh">前几天在团队团建时，我也参与了同样一段怀旧对话。
+I'm not quite sure what this really means for games but I think it's important?</div>
+      <div class="zh">我发现如今我常常宁愿用 vibe coding 敲出游戏的某个小部分，也不愿真的去玩游戏。
 
-「在 AI 之前，我们都在关注什么来着？」
+尤其是像《英雄联盟》那种需要动脑的烧脑游戏。
 
-「前端 JavaScript 框架。」</div>
-      <a class="link" href="https://x.com/thenanyu/status/2111597172840083574" target="_blank">x.com/thenanyu/status/2111597172840083574</a>
-    </div>
-  </div>
-
-  <!-- Amjad Masad -->
-  <div class="card">
-    <div class="builder-head">
-      <div><span class="builder-name">Amjad Masad</span><span class="builder-handle">@amasad</span></div>
-      <div class="builder-bio">@Replit CEO。文明主义者。</div>
+我不太确定这对游戏行业到底意味着什么，但我觉得这很重要？</div>
+      <a class="link" href="https://x.com/trq212/status/2111945336537420259" target="_blank" rel="noopener">查看原推 →</a>
     </div>
 
     <div class="tweet">
-      <div class="en">To clarify: Replit remains model agnostic. Our users can choose Anthropic models as well as many other supported models.
+      <div class="en">What do the mechanics look like here? Do your characters play themselves, like Salty Bet? Or maybe there are cool cinematic options for you in combat, like Persona or Heavy Rain.
 
-What I meant at TC Disrupt is that OpenAI is now our preferred partner powering Agent based on performance, cost, and strength of our partnership.
+I'm not sure! But I'll share more as I figure it out.</div>
+      <div class="zh">这里的玩法机制会是什么样？你的角色会自己行动吗，就像 Salty Bet 那样？或者战斗中有很酷的电影化选项，像《女神异闻录》或《暴雨》那样。
 
-We believe in giving our users model choice while optimizing the default experience for the best performance at the best price.</div>
-      <div class="zh">澄清一下：Replit 依然保持模型无关（model agnostic）。我们的用户可以选择 Anthropic 的模型，以及其他众多受支持的模型。
-
-我在 TC Disrupt 上想表达的是：基于性能、成本以及双方合作的深度，OpenAI 现在是我们为 Agent 提供支持的首选合作伙伴。
-
-我们坚信要给用户模型选择权，同时把默认体验优化到最佳性能与最优价格。</div>
-      <a class="link" href="https://x.com/amasad/status/2111494912562888939" target="_blank">x.com/amasad/status/2111494912562888939</a>
+我也不确定！但等我理清楚了会分享更多。</div>
+      <a class="link" href="https://x.com/trq212/status/2111884272101691613" target="_blank" rel="noopener">查看原推 →</a>
     </div>
-  </div>
+
+    <div class="tweet">
+      <div class="en">One hook I kept coming back to was that I was having as much fun making the game + characters as I was playing it. What if that was the main hook?
+
+I'd distribute the game as open source, you could vibe code your own characters &amp; it would balance it. https://t.co/JcAwTbjimN</div>
+      <div class="zh">我一直回到的一个核心点：我做游戏和角色的乐趣，和在玩它时一样多。如果这才是主要卖点呢？
+
+我会把游戏以开源形式发布，你可以 vibe code 自己的角色，系统会自动平衡。https://t.co/JcAwTbjimN</div>
+      <a class="link" href="https://x.com/trq212/status/2111884199359897953" target="_blank" rel="noopener">查看原推 →</a>
+    </div>
+  </article>
 
   <!-- Guillermo Rauch -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <div><span class="builder-name">Guillermo Rauch</span><span class="builder-handle">@rauchg</span></div>
-      <div class="builder-bio">@Vercel CEO</div>
+      <div class="builder-bio">@vercel CEO</div>
     </div>
 
     <div class="tweet">
-      <div class="en">“What matters is the end product, whether it's a game or an engine”. Well said! https://t.co/PC90IVIa2y</div>
-      <div class="zh">「真正重要的是最终产品，无论它是一个游戏还是一个引擎。」说得好！</div>
-      <a class="link" href="https://x.com/rauchg/status/2111643672274165938" target="_blank">x.com/rauchg/status/2111643672274165938</a>
+      <div class="en">Tried out the new -.--- on AI Gateway to make a few improvements. It added sound, better collision detection, improved the ramp, camera that follows the car, etc. I think it cost 30 cents  https://t.co/zmpILvTJll</div>
+      <div class="zh">试了试 AI Gateway 上新的 -.---，做了几项改进。它加上了音效、更好的碰撞检测、改良的坡道、跟随车辆的镜头等等。我想这大概花了 30 美分。https://t.co/zmpILvTJll</div>
+      <a class="link" href="https://x.com/rauchg/status/2111929486661018081" target="_blank" rel="noopener">查看原推 →</a>
     </div>
-  </div>
+
+    <div class="tweet">
+      <div class="en">. → Shell → Saint Helean
+. → Augmented Reality → Argentina</div>
+      <div class="zh">. → Shell → 圣赫勒拿
+. → 增强现实（AR） → 阿根廷</div>
+      <a class="link" href="https://x.com/rauchg/status/2111927570266734770" target="_blank" rel="noopener">查看原推 →</a>
+    </div>
+
+    <div class="tweet">
+      <div class="en">Every once in a while, some unsuspecting country's domain economy goes vertical 
+
+. → Colombia
+. → I/O → Island Ocean
+. → Markdown → Moldova
+. → Rust → Serbia
+. → AI → Anguilla
+. → SI → Slovenia</div>
+      <div class="zh">每隔一阵子，某个毫无防备的国家域名经济就会垂直起飞。
+
+. → 哥伦比亚
+. → I/O → Island Ocean（岛屿海洋）
+. → Markdown → 摩尔多瓦
+. → Rust → 塞尔维亚
+. → AI → 安圭拉
+. → SI → 斯洛文尼亚</div>
+      <a class="link" href="https://x.com/rauchg/status/2111907375120859243" target="_blank" rel="noopener">查看原推 →</a>
+    </div>
+  </article>
 
   <!-- Aaron Levie -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <div><span class="builder-name">Aaron Levie</span><span class="builder-handle">@levie</span></div>
-      <div class="builder-bio">@Box CEO —— 你的业务存在于内容之中，用 AI 释放它。</div>
+      <div class="builder-bio">@box CEO —— 你的业务存在于内容之中。用 AI 释放它。</div>
     </div>
 
     <div class="tweet">
-      <div class="en">The biggest misread of anyone predicting the end of software engineering was imagining that the world only needed a certain amount of software, and bringing automation to the field would reduce the need for labor.
+      <div class="en">Here’s why agent swarms are going to be a very big deal. We can finally make compute a critical variable in a large number of important tasks in the economy which wasn’t possible before.
 
-Exactly the opposite is happening where essentially most things are actually turning into software. Because agents can use tools, work with computers, write software on the fly, and process data like humans (but far faster), we can now throw “software” at problems that never could reasonably be digitized before.
+There’s a large amount of work in the world that is essentially only constrained by the amount of time that we put into research, data processing, discovery work, running tests, and more. All of this work is bottlenecked by our ability to plan, execute, review, and coordinate everything happening in these workflows. Which means we basically do very little of them today relative to their economic value. 
 
-What that leads to is the role of engineering taking on greater importance in the economy, because we can now engineer far more systems and processes than were possible before.
+Agent swarms are the first real ability to parallelize this work in a way where - in theory - the only parameter that matters is how much compute you throw at the problem. Cyber security, life sciences or material science research, trading, QA testing, data processing, and many other fields are essentially compute constrained problems in the limit once models are good enough at these tasks.
 
-If you're a bank trying to do new forms of trading, engineers are often your first bet. If you are in life sciences, you expect more and more research and lab work to be engineering centric. If you're in manufacturing, you're trying to automate more of the supply chain, all that is engineering. More and more work is shaped like software problems.
+The breakthrough is that in a world where agents can use tools, write code, process data, have strong domain depth, and can coordinate with each other, you can begin to solve arbitrarily complex problems by setting the right goals and applying enough tokens to the problem. This changes a lot of fields as well as even the competitive dynamics in these fields.</div>
+      <div class="zh">这就是为什么智能体集群（agent swarms）将变得极其重要。我们终于能让算力成为经济中大量重要任务的关键变量，而这在过去是不可能的。
 
-Yes we're not going to be coding manually in the future. But almost everything will be code, which means those that understand it are in a fantastic position.</div>
-      <div class="zh">那些预言软件工程将终结的人，最大的误判在于：他们以为世界只需要一定数量的软件，而把自动化引入这个领域会减少对劳动力的需求。
+世界上有大量工作，本质上只受限于我们投入在研究、数据处理、探索性工作、跑测试等方面的时间。所有这些工作都卡在我们规划、执行、审查和协调这些流程的能力上。这意味着，相对于其经济价值，我们今天实际做的事情非常少。
 
-事实恰恰相反——几乎所有东西实际上都在变成软件。因为智能体能够使用工具、操作电脑、即时编写软件，并像人一样（但快得多）处理数据，我们现在可以把「软件」这件武器用到那些以前根本无法合理数字化的难题上。
+智能体集群是第一次真正能把这类工作并行化的能力——理论上，唯一重要的参数就是你为这个问题投入多少算力。网络安全、生命科学或材料科学研究、交易、QA 测试、数据处理等众多领域，一旦模型在这些任务上足够强，本质上都会变成受算力约束的问题。
 
-由此带来的结果是，工程岗位在经济中的重要性反而上升了，因为我们现在能够构建的系统与流程，远超以往所能。
-
-如果你是银行、想做新型交易业务，工程师往往是你的第一选择。如果你身处生命科学领域，你会期待越来越多的研究与实验室工作以工程为核心。如果你做制造业，你会想自动化更多供应链环节——而这些都是工程。越来越多的工作，其本质都像软件问题。
-
-是的，未来我们不会再手动写代码。但几乎所有东西都将是代码——这意味着那些真正理解代码的人，将处于极其有利的位置。</div>
-      <a class="link" href="https://x.com/levie/status/2111525362446520466" target="_blank">x.com/levie/status/2111525362446520466</a>
+突破点在于：在一个智能体能使用工具、写代码、处理数据、拥有深厚领域知识、并能彼此协作的世界里，你只要设定正确的目标、投入足够的 token，就能开始解决任意复杂的问题。这会改变很多领域，甚至改变这些领域里的竞争格局。</div>
+      <a class="link" href="https://x.com/levie/status/2112051081014649303" target="_blank" rel="noopener">查看原推 →</a>
     </div>
-  </div>
+  </article>
+
+  <!-- Garry Tan -->
+  <article class="card">
+    <div class="builder-head">
+      <div><span class="builder-name">Garry Tan</span><span class="builder-handle">@garrytan</span></div>
+      <div class="builder-bio">@ycombinator 总裁兼 CEO —— @garryslist 创始人 —— GStack 与 GBrain 创造者 —— 帮助创始人的设计师 / 工程师 —— 旧金山民主党人</div>
+    </div>
+
+    <div class="tweet">
+      <div class="en">Prediction: you’re all going to be using @AsideAI with your agents in a year or so https://t.co/gF7Nx30O4D</div>
+      <div class="zh">预测：大约一年后，你们都会把 @AsideAI 和你的智能体搭配使用。https://t.co/gF7Nx30O4D</div>
+      <a class="link" href="https://x.com/garrytan/status/2111971992769565177" target="_blank" rel="noopener">查看原推 →</a>
+    </div>
+  </article>
+
+  <!-- Matt Turck -->
+  <article class="card">
+    <div class="builder-head">
+      <div><span class="builder-name">Matt Turck</span><span class="builder-handle">@mattturck</span></div>
+      <div class="builder-bio">@FirstMarkCap 风投。主持：MAD Podcast；组织：Data Driven NYC；作者：MAD Landscape。</div>
+    </div>
+
+    <div class="tweet">
+      <div class="en">Americans packing for their next vacation to France  https://t.co/mSfVfLirCZ</div>
+      <div class="zh">美国人正在为下一次去法国度假打包行李。https://t.co/mSfVfLirCZ</div>
+      <a class="link" href="https://x.com/mattturck/status/2111919706429100230" target="_blank" rel="noopener">查看原推 →</a>
+    </div>
+  </article>
 
   <!-- Nikunj Kothari -->
-  <div class="card">
+  <article class="card">
     <div class="builder-head">
       <div><span class="builder-name">Nikunj Kothari</span><span class="builder-handle">@nikunj</span></div>
-      <div class="builder-bio">@fpvventures 合伙人 —— 投资种子轮 / A 轮。曾早期加入 @Meter、@Opendoor、@Atlassian 等。爱 @shimoleej</div>
+      <div class="builder-bio">@fpvventures 合伙人 —— 投资种子轮 / A 轮。此前：@meter、@opendoor、@atlassian 等早期员工。爱 @shimoleej。</div>
     </div>
 
     <div class="tweet">
-      <div class="en">introducing the modern venture capital stack (2026): 
-- pre-pre-seed
-- pre-seed
-- post-pre-seed
-- mid-seed
-- pre-post-seed
-- post-seed
-- post-post-seed(?) https://t.co/WSFA45JCLu</div>
-      <div class="zh">隆重介绍现代风险投资融资层级（2026 版）：
-- 前前种子轮
-- 前种子轮
-- 后前种子轮
-- 中种子轮
-- 前后种子轮
-- 后种子轮
-- 后后种子轮（？）</div>
-      <a class="link" href="https://x.com/nikunj/status/2111558586421920134" target="_blank">x.com/nikunj/status/2111558586421920134</a>
+      <div class="en">This aged relatively well.. even with the GH growth, I think people are still sleeping on @reatools. It’s truly bonkers  https://t.co/G1dzcVf2mj</div>
+      <div class="zh">这条预测历久弥新……即便 GitHub 增长强劲，我觉得大家仍然低估了 @reatools。它真的猛得离谱。https://t.co/G1dzcVf2mj</div>
+      <a class="link" href="https://x.com/nikunj/status/2111986818057118160" target="_blank" rel="noopener">查看原推 →</a>
+    </div>
+  </article>
+
+  <!-- Peter Steinberger -->
+  <article class="card">
+    <div class="builder-head">
+      <div><span class="builder-name">Peter Steinberger</span><span class="builder-handle">@steipete</span></div>
+      <div class="builder-bio">多智能体一夫多妻制 ClawFather。从退休中归来，折腾 AI，帮一只龙虾接管世界。@OpenClaw</div>
     </div>
 
     <div class="tweet">
-      <div class="en">nyc ily  https://t.co/renM3InhHD</div>
-      <div class="zh">纽约，我爱你。</div>
-      <a class="link" href="https://x.com/nikunj/status/2111415330622820739" target="_blank">x.com/nikunj/status/2111415330622820739</a>
+      <div class="en">AI;DR https://t.co/IAfmhOaTQx</div>
+      <div class="zh">AI;DR（AI 版“太长不看”）https://t.co/IAfmhOaTQx</div>
+      <a class="link" href="https://x.com/steipete/status/2111918049116987476" target="_blank" rel="noopener">查看原推 →</a>
     </div>
-  </div>
+  </article>
 
+  <!-- Dan Shipper -->
+  <article class="card">
+    <div class="builder-head">
+      <div><span class="builder-name">Dan Shipper</span><span class="builder-handle">@danshipper</span></div>
+      <div class="builder-bio">@every CEO | 让你保持在 AI 前沿的唯一订阅</div>
+    </div>
+
+    <div class="tweet">
+      <div class="en">current (mostly) reading: https://t.co/gvZsM7SnfD</div>
+      <div class="zh">目前（大部分时间）在读的书：https://t.co/gvZsM7SnfD</div>
+      <a class="link" href="https://x.com/danshipper/status/2111962665987825809" target="_blank" rel="noopener">查看原推 →</a>
+    </div>
+  </article>
+
+  <!-- Podcast -->
   <h2 class="section-title">播客</h2>
-
-  <div class="card podcast">
-    <div class="pod-name">The MAD Podcast with Matt Turck</div>
-    <div class="pod-title">
-      当数十亿 AI 智能体涌入你的数据库，会发生什么？
-      <span class="en-title">What Happens When Billions of AI Agents Hit Your Database? (Andy Pavlo)</span>
-    </div>
-    <div class="tweet">
-      <div class="en">Episode topic: The collision between autonomous AI agents and traditional database architecture — what breaks, what must change, and how database systems will need to evolve when billions of agents become first-class users.</div>
-      <div class="zh">本期主题：自主 AI 智能体与传统数据库架构之间的碰撞——什么会崩溃、什么必须改变，以及当数十亿智能体成为一等用户时，数据库系统将如何演进。</div>
-    </div>
-    <div class="tweet">
-      <div class="en">Guest: Andy Pavlo — database systems researcher, known for work on query optimization, self-driving databases, and the future of OLTP systems.</div>
-      <div class="zh">嘉宾：Andy Pavlo —— 数据库系统研究者，以查询优化、自动驾驶数据库（self-driving DB）以及 OLTP 系统未来方向的研究而闻名。</div>
-    </div>
-    <a class="link" href="https://www.youtube.com/@DataDrivenNYC/videos" target="_blank">youtube.com/@DataDrivenNYC/videos</a>
-  </div>
+  <article class="podcast-card">
+    <div class="podcast-name">No Priors</div>
+    <div class="podcast-title">Beam：伟大的美国开放模型 —— 对话 ReflectionAI 联合创始人兼 CEO Misha Laskin</div>
+    <div class="podcast-desc-en">Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin</div>
+    <div class="podcast-desc-zh">本期 No Priors 邀请 ReflectionAI 联合创始人兼 CEO Misha Laskin，围绕其开放模型 Beam 展开对谈，探讨美国开源模型的发展路径与竞争格局。</div>
+    <a class="podcast-link" href="https://www.youtube.com/@NoPriorsPodcast" target="_blank" rel="noopener">收听播客 → youtube.com/@NoPriorsPodcast</a>
+  </article>
 
   <footer>
     由 AI Daily Bot 自动生成 · 每日 10:00（北京时间）
