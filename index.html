@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 · 2026年10月25日</title>
+<title>AI 日报 · 2026年10月26日</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  * { box-sizing: border-box; }
   body {
+    margin: 0;
+    padding: 0;
     background: #fafaf8;
     color: #1a1a1a;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
     line-height: 1.7;
-    font-size: 16px;
     -webkit-font-smoothing: antialiased;
   }
   .container {
@@ -19,38 +20,33 @@
     margin: 0 auto;
     padding: 64px 32px 80px;
   }
-  /* Masthead */
   .masthead {
     text-align: center;
     padding-bottom: 40px;
-    border-bottom: 1px solid #e8e8e4;
     margin-bottom: 48px;
+    border-bottom: 1px solid #e8e8e4;
   }
   .masthead .date {
     font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
+    letter-spacing: 0.14em;
     color: #6b6b6b;
+    text-transform: uppercase;
     margin-bottom: 16px;
   }
   .masthead h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 44px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    margin-bottom: 18px;
+    font-family: Georgia, "Songti SC", serif;
+    font-size: 46px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    margin: 0 0 18px;
+    color: #1a1a1a;
   }
-  .masthead h1 span {
-    display: inline-block;
-    border-bottom: 3px solid #8b5e3c;
-    padding-bottom: 4px;
-  }
-  .masthead .summary {
+  .masthead .stats {
     font-size: 14px;
     color: #6b6b6b;
     letter-spacing: 0.02em;
   }
-  /* Builder card */
+  .masthead .stats span { color: #8b5e3c; font-weight: 600; }
   .card {
     background: #ffffff;
     border: 1px solid #e8e8e4;
@@ -59,53 +55,52 @@
     margin-bottom: 28px;
   }
   .builder-head {
-    margin-bottom: 24px;
-    padding-bottom: 18px;
-    border-bottom: 1px solid #f0f0ec;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 6px;
   }
   .builder-name {
-    font-family: Georgia, serif;
+    font-family: Georgia, "Songti SC", serif;
     font-size: 22px;
-    font-weight: 700;
+    font-weight: 600;
     color: #1a1a1a;
   }
   .builder-handle {
     font-size: 14px;
     color: #8b5e3c;
-    margin-left: 8px;
-    font-weight: 400;
+    letter-spacing: 0.02em;
   }
   .builder-bio {
     font-size: 13.5px;
     color: #6b6b6b;
-    margin-top: 8px;
-    line-height: 1.6;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0ec;
   }
-  /* Tweet */
   .tweet {
     border-left: 3px solid #e8e0d0;
     background: #fdfdfb;
     padding: 18px 20px;
     border-radius: 0 6px 6px 0;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
   .tweet:last-child { margin-bottom: 0; }
-  .tweet-en {
+  .tweet .en {
     font-size: 15px;
     color: #1a1a1a;
-    margin-bottom: 10px;
     white-space: pre-wrap;
-    word-break: break-word;
+    margin-bottom: 12px;
   }
-  .tweet-zh {
-    font-size: 15px;
+  .tweet .zh {
+    font-size: 14.5px;
     color: #4a4a4a;
     white-space: pre-wrap;
-    word-break: break-word;
-    padding-top: 10px;
-    border-top: 1px dashed #ecece6;
+    padding-top: 12px;
+    border-top: 1px dashed #ece7dd;
   }
-  .tweet-link {
+  .tweet .link {
     display: inline-block;
     margin-top: 14px;
     font-size: 12.5px;
@@ -113,588 +108,304 @@
     text-decoration: none;
     letter-spacing: 0.02em;
   }
-  .tweet-link:hover { text-decoration: underline; }
-  a { color: #2c6bae; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  /* Podcast */
+  .tweet .link:hover { text-decoration: underline; }
   .section-title {
-    font-family: Georgia, serif;
-    font-size: 26px;
-    font-weight: 700;
+    font-family: Georgia, "Songti SC", serif;
+    font-size: 15px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #8b5e3c;
     margin: 56px 0 24px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #8b5e3c;
-    display: inline-block;
+    border-bottom: 1px solid #e8e8e4;
   }
-  .podcast-card {
-    background: #ffffff;
-    border: 1px solid #e8e8e4;
-    border-radius: 8px;
-    padding: 30px;
-    margin-bottom: 28px;
+  .podcast-title {
+    font-family: Georgia, "Songti SC", serif;
+    font-size: 20px;
+    margin: 0 0 6px;
+    color: #1a1a1a;
   }
   .podcast-show {
     font-size: 13px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
     color: #8b5e3c;
-    margin-bottom: 10px;
-  }
-  .podcast-title {
-    font-family: Georgia, serif;
-    font-size: 21px;
-    font-weight: 700;
-    line-height: 1.4;
-    margin-bottom: 8px;
-  }
-  .podcast-guest {
-    font-size: 14px;
-    color: #6b6b6b;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     margin-bottom: 20px;
   }
-  .podcast-points {
-    list-style: none;
-    padding: 0;
-  }
-  .podcast-points li {
+  .podcast-point {
+    margin-bottom: 18px;
+    padding-left: 18px;
     border-left: 3px solid #e8e0d0;
-    background: #fdfdfb;
-    padding: 14px 18px;
-    border-radius: 0 6px 6px 0;
-    margin-bottom: 14px;
   }
-  .podcast-points li:last-child { margin-bottom: 0; }
-  .point-en {
+  .podcast-point .en {
     font-size: 14.5px;
     color: #1a1a1a;
     margin-bottom: 8px;
   }
-  .point-zh {
-    font-size: 14.5px;
+  .podcast-point .zh {
+    font-size: 14px;
     color: #4a4a4a;
-    padding-top: 8px;
-    border-top: 1px dashed #ecece6;
   }
-  .podcast-link {
-    display: inline-block;
-    margin-top: 18px;
-    font-size: 13px;
-    color: #2c6bae;
-  }
-  /* Footer */
-  footer {
-    margin-top: 64px;
+  .footer {
+    margin-top: 56px;
     padding-top: 28px;
     border-top: 1px solid #e8e8e4;
     text-align: center;
-    font-size: 13px;
+    font-size: 12.5px;
     color: #6b6b6b;
     letter-spacing: 0.04em;
   }
   @media (max-width: 600px) {
     .container { padding: 40px 18px 60px; }
-    .masthead h1 { font-size: 32px; }
-    .card, .podcast-card { padding: 24px 18px; }
-    .builder-name { font-size: 19px; }
-    .tweet { padding: 14px 14px; }
-    .tweet-en, .tweet-zh { font-size: 14.5px; }
-    .section-title { font-size: 22px; }
+    .masthead h1 { font-size: 34px; }
+    .card { padding: 24px 18px; }
+    .tweet { padding: 15px 15px; }
   }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- Masthead -->
   <header class="masthead">
-    <div class="date">2026年10月25日 · 星期日</div>
-    <h1><span>AI 日报</span></h1>
-    <div class="summary">11 位 Builder · 20 条推文 · 1 期播客</div>
+    <div class="date">2026年10月26日 · 星期一</div>
+    <h1>AI 日报</h1>
+    <div class="stats"><span>9</span> 位 Builder · <span>15</span> 条推文 · <span>1</span> 期播客</div>
   </header>
 
   <!-- Swyx -->
-  <article class="card">
+  <section class="card">
     <div class="builder-head">
       <span class="builder-name">Swyx</span>
       <span class="builder-handle">@swyx</span>
-      <div class="builder-bio">以刻意、极致、正直与疯狂去实现抱负。｜隶属 @smol_ai · @cognition · @tempora</div>
     </div>
+    <div class="builder-bio">achieve ambition with intentionality, intensity, integrity &amp; insanity. · @smol_ai · @cognition · @tempora</div>
 
     <div class="tweet">
-      <div class="tweet-en">part time and oneoff guest posts welcome https://t.co/XoIbSxRbod</div>
-      <div class="tweet-zh">欢迎兼职投稿和一次性客座文章。</div>
-      <a class="tweet-link" href="https://x.com/swyx/status/2114149330135519730" target="_blank">查看原推 →</a>
+      <div class="en">i need 12 more likes to ratio @ArfurRock whos got it</div>
+      <div class="zh">我还差 12 个赞就能在互动量上压过 @ArfurRock，谁来帮我一把。</div>
+      <a class="link" href="https://x.com/swyx/status/2114263159355904426" target="_blank" rel="noopener">查看原推 →</a>
     </div>
-
-    <div class="tweet">
-      <div class="tweet-en">we are hiring writers, reviewers and reporters for the new @latentspacepod editorial team (hit up @ricmac and @adlinzainal) and i’m gonna put a version of this in the welcome package for everyone we hire https://t.co/fYPQURjQoy</div>
-      <div class="tweet-zh">我们正在为全新的 @latentspacepod 编辑团队招募撰稿人、审稿人和记者（请联系 @ricmac 和 @adlinzainal）。我会把这份说明的一个版本放进每位新员工的入职欢迎包里。</div>
-      <a class="tweet-link" href="https://x.com/swyx/status/2114145315196711194" target="_blank">查看原推 →</a>
-    </div>
-  </article>
+  </section>
 
   <!-- Thibault Sottiaux -->
-  <article class="card">
+  <section class="card">
     <div class="builder-head">
       <span class="builder-name">Thibault Sottiaux</span>
       <span class="builder-handle">@thsottiaux</span>
-      <div class="builder-bio">Codex &amp; ChatGPT @OpenAI</div>
+    </div>
+    <div class="builder-bio">Codex &amp; ChatGPT @OpenAI</div>
+
+    <div class="tweet">
+      <div class="en">Reminder you can customize the appearance of chatgpt on web and make it soothing
+
+https://t.co/an6R8iY5Ix https://t.co/iysHpdDLml</div>
+      <div class="zh">提醒一下：你可以在网页版自定义 ChatGPT 的外观，把它调得更柔和舒适一些。</div>
+      <a class="link" href="https://x.com/thsottiaux/status/2114595002210783279" target="_blank" rel="noopener">查看原推 →</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">It is all propagated. Enjoy some mad codexing tomorrow. Fun week ahead too. https://t.co/qOrzwSeIZZ https://t.co/xKaK95EAly</div>
-      <div class="tweet-zh">全部已推送完成。明天尽情地「疯狂 Codex」吧。接下来的一周也会很有趣。</div>
-      <a class="tweet-link" href="https://x.com/thsottiaux/status/2114237083652882932" target="_blank">查看原推 →</a>
+      <div class="en">Day 21/ Wonder what happens the remaining seven days. But today is a reset.</div>
+      <div class="zh">第 21 天。好奇剩下七天会发生什么。但今天是一次重置。</div>
+      <a class="link" href="https://x.com/thsottiaux/status/2114588174249071102" target="_blank" rel="noopener">查看原推 →</a>
     </div>
-
-    <div class="tweet">
-      <div class="tweet-en">By midnight PST</div>
-      <div class="tweet-zh">太平洋时间午夜前完成。</div>
-      <a class="tweet-link" href="https://x.com/thsottiaux/status/2114200291319124163" target="_blank">查看原推 →</a>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">Day 20/ Rest and reset</div>
-      <div class="tweet-zh">第 20 天／休息与重启。</div>
-      <a class="tweet-link" href="https://x.com/thsottiaux/status/2114200152701575656" target="_blank">查看原推 →</a>
-    </div>
-  </article>
+  </section>
 
   <!-- Peter Yang -->
-  <article class="card">
+  <section class="card">
     <div class="builder-head">
       <span class="builder-name">Peter Yang</span>
       <span class="builder-handle">@petergyang</span>
-      <div class="builder-bio">为忙碌人群提供实用的 AI 教程与访谈｜在 petergyang.com 获取我的最佳 AI 技巧与指南</div>
+    </div>
+    <div class="builder-bio">Practical AI tutorials and interviews for busy people | Get my best AI skills and guides at https://t.co/6VAA6p81x6</div>
+
+    <div class="tweet">
+      <div class="en">This is beautiful. Who said AI doesn't have taste https://t.co/gaPLhncKM2</div>
+      <div class="zh">太美了。谁说 AI 没有品味。</div>
+      <a class="link" href="https://x.com/petergyang/status/2114560930646487116" target="_blank" rel="noopener">查看原推 →</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">Of all the learning apps that my 4-year-old and I have tried, @once_reading is the only one that we’ve managed to persist in following for months. 
-
-It works because:
-
-1. It builds a habit where you need to learn with your kid daily
-
-2. It has lightweight gamification like taking a silly photo with your kid after every lesson
-
-3. After 30 lessons, Once will send you books for your kid to read by themselves, giving them a big feeling of accomplishment
-
-My kid loves reading now and will even choose her Once books over YouTube and the phone (sometimes at least) which is the highest compliment 
-
-This is not sponsored or anything I just love the product. 
-
-Try out Once here: https://t.co/RbDiwACYbI</div>
-      <div class="tweet-zh">在我 4 岁孩子和我试过的所有学习类应用里，@once_reading 是唯一一个我们坚持用了好几个月的。
-
-它能奏效的原因在于：
-
-1. 它养成了一种习惯——你需要每天和孩子一起学习；
-
-2. 它有轻量的游戏化设计，比如每节课后和孩子拍一张搞怪照片；
-
-3. 完成 30 节课后，Once 会寄来让孩子自己读的书，给孩子带来巨大的成就感。
-
-我的孩子现在爱上了阅读，甚至会选择她的 Once 书而不是 YouTube 和手机（至少有时候是这样），这是最高的赞美。
-
-这不是广告，我只是真心喜欢这个产品。
-
-在这里试试 Once：https://t.co/RbDiwACYbI</div>
-      <a class="tweet-link" href="https://x.com/petergyang/status/2114042708105060501" target="_blank">查看原推 →</a>
+      <div class="en">lol this is me except my wife still buys snacks https://t.co/OvTm1jMXGD</div>
+      <div class="zh">哈哈，这就是我，只不过我老婆还是会买零食。</div>
+      <a class="link" href="https://x.com/petergyang/status/2114557067700916723" target="_blank" rel="noopener">查看原推 →</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">I had trouble believing this is true but shouldn’t have doubted @ArfurGrok 
+      <div class="en">Here’s how to use Claude to copy any video shorts style in a few minutes.
 
-Huge bummer for claude users. Anthony and Thariq are two of the best at listening to users. https://t.co/XwQAXb7LYE</div>
-      <div class="tweet-zh">我一开始很难相信这是真的，但我不该怀疑 @ArfurGrok。
+From @jake11moran:
 
-对 Claude 用户来说这真是巨大的遗憾。Anthony 和 Thariq 是最擅长倾听用户声音的两个人。</div>
-      <a class="tweet-link" href="https://x.com/petergyang/status/2114001125636768121" target="_blank">查看原推 →</a>
+“We added this as a native capability in @HyperFrames_ studio. You just upload or pick a reference clip and then describe in the prompt what you want to change.
+
+You can see where we’re drawing inspiration from and apply a different font or different colors. It’s still structurally the same idea.”
+
+Watch our full AI video editing tutorial here: https://t.co/1seCb77tGJ</div>
+      <div class="zh">教你如何在几分钟内用 Claude 复刻任意短视频风格。
+
+来自 @jake11moran：
+
+「我们把这做成了 @HyperFrames_ studio 的原生能力。你只需上传或挑选一段参考片段，然后在提示词里描述你想改什么。
+
+你能看到我们从哪里汲取灵感，再套用不同的字体或配色。结构上仍是同一个思路。」
+
+在此观看完整的 AI 视频剪辑教程：https://t.co/1seCb77tGJ</div>
+      <a class="link" href="https://x.com/petergyang/status/2114507378532229214" target="_blank" rel="noopener">查看原推 →</a>
     </div>
-  </article>
+  </section>
 
-  <!-- Guillermo Rauch -->
-  <article class="card">
+  <!-- Nan Yu -->
+  <section class="card">
     <div class="builder-head">
-      <span class="builder-name">Guillermo Rauch</span>
-      <span class="builder-handle">@rauchg</span>
-      <div class="builder-bio">@vercel CEO</div>
+      <span class="builder-name">Nan Yu</span>
+      <span class="builder-handle">@thenanyu</span>
+    </div>
+    <div class="builder-bio">product, codex @openai. prev head of product @linear</div>
+
+    <div class="tweet">
+      <div class="en">Anyone else find it insane that this is the default for unoptimized apps when the iPhone Duo supports split mode? https://t.co/TOoeDyhMzz https://t.co/uXGfG7EbYt</div>
+      <div class="zh">还有谁觉得离谱：iPhone Duo 明明支持分屏模式，未优化的应用却默认是这种表现？</div>
+      <a class="link" href="https://x.com/thenanyu/status/2114433404557279435" target="_blank" rel="noopener">查看原推 →</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">I oddly love the models' engineering vernacular: gate, evidence, culprit, durable, provenance, contract…
-
-A lot of these stem from most engineering being debugging and understanding existing systems, where you take on the detective / auditor roles. You do forensics.
-
-I wonder what the *minimum viable English* in fact is to be productive. ASD-STE100 Simplified Technical English contains ~900 approved words. I suspect we need far fewer.</div>
-      <div class="tweet-zh">我莫名地喜欢模型们的工程术语：gate（闸门）、evidence（证据）、culprit（元凶）、durable（持久）、provenance（溯源）、contract（契约）……
-
-其中很多都源于这样一个事实：大多数工程工作其实是调试和理解既有系统，你需要扮演侦探／审计员的角色，做的是取证工作。
-
-我在想，真正能高效产出所需的「最小可行英语」到底是什么。ASD-STE100 简化技术英语收录了约 900 个核准词，我怀疑我们需要的远少于这个数。</div>
-      <a class="tweet-link" href="https://x.com/rauchg/status/2114164830403989880" target="_blank">查看原推 →</a>
+      <div class="en">By the time it shows up in the data or UXR interviews it’s too late. The damage has been done and the reputation tarnished https://t.co/hIPaT1BOmk</div>
+      <div class="zh">等它出现在数据或用户研究访谈里时，已经太晚了。伤害已经造成，声誉也已经受损。</div>
+      <a class="link" href="https://x.com/thenanyu/status/2114427877240488442" target="_blank" rel="noopener">查看原推 →</a>
     </div>
-
-    <div class="tweet">
-      <div class="tweet-en">There’ll be times where you over-guide the AI. It knows better than you and is more intelligent than you.
-
-There’ll be times where you under-guide the AI. It can go off-track, have the wrong biases, or miss context.
-
-How well you manage this superpower is the #0 skill I look for.</div>
-      <div class="tweet-zh">有些时候你会过度引导 AI——它比你更懂，也比你更聪明。
-
-也有些时候你会引导不足——它可能跑偏、带上错误的偏见，或遗漏上下文。
-
-你驾驭这种「超能力」的水平，是我最看重的第 0 号技能。</div>
-      <a class="tweet-link" href="https://x.com/rauchg/status/2114085432749347086" target="_blank">查看原推 →</a>
-    </div>
-  </article>
-
-  <!-- Alex Albert -->
-  <article class="card">
-    <div class="builder-head">
-      <span class="builder-name">Alex Albert</span>
-      <span class="builder-handle">@alexalbert__</span>
-      <div class="builder-bio">Research @AnthropicAI</div>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">@addyosmani @lydiahallie @_catwu @bcherny @sidbid @jarredsumner @adocomplete @delba_oliveira @connerphillippi @dsp_ @gcemaj @karbon0x and @davidsuttonca on Duet as well!</div>
-      <div class="tweet-zh">@addyosmani @lydiahallie @_catwu @bcherny @sidbid @jarredsumner @adocomplete @delba_oliveira @connerphillippi @dsp_ @gcemaj @karbon0x 以及 @davidsuttonca 也参与了 Duet！</div>
-      <a class="tweet-link" href="https://x.com/alexalbert__/status/2114145722320969943" target="_blank">查看原推 →</a>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">@addyosmani @lydiahallie @_catwu @bcherny @sidbid @jarredsumner @adocomplete @delba_oliveira @connerphillippi @dsp_ https://t.co/4ea5te3d8w @gcemaj @karbon0x for Claude Managed Agents!</div>
-      <div class="tweet-zh">@addyosmani @lydiahallie @_catwu @bcherny @sidbid @jarredsumner @adocomplete @delba_oliveira @connerphillippi @dsp_ @gcemaj @karbon0x 也参与了 Claude Managed Agents！</div>
-      <a class="tweet-link" href="https://x.com/alexalbert__/status/2114145588686233612" target="_blank">查看原推 →</a>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">@addyosmani @lydiahallie @_catwu @bcherny @sidbid @jarredsumner @adocomplete @delba_oliveira @connerphillippi https://t.co/3GqTnbWxxB @dsp_ as well!</div>
-      <div class="tweet-zh">@addyosmani @lydiahallie @_catwu @bcherny @sidbid @jarredsumner @adocomplete @delba_oliveira @connerphillippi @dsp_ 同样参与其中！</div>
-      <a class="tweet-link" href="https://x.com/alexalbert__/status/2114145290970357953" target="_blank">查看原推 →</a>
-    </div>
-  </article>
+  </section>
 
   <!-- Aaron Levie -->
-  <article class="card">
+  <section class="card">
     <div class="builder-head">
       <span class="builder-name">Aaron Levie</span>
       <span class="builder-handle">@levie</span>
-      <div class="builder-bio">@box CEO——你的业务存在于内容之中，用 AI 释放它的价值。</div>
     </div>
+    <div class="builder-bio">ceo @box - your business lives in content. unleash it with AI</div>
 
     <div class="tweet">
-      <div class="tweet-en">We’ll likely have 1,000X more tokens flowing through cyber agents soon than we do today. 
+      <div class="en">Good assessment of the on the ground reality for security in most large enterprises right now. The fragmented landscape of the risk surface is only going to get more gnarly, making it even more complex for enterprises to solve.
 
-As the surface area of cyber risk increases, at some point soon it will be nearly impossible to keep up with the volume of new risks (we’re essentially already there). Large companies barely had the resources to pull this off before, but the vast majority of companies don’t. 
+There’s a never ending set of libraries to keep up with, tools to leverage, and sprawling infrastructure, data, and code to secure. Most large enterprises can barely keep up with this, let alone smaller startups or most companies outside of tech.
 
-There’s a never ending set of libraries to keep up with, tools to leverage, and sprawling infrastructure and code to secure. We’ll have agent swarms that can fan out, leverage any security tool, test various perpetuations of attacks, read through logs, process enterprise data for risk level, and more. 
+In many cases enterprises need to work to modernize their tech stacks. Data, in most organizations, is highly fragmented which means you don’t really know the state of risk at any given time. Some systems are open up privileges too broadly, and others are operating primarily via security through obscurity. Lots of upgrading here to do.
 
-This capability only emerged in the past few months. Wouldn’t have been possible before long running agents and computer use were good enough, and models hadn’t been trained on cyber deeply. That’s all changing now.
+Once you can get your data and infra into a better spot, at least you have a chance for agents to help you secure the environment. Agent swarms can fan out, leverage any security tool, test various perpetuations of attacks, read through logs, process enterprise data for risk level, and more. This capability only emerged in the past few months, and none of it would be possible before we had long running agents and computer use good enough.
 
-This is a huge area of opportunity right now for every layer of the security stack across identity, firewall, network, code scanning, data protection, and more. And it’s at least one reason to be optimistic about the balance of offensive and defensive capability.</div>
-      <div class="tweet-zh">不久之后，流经网络安全智能体的 token 量很可能会是今天的 1000 倍。
+This is a huge area of opportunity right now for every layer of the security stack across identity, firewall, network, code scanning, data protection, and more. And it’s at least one reason to be optimistic about the balance of offensive and defensive capability.
 
-随着网络风险的表面积不断扩大，很快我们就几乎无法跟上新增风险的体量（实际上现在基本已经如此）。大公司以前也勉强才有资源应对，而绝大多数公司根本没有。
+But everyone does need to do the hard work of getting the basics right at the start.</div>
+      <div class="zh">这是对当下大多数大型企业安全现状的一个很到位的评估。风险面的碎片化只会愈发棘手，让企业更难应对。
 
-需要跟进的库无穷无尽，可利用的工具、需要保护的海量基础设施和代码也是如此。我们将拥有可横向铺开的智能体集群，它们能调用任何安全工具、测试各种攻击变体、通读日志、处理企业数据以评估风险等级，等等。
+要跟进的库无穷无尽，要用起来的工具层出不穷，还要保护庞杂的基础设施、数据和代码。大多数大型企业勉强应付，更别提小型创业公司或科技行业以外的多数公司了。
 
-这种能力只在过去几个月里才出现。在长时间运行的智能体和 computer use 足够好用、并且模型在网络安全领域得到深度训练之前，这根本不可能。而现在这一切都在改变。
+很多情况下，企业需要着手实现技术栈现代化。多数组织的数据高度碎片化，意味着你其实无从知晓任一时刻的风险状态。有些系统的权限开放得过于宽泛，另一些则主要靠「隐匿性安全」运转。这里有大量升级工作要做。
 
-这是当下整个安全栈每一层的巨大机会——身份、防火墙、网络、代码扫描、数据保护等等。这至少是让我们对攻防能力平衡保持乐观的一个理由。</div>
-      <a class="tweet-link" href="https://x.com/levie/status/2114187326406766604" target="_blank">查看原推 →</a>
+一旦你把数据和基础设施整理到更好的状态，至少就有机会让 Agent 帮你加固环境。Agent 集群可以铺开作业，调用任意安全工具，测试各种攻击变体，通读日志，处理企业数据以评估风险等级等等。这种能力直到过去几个月才出现，在此之前，没有长时运行的 Agent 和足够好用的计算机操作能力，这一切都不可能实现。
+
+眼下这对安全栈的每一层——身份、防火墙、网络、代码扫描、数据保护等等——都是巨大的机会。这也至少是让人对攻防能力平衡保持乐观的一个理由。
+
+但每个人都需要踏踏实实把基础打牢。</div>
+      <a class="link" href="https://x.com/levie/status/2114391265655816315" target="_blank" rel="noopener">查看原推 →</a>
     </div>
-  </article>
+  </section>
 
-  <!-- Ryo Lu -->
-  <article class="card">
+  <!-- Matt Turck -->
+  <section class="card">
     <div class="builder-head">
-      <span class="builder-name">Ryo Lu</span>
-      <span class="builder-handle">@ryolu_</span>
-      <div class="builder-bio">设计过 @Cursor_ai、@NotionHQ、@Stripe，创办过初创公司。我在创造一个任何人都能造软件的世界。准 K-pop 爱好者。</div>
+      <span class="builder-name">Matt Turck</span>
+      <span class="builder-handle">@mattturck</span>
+    </div>
+    <div class="builder-bio">VC at @FirstMarkCap. Host: MAD Podcast; Organizer: Data Driven NYC, Author: MAD Landscape.</div>
+
+    <div class="tweet">
+      <div class="en">Rare footage of how VCs turned their 2021 bets in metaverse, gaming and crypto mining into 'mission-critical AI infrastructure’ https://t.co/ULSKrUwg1f</div>
+      <div class="zh">罕见画面：VC 们如何把 2021 年在元宇宙、游戏和加密挖矿上的押注，包装成「关键任务型 AI 基础设施」。</div>
+      <a class="link" href="https://x.com/mattturck/status/2114507945585328606" target="_blank" rel="noopener">查看原推 →</a>
     </div>
 
     <div class="tweet">
-      <div class="tweet-en">https://t.co/0E2zuZ5M3N</div>
-      <div class="tweet-zh">（配图／链接）</div>
-      <a class="tweet-link" href="https://x.com/ryolu_/status/2114187660734668884" target="_blank">查看原推 →</a>
+      <div class="en">Good neighborhood https://t.co/ZRTxHmsoZv https://t.co/OCMZ85Yk8G</div>
+      <div class="zh">好社区。</div>
+      <a class="link" href="https://x.com/mattturck/status/2114411547594457483" target="_blank" rel="noopener">查看原推 →</a>
     </div>
-
-    <div class="tweet">
-      <div class="tweet-en">struggle together
-
-i learned programming and design by trying, failing, and trying again.
-
-when i hit a wall, i figured out how to climb it. read something i barely understood. took things apart. asked someone for help. started over.
-
-when i began my career, i kept doing things i had never done before. trying different ways to make something work. when i stopped learning, i moved on to the next struggle.
-
-many things i made weren’t very good. but after enough rounds, something stuck. what once took so much effort became part of how i thought. i could feel something was wrong before i knew how to explain it.
-
-it became like water.
-
-i think about what went into that. the bug i couldn’t fix. the design that looked right until someone used it. the conversation that made me realize my flaws.
-
-now we can ask a machine.
-
-i’ve made things with these tools that i might never have made otherwise. i don’t miss every tedious task. but i wonder what happens when we remove the difficulty before we understand what it was teaching us.
-
-we ask. something appears. it works well enough. we move on.
-
-we learn how to get results without necessarily understanding how it works. and because the result looks complete, it becomes easy to miss the questions we never learned to ask.
-
-there is another side to this.
-
-working with people is uncomfortable.
-
-everyone wants something different. everyone has a history you don’t know. someone cares about a detail you think is unimportant. someone pushes back when you want to move. someone needs time when you feel certain.
-
-it takes a while to find each other.
-
-but sometimes, after struggling together, you become a band.
-
-you know who notices what you miss. who can pull an idea apart without killing it. when to step in, when to slow down, when to let someone else carry the rhythm.
-
-you share something unfinished. admit you don’t know. hurt each other, apologize, try again. eventually you make something none of you could have made alone.
-
-some of my closest friendships came from working this way. smart, caring humans who saw me confused, wrong, tired, excited. people i could be vulnerable with. people whose ideas changed mine.
-
-i worry we are making it easier to avoid that beginning.
-
-an agent is always there. patient. ready to keep going. talking to it can feel easier than reaching toward someone who might misunderstand you, disagree, or have somewhere else to be.
-
-sometimes that ease helps. but if we keep choosing it, where do the friendships begin?
-
-i picture each of us with our own agents. our own explanations. our own little worlds. making more things, with fewer reasons to leave the screen or work through a difference with another person.
-
-and these worlds aren’t entirely ours.
-
-they run on machines in server farms, owned by companies, shaped by interests we may not see. we bring them our questions, our work, our loneliness. they become part of how we understand what is real.
-
-is that freedom?
-
-or a comfortable kind of confinement, where everything responds to us but fewer things reach us?
-
-i don’t think pain makes something good. there are struggles nobody should have to endure. but i don’t want to lose the difficulty of learning something unfamiliar, or getting to know someone who isn’t like me.
-
-maybe we need tools that help us spend more time with the world, instead of giving us fewer reasons to enter it. tools that make it easier to find people, share something unfinished, and work through what we couldn’t figure out alone.
-
-sometimes i want to close the laptop.
-
-sit with people i love. play something we haven’t figured out yet. miss a note, lose the rhythm, listen until we find each other again.
-
-like a jazz band. everyone bringing something different. nobody knowing where we’ll end up.
-
-i don’t want a life without struggle. i want people to struggle with. something we can feel, change, and make our own.
-
-music we couldn’t have made alone, instead of the silent static of the server farm.</div>
-      <div class="tweet-zh">一起挣扎
-
-我学编程和设计，靠的是尝试、失败、再尝试。
-
-撞到墙的时候，我就想办法翻过去。读一些我几乎看不懂的东西。把东西拆开。向别人求助。重新开始。
-
-刚开始职业生涯时，我不断做自己从没做过的事。尝试不同的方式让某样东西跑起来。一旦停止学习，我就转向下一个挣扎。
-
-我做的很多东西并不出色。但经过足够多轮之后，有些东西留了下来。曾经需要巨大努力才能做到的事，变成了我思维方式的一部分。我能在还没想清楚怎么解释之前，就感觉到哪里不对。
-
-它变得像水一样。
-
-我会回想这背后发生了什么。那个我修不好的 bug。那个看起来没问题、直到有人用起来才发现不对的设计。那场让我意识到自身缺陷的对话。
-
-现在我们可以直接问机器了。
-
-借助这些工具，我做出了许多原本可能永远不会做的东西。我并不怀念那些枯燥的任务。但我在想：当我们还没理解「困难」教会了我们什么，就先把困难移除，会发生什么？
-
-我们提问，东西出现，它足够好用，我们继续前进。
-
-我们学会了如何得到结果，却未必理解它是怎么运作的。而因为结果看起来是完整的，我们就很容易错过那些我们从未学会去问的问题。
-
-这件事还有另一面。
-
-与人合作是不舒服的。
-
-每个人想要的东西都不同。每个人都有你不知道的过往。有人在意你觉得不重要的细节。有人在你想要推进时提出反对。有人在你觉得笃定时需要时间。
-
-彼此找到对方需要时间。
-
-但有时候，在一同挣扎之后，你们会成为一个乐队。
-
-你知道谁会注意到你遗漏的东西。谁能把一个想法拆解开来却不杀死它。什么时候该介入，什么时候该放慢，什么时候该让别人来带节奏。
-
-你们分享一件未完成的东西。承认自己不知道。彼此伤害、道歉、再试一次。最终，你们做出了任何一个人都无法独自完成的东西。
-
-我最亲密的一些友谊就来自这样的合作。聪明、有爱的人类，见过我困惑、犯错、疲惫、兴奋。是那些我可以袒露脆弱的人。是那些想法改变了我的想法的人。
-
-我担心我们正在让「开始」变得更容易被回避。
-
-智能体永远都在。耐心。随时准备继续。和它对话，可能比走向一个可能误解你、反对你、或另有他处要去的人更容易。
-
-有时这种轻松是有帮助的。但如果我们一直选择它，友谊又从哪里开始？
-
-我想象我们每个人都配有自己的智能体。自己的解释。自己的小世界。做出更多东西，却越来越少离开屏幕、或与他人磨合分歧的理由。
-
-而这些世界并不完全属于我们。
-
-它们运行在服务器农场的机器上，属于公司，被我们也许看不见的利益所塑造。我们把问题、工作、孤独交给它们。它们成了我们理解「什么是真实的」的一部分。
-
-那是自由吗？
-
-还是一种舒适的禁锢——一切都在回应我们，却越来越少有东西能真正抵达我们？
-
-我不认为痛苦能让事物变好。有些挣扎是任何人都不该承受的。但我不想失去学习陌生事物的困难，也不想失去认识一个和我不同的人的困难。
-
-也许我们需要的是这样的工具：帮助我们花更多时间与世界相处，而不是给我们更少的理由进入世界。让寻找他人、分享未完成之物、一起搞定独自无法解决的事情变得更容易的工具。
-
-有时我想合上笔记本电脑。
-
-和我爱的人坐在一起。玩一些我们还没搞懂的东西。弹错一个音，丢掉节奏，一直听到我们重新找到彼此。
-
-像一个爵士乐队。每个人都带来不同的东西。没人知道我们会走向哪里。
-
-我不想要没有挣扎的人生。我想要可以一起挣扎的人。一些我们能感受、能改变、能据为己有的东西。
-
-那是我们无法独自创造的音乐，而不是服务器农场里无声的静电。</div>
-      <a class="tweet-link" href="https://x.com/ryolu_/status/2114187405251219954" target="_blank">查看原推 →</a>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">lots more detail + my curated playlist
-play here:
-https://t.co/8nOipsQ4q3</div>
-      <div class="tweet-zh">更多细节，以及我精选的歌单，在这里播放：https://t.co/8nOipsQ4q3</div>
-      <a class="tweet-link" href="https://x.com/ryolu_/status/2114153611005702542" target="_blank">查看原推 →</a>
-    </div>
-  </article>
-
-  <!-- Garry Tan -->
-  <article class="card">
-    <div class="builder-head">
-      <span class="builder-name">Garry Tan</span>
-      <span class="builder-handle">@garrytan</span>
-      <div class="builder-bio">@ycombinator 总裁兼 CEO——@garryslist 创始人——GStack 与 GBrain 的创造者——帮助创始人的设计师／工程师——旧金山民主党人</div>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">What’s new in Gstack? https://t.co/RLLZyuDxNt</div>
-      <div class="tweet-zh">Gstack 有什么新东西？</div>
-      <a class="tweet-link" href="https://x.com/garrytan/status/2114090740217499854" target="_blank">查看原推 →</a>
-    </div>
-  </article>
+  </section>
 
   <!-- Zara Zhang -->
-  <article class="card">
+  <section class="card">
     <div class="builder-head">
       <span class="builder-name">Zara Zhang</span>
       <span class="builder-handle">@zarazhangrui</span>
-      <div class="builder-bio">Builder。哈佛'17。Instagram / GitHub 见主页。</div>
     </div>
+    <div class="builder-bio">Builder. Harvard’17. Instagram: https://t.co/aJqTEMrL2L GitHub: https://t.co/KCuEajezlL</div>
 
     <div class="tweet">
-      <div class="tweet-en">It is so much easier to give advice to other people than to apply the same advice to yourself</div>
-      <div class="tweet-zh">给别人提建议，比把同样的建议用在自己身上容易太多了。</div>
-      <a class="tweet-link" href="https://x.com/zarazhangrui/status/2114225607022412049" target="_blank">查看原推 →</a>
-    </div>
+      <div class="en">Great interview. Most people overestimate the importance of one huge launch and underestimate the power of just showing up every day on the timeline
 
-    <div class="tweet">
-      <div class="tweet-en">Lots of inspiring examples in this thread too https://t.co/uVPXovcNOo</div>
-      <div class="tweet-zh">这条串里也有很多鼓舞人心的例子。</div>
-      <a class="tweet-link" href="https://x.com/zarazhangrui/status/2114013292016611442" target="_blank">查看原推 →</a>
+Develop a system where you make a video every day &gt; spending tens of thousands of dollars on a single launch video https://t.co/ujN4fPyN1y</div>
+      <div class="zh">很棒的访谈。大多数人高估了一次大发布的重要性，却低估了每天出现在时间线上的力量。
+
+建立一套每天产出一条视频的机制，胜过在一条发布视频上砸下数万美元。</div>
+      <a class="link" href="https://x.com/zarazhangrui/status/2114255477907570865" target="_blank" rel="noopener">查看原推 →</a>
     </div>
-  </article>
+  </section>
 
   <!-- Nikunj Kothari -->
-  <article class="card">
+  <section class="card">
     <div class="builder-head">
       <span class="builder-name">Nikunj Kothari</span>
       <span class="builder-handle">@nikunj</span>
-      <div class="builder-bio">@fpvventures 合伙人——投资种子轮／A 轮。曾任职于 @meter、@opendoor、@atlassian 等早期团队。爱 @shimoleej。</div>
     </div>
+    <div class="builder-bio">partner @fpvventures - investing in seed/A. previous: early hire @meter, @opendoor, @atlassian &amp; others. love @shimoleej</div>
 
     <div class="tweet">
-      <div class="tweet-en">If you are a helpful angel that would invest in an infra series A and we don’t know each other, please holler!</div>
-      <div class="tweet-zh">如果你是一位乐于助人的天使投资人，愿意投资基础设施领域的 A 轮，而我们还不认识，请大声招呼我！</div>
-      <a class="tweet-link" href="https://x.com/nikunj/status/2114095315271942176" target="_blank">查看原推 →</a>
+      <div class="en">Golden hour https://t.co/VPmAgnMkGH</div>
+      <div class="zh">黄金时刻。</div>
+      <a class="link" href="https://x.com/nikunj/status/2114380495140405394" target="_blank" rel="noopener">查看原推 →</a>
     </div>
+  </section>
 
-    <div class="tweet">
-      <div class="tweet-en">Venture in a single meme  https://t.co/qyDhewpFa7</div>
-      <div class="tweet-zh">用一个梗图概括风险投资。</div>
-      <a class="tweet-link" href="https://x.com/nikunj/status/2114091467652444625" target="_blank">查看原推 →</a>
-    </div>
-
-    <div class="tweet">
-      <div class="tweet-en">This describes much more eloquently what I meant what evolving from context -&gt; harnesses -&gt; judgement means..
-
-If you have built something in this space, and want to jam on product ideas, please hit me up  https://t.co/9cWnYRpSi6</div>
-      <div class="tweet-zh">这更优雅地表达了我所说的「从上下文 → 驾驭框架 → 判断力」这一演进过程意味着什么。
-
-如果你在这个领域做过东西，想一起碰撞产品想法，请随时联系我。</div>
-      <a class="tweet-link" href="https://x.com/nikunj/status/2113994081345126486" target="_blank">查看原推 →</a>
-    </div>
-  </article>
-
-  <!-- Aditya Agarwal -->
-  <article class="card">
+  <!-- Dan Shipper -->
+  <section class="card">
     <div class="builder-head">
-      <span class="builder-name">Aditya Agarwal</span>
-      <span class="builder-handle">@adityaag</span>
-      <div class="builder-bio">@SPC 普通合伙人，@Bevel_Health 联合创始人｜曾任：@facebook 早期工程师、@Dropbox CTO、@Flipkart 董事｜乐观主义者，Builder</div>
+      <span class="builder-name">Dan Shipper</span>
+      <span class="builder-handle">@danshipper</span>
     </div>
+    <div class="builder-bio">ceo @every | the only subscription you need to stay at the edge of AI</div>
 
     <div class="tweet">
-      <div class="tweet-en">One weird effect of being max AI pilled is that I have started to really treasure IRL time with my family and my friends.
-
-Put on some techno, dance with friends, take your kids to the park. 
-
-Let the agents cook (or not).
-
-But dear god, celebrate humans.</div>
-      <div class="tweet-zh">「AI 信仰拉满」的一个奇怪副作用是：我开始真正珍惜与家人和朋友面对面相处的时间。
-
-放点 techno，和朋友跳舞，带孩子去公园。
-
-让智能体们去忙吧（或者不忙）。
-
-但拜托，请为人而庆祝。</div>
-      <a class="tweet-link" href="https://x.com/adityaag/status/2114135237806760097" target="_blank">查看原推 →</a>
+      <div class="en">https://t.co/F3WWInD6LH https://t.co/PKNm0MT3So</div>
+      <div class="zh">（配图 / 链接分享）</div>
+      <a class="link" href="https://x.com/danshipper/status/2114509827057561603" target="_blank" rel="noopener">查看原推 →</a>
     </div>
-  </article>
+  </section>
 
-  <!-- Podcast -->
+  <!-- Podcasts -->
   <div class="section-title">播客</div>
 
-  <article class="podcast-card">
-    <div class="podcast-show">The MAD Podcast with Matt Turck</div>
-    <div class="podcast-title">Jev：一个做决策而非生成文本的 AI——以及它为何改变一切</div>
-    <div class="podcast-guest">嘉宾：Diogo Almeida</div>
+  <section class="card">
+    <div class="podcast-show">No Priors</div>
+    <h2 class="podcast-title">The Changing Physics of Cybersecurity and Drug Development with OpenAI President Greg Brockman</h2>
+    <div class="builder-bio">与 OpenAI 总裁 Greg Brockman 对谈：网络安全与药物研发正在改变的底层物理规律</div>
 
-    <ul class="podcast-points">
-      <li>
-        <div class="point-en">The conversation centers on "Jev," an AI system framed not as a text generator but as a decision-maker — shifting the discussion from language output to autonomous action.</div>
-        <div class="point-zh">本期对话聚焦于「Jev」——一个不被定义为文本生成器、而被定义为决策者的 AI 系统，把讨论从语言输出转向自主行动。</div>
-      </li>
-      <li>
-        <div class="point-en">Diogo Almeida explains why decision-making agents represent a different architectural and product paradigm than chat-based models.</div>
-        <div class="point-zh">Diogo Almeida 解释了为什么决策型智能体在架构和产品范式上都不同于基于对话的模型。</div>
-      </li>
-      <li>
-        <div class="point-en">The episode explores the implications for how software gets built, evaluated, and trusted when the AI's output is an action rather than a sentence.</div>
-        <div class="point-zh">本期探讨了当 AI 的产出是行动而非一句话时，软件的构建、评估与信任方式将受到怎样的影响。</div>
-      </li>
-      <li>
-        <div class="point-en">Discussion touches on why this shift "changes everything" — from reliability and oversight to the very definition of an AI product.</div>
-        <div class="point-zh">讨论还涉及这一转变为何「改变一切」——从可靠性与监督，到 AI 产品本身的定义。</div>
-      </li>
-    </ul>
+    <div class="podcast-point">
+      <div class="en">Greg Brockman discusses how the underlying "physics" of cybersecurity and drug development are being reshaped by frontier AI models.</div>
+      <div class="zh">Greg Brockman 探讨前沿 AI 模型如何重塑网络安全与药物研发的底层「物理规律」。</div>
+    </div>
 
-    <a class="podcast-link" href="https://www.youtube.com/@DataDrivenNYC/videos" target="_blank">在 YouTube 收听 →</a>
-  </article>
+    <div class="podcast-point">
+      <div class="en">The conversation covers the evolving balance between offensive and defensive capabilities in security, and what long-running agents make newly possible.</div>
+      <div class="zh">对话涉及安全领域攻防能力之间不断演变的平衡，以及长时运行的 Agent 带来了哪些全新可能。</div>
+    </div>
 
-  <!-- Footer -->
-  <footer>
+    <div class="podcast-point">
+      <div class="en">On drug development, the discussion explores how AI is compressing timelines and changing the way biological research is conducted.</div>
+      <div class="zh">在药物研发方面，讨论探索了 AI 如何压缩研发周期，并改变生物学研究的开展方式。</div>
+    </div>
+
+    <a class="link" href="https://www.youtube.com/@NoPriorsPodcast" target="_blank" rel="noopener">收听播客 →</a>
+  </section>
+
+  <footer class="footer">
     由 AI Daily Bot 自动生成 · 每日 10:00（北京时间）
   </footer>
 
