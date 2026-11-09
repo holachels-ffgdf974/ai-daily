@@ -3,42 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 · 2026年11月08日</title>
+<title>AI 日报 · 2026年11月09日</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  * { box-sizing: border-box; }
   body {
+    margin: 0;
+    padding: 0;
     background: #fafaf8;
     color: #1a1a1a;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
-  .wrap {
+  .container {
     max-width: 680px;
     margin: 0 auto;
-    padding: 56px 24px 80px;
+    padding: 64px 24px 80px;
   }
   /* Masthead */
   .masthead {
     text-align: center;
+    margin-bottom: 56px;
     padding-bottom: 40px;
     border-bottom: 1px solid #e8e8e4;
-    margin-bottom: 48px;
   }
   .masthead .date {
-    font-size: 14px;
-    letter-spacing: 0.12em;
+    font-size: 13px;
+    letter-spacing: 0.18em;
     color: #6b6b6b;
     text-transform: uppercase;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
   }
   .masthead h1 {
-    font-family: Georgia, "Songti SC", serif;
-    font-size: 46px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 52px;
     font-weight: 700;
-    letter-spacing: 0.04em;
-    color: #1a1a1a;
-    margin-bottom: 18px;
+    margin: 0 0 20px;
+    letter-spacing: 0.02em;
+    position: relative;
+    display: inline-block;
   }
   .masthead h1::after {
     content: "";
@@ -48,457 +51,487 @@
     background: #8b5e3c;
     margin: 18px auto 0;
   }
-  .masthead .summary {
+  .masthead .stats {
     font-size: 14px;
     color: #6b6b6b;
-    margin-top: 18px;
+    margin-top: 8px;
   }
-  /* Section title */
-  .section-title {
-    font-family: Georgia, serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin: 48px 0 24px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #8b5e3c;
-    display: inline-block;
-  }
+  .masthead .stats span { color: #8b5e3c; font-weight: 600; }
   /* Builder card */
-  .card {
+  .builder {
     background: #ffffff;
     border: 1px solid #e8e8e4;
     border-radius: 8px;
-    padding: 28px 26px;
+    padding: 28px 28px 12px;
     margin-bottom: 28px;
   }
-  .builder-head {
-    margin-bottom: 20px;
-    padding-bottom: 16px;
+  .builder-header {
+    margin-bottom: 22px;
+    padding-bottom: 18px;
     border-bottom: 1px solid #f0f0ec;
   }
   .builder-name {
-    font-size: 18px;
+    font-family: Georgia, serif;
+    font-size: 22px;
     font-weight: 700;
-    color: #1a1a1a;
+    margin: 0;
   }
   .builder-handle {
     font-size: 14px;
-    color: #2c6bae;
+    color: #8b5e3c;
+    margin-left: 8px;
     font-weight: 500;
-    margin-left: 6px;
   }
   .builder-bio {
-    font-size: 13px;
+    font-size: 14px;
     color: #6b6b6b;
-    margin-top: 6px;
-    white-space: pre-line;
+    margin: 8px 0 0;
   }
   /* Tweet */
   .tweet {
     border-left: 3px solid #e8e0d0;
     background: #fdfdfb;
     padding: 16px 18px;
+    margin-bottom: 18px;
     border-radius: 0 6px 6px 0;
-    margin-bottom: 20px;
   }
-  .tweet:last-child { margin-bottom: 0; }
   .tweet .en {
     font-size: 15px;
     color: #1a1a1a;
-    white-space: pre-line;
-    margin-bottom: 12px;
+    margin: 0 0 10px;
+    white-space: pre-wrap;
   }
   .tweet .zh {
     font-size: 15px;
-    color: #3a3a3a;
-    white-space: pre-line;
-    padding-top: 12px;
-    border-top: 1px dashed #e8e0d0;
+    color: #4a4a4a;
+    margin: 0 0 12px;
+    padding-top: 10px;
+    border-top: 1px dashed #ece8de;
+    white-space: pre-wrap;
   }
-  .tweet .link {
-    display: inline-block;
-    margin-top: 12px;
+  .tweet .src {
     font-size: 13px;
+  }
+  .tweet .src a {
     color: #2c6bae;
     text-decoration: none;
-    word-break: break-all;
   }
-  .tweet .link:hover { text-decoration: underline; }
+  .tweet .src a:hover { text-decoration: underline; }
   /* Podcast */
-  .podcast .pod-name {
-    font-size: 13px;
-    letter-spacing: 0.08em;
+  .podcast {
+    background: #ffffff;
+    border: 1px solid #e8e8e4;
+    border-radius: 8px;
+    padding: 28px;
+    margin-bottom: 28px;
+  }
+  .podcast .label {
+    font-size: 12px;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: #8b5e3c;
     font-weight: 600;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
   }
-  .podcast .pod-title {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 8px;
+  .podcast h2 {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    margin: 0 0 6px;
+    line-height: 1.4;
   }
-  .podcast .pod-title-zh {
-    font-size: 15px;
-    color: #3a3a3a;
-    margin-bottom: 16px;
+  .podcast .ep-en {
+    font-size: 14px;
+    color: #6b6b6b;
+    margin: 0 0 18px;
   }
-  .podcast .pod-url {
-    font-size: 13px;
+  .podcast .ep-zh {
+    font-size: 14px;
+    color: #4a4a4a;
+    margin: 0 0 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0ec;
+  }
+  .podcast .link a {
     color: #2c6bae;
     text-decoration: none;
-    word-break: break-all;
+    font-size: 14px;
   }
+  .podcast .link a:hover { text-decoration: underline; }
   /* Footer */
-  .footer {
-    margin-top: 64px;
-    padding-top: 24px;
-    border-top: 1px solid #e8e8e4;
+  footer {
     text-align: center;
     font-size: 13px;
     color: #6b6b6b;
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid #e8e8e4;
   }
   @media (max-width: 600px) {
-    .wrap { padding: 36px 16px 60px; }
-    .masthead h1 { font-size: 34px; }
-    .card { padding: 22px 18px; }
+    .container { padding: 40px 16px 56px; }
+    .masthead h1 { font-size: 38px; }
+    .builder, .podcast { padding: 20px 18px 8px; }
+    .podcast { padding-bottom: 20px; }
     .tweet { padding: 14px 14px; }
   }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="container">
 
   <header class="masthead">
-    <div class="date">2026年11月08日 · 星期日</div>
+    <div class="date">2026年11月09日 · 星期一</div>
     <h1>AI 日报</h1>
-    <div class="summary">本期收录 9 位 Builder 的 17 条动态 · 1 期播客</div>
+    <div class="stats">本期收录 <span>11</span> 位 Builder · <span>21</span> 条推文 · <span>1</span> 期播客</div>
   </header>
 
-  <div class="section-title">Builder 动态</div>
-
-  <!-- Karpathy -->
-  <div class="card">
-    <div class="builder-head">
-      <span class="builder-name">Andrej Karpathy</span>
-      <span class="builder-handle">@karpathy</span>
-    </div>
-    <div class="tweet">
-      <div class="en">Earlier this week Tristan published his top YouTube channels:
-https://t.co/NZ3UCNo6cT
-Which looked excellent so clearly I had to turn it into TristanTube:
-https://t.co/l0KyW1WdNH
-47K super nerdy videos +TV mode for laid back watching. (One-shotted with Claude Code in 3 minutes)</div>
-      <div class="zh">本周早些时候，Tristan 公布了他最爱的 YouTube 频道清单：
-https://t.co/NZ3UCNo6cT
-看起来非常棒，所以显然我得把它做成 TristanTube：
-https://t.co/l0KyW1WdNH
-4.7 万个极客视频，外加 TV 模式，方便躺着看。（用 Claude Code 一次性搞定，只花了 3 分钟）</div>
-      <a class="link" href="https://x.com/karpathy/status/2119114537442189652" target="_blank" rel="noopener">查看原推 →</a>
-    </div>
-  </div>
-
   <!-- Swyx -->
-  <div class="card">
-    <div class="builder-head">
-      <span class="builder-name">Swyx</span>
-      <span class="builder-handle">@swyx</span>
-      <div class="builder-bio">Bio: 以刻意、强度、正直与疯狂去实现抱负。
-关联：@smol_ai · @cognition · @tempora</div>
+  <section class="builder">
+    <div class="builder-header">
+      <h2 class="builder-name">Swyx<span class="builder-handle">@swyx</span></h2>
+      <p class="builder-bio">以刻意、强度、正直与疯狂去实现抱负。关联：@smol_ai · @cognition · @tempora</p>
     </div>
-    <div class="tweet">
-      <div class="en">sticker game inspired by @dexhorthy @CompleteSkeptic et al https://t.co/NWvVRZ71uW https://t.co/QHmHu3ZSFG</div>
-      <div class="zh">受 @dexhorthy、@CompleteSkeptic 等人启发的贴纸游戏 https://t.co/NWvVRZ71uW https://t.co/QHmHu3ZSFG</div>
-      <a class="link" href="https://x.com/swyx/status/2119242830707311005" target="_blank" rel="noopener">查看原推 →</a>
-    </div>
-    <div class="tweet">
-      <div class="en">https://t.co/ydo8JgYDXr</div>
-      <div class="zh">（分享一条链接）https://t.co/ydo8JgYDXr</div>
-      <a class="link" href="https://x.com/swyx/status/2119210618976944259" target="_blank" rel="noopener">查看原推 →</a>
-    </div>
-    <div class="tweet">
-      <div class="en">just arrived… best swag game in the business. u guys are in for a treat next week https://t.co/4tppCNnBWf https://t.co/uBruvPBba5</div>
-      <div class="zh">刚收到……业界最强的周边玩法。你们下周有福了 https://t.co/4tppCNnBWf https://t.co/uBruvPBba5</div>
-      <a class="link" href="https://x.com/swyx/status/2119210582654210255" target="_blank" rel="noopener">查看原推 →</a>
-    </div>
-  </div>
 
-  <!-- Thibault -->
-  <div class="card">
-    <div class="builder-head">
-      <span class="builder-name">Thibault Sottiaux</span>
-      <span class="builder-handle">@thsottiaux</span>
-      <div class="builder-bio">Bio: Codex &amp; ChatGPT @OpenAI</div>
-    </div>
     <div class="tweet">
-      <div class="en">Would a Pro 50 make sense? Wdyt? https://t.co/WZi6KGXFc9</div>
-      <div class="zh">推出一个 Pro 50 档位合理吗？你们怎么看？https://t.co/WZi6KGXFc9</div>
-      <a class="link" href="https://x.com/thsottiaux/status/2119305294291612140" target="_blank" rel="noopener">查看原推 →</a>
+      <p class="en">are you listening anon?</p>
+      <p class="zh">匿名朋友，你在听吗？</p>
+      <div class="src"><a href="https://x.com/swyx/status/2119611058881192187" target="_blank">查看原推 →</a></div>
     </div>
-    <div class="tweet">
-      <div class="en">Saw some confusions, but all Pro plans have no 5-hour limits, and give the following usage compared to Plus.
 
-✅ Pro 100 = 10X
-✅ Pro 200 = 20X
-✅ Pro 500 = 50X, access to ultrafast</div>
-      <div class="zh">看到一些困惑，澄清一下：所有 Pro 套餐都没有 5 小时限制，相较 Plus 的用量如下。
+    <div class="tweet">
+      <p class="en">and a special pod!</p>
+      <p class="zh">还有一期特别播客！</p>
+      <div class="src"><a href="https://x.com/swyx/status/2119550477629379009" target="_blank">查看原推 →</a></div>
+    </div>
 
-✅ Pro 100 = 10 倍
-✅ Pro 200 = 20 倍
-✅ Pro 500 = 50 倍，并可访问超高速模式</div>
-      <a class="link" href="https://x.com/thsottiaux/status/2119296267545419987" target="_blank" rel="noopener">查看原推 →</a>
-    </div>
     <div class="tweet">
-      <div class="en">Cyber https://t.co/SEBUvxdyEj</div>
-      <div class="zh">Cyber https://t.co/SEBUvxdyEj</div>
-      <a class="link" href="https://x.com/thsottiaux/status/2118953362725159104" target="_blank" rel="noopener">查看原推 →</a>
+      <p class="en">if youre wondering how, ask their VP of FDE Pauline Brunet (thanks @realbasilchatha for curating this)</p>
+      <p class="zh">如果你想知道这是怎么做到的，去问他们的 FDE（前向部署工程师）副总裁 Pauline Brunet（感谢 @realbasilchatha 的整理）。</p>
+      <div class="src"><a href="https://x.com/swyx/status/2119543788192600450" target="_blank">查看原推 →</a></div>
     </div>
-  </div>
+  </section>
 
-  <!-- Amjad -->
-  <div class="card">
-    <div class="builder-head">
-      <span class="builder-name">Amjad Masad</span>
-      <span class="builder-handle">@amasad</span>
-      <div class="builder-bio">Bio: @replit CEO，文明主义者。</div>
+  <!-- Peter Yang -->
+  <section class="builder">
+    <div class="builder-header">
+      <h2 class="builder-name">Peter Yang<span class="builder-handle">@petergyang</span></h2>
+      <p class="builder-bio">为忙碌的人提供实用的 AI 教程与访谈 | 在我的网站获取最佳 AI 技能与指南</p>
     </div>
+
     <div class="tweet">
-      <div class="en">The Better Lesson: https://t.co/662AivSigr</div>
-      <div class="zh">更好的一课：https://t.co/662AivSigr</div>
-      <a class="link" href="https://x.com/amasad/status/2119217304953053419" target="_blank" rel="noopener">查看原推 →</a>
+      <p class="en">This affair is going to destroy billions in shareholder value isn’t it</p>
+      <p class="zh">这桩丑闻怕是要蒸发掉数十亿美元的股东价值吧？</p>
+      <div class="src"><a href="https://x.com/petergyang/status/2119657833516171384" target="_blank">查看原推 →</a></div>
     </div>
+
     <div class="tweet">
-      <div class="en">Really enjoyed Kazakhstan — super AI pilled government. And a great place for the Network School. https://t.co/Mt9rIomS6q</div>
-      <div class="zh">非常喜欢哈萨克斯坦——政府对 AI 极度拥抱。也是 Network School 的理想之地。https://t.co/Mt9rIomS6q</div>
-      <a class="link" href="https://x.com/amasad/status/2119126064815608270" target="_blank" rel="noopener">查看原推 →</a>
+      <p class="en">“Both of my parents got diagnosed with two cancers each within a week of each other.”
+
+From @AshleyYuki, VP of Product at @OpenAI:
+
+“I just decided to take a month [off work]. It was one of the best things I could have done in that moment to care for my parents.
+
+You also have to care for yourself as a caregiver. We don’t talk about that enough. It’s still a really big cognitive load, emotional load, just pure time load to be a caregiver. You have to make sure you’re budgeting time for your own mental health.”</p>
+      <p class="zh">“我的父母在一周之内相继被诊断出各患两种癌症。”
+
+来自 @OpenAI 产品副总裁 @AshleyYuki：
+
+“我当即决定请一个月假。那一刻，这是我为照顾父母能做的最好的事情之一。
+
+作为照护者，你也必须照顾好自己。我们对此谈得太少了。照护者承受着巨大的认知负担、情绪负担，以及纯粹的时间负担。你必须确保为自己的心理健康预留时间。”</p>
+      <div class="src"><a href="https://x.com/petergyang/status/2119595860057288967" target="_blank">查看原推 →</a></div>
     </div>
-  </div>
+
+    <div class="tweet">
+      <p class="en">Anecdotally, I think cheating is far more common in Asia.
+
+Plenty of guys who have their wife and kids living in the US/Canada, while they do business in Asia and have another girlfriend or even family in a 二奶村.
+
+Most of the time their wife knows about this too. Not saying any of this is right but just what I've seen and heard
+
+Just randomly came across this article</p>
+      <p class="zh">据我观察，出轨在亚洲要普遍得多。
+
+很多男人把妻儿安置在美国/加拿大，自己在亚洲做生意，同时另有一个女友，甚至在“二奶村”另组家庭。
+
+大多数情况下，他们的妻子也知道这些。我不是说这些是对的，只是我亲眼所见、亲耳所闻。
+
+只是偶然刷到了这篇文章。</p>
+      <div class="src"><a href="https://x.com/petergyang/status/2119556651636441416" target="_blank">查看原推 →</a></div>
+    </div>
+  </section>
+
+  <!-- Nan Yu -->
+  <section class="builder">
+    <div class="builder-header">
+      <h2 class="builder-name">Nan Yu<span class="builder-handle">@thenanyu</span></h2>
+      <p class="builder-bio">产品与代码，就职于 @openai。曾任 @linear 产品负责人</p>
+    </div>
+
+    <div class="tweet">
+      <p class="en">This is a good question. And you should definitely pick "dumbest" over "simplest".
+
+Simple is something you iterate to. Dumb is the correct starting point. Otherwise, you start to outsmart yourself.</p>
+      <p class="zh">这是个好问题。而且你绝对应该选“最笨”而不是“最简单”。
+
+“简单”是你迭代出来的结果，“笨”才是正确的起点。否则，你就会聪明反被聪明误。</p>
+      <div class="src"><a href="https://x.com/thenanyu/status/2119493015190249556" target="_blank">查看原推 →</a></div>
+    </div>
+
+    <div class="tweet">
+      <p class="en">This is basically true in all aspects of software. Choose the dumbest architecture that’ll work. choose the dumbest design that gets the job done. Being clever means your users also have to be just as clever to understand your cleverness</p>
+      <p class="zh">这在软件的方方面面基本都成立。选能跑通的最笨的架构，选能完成任务的最笨的设计。你一旦“聪明”，就意味着用户也必须同样“聪明”才能理解你的聪明。</p>
+      <div class="src"><a href="https://x.com/thenanyu/status/2119462979179892925" target="_blank">查看原推 →</a></div>
+    </div>
+
+    <div class="tweet">
+      <p class="en">Software got a lot easier if you know what you wanna build, and a lot harder if you don’t.
+
+With clarity, you can straight-shot to the solution. Without it, you’ll ship a pile of junk and spend a lot of money doing it. Pre-AI era you would ship nothing, which is an improvement.</p>
+      <p class="zh">如果你清楚自己想做什么，软件开发变得容易多了；如果你不清楚，那就难多了。
+
+目标清晰，你可以直奔解决方案；目标模糊，你只会交付一堆垃圾，还为此花掉一大笔钱。在 AI 之前，你至少什么都交付不出来——那反而是一种进步。</p>
+      <div class="src"><a href="https://x.com/thenanyu/status/2119462224721002560" target="_blank">查看原推 →</a></div>
+    </div>
+  </section>
+
+  <!-- Guillermo Rauch -->
+  <section class="builder">
+    <div class="builder-header">
+      <h2 class="builder-name">Guillermo Rauch<span class="builder-handle">@rauchg</span></h2>
+      <p class="builder-bio">@vercel 首席执行官</p>
+    </div>
+
+    <div class="tweet">
+      <p class="en">Built a physical simulation of a record player with WebGL2 and Web Audio. It's *shockingly* accurate.
+
+Instead of playing a song, it works by converting it into the physical shape of a groove. Then a simulated stylus rides those walls 384,000 times a second, and you hear the voltage that motion would induce in a cartridge.
+
+So the crackle, the pops, the wow/flutter, the dull inner grooves are natural byproducts of the simulation. You can also "DJ" the record.
+
+(The converted songs are in the public domain or CC-licensed. Code is linked for you to remix and re-deploy.)</p>
+      <p class="zh">用 WebGL2 和 Web Audio 做了一个黑胶唱机的物理模拟，精准得令人震惊。
+
+它不是直接播放歌曲，而是把歌曲转换成唱片纹槽的物理形状。然后一个模拟唱针以每秒 38.4 万次的频率在这些槽壁上行走，你听到的是这种运动在唱头中感应出的电压。
+
+所以，噼啪声、爆音、抖晃（wow/flutter）、内侧音轨的沉闷感，都是模拟的自然产物。你还可以像 DJ 一样“搓碟”。
+
+（转换的歌曲均为公有领域或 CC 授权作品。代码已附链接，供你二次创作与重新部署。）</p>
+      <div class="src"><a href="https://x.com/rauchg/status/2119536313712230802" target="_blank">查看原推 →</a></div>
+    </div>
+  </section>
 
   <!-- Aaron Levie -->
-  <div class="card">
-    <div class="builder-head">
-      <span class="builder-name">Aaron Levie</span>
-      <span class="builder-handle">@levie</span>
-      <div class="builder-bio">Bio: @box CEO——你的业务就在内容之中，用 AI 释放它。</div>
+  <section class="builder">
+    <div class="builder-header">
+      <h2 class="builder-name">Aaron Levie<span class="builder-handle">@levie</span></h2>
+      <p class="builder-bio">@box 首席执行官 —— 你的业务存在于内容之中，用 AI 释放它</p>
     </div>
+
     <div class="tweet">
-      <div class="en">This sounds extreme and I wouldn’t have believed it even a year ago, but we’re starting to see plenty of examples of productivity gains that are an order of magnitude or two above output levels pre-AI.
+      <p class="en">We’re moving from an era of AI where the output comes roughly at the rate that you can chat back and forth with the AI to work with you, to a period where you can set a problem for a set of agents to go off and do an arbitrarily large amount of work for you. This means productivity gains that are maybe 20-50% to gains that don’t really have an upper limit.
 
-With the right harness, a deep understanding of your domain of what you want to build, likely a relatively new codebase (with some exceptions), a fluency of how to work with multiple agents at once, and a setup that makes it so you can test and deploy with limited friction, outputs on this level feel realistic in coding.
+Agent swarms and the ability to fan out complex work across many agents doing tasks in parallel provide a massive unlock in a lot of spaces. This will lead to qualitatively different outcomes in my fields.
 
-What’s crazy is this gap doesn’t appear to be diminishing over time. You’d think that we’d see a convergence in the lines because of AI, but it turns out the more depth you had before -and willingness now to take a different approach- gives you crazy leverage. And that is only compounding as the models can take on larger work and harder problems.
+This has already been seen across the coding domain. Next, cyber is almost entirely a problem space where more agents reviewing more things will lead to far better outcomes. We’re seeing the same now in many scientific fields, and this almost certainly will change life sciences.
 
-Right now this is most pronounced in software engineering for the obvious reasons. But there’s no reason we don’t start to see this in a number of other computer-use-sensitive domains like other scientific fields, AEC, finance, cyber, and more. Going to get quite wild.</div>
-      <div class="zh">这听起来很极端，一年前的我甚至都不会相信，但现在我们开始看到大量案例：生产力提升达到 AI 之前产出水平的一到两个数量级。
+But this will increasingly be true in any field where you can parallelize computer-based work to complete something faster or do something at a totally different quality level. Which is actually are some of the most valuable domains of knowledge work today.
 
-配合合适的工具框架、对你想构建的领域有深刻理解、大概率是一个相对较新的代码库（也有例外）、熟练地同时与多个智能体协作，再加上一套让测试和部署几乎无摩擦的环境，这种级别的产出在编程领域已经显得很现实。
+Our brains aren’t really wired for the new scenario we’re heading into where compute becomes the variable that we can flex to solve any problem that we want. We’re used to thinking that the amount of time that goes into a task is correlated to the output that we get from it. And most domains of knowledge work or science have generally always been correlated with this. That’s changing forever.</p>
+      <p class="zh">我们正从“产出速度大致等于你与 AI 来回对话速度”的 AI 时代，迈向一个你可以把问题交给一组智能体、让它们为你完成任意规模工作的时期。这意味着生产力提升将从 20–50% 跃升至几乎没有上限。
 
-疯狂的是，这个差距似乎并没有随时间缩小。你本以为因为 AI，曲线会趋于收敛，但结果是——你过去积累的深度越深，加上现在愿意采取不同方法，你获得的杠杆就大得离谱。而且随着模型能承担更大的工作和更难的难题，这种优势还在不断复利。
+智能体集群（Agent swarms），以及把复杂工作分发给多个并行执行任务的智能体的能力，在许多领域释放了巨大的潜力。这将在我所在的领域带来质变级的结果。
 
-目前这在软件工程中最明显，原因显而易见。但没有理由认为它不会出现在其他对计算机使用敏感的领域，比如其他科学领域、建筑工程、金融、网络安全等等。接下来会变得相当疯狂。</div>
-      <a class="link" href="https://x.com/levie/status/2119111328099168409" target="_blank" rel="noopener">查看原推 →</a>
+这在编程领域已经显现。接下来，网络安全几乎完全是一个“更多智能体审查更多东西就能带来更好结果”的问题空间。我们在许多科学领域也已看到同样的趋势，而这几乎必然会改变生命科学。
+
+但在任何能够把基于电脑的工作并行化、从而更快完成或达到完全不同质量水平的领域，这一点都会越来越成立——而这些恰恰是当今知识工作中最有价值的领域。
+
+我们的大脑其实还没适应即将到来的新场景：算力成为我们可以弹性调用的变量，用来解决任何我们想解决的问题。我们习惯认为，投入任务的时间与产出成正比——大多数知识工作或科学领域历来如此。但这正在被永久改变。</p>
+      <div class="src"><a href="https://x.com/levie/status/2119592025440092192" target="_blank">查看原推 →</a></div>
     </div>
+
     <div class="tweet">
-      <div class="en">The interesting thing about AI agents is that as a theoretical matter, their inference can kind of run anywhere. AI is one of the few areas of technology that isn’t *as* sensitive to latency back to the user.
+      <p class="en">A good lesson in AI is that you need to check back in on the latest with every 3 to 6 months to try something that wasn’t possible before and see if it works again.
 
-Long running agents are now going to be the norm, which means it’s ok to send off work to an AI factory somewhere and that work can essentially be largely done within that remote data center and a final result spit back to the user. The data can pass into these systems in an encrypted manner, be combed through by agents, and then disregarded right after.
+At no point in AI’s history is that more true than today. Just the past six months of model progress around computer and tool use, less context rot, better reasoning, multimodality, and deeper domain expertise in a number of key fields, these models are vastly more capable on what they can execute.
 
-And because the economic value of the task is so high relative to the latency sensitivity (eg getting back $500 in value from an automated task, but it takes an extra second to return), you don’t have to have the inference to be particularly close to the user.
+This is opening up a new vector of what AI systems will be able to autonomously work on. Essentially, anything with an API (and even many things without), we can anticipate that an agent will be able to control and utilize as an underlying capability to complete a process.
 
-Also, because inference is a temporary process with no sensitive data needing to be stored long term where the inference is happening, you can effectively treat AI factories as ephemeral systems, changing some of the data residency dynamics slightly.
+This means that we are no longer dependent on *just* the models generating everything from whole cloth, but instead they can fully utilize existing systems (or new ones purpose built for them) very effectively. This creates immense leverage for agents.
 
-Combined, this means you have more flexibility in where you can begin to deploy AI data centers. This is both a huge economic opportunity for the states or countries (or space) that want to take advantage of this fact. And it’s a loss to the states or countries that decide to forgo the opportunity.</div>
-      <div class="zh">AI 智能体有意思的地方在于，从理论上讲，它们的推理几乎可以在任何地方运行。AI 是少数对返回用户的延迟不那么敏感的技术领域之一。
+Security agents can leverage existing data feeds and cyber tooling, IT agents that can execute workflows reliably across software stacks, data agents that can migrate data or processes between systems, architect and design agents can leverage CAD and design tools, and on and on. And any of today’s tools that don’t work will likely be replaced by agent-friendly or OSS tooling that does the same.
 
-长时间运行的智能体将成为常态，这意味着把工作派发到某个「AI 工厂」是可以的，这些工作基本可以在那个远程数据中心里完成，最后把结果吐回给用户。数据可以以加密方式进入这些系统，由智能体梳理处理，然后随即被丢弃。
+When you combine this with the domain understanding being trained into agents, you started to get autonomous collaborators for every job function and industry. This will open up a ton of new opportunities in AI if you build with this understanding in mind.</p>
+      <p class="zh">AI 领域的一条重要经验是：你每 3 到 6 个月就要回头看看最新进展，去尝试一件以前做不到的事，看看现在是否可行。
 
-而且，由于任务的相对经济价值远高于对延迟的敏感度（比如一个自动化任务能带来 500 美元价值，但多花一秒钟返回），你并不需要让推理离用户特别近。
+在 AI 历史上，没有哪个时刻比今天更能印证这一点。仅过去六个月，模型在计算机与工具使用、更少的上下文衰减、更强的推理、多模态，以及在若干关键领域更深的专业能力上取得的进步，让这些模型能执行的事情远超从前。
 
-同时，由于推理是一个临时过程，不需要在推理发生地长期存储任何敏感数据，你实际上可以把 AI 工厂当作临时性系统来对待，这在一定程度上改变了数据驻留的动态。
+这为 AI 系统能自主开展的工作开辟了新的方向。基本上，任何带 API 的东西（甚至许多没有 API 的东西），我们都可以预见智能体会控制并利用它们作为底层能力来完成流程。
 
-综合来看，这意味着在部署 AI 数据中心的位置上你有了更大的灵活性。对于那些想抓住这一点的州或国家（或太空）来说，这是巨大的经济机遇；而对于决定放弃这一机遇的州或国家来说，则是一种损失。</div>
-      <a class="link" href="https://x.com/levie/status/2118953909524050288" target="_blank" rel="noopener">查看原推 →</a>
+这意味着我们不再*仅仅*依赖模型凭空生成一切，而是模型可以高效地充分利用现有系统（或专为它们打造的新系统）。这为智能体创造了巨大的杠杆。
+
+安全智能体可以利用现有的数据源和网络安全工具；IT 智能体能跨软件栈可靠地执行工作流；数据智能体能在系统之间迁移数据或流程；架构与设计智能体能利用 CAD 和设计工具，如此等等。而今天任何不好用的工具，很可能都会被具备智能体友好特性或开源的同类工具所取代。
+
+当你把这一点与训练进智能体的领域理解结合起来，你就开始为每个职能和行业获得自主协作者。如果你带着这种理解去构建，AI 领域将涌现大量新机会。</p>
+      <div class="src"><a href="https://x.com/levie/status/2119502716770902234" target="_blank">查看原推 →</a></div>
     </div>
-  </div>
+  </section>
+
+  <!-- Ryo Lu -->
+  <section class="builder">
+    <div class="builder-header">
+      <h2 class="builder-name">Ryo Lu<span class="builder-handle">@ryolu_</span></h2>
+      <p class="builder-bio">设计过 @Cursor_ai、@NotionHQ、@Stripe，创过业。我在打造一个人人都能做软件的世界。想成为 K-pop 偶像</p>
+    </div>
+
+    <div class="tweet">
+      <p class="en">when we can do anything,
+do we still know what we want?
+
+the full talk from @aiDotEngineer shanghai. every slide handmade in keynote, subs in 中文 and english</p>
+      <p class="zh">当我们什么都能做时，
+我们还知道自己想要什么吗？
+
+来自 @aiDotEngineer 上海站的完整演讲。每一页幻灯片都在 Keynote 里手工制作，配有中英文字幕。</p>
+      <div class="src"><a href="https://x.com/ryolu_/status/2119586846657454152" target="_blank">查看原推 →</a></div>
+    </div>
+  </section>
 
   <!-- Garry Tan -->
-  <div class="card">
-    <div class="builder-head">
-      <span class="builder-name">Garry Tan</span>
-      <span class="builder-handle">@garrytan</span>
-      <div class="builder-bio">Bio: @ycombinator 总裁兼 CEO——@garryslist 创始人——GStack 与 GBrain 的创造者——帮助创始人的设计师/工程师——旧金山民主党人</div>
+  <section class="builder">
+    <div class="builder-header">
+      <h2 class="builder-name">Garry Tan<span class="builder-handle">@garrytan</span></h2>
+      <p class="builder-bio">@ycombinator 总裁兼 CEO —— @garryslist 创始人 —— GStack 与 GBrain 的创造者 —— 帮助创始人的设计师/工程师 —— 旧金山民主党人</p>
     </div>
+
     <div class="tweet">
-      <div class="en">WIRED is a shell of its former self https://t.co/vERIHNqbga</div>
-      <div class="zh">《连线》杂志如今只剩一副空壳 https://t.co/vERIHNqbga</div>
-      <a class="link" href="https://x.com/garrytan/status/2119172824271360124" target="_blank" rel="noopener">查看原推 →</a>
+      <p class="en">My gstack-evals project took a look at this Jev Engineering article and tried to replicate it, and I also told it to try particle-1 and it turns out this article replicates, and particle-1 is even better</p>
+      <p class="zh">我的 gstack-evals 项目研究了这篇 Jev Engineering 的文章并尝试复现，我还让它试试 particle-1，结果这篇文章的结论可以复现，而且 particle-1 表现更好。</p>
+      <div class="src"><a href="https://x.com/garrytan/status/2119624260675350605" target="_blank">查看原推 →</a></div>
     </div>
+
     <div class="tweet">
-      <div class="en">We could have abundance
-
-This is going to be the defining political issue of the next decade: can we have human progress in science, medicine and engineering through superintelligence?
-
-Or will we choose the darkness? https://t.co/efmVMYZwsM</div>
-      <div class="zh">我们本可以拥有富足
-
-这将成为下一个十年具有决定性意义的政治议题：我们能否通过超级智能，在科学、医学和工程领域实现人类进步？
-
-还是会选择黑暗？https://t.co/efmVMYZwsM</div>
-      <a class="link" href="https://x.com/garrytan/status/2119146939514278238" target="_blank" rel="noopener">查看原推 →</a>
+      <p class="en">You're really going to want your own software factory</p>
+      <p class="zh">你真的会想要一座属于自己的“软件工厂”。</p>
+      <div class="src"><a href="https://x.com/garrytan/status/2119615647592395037" target="_blank">查看原推 →</a></div>
     </div>
+
     <div class="tweet">
-      <div class="en">Man don’t show this essay to the NIMBYs https://t.co/n7W3CQaHH8</div>
-      <div class="zh">兄弟，可别把这篇文章给那些「邻避主义者」看 https://t.co/n7W3CQaHH8</div>
-      <a class="link" href="https://x.com/garrytan/status/2119142686422859899" target="_blank" rel="noopener">查看原推 →</a>
+      <p class="en">Once you realize software is so easily changed with frontier models, these bugs become a little bit unbearable
+
+And simultaneously, it seems obvious personal just-in-time software will be inevitable</p>
+      <p class="zh">一旦你意识到借助前沿模型软件可以如此轻易地被修改，这些 bug 就变得有些难以忍受了。
+
+与此同时，个人化的“即时软件”（just-in-time software）似乎注定不可避免。</p>
+      <div class="src"><a href="https://x.com/garrytan/status/2119612084220842483" target="_blank">查看原推 →</a></div>
     </div>
-  </div>
+  </section>
+
+  <!-- Matt Turck -->
+  <section class="builder">
+    <div class="builder-header">
+      <h2 class="builder-name">Matt Turck<span class="builder-handle">@mattturck</span></h2>
+      <p class="builder-bio">@FirstMarkCap 风投合伙人。主持 MAD Podcast；组织 Data Driven NYC；著有 MAD Landscape</p>
+    </div>
+
+    <div class="tweet">
+      <p class="en">ok lol trolls coming out in full force - Elon is a business genius, a visionary and and the richest man in the world, it’s ok for comedians to attempt to poke some fun, relax!</p>
+      <p class="zh">好吧，哈哈，喷子们全出来了——马斯克是商业天才、远见者、世界首富，喜剧演员拿他开开玩笑没什么大不了的，放轻松！</p>
+      <div class="src"><a href="https://x.com/mattturck/status/2119525416780361766" target="_blank">查看原推 →</a></div>
+    </div>
+
+    <div class="tweet">
+      <p class="en">Lol not Elon now, after nailing the Tucker Carlson impersonation Absolutely epic run from Jeremy Culhane</p>
+      <p class="zh">哈哈，这次不是马斯克了——在完美模仿 Tucker Carlson 之后，Jeremy Culhane 的表现简直史诗级。</p>
+      <div class="src"><a href="https://x.com/mattturck/status/2119457959625498698" target="_blank">查看原推 →</a></div>
+    </div>
+  </section>
 
   <!-- Zara Zhang -->
-  <div class="card">
-    <div class="builder-head">
-      <span class="builder-name">Zara Zhang</span>
-      <span class="builder-handle">@zarazhangrui</span>
-      <div class="builder-bio">Bio: 建设者。哈佛'17。Instagram: https://t.co/aJqTEMrL2L GitHub: https://t.co/KCuEajezlL</div>
+  <section class="builder">
+    <div class="builder-header">
+      <h2 class="builder-name">Zara Zhang<span class="builder-handle">@zarazhangrui</span></h2>
+      <p class="builder-bio">Builder。哈佛'17。Instagram / GitHub 见个人主页</p>
     </div>
+
     <div class="tweet">
-      <div class="en">So many people speak of startup as if their fates are predestined: X idea will never work out; the market for Y is too niche...
+      <p class="en">I’ve almost stopped using the term “vibe coding” because there’s a negative connotation to it
 
-But startups' fates are MADE, not predetermined. Given one idea, there are 1000 ways to execute it, 100 people will have 100 different approaches. Brilliant people with brilliant execution often create something when there was nothing, or make the impossible seem obvious in hindsight.</div>
-      <div class="zh">太多人谈论创业时，仿佛命运早已注定：X 点子永远做不成；Y 的市场太小众……
+It implies that you didn’t put a lot of effort or soul into the output and it’s just AI slop
 
-但创业的命运是「造」出来的，而非预先注定。同一个点子，有 1000 种执行方式，100 个人会有 100 种不同的做法。卓越的人配上卓越的执行，常常能在本无一物之处创造出东西，或者让不可能的事在后见之明中显得理所当然。</div>
-      <a class="link" href="https://x.com/zarazhangrui/status/2118968862557475298" target="_blank" rel="noopener">查看原推 →</a>
+But oftentimes people ARE putting their heart and soul into the work even when using AI coding tools. The 2 are not contradictory
+
+We need a better word for describing this</p>
+      <p class="zh">我几乎已经不再使用“vibe coding”这个词了，因为它带有负面含义。
+
+它暗示你没有在产出上投入多少心血或灵魂，只是 AI 垃圾。
+
+但很多时候，人们即便使用 AI 编程工具，也依然在全身心投入。这两者并不矛盾。
+
+我们需要一个更好的词来描述这件事。</p>
+      <div class="src"><a href="https://x.com/zarazhangrui/status/2119592080318341128" target="_blank">查看原推 →</a></div>
     </div>
-  </div>
 
-  <!-- Nikunj -->
-  <div class="card">
-    <div class="builder-head">
-      <span class="builder-name">Nikunj Kothari</span>
-      <span class="builder-handle">@nikunj</span>
-      <div class="builder-bio">Bio: @fpvventures 合伙人——投资种子轮/A 轮。曾任 @meter、@opendoor、@atlassian 等公司早期成员。爱 @shimoleej</div>
-    </div>
     <div class="tweet">
-      <div class="en">Next guest up is @danielrupawalla, cofounder of @ArcanumLabs_ next Wednesday, Nov 11th at noon.
-
-For this session, we'll be chatting about all things data (what the labs are buying, who is selling, how do i get into this business, will this market even last..)
-
-Format:
-&gt; 60 minute sessions (IRL only) in SF
-&gt; For the first 45 mins, I get to ask the guest spicy questions about their expertise
-&gt; For the last 15 mins, they get to ask me anything they want to learn about venture
-&gt; All off the record, chatham house rules
-&gt; Open to 10-12 guests who listen in and can ask some of their own questions
-
-Register here if you want to join, and subscribe to the Luma for future guests: https://t.co/esETUKhcm7</div>
-      <div class="zh">下一位嘉宾是 @ArcanumLabs_ 联合创始人 @danielrupawalla，时间在下周三 11 月 11 日中午。
-
-这一期我们会聊数据相关的一切（各大实验室在买什么、谁在卖、我怎么进入这个行当、这个市场还能撑多久……）
-
-形式：
-&gt; 60 分钟，旧金山线下
-&gt; 前 45 分钟，我向嘉宾就其专业领域提一些犀利问题
-&gt; 最后 15 分钟，嘉宾可以问我任何他们想了解的创投问题
-&gt; 全程不公开，遵循查塔姆宫守则
-&gt; 开放 10–12 位听众参与，并可提出自己的问题
-
-想参加就在这里报名，并订阅 Luma 获取未来嘉宾信息：https://t.co/esETUKhcm7</div>
-      <a class="link" href="https://x.com/nikunj/status/2119229917019971879" target="_blank" rel="noopener">查看原推 →</a>
+      <p class="en">The joy of building a product comes from the collision between the predictability of how technology behaves &amp; the unpredictability of how humans behave</p>
+      <p class="zh">打造产品的乐趣，来自技术行为的可预测性与人类行为的不可预测性之间的碰撞。</p>
+      <div class="src"><a href="https://x.com/zarazhangrui/status/2119342420412510686" target="_blank">查看原推 →</a></div>
     </div>
+  </section>
+
+  <!-- Nikunj Kothari -->
+  <section class="builder">
+    <div class="builder-header">
+      <h2 class="builder-name">Nikunj Kothari<span class="builder-handle">@nikunj</span></h2>
+      <p class="builder-bio">@fpvventures 合伙人 —— 投资种子轮/A 轮。曾任职于 @meter、@opendoor、@atlassian 等早期成员。爱 @shimoleej</p>
+    </div>
+
     <div class="tweet">
-      <div class="en">ok here’s how we get investors to fomo our series A and get seven term sheets..
+      <p class="en">If you are visiting SF, and trying to meet more people, here are a random list of things you should remove from your vocabulary..
 
-first, we have to vague post revenue. or customers. this is absolutely critical. no y axis, just keep showing numbers and to the right. graphs work and of course get your investors to quote tweet it and take credit. they love doing that anyway. make it vague like “slowly but surely” or “i see an exponential when I see one”
+&gt; swap notes
+&gt; "synergies"
+&gt; pick your brain
+&gt; networking
+&gt; "san fran" (tourist tell)
+&gt; grab coffee if you're free
 
-ok, once you do that, you know you can do another launch video for features or even better multiple for features so you get maximum airtime. after that case studies are critical - get a trendsetter company to talk about you or even better have the labs mention you in articles. this will guarantee cold emails to grab coffee from partners.
+If you want to meet interesting people here, show your work. The most interesting people I know in the city are not attending that fancy large conference - they are probably at their office.
 
-also you know you can buy “articles” in “premier” publications. you can even run ads against it targeted to just investors too. you’re joking? no dead serious bro.
+So what's the work? It can be as simple as a thoughtful cold email, a five line pointed DM, or complex as some side projects that you have shipped, or a meetup that you are organizing.
 
-ok now that you have interest and top of mindshare - the most important thing is to use the magic mantras of “large ambition” and combinations of “long horizon agent swarms abilterared world models physical ai”.
+If you put in the effort, it shows, yes, even in this AI era. I still get so much slop across the board, that if I see anyone put in the effort, I try to go out of my way to meet them.
 
-and finally and most importantly you don’t have a deck because of course we’re not raising, we were thinking early next year. and of course we still got pre empted so we don’t have a data room even. you get on or not it’s your call.
+Even the busiest people have 15 mins to give you, if you give them a reason to!</p>
+      <p class="zh">如果你来旧金山，想认识更多人，下面这些词请从你的词汇表里删掉……
 
-and then you use the magic words of optimizing for the best partner but let’s be honest we both know i just want the best valuation.
+&gt; 交流心得（swap notes）
+&gt; “协同效应”
+&gt; 请教一下（pick your brain）
+&gt; 社交拓展（networking）
+&gt; “San Fran”（一听就是游客）
+&gt; 有空一起喝杯咖啡
 
-(again the whole thing is satire, but individually each line is true)</div>
-      <div class="zh">好，下面讲讲怎么让投资人对我们的 A 轮产生 FOMO，并拿到七份 term sheet……
+想在这里认识有趣的人，就展示你的作品。我认识这座城市里最有趣的人，他们不会去参加那些花哨的大型会议——他们多半待在自己的办公室。
 
-首先，必须含糊地发营收数据。或者客户数。这绝对关键。不要 y 轴，只管把数字往右画。图表就是管用，当然还要让投资人转发并抢功——他们本来就爱这么干。写得含糊点，比如「缓慢但稳步前进」或者「我看到指数级增长的时候我就看到了」。
+那“作品”是什么？可以是一封用心的冷邮件、一条五行以内的精准私信，也可以是复杂到你已经上线的副业项目，或你正在组织的聚会。
 
-好，做完这些，你知道你还可以再发一个功能发布视频，或者更狠——为每个功能各发一个，最大化曝光。之后客户案例至关重要——找个潮流引领型公司来谈你，或者更妙的是让各大实验室在文章里提到你。这保证你能收到一堆合伙人约咖啡的冷邮件。
+只要你投入了心思，别人看得出来——是的，即使在 AI 时代也是如此。我每天还是会收到大量垃圾信息，所以一旦看到有人真正投入了心思，我都会尽量特意去见他。
 
-还有，你知道你可以在「顶级」媒体上「买」文章。你甚至还能针对投资人精准投放广告。你开玩笑？不，兄弟，我是认真的。
-
-好了，现在你有兴趣和顶层的注意力份额了——最重要的是用上那些魔法咒语：「宏大野心」，以及「长时程智能体集群」「可操控世界模型」「物理 AI」的各种组合。
-
-最后，最重要的是你没有 deck，因为当然我们不是在融资，我们本来想明年初再说。而且当然我们已经被抢先了，所以连数据室都没有。你投不投随你。
-
-然后你用上魔法词汇：我们是在寻找最佳合伙人。但说实话，咱俩都知道我只想要最好的估值。
-
-（再说一遍，整段是讽刺，但每一句单独看都是真的）</div>
-      <a class="link" href="https://x.com/nikunj/status/2119162212044742938" target="_blank" rel="noopener">查看原推 →</a>
+再忙的人也能挤出 15 分钟给你——只要你给他一个理由！</p>
+      <div class="src"><a href="https://x.com/nikunj/status/2119670529254981756" target="_blank">查看原推 →</a></div>
     </div>
-  </div>
+  </section>
 
-  <!-- Peter Steinberger -->
-  <div class="card">
-    <div class="builder-head">
-      <span class="builder-name">Peter Steinberger</span>
-      <span class="builder-handle">@steipete</span>
-      <div class="builder-bio">Bio: 多智能体风流客，ClawFather。退休后回归，折腾 AI，帮一只龙虾接管世界。@OpenClaw</div>
-    </div>
-    <div class="tweet">
-      <div class="en">The Asahi project was all about taking something closed and restricted and opening it up.
+  <!-- Podcast -->
+  <section class="podcast">
+    <div class="label">播客</div>
+    <h2>One Million AI Engineer Special · 斯坦福如何教授“AI 原生工程”</h2>
+    <p class="ep-en">Latent Space — [One Million AI Engineer Special] How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco</p>
+    <p class="ep-zh">Latent Space —— 【百万 AI 工程师特辑】斯坦福如何教授 AI 原生工程 —— 嘉宾：Mihail Eric、Monaco</p>
+    <div class="link"><a href="https://www.youtube.com/watch?v=dpY7YzZo4kE" target="_blank">收听播客 →</a></div>
+  </section>
 
-Adding new restrictions that make it harder for other projects to build on that is not the way. And that AI rejection is just silly. https://t.co/fT4O4wieQm</div>
-      <div class="zh">Asahi 项目的精神，就是把封闭受限的东西打开。
-
-再添加新限制、让其他项目更难在其上构建，这不是正确的做法。而那个「拒绝 AI」的条款更是荒唐。https://t.co/fT4O4wieQm</div>
-      <a class="link" href="https://x.com/steipete/status/2119264334627090514" target="_blank" rel="noopener">查看原推 →</a>
-    </div>
-  </div>
-
-  <!-- Aditya Agarwal -->
-  <div class="card">
-    <div class="builder-head">
-      <span class="builder-name">Aditya Agarwal</span>
-      <span class="builder-handle">@adityaag</span>
-      <div class="builder-bio">Bio: @SPC 普通合伙人，@Bevel_Health 联合创始人 | 曾任：@facebook 早期工程师、@Dropbox CTO、@Flipkart 董事 | 乐观主义者，建设者</div>
-    </div>
-    <div class="tweet">
-      <div class="en">If building datacenters becomes harder, it is obvious that you should be super long anyone who has existing capacity (aka hyperscalers).
-
-It's not like the demand for the spice is going way -- it is only continuing to go up.
-
-Thus the spice holders will win big.
-
-What will suffer is the rate of new model training.
-
-I guess we will pace the frontier after all. The body politic speaketh.</div>
-      <div class="zh">如果建数据中心变得更难，那么显然你应该重仓任何已拥有现成容量的一方（也就是超大规模云厂商）。
-
-需求可不会消失——它只会继续上涨。
-
-因此「香料」的持有者将大获全胜。
-
-受损的将是新模型训练的速度。
-
-看来我们终究还是要给前沿降速了。政治体发话了。</div>
-      <a class="link" href="https://x.com/adityaag/status/2119157297167372646" target="_blank" rel="noopener">查看原推 →</a>
-    </div>
-  </div>
-
-  <div class="section-title">播客</div>
-
-  <div class="card podcast">
-    <div class="pod-name">No Priors</div>
-    <div class="pod-title">Tokenization, Agentic Trading, Harmonic: Robinhood's Mission to Expand Ownership with CEO Vlad Tenev</div>
-    <div class="pod-title-zh">代币化、智能体交易、Harmonic：Robinhood CEO Vlad Tenev 谈扩大所有权的使命</div>
-    <a class="pod-url" href="https://www.youtube.com/@NoPriorsPodcast" target="_blank" rel="noopener">https://www.youtube.com/@NoPriorsPodcast</a>
-  </div>
-
-  <footer class="footer">
+  <footer>
     由 AI Daily Bot 自动生成 · 每日 10:00（北京时间）
   </footer>
 
